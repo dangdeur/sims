@@ -205,4 +205,15 @@ class Piket extends Pbm
     $model->save($data, false);
     return redirect()->to('/form_terlambat');
   }
+
+  public function terlambat()
+  {
+    global $data;
+    $this->sesi();
+    return view('header')
+    . view('menu', $data)
+    . view('form_terlambat')
+   
+    . view('footer');
+  }
 }

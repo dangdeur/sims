@@ -79,7 +79,7 @@ $routes->get('/piket', 'Piket::index');
 $routes->get('/piketbaru', 'Piket::lapor');
 $routes->get('/home/get_items', 'Home::get_items');
 $routes->get('/gi', 'Home::get_items');
-$routes->get('/form_terlambat', 'Piket::form_terlambat');
+$routes->get('/terlambat', 'Piket::terlambat');
 $routes->get('/tampil_siswa/(.+)', 'Piket::tampil_siswa/$1');
 //$routes->post('/tampil_siswa', 'Piket::tampil_siswa');
 $routes->post('/tampil_siswa/(.+)', 'Piket::tampil_siswa/$1');
