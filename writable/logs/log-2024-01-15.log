@@ -1,0 +1,1403 @@
+CRITICAL - 2024-01-15 09:51:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "login.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(17): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-15 09:54:18 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "login.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(17): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-15 09:54:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "login.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(17): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-15 09:54:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "login.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(17): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-15 09:54:57 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "login.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(17): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-15 10:02:22 --> ErrorException: Undefined property: App\Controllers\Login::$session
+in APPPATH/Controllers/Login.php on line 96.
+ 1 APPPATH/Controllers/Login.php(96): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->pengguna()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 10:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 10:04:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(99): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->pengguna()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 10:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 10:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 10:20:08 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(99): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->pengguna()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 10:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 10:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 10:43:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 10:43:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 10:44:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 10:44:14 --> CodeIgniter\Validation\Exceptions\ValidationException: "validateUser" is not a valid rule.
+in SYSTEMPATH/Validation/Validation.php on line 336.
+ 1 SYSTEMPATH/Validation/Validation.php(336): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound()
+ 2 SYSTEMPATH/Validation/Validation.php(200): CodeIgniter\Validation\Validation->processRules()
+ 3 SYSTEMPATH/Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH/Controllers/Login.php(73): CodeIgniter\Controller->validate()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->pengguna()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 10:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 10:45:25 --> CodeIgniter\Validation\Exceptions\ValidationException: "validateUser" is not a valid rule.
+in SYSTEMPATH/Validation/Validation.php on line 336.
+ 1 SYSTEMPATH/Validation/Validation.php(336): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound()
+ 2 SYSTEMPATH/Validation/Validation.php(200): CodeIgniter\Validation\Validation->processRules()
+ 3 SYSTEMPATH/Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH/Controllers/Login.php(73): CodeIgniter\Controller->validate()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->pengguna()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 11:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 11:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 11:14:14 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(53): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 11:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 11:14:14 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(53): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 11:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 11:14:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(53): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 11:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 11:15:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(53): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:04:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:04:35 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(53): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:04:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:04:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(53): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 13:05:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 13:06:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 13:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 13:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 13:10:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 13:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 13:11:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 13:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:11:43 --> CodeIgniter\Validation\Exceptions\ValidationException: "validateUser" is not a valid rule.
+in SYSTEMPATH/Validation/Validation.php on line 336.
+ 1 SYSTEMPATH/Validation/Validation.php(336): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound()
+ 2 SYSTEMPATH/Validation/Validation.php(200): CodeIgniter\Validation\Validation->processRules()
+ 3 SYSTEMPATH/Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH/Controllers/Login.php(27): CodeIgniter\Controller->validate()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 13:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:14:39 --> CodeIgniter\Validation\Exceptions\ValidationException: "validateUser" is not a valid rule.
+in SYSTEMPATH/Validation/Validation.php on line 336.
+ 1 SYSTEMPATH/Validation/Validation.php(336): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound()
+ 2 SYSTEMPATH/Validation/Validation.php(200): CodeIgniter\Validation\Validation->processRules()
+ 3 SYSTEMPATH/Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH/Controllers/Login.php(27): CodeIgniter\Controller->validate()
+ 5 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 6 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:24:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:24:39 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:24:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:24:39 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:28:46 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:29:18 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:29:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:29:54 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:38:45 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:38:48 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:50:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:50:59 --> Error: Class "Config\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:51:02 --> Error: Class "Config\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:51:36 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:52:11 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(56): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:56:32 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Controllers/BaseController.php(57): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\BaseController->initController()
+ 9 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:56:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:56:35 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Controllers/BaseController.php(57): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\BaseController->initController()
+ 9 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:56:47 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Controllers/BaseController.php(57): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\BaseController->initController()
+ 9 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 13:57:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 13:57:10 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Controllers/Login.php(11): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:02:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:02:55 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(57): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:06:07 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Controllers/Login.php(14): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:07:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:07:55 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(57): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:07:58 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(57): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:15:09 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Views/login.php(47): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/login.php')
+ 9 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+11 APPPATH/Controllers/Login.php(57): view()
+12 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+13 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+14 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+15 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:23:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:23:29 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(39): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:25:48 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Controllers/Login.php(15): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:25:50 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Controllers/Login.php(15): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:25:52 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 APPPATH/Controllers/Login.php(15): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-15 14:33:14 --> ParseError: Unclosed '{' on line 10 does not match ']'
+in APPPATH/Controllers/Login.php on line 15.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(899): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-15 14:33:31 --> ParseError: syntax error, unexpected token "private"
+in APPPATH/Controllers/Login.php on line 67.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(899): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:34:05 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(165): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(33): CodeIgniter\Controller->validateData()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:37:06 --> ErrorException: Undefined variable $errors
+in APPPATH/Controllers/Login.php on line 27.
+ 1 APPPATH/Controllers/Login.php(27): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:37:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:37:56 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:39:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:39:22 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:42:22 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:42:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:42:24 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:42:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:42:44 --> Error: Class "CodeIgniter\Validation\StrictRules\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:43:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:43:14 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:43:31 --> Error: Class "Config\App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:44:21 --> Error: Class "Config\App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:44:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:44:23 --> Error: Class "Config\App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:44:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:44:38 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:45:21 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:45:22 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:45:22 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:45:31 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:45:32 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:45:33 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:45:33 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:45:33 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:45:56 --> Error: Class "ValidationPenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:46:08 --> Error: Class "Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:46:25 --> Error: Class "App\Validation\PenggunaRules" not found
+in SYSTEMPATH/Validation/Validation.php on line 715.
+ 1 SYSTEMPATH/Validation/Validation.php(121): CodeIgniter\Validation\Validation->loadRuleSets()
+ 2 SYSTEMPATH/Config/Services.php(818): CodeIgniter\Validation\Validation->__construct()
+ 3 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 4 SYSTEMPATH/Config/BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic()
+ 5 SYSTEMPATH/Config/Services.php(813): CodeIgniter\Config\BaseService::getSharedInstance()
+ 6 SYSTEMPATH/Config/BaseService.php(258): CodeIgniter\Config\Services::validation()
+ 7 SYSTEMPATH/Controller.php(175): CodeIgniter\Config\BaseService::__callStatic()
+ 8 SYSTEMPATH/Controller.php(150): CodeIgniter\Controller->setValidator()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:47:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:47:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:49:51 --> ParseError: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+in APPPATH/Views/login.php on line 83.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(53): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:50:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:50:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:51:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:52:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:54:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:55:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:55:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:55:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 14:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:58:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "loginn.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(50): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 14:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 14:58:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "loginn.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(50): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:03:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:03:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:03:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:04:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:06:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:08:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:08:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:10:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(58): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-01-15 15:11:24 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'csims'@'localhost' in /home/ddr/www/csims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:185
+Stack trace:
+#0 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(185): mysqli->real_connect()
+#1 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query()
+#4 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/ddr/www/csims/vendor/codeigniter4/framework/system/BaseModel.php(676): CodeIgniter\Model->doFirst()
+#6 /home/ddr/www/csims/app/Validation/PenggunaRules.php(11): CodeIgniter\BaseModel->first()
+#7 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Validation/Validation.php(328): App\Validation\PenggunaRules->validateUser()
+#8 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Validation/Validation.php(200): CodeIgniter\Validation\Validation->processRules()
+#9 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Controller.php(152): CodeIgniter\Validation\Validation->run()
+#10 /home/ddr/www/csims/app/Controllers/Login.php(32): CodeIgniter\Controller->validate()
+#11 /home/ddr/www/csims/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Login->index()
+#12 /home/ddr/www/csims/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#13 /home/ddr/www/csims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#14 /home/ddr/www/csims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /home/ddr/www/csims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query()
+#3 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/ddr/www/csims/vendor/codeigniter4/framework/system/BaseModel.php(676): CodeIgniter\Model->doFirst()
+#5 /home/ddr/www/csims/app/Validation/PenggunaRules.php(11): CodeIgniter\BaseModel->first()
+#6 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Validation/Validation.php(328): App\Validation\PenggunaRules->validateUser()
+#7 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Validation/Validation.php(200): CodeIgniter\Validation\Validation->processRules()
+#8 /home/ddr/www/csims/vendor/codeigniter4/framework/system/Controller.php(152): CodeIgniter\Validation\Validation->run()
+#9 /home/ddr/www/csims/app/Controllers/Login.php(32): CodeIgniter\Controller->validate()
+#10 /home/ddr/www/csims/vendor/codeigniter4/framework/system/CodeIgniter.php(941): App\Controllers\Login->index()
+#11 /home/ddr/www/csims/vendor/codeigniter4/framework/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#12 /home/ddr/www/csims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#13 /home/ddr/www/csims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2024-01-15 15:11:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1613): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Validation/PenggunaRules.php(11): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH/Validation/Validation.php(328): App\Validation\PenggunaRules->validateUser()
+ 7 SYSTEMPATH/Validation/Validation.php(200): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH/Controllers/Login.php(32): CodeIgniter\Controller->validate()
+10 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+11 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:12:19 --> ErrorException: Undefined array key "id_users"
+in APPPATH/Controllers/Login.php on line 70.
+ 1 APPPATH/Controllers/Login.php(70): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Login.php(40): App\Controllers\Login->setUserSession()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:13:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:14:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:14:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header_l.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(56): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:16:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(58): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:17:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:17:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(58): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:17:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:17:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(58): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:17:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:18:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:18:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:19:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header_l.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(56): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:19:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header_l.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(56): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:19:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:22:27 --> ParseError: syntax error, unexpected token "=", expecting "]"
+in APPPATH/Controllers/Login.php on line 27.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(899): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:23:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:24:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:26:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:26:08 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header_l.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(61): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:26:08 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header_l.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(61): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:26:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:26:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 15:26:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header_l.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(61): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 15:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:26:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 15:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 22:38:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header_l.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(62): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 22:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:39:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:39:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 22:39:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pengguna.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(57): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 22:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 22:41:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "header_l.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Login.php(62): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 22:41:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:41:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:47:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:52:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:54:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:59:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:59:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 22:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:03:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 23:04:51 --> ErrorException: Undefined array key 0
+in APPPATH/Controllers/Login.php on line 46.
+ 1 APPPATH/Controllers/Login.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 23:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 23:05:15 --> ErrorException: Undefined variable $user
+in APPPATH/Controllers/Login.php on line 64.
+ 1 APPPATH/Controllers/Login.php(64): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 23:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 23:05:42 --> ErrorException: Undefined variable $user
+in APPPATH/Controllers/Login.php on line 64.
+ 1 APPPATH/Controllers/Login.php(64): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 23:06:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 23:06:30 --> ErrorException: Undefined variable $user
+in APPPATH/Controllers/Login.php on line 64.
+ 1 APPPATH/Controllers/Login.php(64): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 23:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 23:06:33 --> ErrorException: Undefined variable $user
+in APPPATH/Controllers/Login.php on line 64.
+ 1 APPPATH/Controllers/Login.php(64): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Login->index()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 23:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:10:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:12:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-15 23:15:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 23:15:41 --> Error: Call to undefined method App\Controllers\Profil::load()
+in APPPATH/Controllers/Profil.php on line 11.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Profil->index()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 23:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 23:16:26 --> ErrorException: Undefined variable $nama_lengkap
+in APPPATH/Views/profil.php on line 161.
+ 1 APPPATH/Views/profil.php(161): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/csims/app/Views/profil.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Profil.php(11): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Profil->index()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 23:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 23:17:18 --> ErrorException: Undefined variable $session
+in APPPATH/Controllers/Profil.php on line 11.
+ 1 APPPATH/Controllers/Profil.php(11): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Profil->index()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 23:17:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 23:17:35 --> Error: Call to undefined method App\Controllers\Profil::session()
+in APPPATH/Controllers/Profil.php on line 11.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Profil->index()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 23:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-15 23:20:27 --> TypeError: view(): Argument #2 ($data) must be of type array, CodeIgniter\Session\Session given, called in /home/ddr/www/csims/app/Controllers/Profil.php on line 12
+in SYSTEMPATH/Common.php on line 1166.
+ 1 APPPATH/Controllers/Profil.php(12): view()
+ 2 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Profil->index()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 23:21:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
