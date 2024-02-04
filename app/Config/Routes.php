@@ -13,6 +13,7 @@ $routes->get('/logout', 'Login::logout');
 $routes->get('/profil', 'Profil::index');
 $routes->get('/jadwal', 'Pbm::jadwal');
 $routes->get('/agenda', 'Agenda::index');
+$routes->get('/agenda/baru', 'Agenda::baru');
 
 
 

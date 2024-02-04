@@ -2,84 +2,106 @@
 <div class="container">
   <main>
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-      <h2>Checkout form</h2>
-      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
-    </div>
-
-    <div class="row g-5">
-      <div class="col-md-5 col-lg-4 order-md-last">
+      <img class="d-block mx-auto mb-4" src="<?= base_url('gambar/logo.png') ?>" alt="" width="72" height="72">
+      <h2>Agenda Guru <?= $nama_lengkap ?></h2>
+      <?php
+      //echo $hari.", ".$tanggal." ".$bulan." ".$tahun." ".$jam;
+      echo $waktu;
+      if (empty($agenda))
+      {
+        if (isset($form) && $form==1)
+        {
+      ?>  
+        <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your cart</span>
+          <span class="text-primary">Presensi</span>
           <span class="badge bg-primary rounded-pill">3</span>
         </h4>
         <ul class="list-group mb-3">
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
-              <h6 class="my-0">Product name</h6>
+              <h6 class="my-0">Sakit</h6>
               <small class="text-body-secondary">Brief description</small>
             </div>
             <span class="text-body-secondary">$12</span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
-              <h6 class="my-0">Second product</h6>
+              <h6 class="my-0">Ijin</h6>
               <small class="text-body-secondary">Brief description</small>
             </div>
             <span class="text-body-secondary">$8</span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
-              <h6 class="my-0">Third item</h6>
+              <h6 class="my-0">Alpa</h6>
               <small class="text-body-secondary">Brief description</small>
             </div>
             <span class="text-body-secondary">$5</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
-            <div class="text-success">
-              <h6 class="my-0">Promo code</h6>
-              <small>EXAMPLECODE</small>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Dispensasi</h6>
+              <small class="text-body-secondary">Brief description</small>
             </div>
-            <span class="text-success">−$5</span>
+            <span class="text-body-secondary">$5</span>
           </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Terlambat</h6>
+              <small class="text-body-secondary">Brief description</small>
+            </div>
+            <span class="text-body-secondary">$5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Bolos</h6>
+              <small class="text-body-secondary">Brief description</small>
+            </div>
+            <span class="text-body-secondary">$5</span>
+          </li>
+
+          
           <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
+            <span>Jumlah</span>
             <strong>$20</strong>
           </li>
         </ul>
 
         <form class="card p-2">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Promo code">
-            <button type="submit" class="btn btn-secondary">Redeem</button>
+            <input type="text" class="form-control" placeholder="Catatan Guru">
+            <button type="submit" class="btn btn-secondary">Simpan</button>
           </div>
         </form>
       </div>
+      
       <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Billing address</h4>
+        <!-- <h4 class="mb-3">Billing address</h4> -->
         <form class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <!-- <label for="firstName" class="form-label">Isian</label> -->
+              <input type="text" class="form-control" id="kelas" value="kelas" name="kelas">
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
 
             <div class="col-sm-6">
-              <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <!-- <label for="lastName" class="form-label"></label> -->
+              <input type="text" class="form-control" id="jp" value="jp">
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
             </div>
 
             <div class="col-12">
-              <label for="username" class="form-label">Username</label>
+              <!-- <label for="mapel" class="form-label">Username</label> -->
               <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                <span class="input-group-text">Mapel</span>
+                <input type="text" class="form-control" id="mapel" value="mapel">
               <div class="invalid-feedback">
                   Your username is required.
                 </div>
@@ -87,6 +109,14 @@
             </div>
 
             <div class="col-12">
+              <!-- <label for="address" class="form-label">materi</label> -->
+              <input type="text" class="form-control" id="materi" placeholder="Materi Pelajaran" required>
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+
+            <!-- <div class="col-12">
               <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
               <input type="email" class="form-control" id="email" placeholder="you@example.com">
               <div class="invalid-feedback">
@@ -105,10 +135,10 @@
             <div class="col-12">
               <label for="address2" class="form-label">Address 2 <span class="text-body-secondary">(Optional)</span></label>
               <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-            </div>
+            </div> -->
 
             <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
+              <!-- <label for="country" class="form-label">Country</label> -->
               <select class="form-select" id="country" required>
                 <option value="">Choose...</option>
                 <option>United States</option>
@@ -119,7 +149,7 @@
             </div>
 
             <div class="col-md-4">
-              <label for="state" class="form-label">State</label>
+              <!-- <label for="state" class="form-label">State</label> -->
               <select class="form-select" id="state" required>
                 <option value="">Choose...</option>
                 <option>California</option>
@@ -130,7 +160,7 @@
             </div>
 
             <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
+              <!-- <label for="zip" class="form-label">Zip</label> -->
               <input type="text" class="form-control" id="zip" placeholder="" required>
               <div class="invalid-feedback">
                 Zip code required.
@@ -138,7 +168,7 @@
             </div>
           </div>
 
-          <hr class="my-4">
+          <!-- <hr class="my-4">
 
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="same-address">
@@ -148,11 +178,11 @@
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="save-info">
             <label class="form-check-label" for="save-info">Save this information for next time</label>
-          </div>
+          </div> -->
 
           <hr class="my-4">
 
-          <h4 class="mb-3">Payment</h4>
+          <!-- <h4 class="mb-3">Payment</h4>
 
           <div class="my-3">
             <div class="form-check">
@@ -202,24 +232,36 @@
                 Security code required
               </div>
             </div>
-          </div>
+          </div> -->
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Simpan</button>
         </form>
       </div>
     </div>
+    <?php } 
+    else {
+      echo '<p class="lead">Belum ada riwayat PBM anda</p>';
+        echo '<a type="button" class="btn btn-primary btn-lg" href="'.site_url('agenda/baru').'">Isi Agenda</a></div>';
+    }
+      }      
+      
+    
+      else 
+      {
+      }
+      ?> 
   </main>
 
-  <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+  <!-- <footer class="my-5 pt-5 text-body-secondary text-center text-small">
     <p class="mb-1">&copy; 2017–2023 Company Name</p>
     <ul class="list-inline">
       <li class="list-inline-item"><a href="#">Privacy</a></li>
       <li class="list-inline-item"><a href="#">Terms</a></li>
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
-  </footer>
+  </footer> -->
 </div>
 
 <script src="<?= base_url('js/checkout.js') ?>"></script>

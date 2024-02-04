@@ -7,10 +7,12 @@ use App\Models\PbmModel;
 class Pbm extends BaseController
 {
   protected $helpers = ['form','text','cookie'];
+  protected $pbm=array();
+
     public function jadwal()
     {
-
-      $data = $this->session->get();
+      //$data = $this->session->get();
+      $data = session()->get();
       $pbmmodel = new PbmModel();
       $jadwal = $pbmmodel->where('kode_guru', $data['kode_pengguna'])->findAll();
       //               ->first();
@@ -23,7 +25,23 @@ class Pbm extends BaseController
             .view('menu',$data)
             .view('jadwal')
             .view('footer');
+     
 
+    }
+
+    public function jadwal_data()
+    {
+      $pbmmodel = new PbmModel();
+      $data = session()->get();
+      $jadwal = $pbmmodel->where('kode_guru', $data['kode_pengguna'])->findAll();
+      //               ->first();
+
+      //$data=$data+$jadwal[0];
+      $data_jadwal=$this->olah_jadwal($jadwal);
+      $data['jadwal']=$this->gabung_jadwal($data_jadwal);
+      //d($jadwal);
+      return $data;
+      
     }
 
     public function olah_jadwal($jadwal)
@@ -181,6 +199,11 @@ class Pbm extends BaseController
       return $jadwal;
     }
 
-
+    public function masihkah()
+    {
+      $sekarang['hari']=date('N'); //1-senin
+      $sekarang['jam']=date('G'); //0-23
+      $sekarang['menit']=date('i'); //00-59
+    }
 
 }

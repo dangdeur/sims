@@ -26,17 +26,27 @@ $template = ['table_open' => '<table border="1" cellpadding="4" cellspacing="0" 
       if(isset($kelas_seb) && $kelas_seb == $value['kelas'])
       {
         $kelas='';
-      }
-      else {
-        $kelas = $value['kelas'];
-      }
-      if(isset($mapel_seb) && $mapel_seb == $value['mapel'])
-      {
         $mapel='';
       }
       else {
+        if($value['kelas'] != 'Piket')
+        {
+        $kelas = $value['kelas'];
         $mapel=$value['mapel'];
+        }
+        else {
+          $kelas='';
+          $mapel='Piket';
+        }
+        
       }
+      // if(isset($mapel_seb) && $mapel_seb == $value['mapel'])
+      // {
+      //   $mapel='';
+      // }
+      // else {
+      //   $mapel=$value['mapel'];
+      // }
       $hari_seb=$h;
       $kelas_seb=$value['kelas'];
       $mapel_seb=$value['mapel'];

@@ -1,14 +1,44 @@
 <?php
-//defined('JAM_PBM') || define('PENDAFTARAN','TUTUP');
-//pekerjaan
+defined('SEKOLAH') || define('SEKOLAH','SMKN 2 Pandeglang');
+//defined('KODESEKOLAH') || define('KODESEKOLAH','02');
+defined('JARGON') || define('JARGON','SMK Pusat Keunggulan');
+defined('WEB') || define('WEB','www.smkn2pandeglang.sch.id');
+defined('SITUS') || define('SITUS','SIMS SMKN 2 Pandeglang');
 defined('HARI_PBM') || define('HARI_PBM',['Senin','Selasa','Rabu','Kamis','Jumat']);
 defined('JAM_PBM') || define('JAM_PBM',[
-    '10'=>'08:00-08:45','11'=>'08:45-09:30','12'=>'09:45-10:30','13'=>'10:30-11:15','14'=>'11:15-12:00','15'=>'12:30-13:15','16'=>'13:15-14:00','17'=>'14:00-14:45','18'=>'14:45-15:30','19'=>'14:45-15:30',
+    '10'=>'08:00-08:45','11'=>'08:45-09:30','12'=>'09:45-10:30','13'=>'10:30-11:15','14'=>'11:15-12:00','15'=>'12:30-13:10','16'=>'13:10-13:50','17'=>'13:50-14:30','18'=>'14:30-15:10','19'=>'15:10-15:50',
     '20'=>'07:15-08:00','21'=>'08:00-08:45','22'=>'08:45-09:30','23'=>'09:45-10:30','24'=>'10:30-11:15','25'=>'11:15-12:00','26'=>'12:30-13:15','27'=>'13:15-14:00','28'=>'14:00-14:45','29'=>'14:45-15:30',
     '30'=>'07:15-08:00','31'=>'08:00-08:45','32'=>'08:45-09:30','33'=>'09:45-10:30','34'=>'10:30-11:15','35'=>'11:15-12:00','36'=>'12:30-13:15','37'=>'13:15-14:00','38'=>'14:00-14:45','39'=>'14:45-15:30',
     '40'=>'07:15-08:00','41'=>'08:00-08:45','42'=>'08:45-09:30','43'=>'09:45-10:30','44'=>'10:30-11:15','45'=>'11:15-12:00','46'=>'12:30-13:15','47'=>'13:15-14:00','48'=>'14:00-14:45','49'=>'14:45-15:30',
-    '50'=>'07:15-08:00','51'=>'08:00-08:45','52'=>'08:45-09:30','53'=>'09:45-10:30','54'=>'10:30-11:15','55'=>'11:15-12:00','56'=>'12:30-13:15','57'=>'13:15-14:00'
+    '50'=>'08:00-08:45','51'=>'08:45-09:30','52'=>'09:45-10:30','53'=>'10:30-11:15','54'=>'13:00-13:40','55'=>'13:40-14:20','56'=>'14:20-15:00','57'=>'15:00-15:40'
     ]);
+
+//Program keahlian
+defined('PROGRAM_KEAHLIAN') || define('PROGRAM_KEAHLIAN',['---','Agribisnis Tanaman (AT)','Agribisnis Pengolahan Hasil Pertanian (APHP)','Teknik Otomotif-Kendaraan Ringan (TKRO)','Teknik Otomotif-Bisnis Sepeda Motor (TBSM)','Teknik Ketenagalistrikan (TKL)',
+        'Desain Komunikasi Visual (DKV)','Teknik Jaringan Komputer Dan Telekomunikasi (TJKT)','Analisis Pengujian Laboratorium (APL)']);
+
+defined('PK1') || define('PK1','Agribisnis Tanaman');
+defined('PK2') || define('PK2','Agribisnis Pengolahan Hasil Pertanian');
+defined('PK3') || define('PK3','Teknik Kendaraan Ringan');
+defined('PK4') || define('PK4','Teknik Bisnis Sepeda Motor');
+defined('PK5') || define('PK5','Teknik Ketenagalistrikan');
+defined('PK6') || define('PK6','Desain Komunikasi Visual');
+defined('PK7') || define('PK7','Teknik Jaringan Komputer Dan Telekomunikasi');
+defined('PK8') || define('PK8','Analisis Pengujian Laboratorium');
+
+//pengguna
+defined('ADMIN') || define('ADMIN','1');
+defined('VERIFIKATOR') || define('VERIFIKATOR','2');
+
+//pekerjaan
+defined('PEKERJAAN') || define('PEKERJAAN',['Tidak Bekerja','PNS/ASN/PPPK','TNI/Polri','Honorer Pemerintah','Karyawan Swasta','Buruh Lepas','Wiraswasta','Petani']);
+
+//layanan bantuan
+defined('BANTUAN') || define('BANTUAN',['Reset Password']);
+
+
+
+//
 /*
  | --------------------------------------------------------------------
  | App Namespace
