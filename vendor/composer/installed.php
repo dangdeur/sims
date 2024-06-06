@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '0f79b50b45d9e5d56f034ddc3f05b3447286d7e5',
         'name' => 'codeigniter4/appstarter',
         'dev' => true,
     ),
     'versions' => array(
         'codeigniter4/appstarter' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '0f79b50b45d9e5d56f034ddc3f05b3447286d7e5',
             'dev_requirement' => false,
         ),
         'codeigniter4/authentication-implementation' => array(
@@ -26,12 +26,12 @@
             ),
         ),
         'codeigniter4/framework' => array(
-            'pretty_version' => 'v4.4.4',
-            'version' => '4.4.4.0',
+            'pretty_version' => 'v4.4.5',
+            'version' => '4.4.5.0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../codeigniter4/framework',
             'aliases' => array(),
-            'reference' => '7c170c4e6bde1b879ee67a8a5457c06cfc3ad07a',
+            'reference' => 'f5844cb9790d87ff6043203953821740ba3aa592',
             'dev_requirement' => false,
         ),
         'codeigniter4/settings' => array(
@@ -170,12 +170,12 @@
             'dev_requirement' => true,
         ),
         'phpunit/phpunit' => array(
-            'pretty_version' => '9.6.15',
-            'version' => '9.6.15.0',
+            'pretty_version' => '9.6.16',
+            'version' => '9.6.16.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(),
-            'reference' => '05017b80304e0eb3f31d90194a563fd53a6021f1',
+            'reference' => '3767b2c56ce02d01e3491046f33466a1ae60a37f',
             'dev_requirement' => true,
         ),
         'psr/container' => array(

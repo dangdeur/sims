@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use Config\Services;
 use App\Models\PbmModel;
+use CodeIgniter\I18n\Time;
 
 class Pbm extends BaseController
 {
@@ -20,7 +21,7 @@ class Pbm extends BaseController
       //$data=$data+$jadwal[0];
       $data_jadwal=$this->olah_jadwal($jadwal);
       $data['jadwal']=$this->gabung_jadwal($data_jadwal);
-      //d($jadwal);
+      //dd($data['jadwal']);
       return view('header')
             .view('menu',$data)
             .view('jadwal')
@@ -131,8 +132,8 @@ class Pbm extends BaseController
       $jur=[
         '1'=>'ATPH',
         '2'=>'APHP',
-        '3'=>'TKRO',
-        '4'=>'TKL',
+        '3'=>'TKR',
+        '4'=>'TITL',
         '5'=>'DKV',
         '6'=>'TKJ',
         '7'=>'APL',
@@ -199,11 +200,28 @@ class Pbm extends BaseController
       return $jadwal;
     }
 
+    /*
+    apakah masih dalam jam guru yg bersangkutan ?
+
+    */
     public function masihkah()
     {
-      $sekarang['hari']=date('N'); //1-senin
-      $sekarang['jam']=date('G'); //0-23
-      $sekarang['menit']=date('i'); //00-59
+      // $sekarang['hari']=date('N'); //1-senin
+      // $sekarang['jam']=date('G'); //0-23
+      // $sekarang['menit']=date('i'); //00-59
+
+      //untuk testing
+      $sekarang=['hari'=>5,'jam'=>10,'menit'=>10];
     }
+
+    public function del_arr($arr,$del)
+    {
+      foreach ($del as $a)
+      {
+        unset($arr[$a]);
+      }
+      return $arr;
+    }
+    
 
 }

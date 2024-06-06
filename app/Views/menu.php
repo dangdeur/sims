@@ -16,7 +16,7 @@
   			<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  PBM  </a>
   		    <ul class="dropdown-menu">
   			  <li><a class="dropdown-item" href="<?= site_url('jadwal') ?>"> Jadwal </a></li>
-          <li><a class="dropdown-item" href="<?= site_url('agenda') ?>"> Agenda Kelas </a></li>
+          <li><a class="dropdown-item" href="<?= site_url('agendaguru') ?>"> Agenda Kelas </a></li>
           <!-- <li><a class="dropdown-item" href="#"> Dropdown item 2 &raquo; </a>
   			  	 <ul class="submenu dropdown-menu">
   				    <li><a class="dropdown-item" href="#">Submenu item 1</a></li>

@@ -522,6 +522,7 @@ class ComposerStaticInit52f644a062f9a6ddd9d97d741470b1eb
         'CodeIgniter\\Test\\FeatureTestTrait' => __DIR__ . '/..' . '/codeigniter4/framework/system/Test/FeatureTestTrait.php',
         'CodeIgniter\\Test\\FilterTestTrait' => __DIR__ . '/..' . '/codeigniter4/framework/system/Test/FilterTestTrait.php',
         'CodeIgniter\\Test\\Filters\\CITestStreamFilter' => __DIR__ . '/..' . '/codeigniter4/framework/system/Test/Filters/CITestStreamFilter.php',
+        'CodeIgniter\\Test\\IniTestTrait' => __DIR__ . '/..' . '/codeigniter4/framework/system/Test/IniTestTrait.php',
         'CodeIgniter\\Test\\Interfaces\\FabricatorModel' => __DIR__ . '/..' . '/codeigniter4/framework/system/Test/Interfaces/FabricatorModel.php',
         'CodeIgniter\\Test\\Mock\\MockAppConfig' => __DIR__ . '/..' . '/codeigniter4/framework/system/Test/Mock/MockAppConfig.php',
         'CodeIgniter\\Test\\Mock\\MockAutoload' => __DIR__ . '/..' . '/codeigniter4/framework/system/Test/Mock/MockAutoload.php',

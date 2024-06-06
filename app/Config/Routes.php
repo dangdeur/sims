@@ -12,12 +12,15 @@ $routes->get('/info', 'Info::index');
 $routes->get('/logout', 'Login::logout');
 $routes->get('/profil', 'Profil::index');
 $routes->get('/jadwal', 'Pbm::jadwal');
-$routes->get('/agenda', 'Agenda::index');
-$routes->get('/agenda/baru', 'Agenda::baru');
+$routes->get('/agendaguru', 'AgendaGuru::index');
+$routes->get('/agendaguru/baru', 'AgendaGuru::baru');
+$routes->post('/agendaguru/baru', 'AgendaGuru::baru');
+$routes->get('/agendaguru/absensi', 'AgendaGuru::absensi');
 
 
 
 //test
+$routes->get('/r', 'Pbm::rombel_jadwal');
 $routes->get('/g', 'Login::getCookie');
 $routes->get('/d', 'Login::delCookie');
 $routes->get('/a', 'Login::addCookie');
