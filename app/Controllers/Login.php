@@ -8,7 +8,7 @@ class Login extends BaseController
 {
   protected $helpers = ['form','text','cookie'];
 
-    public function index()
+    public function Index()
     {
       $data = [];
 
@@ -131,6 +131,18 @@ public function autologin($token) {
       }
       elseif ($user['peran']==10) {
         $login='Superadmin';
+      }
+      elseif ($user['peran']==6) {
+        $login='Piket';
+      }
+      elseif ($user['peran']==7) {
+        $login='Sarpras';
+      }
+      elseif ($user['peran']==8) {
+        $login='Pengelola Presensi';
+      }
+      elseif ($user['peran']==9) {
+        $login='Piket';
       }
       else {
         $login='Siswa';

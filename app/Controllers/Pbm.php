@@ -154,6 +154,38 @@ class Pbm extends BaseController
       return $rombel;
     }
 
+    public function kode_kelas($rombel)
+    {
+
+      if (!empty($rombel))
+      {
+      $arr=str_split($rombel);
+      $jenjang=['X'=>'1', 'XI'=>'2', '3'=>'XII'];
+      $jur=[
+        '1'=>'ATPH',
+        '2'=>'APHP',
+        '3'=>'TKR',
+        '4'=>'TITL',
+        '5'=>'DKV',
+        '6'=>'TKJ',
+        '7'=>'APL',
+        '8'=>'TSM'
+      ];
+      
+      //dd($arr[0]);
+      if($arr[0]=='P')
+        {
+          $rombel="Piket";
+        }else {
+      $rombel=$jenjang[$arr[0]]." ".$jur[$arr[1]].$arr[2];
+        }
+      }
+      else {
+        $rombel='';
+      }
+      return $rombel;
+    }
+
     public function cek($data)
     {
       if (isset($data) && !empty($data))

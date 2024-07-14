@@ -14,8 +14,11 @@ $routes->get('/profil', 'Profil::index');
 $routes->get('/jadwal', 'Pbm::jadwal');
 $routes->get('/agendaguru', 'AgendaGuru::index');
 $routes->get('/agendaguru/baru', 'AgendaGuru::baru');
+$routes->post('/agendaguru/simpan', 'AgendaGuru::simpan');
 $routes->post('/agendaguru/baru', 'AgendaGuru::baru');
+
 $routes->get('/agendaguru/absensi', 'AgendaGuru::absensi');
+$routes->get('/presensisiswa/baru/(.+)', 'PresensiSiswa::baru/$1');
 
 
 

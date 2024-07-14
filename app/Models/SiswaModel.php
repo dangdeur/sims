@@ -23,8 +23,11 @@ class SiswaModel extends Model{
 
     public function getSiswaRombel($rombel)
     {
+      $table='siswa';
         $builder = $this->db->table($table);
-        return $builder->where('rombel',$rombel);
+        //$kelas = $builder->escape($rombel);
+        //return $builder->where('rombel',$rombel)->get()->fetchAssoc();
+        return $builder->where(['rombel',$rombel]);
     }
 
     // public function getPresensi()

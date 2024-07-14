@@ -6,6 +6,7 @@
     <div>
       <div class="bg-body-tertiaryp-5 rounded">
         <div class="col-sm-8 mx-auto">
+          Belum terdapat info, klik pada menu diatas!
           <!-- <h1>SIMS</h1>
           <?= esc($token) ?>
           <?php

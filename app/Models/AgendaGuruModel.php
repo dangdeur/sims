@@ -6,7 +6,10 @@ class AgendaGuruModel extends Model{
   protected $table = 'agenda_guru';
   protected $primaryKey = 'id_agendaguru';
   protected $useAutoIncrement = true;
-  protected $allowedFields = ['kode_agendaguru', 'kode_guru','rombel','mapel','S','I','A','TL','BL','D'];
+  protected $allowedFields = [
+    'kode_agendaguru', 'kode_guru','rombel','mapel','materi','jp1','jp2',
+    'S','I','A','TL','BL','D'
+    ];
   
   public function getAgenda()
     {
@@ -23,7 +26,7 @@ class AgendaGuruModel extends Model{
     // }
 
     public function simpanAgenda($data){
-        $query = $this->db->table($table)->insert($data);
+        $query = $this->db->table('agenda_guru')->insert($data);
         return $query;
     }
 
