@@ -22,7 +22,7 @@
       $no_agenda=1;
         for ($a=0;$a<count($agenda);$a++)
         {
-          echo '<tr><td>'.$no_agenda.'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td><td>'.$agenda[$a]['materi'].'</td><td></td><td></td><td></td>
+          echo '<tr><td>'.$no_agenda.'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td><td>'.$agenda[$a]['materi'].'</td><td>'.$agenda[$a]['jp0'].'</td><td>'.$agenda[$a]['jp1'].'</td><td></td>
           <td>';
           
           if (!isset($absensi))

@@ -7,6 +7,9 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Login::index');
 $routes->get('/login', 'Login::index');
+
+$routes->get('/login/gantipassword/(.+)', 'Login::gantipassword/$1');
+$routes->post('/login/gantipassword/(.+)', 'Login::gantipassword/$1');
 $routes->post('/login', 'Login::index');
 $routes->get('/info', 'Info::index');
 $routes->get('/logout', 'Login::logout');

@@ -19,11 +19,13 @@ $template = ['table_open' => '<table border="1" cellpadding="4" cellspacing="0" 
       if(isset($hari_seb) && $hari_seb == $h)
       {
         $hari='';
+        $harinya=1;
       }
       else {
         $hari=$h;
+        $harinya=0;
       }
-      if(isset($kelas_seb) && $kelas_seb == $value['kelas'])
+      if(isset($kelas_seb) && $kelas_seb == $value['kelas'] && $harinya==1)
       {
         $kelas='';
         $mapel='';
@@ -51,6 +53,7 @@ $template = ['table_open' => '<table border="1" cellpadding="4" cellspacing="0" 
       $kelas_seb=$value['kelas'];
       $mapel_seb=$value['mapel'];
       $table->addRow($hari,JAM_PBM[$key],$kelas,$mapel);
+      //$hariyangsama=false;
     }
     
   }

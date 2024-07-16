@@ -12,18 +12,19 @@ class Login extends BaseController
     {
       $data = [];
 
-    if(get_cookie('skendava'))
-    {
-      $this->autologin(get_cookie('skendava'));
-      //view('salah');
-    }
+      // if(!is_null(has_cookie('skendava')))
+      // {
+      //   $token=get_cookie('skendava');
+      //   $this->autologin($token);
+
+      // }
 
         //baru
          if ($this->request->is('post')) {
         //let's do the validation here
         $rules = [
           'email' => 'required|min_length[6]|max_length[50]|valid_email',
-          'password' => 'required|min_length[4]|max_length[255]|validateUser[email,password]',
+          'password' => 'required|min_length[3]|max_length[255]|validateUser[email,password]',
         ];
 
         $errors = [
@@ -46,51 +47,81 @@ class Login extends BaseController
         }else{
           $model = new PenggunaModel();
 
-          $user = $model->where('email', $this->request->getVar('email'))
+          
+         
+            $user = $model->where('email', $this->request->getVar('email'))
                         ->first();
+          
           $user['level']=$this->siapaLogin($user,[$user['peran']]);
+          $this->setUserSession($user);
+
+          
 
 
           //ingat
           if ($this->request->getVar('ingat')==1)
           {
-
+                        
             $newdata['token']=random_string('alnum', 16);
-            // echo "<pre>";
-            // print_r($user);
-            // echo "</pre>";
-
-            //exit();
             $user['token']=$newdata['token'];
 
             $update=$model->update($user['id_pengguna'],$newdata);
-          }
-
-          $this->setUserSession($user);
-          if(!has_cookie('skendava'))
-          {
-            set_cookie('skendava',$user['token'],3600);
-          }
-          //dd($user);
-          return redirect()->to('info')->withCookies();;
-
+            set_cookie('skendava',$user['token'],360000);
+            }
+            
+           return redirect()->to('info')->withCookies();
 
       }
+      //$this->setUserSession($user);
+          
+          //dd($user);
+          
+          
 
-    } //end post
-echo view('login');
-
+    
+    
   }
+  else {
+    if(!is_null(has_cookie('skendava')))
+          {
+            
+            $model = new PenggunaModel();
+            $token=get_cookie('skendava');
+            $user = $model->where('token', $token)->first();
+            d($user);
+            echo $model->getLastQuery();
+          //   $user['level']=$this->siapaLogin($user,[$user['peran']]);
+          //$this->setUserSession($user);
+            return redirect()->to('info')->withCookies();
+          }
+          else {
+            echo view('login');
+          }
+    
+  }
+  
+  
+}
+
+
+  
 
 public function autologin($token) {
   $model = new PenggunaModel();
   $user = $model->where('token',$token)->first();
-  // if ($user) {
+  //d($user);
+  //if ($user['token']==$token) {
     $user['level']=$this->siapaLogin($user,[$user['peran']]);
     $this->setUserSession($user);
-      return redirect()->to('profil')->withCookies();;
-  // }
+      
+  //}
+  return redirect()->to('info')->withCookies();
+  // $model = new PenggunaModel();
 
+  // $user = $model->where('email', $this->request->getVar('email'))
+  //               ->first();
+  // $user['level']=$this->siapaLogin($user,[$user['peran']]);
+  // $this->setUserSession($user);
 
 }
 
@@ -105,6 +136,10 @@ public function autologin($token) {
         'token' => $user['token'],
         'isLoggedIn' => true,
       ];
+      if ($this->request->getVar('password')=='smkn2jaya')
+          {
+            $data['gantipassword']=true;
+          }
 
       session()->set($data);
       return true;
@@ -165,7 +200,11 @@ public function autologin($token) {
 
     public function logout(){
   		session()->destroy();
-  		return redirect()->to('/');
+  		//return redirect()->to('login');
+      $this->delCookie();
+      echo view('login');
+      
+      
   	}
 
 
@@ -187,5 +226,33 @@ public function autologin($token) {
     //echo $cookie;
    }
 
+   public function gantipassword($id)
+   {
+    if ($this->request->is('post')) {
+      
+      $passwordbaru = $this->request->getVar('passwordbaru');
+      $data['id']=$id;
+      $data['update']['password']=$passwordbaru;
+      $this->update($data);
+      $this->logout();
+      return redirect()->to('/');
+
+    }
+    else {
+      $data = $this->session->get();
+    //d($data);
+    return view('header')
+            .view('menu',$data)
+            .view('form_password')
+            .view('footer');
+    }
+    
+   }
+
+   public function update($data)
+   {
+    $pengguna = new PenggunaModel();
+    $update=$pengguna->update($data['id'],$data['update']);
+   }
 
 }

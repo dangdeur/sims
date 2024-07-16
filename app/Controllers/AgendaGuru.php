@@ -29,7 +29,7 @@ class AgendaGuru extends Pbm
   $agenda = $agendamodel->where('kode_guru', $data['kode_pengguna'])->findAll();
   $data['agenda']=$agenda;
   $data['waktu']=$this->waktu();
-  d($data);
+  //d($data);
   return view('header')
          .view('menu',$data)
          .view('daftaragenda')

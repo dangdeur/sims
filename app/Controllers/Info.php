@@ -11,7 +11,7 @@ class Info extends BaseController
     {
       //$session=session();
       $data = $this->session->get();
-
+      //d($data);
       return view('header')
             .view('menu',$data)
             .view('info')

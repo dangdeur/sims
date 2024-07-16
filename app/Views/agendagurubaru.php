@@ -40,6 +40,7 @@
             <?php 
             $jp=JP[date('N')];
             $jp[null]='Pilih JP';
+            //d($jp);
             echo form_dropdown('jp0', $jp,'', $att=['class'=>'form-select','id'=>'jp0','required'=>'required']); ?>
           </div>
               
