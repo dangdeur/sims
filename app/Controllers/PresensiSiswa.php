@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use Config\Services;
-//use App\Models\AgendaGuruModel;
+use App\Models\AgendaGuruModel;
 // use App\Models\PbmModel;
 use App\Models\SiswaModel;
 
@@ -35,15 +35,17 @@ class PresensiSiswa extends Pbm
   //        .view('footer');
   // }
 
-  public function baru ($rombel)
+  public function baru ($rombel,$id)
   {
     
     $data = session()->get();
     $presensi = new SiswaModel();
+    $agenda= new AgendaGuruModel();
+    $data['agenda'] = $agenda->where(['id_agendaguru'=>$id,'absensi'=>NULL])->first();
     $data['siswa'] = $presensi->where('rombel', $rombel)->findAll();
     
     //$data['tess']=$presensi->getLastQuery();
-    //d($data);
+    d($data);
 
     
     return view('header')
@@ -57,8 +59,9 @@ class PresensiSiswa extends Pbm
         $presensi = new PresensiModel();
         $guru = $this->request->getPost('kode_guru');
         $rombel = $this->request->getPost('rombel_agenda');
+        $mapel = $this->request->getPost('mapel');
         $tanggal=date("dmY");
-        $kode_agenda=$guru."-".$tanggal."-".$rombel;
+        $kode_agenda=$guru."-".$tanggal."-".$rombel."-".$mapel;
         $data = array(
             'rombel' => $rombel,
             'jp0' => $this->request->getPost('jp0'),

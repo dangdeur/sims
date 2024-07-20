@@ -7,9 +7,24 @@ class AgendaGuruModel extends Model{
   protected $primaryKey = 'id_agendaguru';
   protected $useAutoIncrement = true;
   protected $allowedFields = [
-    'kode_agendaguru', 'kode_guru','rombel','mapel','materi','jp1','jp2',
+    'kode_agendaguru', 'kode_guru','rombel','mapel','materi','jp0','jp1','absensi',
     'S','I','A','TL','BL','D'
     ];
+    protected $beforeInsert = ['beforeInsert'];
+  protected $beforeUpdate = ['beforeUpdate'];
+
+  protected function beforeInsert(array $data){
+    //$data = $this->passwordHash($data);
+    $data['data']['dibuat'] = date('Y-m-d H:i:s');
+
+    return $data;
+  }
+
+  protected function beforeUpdate(array $data){
+   // $data = $this->passwordHash($data);
+    $data['data']['diupdate'] = date('Y-m-d H:i:s');
+    return $data;
+  }
   
   public function getAgenda()
     {

@@ -18,10 +18,14 @@ $routes->get('/jadwal', 'Pbm::jadwal');
 $routes->get('/agendaguru', 'AgendaGuru::index');
 $routes->get('/agendaguru/baru', 'AgendaGuru::baru');
 $routes->post('/agendaguru/simpan', 'AgendaGuru::simpan');
+$routes->get('/agendaguru/hapus/(.+)', 'AgendaGuru::hapus/$1');
 $routes->post('/agendaguru/baru', 'AgendaGuru::baru');
 
 $routes->get('/agendaguru/absensi', 'AgendaGuru::absensi');
-$routes->get('/presensisiswa/baru/(.+)', 'PresensiSiswa::baru/$1');
+$routes->get('/agendaguru/presensi/(.+)', 'AgendaGuru::presensi/$1/$2');
+$routes->get('/agendaguru/tambahpresensi/(.+)', 'AgendaGuru::tambahpresensi/$1/$2');
+$routes->get('/agendaguru/hapuspresensi/(.+)', 'AgendaGuru::hapuspresensi/$1/$2/$3');
+$routes->post('/agendaguru/simpanpresensi', 'AgendaGuru::simpanpresensi');
 
 
 
@@ -29,6 +33,6 @@ $routes->get('/presensisiswa/baru/(.+)', 'PresensiSiswa::baru/$1');
 $routes->get('/r', 'Pbm::rombel_jadwal');
 $routes->get('/g', 'Login::getCookie');
 $routes->get('/d', 'Login::delCookie');
-$routes->get('/a', 'Login::addCookie');
+$routes->get('/a/(.+)', 'Login::addCookie/$1');
 
 service('auth')->routes($routes);

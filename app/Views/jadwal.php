@@ -8,10 +8,11 @@ $template = ['table_open' => '<table border="1" cellpadding="4" cellspacing="0" 
   <?php
   
  $table->setHeading('Hari','Jam', 'Kelas','Mapel');
- 
+//  dd($jadwal);
   foreach ($jadwal as $h => $d) { //$h hari, $d kelas=>...,mapel=>...
     
-    foreach ($d as $key=>$value) {
+   foreach ($d as $key=>$value) {
+      
       //$kelas=$value['kelas'];
       //$mapel=$value['mapel'];
       
@@ -53,6 +54,7 @@ $template = ['table_open' => '<table border="1" cellpadding="4" cellspacing="0" 
       $kelas_seb=$value['kelas'];
       $mapel_seb=$value['mapel'];
       $table->addRow($hari,JAM_PBM[$key],$kelas,$mapel);
+      //$table->addRow($hari,$kelas,$kelas,$mapel);
       //$hariyangsama=false;
     }
     

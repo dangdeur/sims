@@ -25,14 +25,26 @@ class AgendaGuru extends Pbm
   public function index()
   {
   $data = session()->get();
+  
   $agendamodel = new AgendaGuruModel();
   $agenda = $agendamodel->where('kode_guru', $data['kode_pengguna'])->findAll();
-  $data['agenda']=$agenda;
+  
+ //OK
+  // $data['agenda']=$agenda;
   $data['waktu']=$this->waktu();
+  
+  //paginasi
+  $data ['agenda']=  $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('dibuat','DESC')->paginate(10);
+  $data ['pager'] = $agendamodel->pager;
+  
+
+  
   //d($data);
+  
   return view('header')
          .view('menu',$data)
          .view('daftaragenda')
+        //  .view('paginasi')
          .view('footer');
   }
 
@@ -41,8 +53,9 @@ class AgendaGuru extends Pbm
     $data = session()->get();
     $data['waktu']=$this->waktu();
     $jadwal=$this->pbm->jadwal_data();
-    $data['rombel']=$this->rombel_jadwal($jadwal['jadwal']);
-    $data['mapel']=$this->mapel_jadwal($jadwal['jadwal']);
+    //d($jadwal);
+    $data['rombel']=$this->rombel_jadwal($jadwal);
+    $data['mapel']=$this->mapel_jadwal($jadwal);
     if ($this->request->is('get')) 
       {
       $data['form']=1;
@@ -92,10 +105,123 @@ class AgendaGuru extends Pbm
          .view('agendagurubaru')
          .view('footer');
   }
-   
+  
+  public function presensi($rombel,$id)
+  {
+    $data = session()->get();
+    $presensi = new SiswaModel();
+    $agenda= new AgendaGuruModel();
+    $data['agenda'] = $agenda->where(['id_agendaguru'=>$id])->first();
+    $data['siswa'] = $presensi->where('rombel', $rombel)->findAll();
+    
+    //$data['tess']=$presensi->getLastQuery();
+    //d($data);
+
+    
+    return view('header')
+         .view('menu',$data)
+         .view('presensi_agenda')
+         .view('footer');
+  }
+
+  public function simpanpresensi()
+  {
+    $data = session()->get();
+    $agenda= new AgendaGuruModel();
+    $data['datapresensi']=$this->request->getPost();
+    //dd($data);
+    $absen=array();
+    $no_urut=1;
+    for ($a=1;$a<=$data['datapresensi']['jumlah_siswa'];$a++)
+    {
+      if (!empty($data['datapresensi']['absensi'.$a]))
+      {
+        if ($data['datapresensi']['absensi'.$a]=="TL")
+        {
+        $absen['TL'][]=['nis'=>$this->request->getPost('nis'.$a),'nama'=>$this->request->getPost('nama_siswa'.$a),'catatan'=>$this->request->getPost('catatan'.$a)];
+        }
+        if ($data['datapresensi']['absensi'.$a]=="BL")
+        {
+        $absen['BL'][]=['nis'=>$this->request->getPost('nis'.$a),'nama'=>$this->request->getPost('nama_siswa'.$a),'catatan'=>$this->request->getPost('catatan'.$a)];
+        }
+        if ($data['datapresensi']['absensi'.$a]=="D")
+        {
+        $absen['D'][]=['nis'=>$this->request->getPost('nis'.$a),'nama'=>$this->request->getPost('nama_siswa'.$a),'catatan'=>$this->request->getPost('catatan'.$a)];
+        }
+        if ($data['datapresensi']['absensi'.$a]=="S")
+        {
+        $absen['S'][]=['nis'=>$this->request->getPost('nis'.$a),'nama'=>$this->request->getPost('nama_siswa'.$a),'catatan'=>$this->request->getPost('catatan'.$a)];
+        }
+        if ($data['datapresensi']['absensi'.$a]=="I")
+        {
+        $absen['I'][]=['nis'=>$this->request->getPost('nis'.$a),'nama'=>$this->request->getPost('nama_siswa'.$a),'catatan'=>$this->request->getPost('catatan'.$a)];
+        }
+        if ($data['datapresensi']['absensi'.$a]=="A")
+        {
+        $absen['A'][]=['nis'=>$this->request->getPost('nis'.$a),'nama'=>$this->request->getPost('nama_siswa'.$a),'catatan'=>$this->request->getPost('catatan'.$a)];
+        }
+
+      }
+    }
+    //$data['tess']=$presensi->getLastQuery();
+    //dd($absen);
+    $dataabsen=json_encode($absen);
+    $data[ 'update' ][ 'absensi' ] = $dataabsen;
+    //dd($data);
+    $agenda->update( $data['datapresensi']['id_agendaguru'], $data[ 'update' ]);
+    //$data['waktu']=$this->waktu();
+    return redirect()->to('/agendaguru');
+  }
+
+  public function hapuspresensi($absensi,$nis,$id_agendaguru)
+  {
+    $data = session()->get();
+    
+    $agenda= new AgendaGuruModel();
+    $data['agenda'] = $agenda->where(['id_agendaguru'=>$id_agendaguru])->first();
+
+    $data_absensi=json_decode($data['agenda']['absensi'],true);
+    $key=array_column($data_absensi[$absensi], $nis);
+    //dd($data_absensi);
+    for($h=0;$h<count($data_absensi[$absensi]);$h++)
+    {
+      if ($data_absensi[$absensi][$h]['nis']==$nis)
+      {
+        unset($data_absensi[$absensi][$h]);
+      }
+    }
+    
+    $this->update_absen($data_absensi,$id_agendaguru);
+     return redirect()->to('/agendaguru');
+  }
+
+  //   function cari_nis($nis, $array) {
+//     foreach ($array as $key => $val) {
+//         if ($val['nis'] === $nis) {
+//             return $key;
+//         }
+//     }
+//     return null;
+//  }
+
+public function tambahpresensi($absensi,$id_agendaguru)
+  {
+    $data = session()->get();
+    $agenda= new AgendaGuruModel();
+    // $data['agenda'] = $agenda->where(['id_agendaguru'=>$id_agendaguru])->first();
+  }
+
+  public function update_absen($absen,$id)
+  {
+    $agenda= new AgendaGuruModel();
+    $dataabsen=json_encode($absen);
+    $data[ 'update' ][ 'absensi' ] = $dataabsen;
+    $agenda->update( $id, $data[ 'update' ]);
+  }
   public function rombel_jadwal($jadwal)
   {
     $rombel=[];
+    //d($jadwal);
     foreach($jadwal as $j)
     {
      foreach ($j as $hari => $rom)
@@ -189,24 +315,17 @@ class AgendaGuru extends Pbm
         return redirect()->to('/agendaguru');
     }
 
-    public function update()
-    {
-        $model = new AgendaModel();
-        $id = $this->request->getPost('product_id');
-        $data = array(
-            'product_name'        => $this->request->getPost('product_name'),
-            'product_price'       => $this->request->getPost('product_price'),
-            'product_category_id' => $this->request->getPost('product_category'),
-        );
-        $model->updateAgenda($data, $id);
-        return redirect()->to('/product');
-    }
+    
 
-    public function hapus()
+    public function hapus($id)
     {
-        $model = new AgendaModel();
-        $id = $this->request->getPost('product_id');
-        $model->hapusAgenda($id);
-        return redirect()->to('/product');
+              $data['id_agendaguru']=$id;
+          $model = new AgendaGuruModel();
+          $model->delete($data);
+          
+          return redirect()->to('/agendaguru');
+    
+       
+        
     }
 }

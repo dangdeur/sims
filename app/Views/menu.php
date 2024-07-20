@@ -44,8 +44,9 @@
 
 
   	</ul>
-
+	  
   	<ul class="navbar-nav ms-auto">
+	  <li class="nav-item"><a class="navbar-brand" href="#"><?= $level ?></a></li>
   		<li class="nav-item"><a class="nav-link" href="<?= site_url('logout') ?>">Keluar</a></li>
   		<!-- <li class="nav-item"><a class="nav-link" href="#"> Menu item </a></li>
   		<li class="nav-item dropdown">
@@ -67,7 +68,7 @@
 
 
   	</ul>
-      <a class="navbar-brand" href="#"><?= $level ?></a>
+     
     </div> <!-- navbar-collapse.// -->
    </div> <!-- container-fluid.// -->
   </nav>

@@ -15,6 +15,9 @@
 
     <link rel="stylesheet" href="<?= base_url('css/css_nav.css') ?>">
     <link href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= base_url("fa/css/all.css"); ?>" />
+
+
 
 <link href="<?= base_url('css/navbars.css') ?>" rel="stylesheet">
 
