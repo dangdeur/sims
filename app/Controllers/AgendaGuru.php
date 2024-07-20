@@ -204,11 +204,24 @@ class AgendaGuru extends Pbm
 //     return null;
 //  }
 
-public function tambahpresensi($absensi,$id_agendaguru)
+public function tambahpresensi($id_agendaguru)
   {
     $data = session()->get();
+    $presensi = new SiswaModel();
     $agenda= new AgendaGuruModel();
-    // $data['agenda'] = $agenda->where(['id_agendaguru'=>$id_agendaguru])->first();
+    $data['agenda'] = $agenda->where(['id_agendaguru'=>$id_agendaguru])->first();
+    $data['absen_lama']=json_decode($data['agenda']['absensi'],true);
+    //d($data);
+    $data['siswa'] = $presensi->where('rombel', $data['agenda']['rombel'])->findAll();
+    
+    //$data['tess']=$presensi->getLastQuery();
+    //d($data);
+
+    
+    return view('header')
+         .view('menu',$data)
+         .view('updatepresensi')
+         .view('footer');
   }
 
   public function update_absen($absen,$id)

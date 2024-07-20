@@ -57,11 +57,13 @@
             //     }
             //   }
             // }
-            if (isset($dataabsensi['TL']) && count($dataabsensi['TL'])>0)
-            {
-            echo 'Terlambat : <a class="text-success" href="'.site_url('agendaguru/tambahpresensi/TL/'.$agenda[$a]['id_agendaguru']).'">
+            echo '<a class="text-success" href="'.site_url('agendaguru/tambahpresensi/'.$agenda[$a]['id_agendaguru']).'">
                   <i class="fa-solid fa-user-plus"></i>
                   </a><br />';
+            if (isset($dataabsensi['TL']) && count($dataabsensi['TL'])>0)
+            {
+            
+            echo 'Terlambat : <br />';
             foreach ($dataabsensi['TL'] as $tl)
               {
                 echo $tl['nama'] . ' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/TL/'.$tl['nis']).'/'.$agenda[$a]['id_agendaguru'].'">
@@ -69,25 +71,23 @@
                                     </a>';
                 if(!empty($tl['catatan']))
                   {
-                    //echo '<br />';
                     echo '<div class="small">('.$tl['catatan'].')</div>';
                   }
-                  
-                
-                echo '<br />';
+                  echo '<br />';
               }
             }
             
 
             if (isset($dataabsensi['BL']) && count($dataabsensi['BL'])>0)
             {
-            echo 'Bolos : <a class="text-success" href="'.site_url('agendaguru/tambahpresensi/BL/'.$agenda[$a]['id_agendaguru']).'">+</a><br />';
+            echo 'Bolos : <br />';
             foreach ($dataabsensi['BL'] as $bl)
               {
-                echo $bl['nama'].' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/BL/'.$bl['nis']).'/'.$agenda[$a]['id_agendaguru'].'">X</a>';
+                echo $bl['nama'].' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/BL/'.$bl['nis']).'/'.$agenda[$a]['id_agendaguru'].'">
+                                  <i class="fa-solid fa-user-xmark"></i></a>';
                 if(!empty($bl['catatan']))
                   {
-                    echo '('.$bl['catatan'].')';
+                    echo '<div class="small">('.$bl['catatan'].')</div>';
                   }
                   echo '<br />';
               }
@@ -95,13 +95,14 @@
            
             if (isset($dataabsensi['D']) && count($dataabsensi['D'])>0)
             {
-            echo 'Dispensasi : <a class="text-success" href="'.site_url('agendaguru/tambahpresensi/D/'.$agenda[$a]['id_agendaguru']).'">+</a><br />';
+            echo 'Dispensasi : <br />';
             foreach ($dataabsensi['D'] as $d)
               {
-                echo $d['nama'].' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/D/'.$d['nis']).'/'.$agenda[$a]['id_agendaguru'].'">X</a>';
+                echo $d['nama'].' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/D/'.$d['nis']).'/'.$agenda[$a]['id_agendaguru'].'">
+                      <i class="fa-solid fa-user-xmark"></i></a>';
                 if(!empty($d['catatan']))
                   {
-                    echo '('.$d['catatan'].')';
+                    echo '<div class="small">('.$d['catatan'].')</div>';
                   }
                   echo '<br />';
               }
@@ -110,13 +111,14 @@
            
             if (isset($dataabsensi['S']) && count($dataabsensi['S'])>0)
             {
-            echo 'Sakit : <a class="text-success" href="'.site_url('agendaguru/tambahpresensi/S/'.$agenda[$a]['id_agendaguru']).'">+</a><br />';
+            echo 'Sakit : <br />';
             foreach ($dataabsensi['S'] as $s)
               {
-                echo $s['nama'].' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/S/'.$s['nis']).'/'.$agenda[$a]['id_agendaguru'].'">X</a>';
+                echo $s['nama'].' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/S/'.$s['nis']).'/'.$agenda[$a]['id_agendaguru'].'">
+                                  <i class="fa-solid fa-user-xmark"></i></a>';
                 if(!empty($s['catatan']))
                   {
-                    echo '('.$s['catatan'].')';
+                    echo '<div class="small">('.$s['catatan'].')</div>';
                   }
                   echo '<br />';
               }
@@ -125,13 +127,14 @@
            
             if (isset($dataabsensi['I']) && count($dataabsensi['I'])>0)
             {
-            echo 'Ijin : <a class="text-success" href="'.site_url('agendaguru/tambahpresensi/I/'.$agenda[$a]['id_agendaguru']).'">+</a><br />';
+            echo 'Ijin : <br />';
             foreach ($dataabsensi['I'] as $i)
               {
-                echo $i['nama'].' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/I/'.$i['nis']).'/'.$agenda[$a]['id_agendaguru'].'">X</a>';
+                echo $i['nama'].' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/I/'.$i['nis']).'/'.$agenda[$a]['id_agendaguru'].'">
+                                <i class="fa-solid fa-user-xmark"></i></a>';
                 if(!empty($i['catatan']))
                   {
-                    echo '('.$i['catatan'].')';
+                    echo '<div class="small">('.$i['catatan'].')</div>';
                   }
                   echo '<br />';
               }
@@ -140,13 +143,14 @@
             
             if (isset($dataabsensi['A']) && count($dataabsensi['A'])>0)
             {
-            echo 'Alpa : <a class="text-success" href="'.site_url('agendaguru/tambahpresensi/A/'.$agenda[$a]['id_agendaguru']).'">+</a><br />';
+            echo 'Alpa : <br />';
             foreach ($dataabsensi['A'] as $alpa)
               {
-                echo $alpa['nama'].' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/A/'.$alpa['nis']).'/'.$agenda[$a]['id_agendaguru'].'">X</a>';
+                echo $alpa['nama'].' <a class="text-danger" href="'.site_url('agendaguru/hapuspresensi/A/'.$alpa['nis']).'/'.$agenda[$a]['id_agendaguru'].'">
+                                <i class="fa-solid fa-user-xmark"></i></a>';
                 if(!empty($alpa['catatan']))
                   {
-                    echo '('.$alpa['catatan'].')';
+                    echo '<div class="small">('.$alpa['catatan'].')</div>';
                   }
                   echo '<br />';
               }

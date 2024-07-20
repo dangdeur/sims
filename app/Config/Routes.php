@@ -23,7 +23,7 @@ $routes->post('/agendaguru/baru', 'AgendaGuru::baru');
 
 $routes->get('/agendaguru/absensi', 'AgendaGuru::absensi');
 $routes->get('/agendaguru/presensi/(.+)', 'AgendaGuru::presensi/$1/$2');
-$routes->get('/agendaguru/tambahpresensi/(.+)', 'AgendaGuru::tambahpresensi/$1/$2');
+$routes->get('/agendaguru/tambahpresensi/(.+)', 'AgendaGuru::tambahpresensi/$1');
 $routes->get('/agendaguru/hapuspresensi/(.+)', 'AgendaGuru::hapuspresensi/$1/$2/$3');
 $routes->post('/agendaguru/simpanpresensi', 'AgendaGuru::simpanpresensi');
 
