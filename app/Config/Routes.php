@@ -27,7 +27,7 @@ $routes->get('/agendaguru/tambahpresensi/(.+)', 'AgendaGuru::tambahpresensi/$1')
 $routes->get('/agendaguru/hapuspresensi/(.+)', 'AgendaGuru::hapuspresensi/$1/$2/$3');
 $routes->post('/agendaguru/simpanpresensi', 'AgendaGuru::simpanpresensi');
 
-
+$routes->get('/admin/isitgldibuat', 'Admin::Isitgldibuat');
 
 //test
 $routes->get('/r', 'Pbm::rombel_jadwal');

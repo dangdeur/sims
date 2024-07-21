@@ -4,8 +4,8 @@
 <div class="container">
   <main>
     <div class="py-5 text-center">
-      <h1 class="text-danger">DATA SISWA BELUM VALID, BELUM BISA ISI PRESENSI, HANYA AGENDA GURU SAJA</h1>
-      <img class="d-block mx-auto mb-4" src="<?= base_url('gambar/logo.png') ?>" alt="" width="72" height="72">
+      <!-- <h1 class="text-danger">DATA SISWA BELUM VALID, BELUM BISA ISI PRESENSI, HANYA AGENDA GURU SAJA</h1> -->
+      <!-- <img class="d-block mx-auto mb-4" src="<?= base_url('gambar/logo.png') ?>" alt="" width="72" height="72"> -->
       <h2>Agenda Guru <?= $nama_lengkap ?></h2>
       <?php
       //echo $hari.", ".$tanggal." ".$bulan." ".$tahun." ".$jam;
@@ -25,17 +25,17 @@
      // }
      
      if(isset($agenda) && !empty($agenda) && !isset($form)){
-      //echo $pager->links('','paginasi');
-      //echo $pager->links();
+      
       echo $pager->links('default', 'paginasi');
       echo '<table class="table">';
       echo '<tr>';
-      echo '<th>No</th><th>Rombel</th><th>Mapel</th><th>Materi</th><th>JP</th><th>Absensi</th><th></th>';
+      echo '<th>No</th><th>Tanggal</th><th>Rombel</th><th>Mapel</th><th>Materi</th><th>JP</th><th>Absensi</th><th></th>';
       echo '</tr>';
       $no_agenda=1;
         for ($a=0;$a<count($agenda);$a++)
         {
-          echo '<tr><td>'.$no_agenda.'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td><td>'.$agenda[$a]['materi'].'</td><td>'.$agenda[$a]['jp0'].'-'.$agenda[$a]['jp1'].'</td>
+          echo '<tr><td><a type="button" class="text-danger" href="'.site_url('agendaguru/hapus/'.$agenda[$a]['id_agendaguru']).'"><i class="fa-regular fa-calendar-xmark"></i></a>
+          '.$no_agenda.'</td><td>'.$agenda[$a]['dibuat'].'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td><td>'.$agenda[$a]['materi'].'</td><td>'.$agenda[$a]['jp0'].'-'.$agenda[$a]['jp1'].'</td>
           <td>';
           
           if (is_null($agenda[$a]['absensi']))
@@ -45,18 +45,6 @@
           else {
             $dataabsensi=json_decode($agenda[$a]['absensi'],true);
             
-            //d($dataabsensi);
-            //echo 'TL : ';
-            // if (count($dataabsensi['TL']>0))
-            // {
-            //   for($tl=0;$tl<count($dataabsensi['TL']);$tl++)
-            //   {
-            //     foreach ($dataabsensi['TL'][$tl] as $tl_nis=>$tl_cat)
-            //     {
-            //       echo $tl_nis.'('.$tl_cat.')';
-            //     }
-            //   }
-            // }
             echo '<a class="text-success" href="'.site_url('agendaguru/tambahpresensi/'.$agenda[$a]['id_agendaguru']).'">
                   <i class="fa-solid fa-user-plus"></i>
                   </a><br />';
@@ -159,7 +147,7 @@
           echo '</td>';
           
           echo '<td>';
-          echo '<a type="button" class="text-danger" href="'.site_url('agendaguru/hapus/'.$agenda[$a]['id_agendaguru']).'"><i class="fa-regular fa-calendar-xmark"></i></a>';
+          //echo '<a type="button" class="text-danger" href="'.site_url('agendaguru/hapus/'.$agenda[$a]['id_agendaguru']).'"><i class="fa-regular fa-calendar-xmark"></i></a>';
           //echo '<a type="button" class="btn btn-danger" href="'.site_url('agendaguru/hapus/'.$agenda[$a]['id_agendaguru']).'">Hapus</a>';
           echo '</td>';
           echo '</tr>';

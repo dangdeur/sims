@@ -11,11 +11,11 @@
           
             if (isset($gantipassword))
             {
-              echo 'Anda menggunakan password bawaan <a class="btn btn-primary" href="login/gantipassword/'.$id_pengguna.'">Ganti Password</a>';
+              echo 'Anda menggunakan password bawaan, beresiko terjadi penyalahgunaan. <a class="btn btn-primary" href="login/gantipassword/'.$id_pengguna.'">Ganti Password</a>';
             }
           ?>
-          <br />klik pada menu diatas!
-          <h1>DATA SISWA BELUM VALID</h1>
+          <!-- <br />klik pada menu diatas! -->
+          <!-- <h1>DATA SISWA BELUM VALID</h1> -->
           
           <?php
           // echo "<hr>";

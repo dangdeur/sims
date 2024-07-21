@@ -11,12 +11,20 @@ class Info extends BaseController
     {
       //$session=session();
       $data = $this->session->get();
+      
       //d($data);
       return view('header')
             .view('menu',$data)
             .view('info')
             .view('footer');
     }
+
+    public function getCookie() {
+
+      return get_cookie( 'skendava');
+      //echo has_cookie( 'skendava' );
+      //echo $cookie;
+  }
 
 
 

@@ -227,7 +227,13 @@ public function tambahpresensi($id_agendaguru)
   public function update_absen($absen,$id)
   {
     $agenda= new AgendaGuruModel();
+    if (!empty($absen))
+    {
     $dataabsen=json_encode($absen);
+    }
+    else {
+      $dataabsen='NULL';
+    }
     $data[ 'update' ][ 'absensi' ] = $dataabsen;
     $agenda->update( $id, $data[ 'update' ]);
   }

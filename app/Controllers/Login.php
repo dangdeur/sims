@@ -30,7 +30,6 @@ class Login extends BaseController {
                 ]
             ];
 
-           
             if ( ! $this->validate( $rules, $errors ) ) {
                 $data[ 'validation' ] = $this->validator;
 
@@ -39,39 +38,51 @@ class Login extends BaseController {
                 $user = $model->where( 'email', $this->request->getVar( 'email' ) )->first();
                 $user[ 'level' ] = $this->siapaLogin( $user, [ $user[ 'peran' ] ] );
                 //apakah walas ?
-                $walas=new WalasModel();
-                $walikelas = $walas->where( 'kode_walas', $user['kode_pengguna'] ) ->first();
+                $walas = new WalasModel();
+                $walikelas = $walas->where( 'kode_walas', $user[ 'kode_pengguna' ] ) ->first();
+                if (!empty($walikelas['rombel']))
+                {
+                    $user['walas']=$walikelas['rombel'];
+                }
+                
+                //dd($walikelas);
                 $this->setUserSession( $user );
 
                 //ingat
-                if ( $this->request->getVar( 'ingat' ) == 1 ) {
+                if ( $this->request->getVar( 'ingat' ) === '1' ) {
                     $token = random_string( 'alnum', 16 );
+                    set_cookie( 'skendava', $token, time() + ( 365 * 24 * 60 * 60 ) );
                     $user[ 'token' ] = $token;
-                     //dd( $user );
-                     $data_update['update']['token']=$token;
-                     $data[ 'id' ] = $user[ 'id_pengguna' ];
-                        $data[ 'update' ][ 'token' ] = $token;
-                        $this->update( $data );
-                    //$update = $model->update( $user[ 'id_pengguna' ], $data_update );
-                    //set_cookie( 'skendava', $user[ 'token' ], 360000 );
-                    $this->addCookie( $token );
+                    //d( $user );
+                    $data_update[ 'update' ][ 'token' ] = $token;
+                    $data[ 'id' ] = $user[ 'id_pengguna' ];
+                    $data[ 'update' ][ 'token' ] = $token;
+                    $this->update( $data );
+
                 }
-                return redirect()->to( 'info' );
+                return redirect()->to( 'info' )->withCookies();
+
             }
         }
         //end post login normal
         else {
 
-            //if ( !is_null( has_cookie( 'skendava' ) ) ) {
-             if ( $this -> getCookie() ) {
-                // $data = $this->session->get();
-                $token = $this -> getCookie();
+            if ( get_cookie( 'skendava' ) ) {
+
+                $token = get_cookie( 'skendava' );
                 $model = new PenggunaModel();
 
                 $user = $model->where( 'token', $token )->first();
+                $walas=new WalasModel();
+                $walikelas = $walas->where( 'kode_walas', $user[ 'kode_pengguna' ] ) ->first();
+                if (!empty($walikelas['rombel']))
+                {
+                    $user['walas']=$walikelas['rombel'];
+                }
+                $user['loginnya']='dengan cookie';
                 //   d( $user );
-                echo $model->getLastQuery();
-                d( $user );
+                //echo $model->getLastQuery();
+                //d( $user );
                 $user[ 'level' ] = $this->siapaLogin( $user, [ $user[ 'peran' ] ] );
                 $this->setUserSession( $user );
                 return redirect()->to( 'info' )->withCookies();
@@ -102,6 +113,10 @@ class Login extends BaseController {
             'token' => $user[ 'token' ],
             'isLoggedIn' => true,
         ];
+        if (isset($user['walas']))
+                {
+                    $data['walas']=$user['walas'];
+                }
         if ( $this->request->getVar( 'password' ) == 'smkn2jaya' ) {
             $data[ 'gantipassword' ] = true;
         }
@@ -153,26 +168,11 @@ class Login extends BaseController {
 
     public function logout() {
         session()->destroy();
+        
+        set_cookie( 'skendava', '', -1) ;
         //return redirect()->to( 'login' );
-        $this->delCookie();
-        echo view( 'login' );
+        echo view('login');
 
-    }
-
-    public function addCookie( $token ) {
-        set_cookie( 'skendava', $token, 3600000 );
-
-    }
-
-    public function delCookie() {
-        delete_cookie( 'skendava' );
-    }
-
-    public function getCookie() {
-
-        return get_cookie( 'skendava' );
-        //echo has_cookie( 'skendava' );
-        //echo $cookie;
     }
 
     public function gantipassword( $id ) {
@@ -199,6 +199,22 @@ class Login extends BaseController {
     public function update( $data ) {
         $pengguna = new PenggunaModel();
         $update = $pengguna->update( $data[ 'id' ], $data[ 'update' ] );
+    }
+
+    public function addCookie( $token ) {
+        set_cookie( 'skendava', $token, 3600000,'/' );
+
+    }
+
+    public function delCookie() {
+        delete_cookie( 'skendava' );
+    }
+
+    public function getCookie() {
+
+        //return get_cookie( 'skendava' );
+        echo has_cookie( 'skendava' );
+        //echo $cookie;
     }
 
 }

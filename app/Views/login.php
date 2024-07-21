@@ -59,7 +59,7 @@
 
     <div class="row mb-3">
       <div class="col checkbox text-start">
-          <input name="ingat" class="" type="checkbox" value=1> Ingat saya
+          <input name="ingat" class="" type="checkbox" value="1"> Ingat saya
         </div>
       <div class="col text-end">
         <a href="" >Lupa</a>
