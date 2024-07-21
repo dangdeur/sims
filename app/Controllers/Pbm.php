@@ -221,7 +221,10 @@ class Pbm extends BaseController {
                     }
 
                 }
+                if (isset($data[$h]))
+                {
                 ksort($data[$h]);
+                }
             }
             
 
