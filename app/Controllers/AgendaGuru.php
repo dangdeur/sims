@@ -338,11 +338,23 @@ public function tambahpresensi($id_agendaguru)
 
     public function hapus($id)
     {
-              $data['id_agendaguru']=$id;
-          $model = new AgendaGuruModel();
-          $model->delete($data);
-          
-          return redirect()->to('/agendaguru');
+      $data = session()->get();
+      $model = new AgendaGuruModel();
+      if ($this->request->is('post')) 
+      {
+      $id=$this->request->getPost('id');
+      $model->delete($id);
+      }
+      else {
+        $data['agenda'] = $model->where('id_agendaguru', $id)->first();
+        $data['konfirmasi']=1;
+        return view('header')
+         .view('menu',$data)
+         .view('daftaragenda')
+        
+         .view('footer');
+      }
+      return redirect()->to('/agendaguru');
     
        
         

@@ -32,6 +32,7 @@ class Login extends BaseController {
 
             if ( ! $this->validate( $rules, $errors ) ) {
                 $data[ 'validation' ] = $this->validator;
+                echo view( 'login' );
 
             } else {
                 $model = new PenggunaModel();

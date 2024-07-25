@@ -26,6 +26,11 @@ $routes->get('/agendaguru/presensi/(.+)', 'AgendaGuru::presensi/$1/$2');
 $routes->get('/agendaguru/tambahpresensi/(.+)', 'AgendaGuru::tambahpresensi/$1');
 $routes->get('/agendaguru/hapuspresensi/(.+)', 'AgendaGuru::hapuspresensi/$1/$2/$3');
 $routes->post('/agendaguru/simpanpresensi', 'AgendaGuru::simpanpresensi');
+$routes->post('/agendaguru/hapus/(.+)', 'AgendaGuru::hapus/$1');
+
+
+//walas
+$routes->get('/siswa', 'Walas::index');
 
 $routes->get('/admin/isitgldibuat', 'Admin::Isitgldibuat');
 
