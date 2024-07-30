@@ -28,7 +28,8 @@ $routes->get('/agendaguru/hapuspresensi/(.+)', 'AgendaGuru::hapuspresensi/$1/$2/
 $routes->post('/agendaguru/simpanpresensi', 'AgendaGuru::simpanpresensi');
 $routes->post('/agendaguru/hapus/(.+)', 'AgendaGuru::hapus/$1');
 
-
+//cetak
+$routes->get('/cetakagenda', 'Cetak::agenda');
 //walas
 $routes->get('/siswa', 'Walas::index');
 

@@ -36,6 +36,7 @@ class AgendaGuru extends Pbm
   //paginasi
   $data ['agenda']=  $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('dibuat','DESC')->paginate(10);
   $data ['pager'] = $agendamodel->pager;
+  $data['fungsi'] = $this;
   
 
   
@@ -359,4 +360,5 @@ public function tambahpresensi($id_agendaguru)
        
         
     }
+
 }

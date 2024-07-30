@@ -1,0 +1,126 @@
+INFO - 2024-07-26 22:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 22:31:08 --> ParseError: syntax error, unexpected token "(", expecting variable
+in APPPATH/Controllers/AgendaGuru.php on line 372.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(899): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-26 22:31:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:31:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:31:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 22:31:49 --> ErrorException: Undefined array key 2
+in APPPATH/Controllers/AgendaGuru.php on line 368.
+ 1 APPPATH/Controllers/AgendaGuru.php(368): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/daftaragenda.php(61): App\Controllers\AgendaGuru->format_tanggal()
+ 3 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/sims/app/Views/daftaragenda.php')
+ 4 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AgendaGuru.php(47): view()
+ 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AgendaGuru->index()
+ 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-26 22:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 22:33:29 --> ErrorException: Undefined array key 2
+in APPPATH/Controllers/AgendaGuru.php on line 370.
+ 1 APPPATH/Controllers/AgendaGuru.php(370): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/daftaragenda.php(61): App\Controllers\AgendaGuru->format_tanggal()
+ 3 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/sims/app/Views/daftaragenda.php')
+ 4 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AgendaGuru.php(47): view()
+ 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AgendaGuru->index()
+ 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-26 22:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 22:33:32 --> ErrorException: Undefined array key 2
+in APPPATH/Controllers/AgendaGuru.php on line 370.
+ 1 APPPATH/Controllers/AgendaGuru.php(370): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/daftaragenda.php(61): App\Controllers\AgendaGuru->format_tanggal()
+ 3 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/sims/app/Views/daftaragenda.php')
+ 4 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AgendaGuru.php(47): view()
+ 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AgendaGuru->index()
+ 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-26 22:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:33:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:33:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 22:33:57 --> ErrorException: Undefined array key 2
+in APPPATH/Controllers/AgendaGuru.php on line 370.
+ 1 APPPATH/Controllers/AgendaGuru.php(370): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/daftaragenda.php(61): App\Controllers\AgendaGuru->format_tanggal()
+ 3 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/sims/app/Views/daftaragenda.php')
+ 4 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AgendaGuru.php(47): view()
+ 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AgendaGuru->index()
+ 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-26 22:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 22:34:30 --> ErrorException: Undefined array key 2
+in APPPATH/Controllers/AgendaGuru.php on line 370.
+ 1 APPPATH/Controllers/AgendaGuru.php(370): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/daftaragenda.php(61): App\Controllers\AgendaGuru->format_tanggal()
+ 3 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/sims/app/Views/daftaragenda.php')
+ 4 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AgendaGuru.php(47): view()
+ 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AgendaGuru->index()
+ 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-26 22:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 22:34:31 --> ErrorException: Undefined array key 2
+in APPPATH/Controllers/AgendaGuru.php on line 370.
+ 1 APPPATH/Controllers/AgendaGuru.php(370): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/daftaragenda.php(61): App\Controllers\AgendaGuru->format_tanggal()
+ 3 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/sims/app/Views/daftaragenda.php')
+ 4 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AgendaGuru.php(47): view()
+ 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AgendaGuru->index()
+ 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-26 22:35:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 22:35:57 --> ErrorException: Undefined array key 2
+in APPPATH/Controllers/AgendaGuru.php on line 371.
+ 1 APPPATH/Controllers/AgendaGuru.php(371): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/daftaragenda.php(61): App\Controllers\AgendaGuru->format_tanggal()
+ 3 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/sims/app/Views/daftaragenda.php')
+ 4 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AgendaGuru.php(47): view()
+ 7 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AgendaGuru->index()
+ 8 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-26 22:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 22:42:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 22:42:16 --> ErrorException: Undefined array key 72
+in APPPATH/Views/daftaragenda.php on line 61.
+ 1 APPPATH/Views/daftaragenda.php(61): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/ddr/www/sims/app/Views/daftaragenda.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AgendaGuru.php(47): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\AgendaGuru->index()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

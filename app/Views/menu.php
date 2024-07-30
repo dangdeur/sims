@@ -70,7 +70,7 @@
 		<li class="nav-item dropdown">
   			<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  eKinerja  </a>
   		    <ul class="dropdown-menu">
-  			  <li><a class="dropdown-item disabled" href="" > Cetak Agenda Harian PBM </a></li>
+  			  <li><a class="dropdown-item" href="<?= site_url('cetakagenda') ?>" > Cetak Agenda Harian PBM </a></li>
           <li><a class="dropdown-item disabled" href="" > Cetak Agenda Tugas Tambahan </a></li>
           <!-- <li><a class="dropdown-item" href="#"> Dropdown item 2 &raquo; </a>
   			  	 <ul class="submenu dropdown-menu">

@@ -57,8 +57,15 @@ else {
       $no_agenda=1;
         for ($a=0;$a<count($agenda);$a++)
         {
+          $kode=explode("-",$agenda[$a]['kode_agendaguru']);
+          $tgl=substr($kode[1],0,2);
+          $bln=BULAN[substr($kode[1],2,2)];
+          $thn=substr($kode[1],4,4);
+          $tanggal= $tgl." ".$bln." ".$thn;
+
+          //$tgl=substr($tanggal[1],0,2).' '.BULAN[substr($tanggal[1],3,2)];
           echo '<tr><td><a type="button" class="text-danger" href="'.site_url('agendaguru/hapus/'.$agenda[$a]['id_agendaguru']).'"><i class="fa-regular fa-calendar-xmark"></i></a>
-          '.$no_agenda.'</td><td>'.$agenda[$a]['dibuat'].'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td><td>'.$agenda[$a]['materi'].'</td><td>'.$agenda[$a]['jp0'].'-'.$agenda[$a]['jp1'].'</td>
+          '.$no_agenda.'</td><td>'.$tanggal.'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td><td>'.$agenda[$a]['materi'].'</td><td>'.$agenda[$a]['jp0'].'-'.$agenda[$a]['jp1'].'</td>
           <td>';
           
           if (is_null($agenda[$a]['absensi']))
