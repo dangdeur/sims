@@ -1,0 +1,41 @@
+INFO - 2024-08-04 21:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 21:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 21:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 21:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 21:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 21:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 21:45:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-04 21:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-04 21:46:03 --> ErrorException: Undefined variable $jp9
+in APPPATH/Controllers/Pbm.php on line 121.
+ 1 APPPATH/Controllers/Pbm.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Pbm.php(143): App\Controllers\Pbm->jam_ke()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Pbm->jadwal_kelas()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-04 21:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-04 21:46:04 --> ErrorException: Undefined variable $jp9
+in APPPATH/Controllers/Pbm.php on line 121.
+ 1 APPPATH/Controllers/Pbm.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Pbm.php(143): App\Controllers\Pbm->jam_ke()
+ 3 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Pbm->jadwal_kelas()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-04 21:51:15 --> ParseError: syntax error, unexpected token ";"
+in APPPATH/Controllers/Pbm.php on line 125.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(899): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-04 21:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-04 21:51:52 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::findColumn()
+in APPPATH/Controllers/Pbm.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Pbm->jadwal_kelas()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()

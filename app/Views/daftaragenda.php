@@ -1,6 +1,12 @@
    
 <?= $this->extend('layout') ?>
 <?= $this->section('content') ?>
+<!-- <script type='text/javascript'>
+           $(document).ready(function()
+           {
+              $('#exampleModal').modal('show');
+           });
+        </script> -->
 <div class="container">
  <?php 
      
@@ -9,7 +15,7 @@ if(isset($konfirmasi))
   
   echo 'Apakah anda yakin akan menghapus data agenda pembelajaran mapel <strong>'.$agenda['mapel'].'</strong> untuk rombel <strong>'.$agenda['rombel'].'</strong> ?';
   echo form_open('agendaguru/hapus/'.$agenda['id_agendaguru']);
-  echo '<div class="row">
+  echo '<div class="row justify-content-md-center">
   <div class="col">';
   echo form_submit('hapus', 'Hapus!',['class'=>"btn btn-danger"]);
   echo '</div>';
@@ -31,12 +37,7 @@ else {
       <!-- <img class="d-block mx-auto mb-4" src="<?= base_url('gambar/logo.png') ?>" alt="" width="72" height="72"> -->
       <h2>Agenda Guru <?= $nama_lengkap ?></h2>
       <?php
-      //echo $hari.", ".$tanggal." ".$bulan." ".$tahun." ".$jam;
      
-      
-      // if (empty($agenda) && !isset($form))
-      // {
-        //d($agenda);
         echo date('l, j F Y, H:i');
         echo '<p class="lead">';
         if (empty($agenda) && !isset($form))
@@ -44,8 +45,17 @@ else {
           echo 'Belum ada riwayat PBM anda</p>';
         }
         echo '</p>';
-        echo '<a type="submit" class="btn btn-primary btn-lg" href="'.site_url('agendaguru/baru').'">Isi Agenda</a></div>';
-     // }
+        
+        echo '<div class="row justify-content-md-center">';
+        echo '<div class="col col-md-2">';
+        echo '<a type="submit" class="btn btn-warning" href="'.site_url('agendaguru/baru_telat').'">Isi Agenda Terlewat</a>';
+        echo '</div>';
+        echo '<div class="col col-md-2">';
+        echo '<a type="submit" class="btn btn-primary" href="'.site_url('agendaguru/baru').'">Isi Agenda Saat Ini</a>';
+        echo '</div>';
+        
+        echo '</div>';
+       
 
      if(isset($agenda) && !empty($agenda) && !isset($form)){
       
@@ -190,8 +200,37 @@ else {
     }
      ?>
      
-  </main>
+  <!-- </main> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Lapor PBM</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Dengan ini saya melapor kepada pimpinan,
+        <ul>
+          <li>Saya telah berada di ruang pelaksanaan pembelajaran</li>
+          <li>Saya siap memulai proses pembelajaran</li>
+        </ul>
+        Matapelajaran : , Rombel : <br />
+        Ruang Pembelajaran
+
+      </div>
+      <div class="modal-footer">
+        <!-- Waktu saat ini : <?php //echo date("h:m:s"); ?> -->
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        <button type="button" class="btn btn-primary">Lapor</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
   
 </div>
+
 
 <script src="<?= base_url('js/checkout.js') ?>"></script>

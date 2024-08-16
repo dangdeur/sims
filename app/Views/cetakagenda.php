@@ -1,6 +1,9 @@
 <table border="0" cellspacing="3" cellpadding="2">
   <tr>
-  <td colspan="2"><h3>Agenda Harian Mengajar</h3></td>
+  <td colspan="2" style="text-align: center;"><h3>Agenda Harian Mengajar</h3></td>
+  </tr>
+  <tr>
+  <td colspan="2" style="text-align: center;"><h3><?= $bulan ?></h3></td>
   </tr>
 
   <tr>
@@ -16,7 +19,7 @@
   </tr>
 </table>
 
-
+<br /><br />
 <table border="1" cellspacing="3" cellpadding="2">
 <thead> 
 <tr>
@@ -61,16 +64,3 @@ for ($a=0;$a<count($agenda);$a++)
   
 </table>
 
-<!-- Keterangan :
-<ul>
-<li>Cetak bukti pendaftaran ini sebanyak 2 lembar, 1 lembar dipegang pendaftar, 1 lembar lagi diserahkan ke SMKN 2 Pandeglang disertai dengan dokumen berikut :</li>
-  <ol>
-    <li>Surat Keterangan Lulus <strong>ASLI</strong>. Dokumen ditinggal di SMKN 2 Pandeglang</li>
-    <li>Raport <strong>ASLI</strong>. Dokumen dibawa kembali setelah verifikasi.</li>
-    <li>Surat Keterangan Bebas Buta Warna <strong>ASLI</strong>. Dokumen dibawa kembali setelah verifikasi.</li>
-    <li>Sertifikat Kejuaraan/Lomba <strong>ASLI</strong>. Dokumen dibawa kembali setelah verifikasi.</li>
-  </ol>
-<li>Peserta PPDB mencetak Kartu Tes PPDB 1 lembar dan ditempeli pas foto yang jelas. Digunakan untuk syarat mengikuti Seleksi PPDB. Kartu Tes hanya ditunjukan ke pengawas ruang ujian</li>
-<li>Data pendaftaran, pilihan Program Keahlian dapat diubah apabila belum diverifikasi oleh Panitia PPDB SMKN 2 Pandeglang</li>
-<li>Pada waktu verifikasi yang telah ditetapkan di atas, Calon Peserta Didik datang ke Kampus SMKN 2 Pandeglang, untuk melaksanakan Ujian Seleksi PPDB dan verifikasi kesesuaian berkas dengan isian form pendaftaran.</li>
-</ul> -->

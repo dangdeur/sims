@@ -44,7 +44,7 @@
 <?= form_open('login') ?>
     <img class="mb-4" src="<?= base_url('gambar/logo.png') ?>" alt="" width="100" height="100">
     <h1 class="h3 mb-3 fw-normal">Silahkan Login</h1>
-    <div class="small danger">
+    <div class="small text-danger">
       <?= validation_list_errors() ?>
     </div>
 

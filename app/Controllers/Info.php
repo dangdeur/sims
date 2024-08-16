@@ -2,17 +2,30 @@
 
 namespace App\Controllers;
 use Config\Services;
-//use App\Models\PenggunaModel;
+use App\Models\InfoModel;
 
 class Info extends BaseController
 {
   protected $helpers = ['form','text','cookie'];
     public function index()
     {
-      //$session=session();
       $data = $this->session->get();
+      $model = new InfoModel;
+     //paginasi
+  $data ['info']=  $model->select('*')->orderBy('tanggal','DESC')->paginate(10);
+  $data ['pager'] = $model->pager;
+  
+    //d($data);
       
-      //d($data);
+      // return view('header')
+      //        .view('menu',$data)
+      //        .view('daftaragenda')
+      //       //  .view('paginasi')
+      //        .view('footer');
+
+     
+     
+     
       return view('header')
             .view('menu',$data)
             .view('info')

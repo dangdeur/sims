@@ -4,6 +4,8 @@ namespace App\Controllers;
 use Config\Services;
 use App\Models\PenggunaModel;
 use App\Models\WalasModel;
+use App\Models\PiketModel;
+use App\Models\TutaModel;
 
 class Login extends BaseController {
     protected $helpers = [ 'form', 'text', 'cookie' ];
@@ -36,17 +38,33 @@ class Login extends BaseController {
 
             } else {
                 $model = new PenggunaModel();
+                //$model->join('piket','piket.kode_petugas = pengguna.kode_pengguna','inner');
                 $user = $model->where( 'email', $this->request->getVar( 'email' ) )->first();
                 $user[ 'level' ] = $this->siapaLogin( $user, [ $user[ 'peran' ] ] );
+                //$model->join('kodenya','pengguna.kode_pengguna = piket.kode_petugas');
+                
                 //apakah walas ?
-                $walas = new WalasModel();
-                $walikelas = $walas->where( 'kode_walas', $user[ 'kode_pengguna' ] ) ->first();
+                $walasmodel = new WalasModel();
+                $walikelas = $walasmodel->where( 'kode_walas', $user[ 'kode_pengguna' ] ) ->first();
                 if (!empty($walikelas['rombel']))
                 {
                     $user['walas']=$walikelas['rombel'];
                 }
                 
-                //dd($walikelas);
+                $piketmodel = new PiketModel();
+                $piket = $piketmodel->where( 'kode_petugas', $user[ 'kode_pengguna' ] ) ->first();
+                if (!empty($piket['hari']))
+                {
+                    $user['piket']=$piket;
+                }
+
+                $tutamodel = new TutaModel();
+                $tuta = $tutamodel->where( 'kode_guru', $user[ 'kode_pengguna' ] ) ->first();
+                if (!empty($tuta['bidang']))
+                {
+                    $user['tuta']=$tuta;
+                }
+                d($user);
                 $this->setUserSession( $user );
 
                 //ingat
@@ -61,7 +79,15 @@ class Login extends BaseController {
                     $this->update( $data );
 
                 }
-                return redirect()->to( 'info' )->withCookies();
+                //d($user);
+                if ($user['level']==='Superadmin')
+                {
+                    return redirect()->to( 'admin' )->withCookies();
+                }
+                else {
+                    return redirect()->to( 'info' )->withCookies();
+                }
+                
 
             }
         }
@@ -117,6 +143,19 @@ class Login extends BaseController {
         if (isset($user['walas']))
                 {
                     $data['walas']=$user['walas'];
+                    $data['jabatan']['Walikelas']='Walikelas';
+                }
+                if (isset($user['piket']))
+                {
+                    //$data['tuta']=['Piket'];
+                    $data['piket']=$user['piket'];
+                    $data['jabatan']['Piket']='Piket';
+                }
+                if (isset($user['tuta']))
+                {
+                    //$data['tuta']=['Piket'];
+                    $data['tuta']=$user['tuta'];
+                    $data['jabatan'][$user['tuta']['bidang']]=$user['tuta']['bidang'];
                 }
         if ( $this->request->getVar( 'password' ) == 'smkn2jaya' ) {
             $data[ 'gantipassword' ] = true;

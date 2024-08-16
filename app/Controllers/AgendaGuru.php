@@ -36,7 +36,15 @@ class AgendaGuru extends Pbm
   //paginasi
   $data ['agenda']=  $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('dibuat','DESC')->paginate(10);
   $data ['pager'] = $agendamodel->pager;
-  $data['fungsi'] = $this;
+//  $data['fungsi'] = $this;
+$jadwal= $this->pbm->jadwal_data();
+// d($jadwal);
+// senin =>
+//         10 =>
+//               kelas =>
+//               mapel =>
+$data['rombel']=$this->rombel_jadwal($jadwal);
+$data['mapel']=$this->mapel_jadwal($jadwal);
   
 
   
@@ -57,6 +65,157 @@ class AgendaGuru extends Pbm
     //d($jadwal);
     $data['rombel']=$this->rombel_jadwal($jadwal);
     $data['mapel']=$this->mapel_jadwal($jadwal);
+    if ($this->request->is('get')) 
+      {
+      $data['form']=1;
+      return view('header')
+         .view('menu',$data)
+         .view('agendagurubaru')
+         .view('footer');
+      }
+
+    //if ($this->request->is('post')) 
+     else {
+      $rules = [
+        'rombel_agenda' => 'required',
+        'jp0' => 'required',
+        'jp1' => 'required',
+        'mapel_agenda' => 'required',
+        'materi' => 'required'
+      ];
+
+      $errors = [
+        'rombel_agenda' => ['required' =>'Rombel belum dipilih'],
+        'jp0' => ['required' => 'Jam pelajaran awal belum dipilih'],
+        'jp1' => ['required' => 'Jam pelajaran akhir belum dipilih'],
+        'mapel_agenda' => ['required' => 'Mapel belum dipilih'],
+        'materi' => ['required' => 'Materi belum dipilih']
+      ];
+
+      if (! $this->validate($rules, $errors)) {
+        $data['validation'] = $this->validator;
+        //$data['form']=1;
+        //return view('agendagurubaru',$data);
+        //d($data); 
+        return redirect()->back()->withInput();
+
+      }
+      else
+      {
+        
+        $model = new AgendaGuruModel();
+        $guru = $this->request->getPost('kode_guru');
+        $rombel = $this->request->getPost('rombel_agenda');
+        $tgl = $this->request->getPost('tanggal');
+        $bln = $this->request->getPost('bulan');
+        $thn = date("Y");
+        //$tanggal=date("dmY");
+        $tanggal=$tgl.$bln.$thn;
+        $kode_agenda=$guru."-".$tanggal."-".$rombel;
+        $data = array(
+            'rombel' => $rombel,
+            'jp0' => $this->request->getPost('jp0'),
+            'jp1' => $this->request->getPost('jp1'),
+            'mapel' => $this->request->getPost('mapel_agenda'),
+            'materi' => $this->request->getPost('materi'),
+            'kode_agendaguru' => $kode_agenda,
+            'kode_guru' => $guru,
+        );
+        $model->insert($data,false);
+        return redirect()->to('/agendaguru');  
+      }
+     
+    }// end post  
+    // return view('header')
+    // .view('menu',$data)
+    // .view('agendagurubaru')
+    // .view('footer');
+    //d($data);
+    
+  }
+
+  public function baru_telat ()
+  {
+    $data = session()->get();
+    $data['waktu']=$this->waktu();
+    $jadwal=$this->pbm->jadwal_data();
+    //d($jadwal);
+    $data['rombel']=$this->rombel_jadwal($jadwal);
+    $data['mapel']=$this->mapel_jadwal($jadwal);
+    if ($this->request->is('get')) 
+      {
+      $data['form']=1;
+      return view('header')
+         .view('menu',$data)
+         .view('agendagurubaru_telat')
+         .view('footer');
+      }
+
+    //if ($this->request->is('post')) 
+     else {
+      $rules = [
+        'rombel_agenda' => 'required',
+        'jp0' => 'required',
+        'jp1' => 'required',
+        'mapel_agenda' => 'required',
+        'materi' => 'required'
+      ];
+
+      $errors = [
+        'rombel_agenda' => ['required' =>'Rombel belum dipilih'],
+        'jp0' => ['required' => 'Jam pelajaran awal belum dipilih'],
+        'jp1' => ['required' => 'Jam pelajaran akhir belum dipilih'],
+        'mapel_agenda' => ['required' => 'Mapel belum dipilih'],
+        'materi' => ['required' => 'Materi belum dipilih']
+      ];
+
+      if (! $this->validate($rules, $errors)) {
+        $data['validation'] = $this->validator;
+        //$data['form']=1;
+        //return view('agendagurubaru',$data);
+        //d($data); 
+        return redirect()->back()->withInput();
+
+      }
+      else
+      {
+        
+        $model = new AgendaGuruModel();
+        $guru = $this->request->getPost('kode_guru');
+        $rombel = $this->request->getPost('rombel_agenda');
+        $tgl = $this->request->getPost('tanggal');
+        $bln = $this->request->getPost('bulan');
+        $thn = date("Y");
+        //$tanggal=date("dmY");
+        $tanggal=$tgl.$bln.$thn;
+        $kode_agenda=$guru."-".$tanggal."-".$rombel;
+        $data = array(
+            'rombel' => $rombel,
+            'jp0' => $this->request->getPost('jp0'),
+            'jp1' => $this->request->getPost('jp1'),
+            'mapel' => $this->request->getPost('mapel_agenda'),
+            'materi' => $this->request->getPost('materi'),
+            'kode_agendaguru' => $kode_agenda,
+            'kode_guru' => $guru,
+        );
+        $model->insert($data,false);
+        return redirect()->to('/agendaguru');  
+      }
+     
+    }// end post  
+    // return view('header')
+    // .view('menu',$data)
+    // .view('agendagurubaru')
+    // .view('footer');
+    //d($data);
+    
+  }
+
+  public function tutabaru ()
+  {
+    $data = session()->get();
+    //$data['waktu']=$this->waktu();
+    
     if ($this->request->is('get')) 
       {
       $data['form']=1;
@@ -103,7 +262,7 @@ class AgendaGuru extends Pbm
     //d($data);
     return view('header')
          .view('menu',$data)
-         .view('agendagurubaru')
+         .view('agendatutabaru')
          .view('footer');
   }
   

@@ -10,43 +10,26 @@ use SimpleSoftwareIO\QrCode\Generator;
 
 class Cetak extends BaseController
 {
+	protected $helpers = ['form'];
 
 	public function agenda()
 	{
 		$data = session()->get();
-		// $db      = \Config\Database::connect();
-		// $builder = $db->table('agenda_guru');
-		// $builder->select('*');
-		// $builder->join('pengguna','agenda_guru.kode_guru=pengguna.kode_pengguna');
-		// $builder->orderBy('dibuat', 'DESC');
-		// $query= $builder->get();
-		// d($query);
-		// $model=new AgendaGuruModel;
-		// $model=
-		// $agenda = $model->where('kode_guru', $data['kode_pengguna'])->findAll();
-		// $data['agenda']=$agenda;
-		//d($data);
-		// $kode_guru="'".$data['id_pengguna']."'";
-
-		// $query = $agenda->query('SELECT * FROM agenda_guru
-		// 									-- JOIN nilai ON nilai.no_pendaftaran = pendaftar.no_pendaftaran
-		// 									-- JOIN pendaftaran ON pendaftaran.no_pendaftaran = nilai.no_pendaftaran
-		// 									WHERE kode_guru='.$kode_guru);
-
-		// if (is_array($query->getRow()) || is_object($query->getRow()))
-		// {
-		// 	foreach ($query->getRow() as $key => $value) {
-		// 		$data['agenda'][]=[$key=>$value];
-		// 	}
-		// }
-		// else {
-		// 	 echo "Data Tidak Ada";
-		// }
+		if ($this->request->is('post')) 
+      {
 		$stafmodel = new StafModel;
+		$bulan=$this->request->getVar('bulan').date("o");
 		$data['staf']=$stafmodel->where('kode_staf', $data['kode_pengguna'])->first();
 		 $agendamodel=new AgendaGuruModel;
-		 $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->findAll();
+		 //OK
+		 //$data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->findAll();
+
+		 //coba
+		 $agendamodel->where('kode_guru', $data['kode_pengguna']);
+		 $agendamodel->like('kode_agendaguru',$bulan);
+		 $data['agenda'] =$agendamodel->findAll();
 		 $data['qr']=$this->qr();
+		 $data['bulan']=BULAN[$this->request->getVar('bulan')].' '.date("o");
 
 
 		//d($data);
@@ -85,6 +68,14 @@ class Cetak extends BaseController
 		$pdf->writeHTML($html, true, false, true, false, '');
 		$this->response->setContentType('application/pdf');
 		$pdf->Output('Agenda Mengajar'.$data['nama_lengkap'].'.pdf', 'I');
+	}
+	else {
+		return view('header')
+         .view('menu',$data)
+         .view('form_cetakagenda')
+        //  .view('paginasi')
+         .view('footer');
+	}
 	}
 
 	public function kelulusan($no)
@@ -246,7 +237,7 @@ class Cetak extends BaseController
         // $qrCodes['styleSquare'] = $qrcode->size(120)->color(0, 0, 0)->backgroundColor(255, 255, 255)->style('square')->generate('https://www.binaryboxtuts.com/');
         // $qrCodes['styleRound'] = $qrcode->size(120)->color(0, 0, 0)->backgroundColor(255, 255, 255)->style('round')->generate('https://www.binaryboxtuts.com/');
       
-        return $qrCodes['qrnya'] = $qrcode->size(80)->format('png')->merge('gambar/logo.png', .4)->generate('http://sims.smkn2pandeglang.sch.id/');
+        return $qrCodes['qrnya'] = $qrcode->size(100)->format('png')->merge('gambar/logo.png', .4)->generate('http://sims.smkn2pandeglang.sch.id/');
             //return view('qr-codes', $qrCodes);
     }
 
