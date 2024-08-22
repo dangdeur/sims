@@ -22,11 +22,12 @@
             '11'=>'November',
             '12'=>'Desember'
           ];
-            echo form_open('cetaktuta');
+            echo form_open('cetakagendatuta');
            
             //echo 'Agenda harian mengajar :';
+            $bln_sekarang=[date("m")];
             
-            echo form_dropdown('bulan', $option,'' ,['class'=>'form-control']);
+            echo form_dropdown('bulan', $option,$bln_sekarang ,['class'=>'form-control']);
            
             echo '<br /><button class="w-100 btn btn-lg btn-primary" type="submit">Cetak</button>';
             echo form_close();

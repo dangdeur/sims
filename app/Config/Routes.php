@@ -13,7 +13,7 @@ $routes->post('/login/gantipassword/(.+)', 'Login::gantipassword/$1');
 $routes->post('/login', 'Login::index');
 $routes->get('/info', 'Info::index');
 $routes->get('/logout', 'Login::logout');
-$routes->get('/profil', 'Profil::index');
+// $routes->get('/profil', 'Profil::index');
 $routes->get('/jadwal', 'Pbm::jadwal');
 $routes->get('/agendaguru', 'AgendaGuru::index');
 $routes->get('/agendaguru/baru', 'AgendaGuru::baru');
@@ -32,6 +32,8 @@ $routes->post('/agendaguru/hapus/(.+)', 'AgendaGuru::hapus/$1');
 //cetak
 $routes->get('/cetakagenda', 'Cetak::agenda');
 $routes->post('/cetakagenda', 'Cetak::agenda');
+$routes->get('/cetakagendatuta', 'Cetak::agenda_tuta');
+$routes->post('/cetakagendatuta', 'Cetak::agenda_tuta');
 //walas
 $routes->get('/siswa', 'Walas::index');
 $routes->get('/jam', 'Pbm::jadwal_kelas');
@@ -62,6 +64,12 @@ $routes->get('/admin/ambilalih/(.+)', 'Admin::ambil_alih/$1');
 
 //Piket
 $routes->get('/home', 'Home::index');
+$routes->get('/home/get_items', 'Home::get_items');
 $routes->get('/gi', 'Home::get_items');
 $routes->get('/form_terlambat', 'Siswa::form_terlambat');
+$routes->get('/tampil_siswa/(.+)', 'Siswa::tampil_siswa/$1');
+$routes->post('/tampil_siswa/(.+)', 'Siswa::tampil_siswa/$1');
+
+//Profil
+$routes->get('/profil', 'Info::profil');
 service('auth')->routes($routes);

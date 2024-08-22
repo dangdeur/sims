@@ -1,6 +1,6 @@
 <table border="0" cellspacing="3" cellpadding="2">
   <tr>
-  <td colspan="2" style="text-align: center;"><h3>Agenda Harian Mengajar</h3></td>
+  <td colspan="2" style="text-align: center;"><h3>Agenda Tugas Tambahan</h3></td>
   </tr>
   <tr>
   <td colspan="2" style="text-align: center;"><h3><?= $bulan ?></h3></td>
@@ -34,7 +34,7 @@
 $no=1;
 for ($a=0;$a<count($agenda);$a++)
 {
-  $kode=explode("-",$agenda[$a]['kode_agendaguru']);
+  $kode=explode("-",$agenda[$a]['kode_agendatuta']);
   $tgl=substr($kode[1],0,2);
   $bln=BULAN[substr($kode[1],2,2)];
   $thn=substr($kode[1],4,4);
@@ -42,7 +42,7 @@ for ($a=0;$a<count($agenda);$a++)
   echo '<tr>
           <td style="width: 5%;text-align: center;">'.$no;
   echo '</td><td style="width: 20%;text-align: center;">'.$tanggal.'</td>
-          <td style="width: 75%;text-align: left;">Mengajar di '.$agenda[$a]['rombel'].' untuk matapelajaran '.$agenda[$a]['mapel'].' dari JP '.$agenda[$a]['jp0'].'-'.$agenda[$a]['jp1'].'</td>
+          <td style="width: 75%;text-align: left;">'.$agenda[$a]['aktifitas'].'</td>
   </tr>';
  
   $no++;

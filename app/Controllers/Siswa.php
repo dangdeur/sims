@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use Config\Services;
-// use App\Models\AgendaGuruModel;
+ use App\Models\AgendaGuruModel;
 // use App\Models\PbmModel;
 use App\Models\SiswaModel;
 
@@ -22,10 +22,12 @@ class Siswa extends Pbm
   }
   
 
-   public function form_terlambat()
+   public function form_terlambat($rombel=false)
   {
     $data = session()->get();
     $siswa = new SiswaModel();
+    if(!$rombel)
+    {
     $siswa->distinct()->select('rombel')->orderBy('rombel','ASC');
     //$siswa->distinct();
     //$data['rombel'] = $siswa->findAll();
@@ -39,6 +41,48 @@ class Siswa extends Pbm
          .view('menu',$data)
          .view('form_terlambat')
          .view('footer');
+    }
+    else {
+      $data['nama_siswa']=$siswa->where(['rombel'=>$rombel])->first();
+    //$siswa->distinct();
+    //$data['rombel'] = $siswa->findAll();
+    $data['rombel'] = $siswa->get()->getResultArray();
+    
+    //$data['tess']=$presensi->getLastQuery();
+    //d($data);
+
+    
+    // return view('header')
+    //      .view('menu',$data)
+    //      .view('form_terlambat')
+    //      .view('footer');
+    echo json_encode($data['nama_siswa']);
+    }
+  }
+
+  public function tampil_siswa($rombel)
+  {
+    //if ($this->request->isAJAX()) {
+    $data = session()->get();
+    $siswa = new SiswaModel();
+    $data['nama_siswa']=$siswa->where(['rombel'=>$rombel])->findAll();
+    //$siswa->distinct();
+    //$data['rombel'] = $siswa->findAll();
+    $data['rombel'] = $siswa->get()->getResultArray();
+    
+    //$data['tess']=$presensi->getLastQuery();
+    //d($data);
+
+    
+    // return view('header')
+    //      .view('menu',$data)
+    //      .view('form_terlambat')
+    //      .view('footer');
+    echo json_encode($data);
+    // }
+    // else {
+    //   echo "C";
+    // }
   }
 
   public function simpanpresensi()

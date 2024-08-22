@@ -82,10 +82,10 @@ class Login extends BaseController {
                 //d($user);
                 if ($user['level']==='Superadmin')
                 {
-                    return redirect()->to( 'admin' )->withCookies();
+                    return redirect()->to( site_url('admin') )->withCookies();
                 }
                 else {
-                    return redirect()->to( 'info' )->withCookies();
+                    return redirect()->to( site_url('info'))->withCookies();
                 }
                 
 
@@ -112,7 +112,7 @@ class Login extends BaseController {
                 //d( $user );
                 $user[ 'level' ] = $this->siapaLogin( $user, [ $user[ 'peran' ] ] );
                 $this->setUserSession( $user );
-                return redirect()->to( 'info' )->withCookies();
+                return redirect()->to( site_url('info') )->withCookies();
 
             } else {
 
