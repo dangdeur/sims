@@ -68,6 +68,7 @@ $routes->get('/home/get_items', 'Home::get_items');
 $routes->get('/gi', 'Home::get_items');
 $routes->get('/form_terlambat', 'Siswa::form_terlambat');
 $routes->get('/tampil_siswa/(.+)', 'Siswa::tampil_siswa/$1');
+$routes->post('/tampil_siswa', 'Siswa::tampil_siswa');
 $routes->post('/tampil_siswa/(.+)', 'Siswa::tampil_siswa/$1');
 
 //Profil

@@ -3,14 +3,16 @@
 namespace App\Controllers;
 use Config\Services;
  use App\Models\AgendaGuruModel;
-// use App\Models\PbmModel;
+
 use App\Models\SiswaModel;
 
 
-// class Agenda extends BaseController
+
+
 class Siswa extends Pbm
 {
-  protected $helpers = ['form','text','cookie','date'];
+  //use ResponseTrait;
+  protected $helpers = ['form','text','cookie','date','url','html'];
   protected $pbm;
   protected $session;
 
@@ -22,67 +24,53 @@ class Siswa extends Pbm
   }
   
 
-   public function form_terlambat($rombel=false)
+   public function form_terlambat()
   {
     $data = session()->get();
     $siswa = new SiswaModel();
-    if(!$rombel)
-    {
+   
     $siswa->distinct()->select('rombel')->orderBy('rombel','ASC');
-    //$siswa->distinct();
-    //$data['rombel'] = $siswa->findAll();
+   
     $data['rombel'] = $siswa->get()->getResultArray();
-    
-    //$data['tess']=$presensi->getLastQuery();
-    d($data);
+     // d($data);
 
     
     return view('header')
          .view('menu',$data)
          .view('form_terlambat')
          .view('footer');
-    }
-    else {
-      $data['nama_siswa']=$siswa->where(['rombel'=>$rombel])->first();
-    //$siswa->distinct();
-    //$data['rombel'] = $siswa->findAll();
-    $data['rombel'] = $siswa->get()->getResultArray();
-    
-    //$data['tess']=$presensi->getLastQuery();
-    //d($data);
-
-    
-    // return view('header')
-    //      .view('menu',$data)
-    //      .view('form_terlambat')
-    //      .view('footer');
-    echo json_encode($data['nama_siswa']);
-    }
+   
+   
   }
 
-  public function tampil_siswa($rombel)
+  public function tampil_siswa($rombel=false)
   {
-    //if ($this->request->isAJAX()) {
-    $data = session()->get();
-    $siswa = new SiswaModel();
-    $data['nama_siswa']=$siswa->where(['rombel'=>$rombel])->findAll();
-    //$siswa->distinct();
-    //$data['rombel'] = $siswa->findAll();
-    $data['rombel'] = $siswa->get()->getResultArray();
-    
-    //$data['tess']=$presensi->getLastQuery();
-    //d($data);
+         
+    if ($rombel != '')
+    {
+      $siswa = new SiswaModel();
+      $data['nama_siswa']=$siswa->where(['rombel'=>$rombel])->findAll();
+      //$data['nama_siswa'] = $siswa->where('rombel', $rombel)->findAll();
+    echo json_encode($data['nama_siswa']);
+    }
+    else {
+      echo 'rombel ='.$rombel;
+    }
+  
+  }
 
+  public function simpan_tl($nis)
+  {
+    $siswa = new SiswaModel();
+    $data['keterlambatan'] = $siswa->where(['id_agendaguru'=>$id_agendaguru])->first();
+    $data['nis']=$nis;
+    $data['catatan']=[];
     
-    // return view('header')
-    //      .view('menu',$data)
-    //      .view('form_terlambat')
-    //      .view('footer');
-    echo json_encode($data);
-    // }
-    // else {
-    //   echo "C";
-    // }
+    // $data['nama_siswa']=$siswa->where(['rombel'=>$rombel])->findAll();
+    //   //$data['nama_siswa'] = $siswa->where('rombel', $rombel)->findAll();
+    // echo json_encode($data['nama_siswa']);
+  
+    $siswa->save($data);
   }
 
   public function simpanpresensi()

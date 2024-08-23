@@ -45,7 +45,7 @@ class PresensiSiswa extends Pbm
     $data['siswa'] = $presensi->where('rombel', $rombel)->findAll();
     
     //$data['tess']=$presensi->getLastQuery();
-    d($data);
+    //d($data);
 
     
     return view('header')

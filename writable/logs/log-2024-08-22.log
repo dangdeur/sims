@@ -1,0 +1,623 @@
+INFO - 2024-08-22 11:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-22 11:47:48 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'sims'@'localhost' in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:185
+Stack trace:
+#0 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(185): mysqli->real_connect()
+#1 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+#9 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+#11 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+#17 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+#18 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+#19 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+#20 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#21 /home/ddr-sarpras/www/sims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#22 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#5 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#6 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#7 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+#8 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#9 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+#10 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#11 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#12 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#13 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#14 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#15 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+#16 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+#17 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+#18 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+#19 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#20 /home/ddr-sarpras/www/sims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#21 {main}
+CRITICAL - 2024-08-22 11:47:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 5 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 6 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+11 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+12 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+13 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+14 SYSTEMPATH/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+15 SYSTEMPATH/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+16 SYSTEMPATH/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+17 SYSTEMPATH/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+18 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+19 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+20 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 11:48:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-22 11:48:21 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'sims'@'localhost' in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:185
+Stack trace:
+#0 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(185): mysqli->real_connect()
+#1 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+#9 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+#11 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+#17 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+#18 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+#19 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+#20 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#21 /home/ddr-sarpras/www/sims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#22 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#5 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#6 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#7 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+#8 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#9 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+#10 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#11 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#12 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#13 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#14 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#15 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+#16 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+#17 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+#18 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+#19 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#20 /home/ddr-sarpras/www/sims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#21 {main}
+CRITICAL - 2024-08-22 11:48:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 5 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 6 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+11 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+12 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+13 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+14 SYSTEMPATH/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+15 SYSTEMPATH/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+16 SYSTEMPATH/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+17 SYSTEMPATH/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+18 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+19 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+20 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 11:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-22 11:48:22 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'sims'@'localhost' in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:185
+Stack trace:
+#0 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(185): mysqli->real_connect()
+#1 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+#9 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+#11 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+#17 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+#18 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+#19 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+#20 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#21 /home/ddr-sarpras/www/sims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#22 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#5 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#6 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#7 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+#8 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#9 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+#10 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#11 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#12 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#13 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#14 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#15 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+#16 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+#17 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+#18 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+#19 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#20 /home/ddr-sarpras/www/sims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#21 {main}
+CRITICAL - 2024-08-22 11:48:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 5 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 6 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+11 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+12 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+13 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+14 SYSTEMPATH/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+15 SYSTEMPATH/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+16 SYSTEMPATH/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+17 SYSTEMPATH/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+18 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+19 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+20 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 11:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-22 11:48:22 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'sims'@'localhost' in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:185
+Stack trace:
+#0 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(185): mysqli->real_connect()
+#1 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+#9 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+#11 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+#17 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+#18 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+#19 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+#20 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#21 /home/ddr-sarpras/www/sims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#22 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#5 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#6 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#7 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+#8 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#9 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+#10 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#11 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#12 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#13 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#14 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#15 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+#16 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+#17 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+#18 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+#19 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#20 /home/ddr-sarpras/www/sims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#21 {main}
+CRITICAL - 2024-08-22 11:48:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 5 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 6 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+11 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+12 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+13 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+14 SYSTEMPATH/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+15 SYSTEMPATH/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+16 SYSTEMPATH/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+17 SYSTEMPATH/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+18 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+19 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+20 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 11:48:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-08-22 11:48:28 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'sims'@'localhost' in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:185
+Stack trace:
+#0 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(185): mysqli->real_connect()
+#1 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+#9 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+#11 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+#17 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+#18 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+#19 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+#20 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#21 /home/ddr-sarpras/www/sims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#22 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#3 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#5 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#6 /home/ddr-sarpras/www/sims/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#7 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+#8 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#9 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+#10 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#11 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#12 /home/ddr-sarpras/www/sims/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#13 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+#14 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#15 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+#16 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+#17 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+#18 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+#19 /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#20 /home/ddr-sarpras/www/sims/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#21 {main}
+CRITICAL - 2024-08-22 11:48:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 5 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 6 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(685): setting()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(703): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(390): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionKey()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(374): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+11 VENDORPATH/codeigniter4/shield/src/Auth.php(191): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+12 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+13 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(226): CodeIgniter\Shield\Collectors\Auth->display()
+14 SYSTEMPATH/Debug/Toolbar.php(93): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+15 SYSTEMPATH/Debug/Toolbar.php(370): CodeIgniter\Debug\Toolbar->run()
+16 SYSTEMPATH/Filters/DebugToolbar.php(42): CodeIgniter\Debug\Toolbar->prepare()
+17 SYSTEMPATH/Filters/Filters.php(211): CodeIgniter\Filters\DebugToolbar->after()
+18 SYSTEMPATH/CodeIgniter.php(522): CodeIgniter\Filters\Filters->run()
+19 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+20 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 13:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:20:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:20:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:30:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:30:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 13:31:04 --> BaconQrCode\Exception\RuntimeException: You need to install the imagick extension to use this back end
+in VENDORPATH/bacon/bacon-qr-code/src/Renderer/Image/ImagickImageBackEnd.php on line 64.
+ 1 VENDORPATH/simplesoftwareio/simple-qrcode/src/Generator.php(464): BaconQrCode\Renderer\Image\ImagickImageBackEnd->__construct()
+ 2 VENDORPATH/simplesoftwareio/simple-qrcode/src/Generator.php(440): SimpleSoftwareIO\QrCode\Generator->getFormatter()
+ 3 VENDORPATH/simplesoftwareio/simple-qrcode/src/Generator.php(171): SimpleSoftwareIO\QrCode\Generator->getRenderer()
+ 4 APPPATH/Controllers/Cetak.php(304): SimpleSoftwareIO\QrCode\Generator->generate()
+ 5 APPPATH/Controllers/Cetak.php(95): App\Controllers\Cetak->qr()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Cetak->agenda_tuta()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 13:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 13:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 13:33:28 --> ErrorException: Undefined variable $nama_lengkap
+in APPPATH/Views/menu.php on line 4.
+ 1 APPPATH/Views/menu.php(4): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/ddr-sarpras/www/sims/app/Views/menu.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Siswa.php(41): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->form_terlambat()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 14:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:33:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:35:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:35:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:41:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:44:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 14:44:29 --> ParseError: syntax error, unexpected token "echo"
+in APPPATH/Views/footer.php on line 4.
+ 1 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Siswa.php(43): view()
+ 4 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->form_terlambat()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 14:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:51:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:51:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:52:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 14:52:06 --> ErrorException: Undefined variable $nama_lengkap
+in APPPATH/Views/menu.php on line 4.
+ 1 APPPATH/Views/menu.php(4): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/ddr-sarpras/www/sims/app/Views/menu.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Siswa.php(43): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->form_terlambat()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 14:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:55:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:56:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:56:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:56:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 14:56:31 --> ErrorException: Undefined variable $nama_lengkap
+in APPPATH/Views/menu.php on line 4.
+ 1 APPPATH/Views/menu.php(4): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(228): include('/home/ddr-sarpras/www/sims/app/Views/menu.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1178): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Siswa.php(43): view()
+ 6 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->form_terlambat()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 14:57:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:57:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:57:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:57:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 14:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:05:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:05:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:05:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:06:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:06:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 15:08:26 --> ArgumentCountError: Too few arguments to function App\Controllers\Siswa::tampil_siswa(), 0 passed in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH/Controllers/Siswa.php on line 65.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->tampil_siswa()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 15:08:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 15:08:28 --> ArgumentCountError: Too few arguments to function App\Controllers\Siswa::tampil_siswa(), 0 passed in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH/Controllers/Siswa.php on line 65.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->tampil_siswa()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 15:08:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:08:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 15:09:00 --> ArgumentCountError: Too few arguments to function App\Controllers\Siswa::tampil_siswa(), 0 passed in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH/Controllers/Siswa.php on line 65.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->tampil_siswa()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 15:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 15:09:04 --> ArgumentCountError: Too few arguments to function App\Controllers\Siswa::tampil_siswa(), 0 passed in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH/Controllers/Siswa.php on line 65.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->tampil_siswa()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 15:20:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:20:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 15:20:14 --> ArgumentCountError: Too few arguments to function App\Controllers\Siswa::tampil_siswa(), 0 passed in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH/Controllers/Siswa.php on line 65.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->tampil_siswa()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 15:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 15:20:57 --> ArgumentCountError: Too few arguments to function App\Controllers\Siswa::tampil_siswa(), 0 passed in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH/Controllers/Siswa.php on line 65.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->tampil_siswa()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 15:21:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 15:21:02 --> ArgumentCountError: Too few arguments to function App\Controllers\Siswa::tampil_siswa(), 0 passed in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH/Controllers/Siswa.php on line 65.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->tampil_siswa()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 15:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 15:21:07 --> ArgumentCountError: Too few arguments to function App\Controllers\Siswa::tampil_siswa(), 0 passed in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH/Controllers/Siswa.php on line 65.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->tampil_siswa()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 15:21:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:21:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-22 15:21:15 --> ArgumentCountError: Too few arguments to function App\Controllers\Siswa::tampil_siswa(), 0 passed in /home/ddr-sarpras/www/sims/vendor/codeigniter4/framework/system/CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH/Controllers/Siswa.php on line 65.
+ 1 SYSTEMPATH/CodeIgniter.php(941): App\Controllers\Siswa->tampil_siswa()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-08-22 15:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 15:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:02:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:02:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:06:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:06:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:07:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:07:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:08:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:08:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-22 16:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

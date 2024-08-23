@@ -1,10 +1,12 @@
 <div class="container">
   <?php 
   //$nama_rombel=array();
+  $nama_rombel[NULL]='Pilih Rombel';
   for ($a=0;$a<count($rombel);$a++)
   {
     $nama_rombel[$rombel[$a]['rombel']]=$rombel[$a]['rombel'];
   }
+  //d($nama_rombel);
   //echo form_open("form_terlambat",['class'=>'row g-3']);
   echo '<div class="row g-3">';
   echo '<div class="col-auto">';
@@ -13,9 +15,10 @@
   echo '<div class="col-auto">';
   //echo form_submit('tampilkan', 'Tampilkan',['class'=>'form-control']);
   echo '</div>';
+  echo '<div id="tampil"></div>';
   echo '</div>';
   ?>
-  <div id="tampil"></div>
+  
 
 
 
@@ -31,46 +34,61 @@
     $(document).ready(function () {
         $('#rombel').change(function () {
 
-            var rombel = $('#rombel').val(); // <-- change this line
+            var rombel = $('#rombel').val();
             console.log(rombel);
 
             $.ajax({
-                url: "<?php base_url('tampil_siswa'); ?> ",
-                // async: false,
+               
+                url: "<?php echo base_url(); ?>"+"tampil_siswa/"+rombel,
                 type: "POST",
-                // data: "rombel="+rombel,
-                data:{"rombel":rombel},
+               
                 contentType: "application/json",
-                dataType: "json",
-
-                success: function(result) {
-                  var data = json.parse(result);
-                    $('#tampil').html(data.nis);
-                }
-            })
-        });
-    });
-
-
-    function fetchStateData(countryId) {
-            $.ajax({
-                url: "<?php echo site_url("state") ?>",
-                method: "POST",
-                data: {
-                    cId: countryId
-                },
-                success: function(result) {
-                    let data = JSON.parse(result);
-
-                    let output = "<option>select state</option>";
-                    for (let row in data) {
-                        output += `<option value="${data[row].id}">${data[row].name}</option>`;
-                        // console.log(data[row].id);
-                        // console.log(data[row].name);
-                    }
-                    document.querySelector("#stateID").innerHTML = output;
-                    // console.log(result);
+                dataType: "JSON",
+                success: function(data) {
+                  var i;
+                  var html='<h4>Input data keterlambatan kelas : '+rombel+'</h4>';
+                   html +='<table class="table table-striped"><tr><th>No</th><th>NIS</th><th>Nama Siswa</th><th></th></tr>';
+                  for (i=0;i<data.length;i++) {
+                    var no=i+1;
+                    html += '<tr><td>'+no+'</td><td>'+data[i].nis+'</td><td>'+data[i].nama_siswa+'</td>';
+                    html +='<td><button class="form-control btn-warning" name="tl" id="tl" onClick="tl('+data[i].nis+');">Terlambat</button></td></tr>';
+                  }
+                  html +='</table>';
+                    $('#tampil').html(html);
                 }
             });
-        }
+        });
+
+
+       
+
+    });
+
+    
+      function tl(nis) {
+
+$.ajax({
+   
+    url: "<?php echo base_url(); ?>"+"simpan_tl/"+nis,
+    type: "POST",
+   
+    contentType: "application/json",
+    dataType: "JSON",
+    success: function(data) {
+      var i;
+      var html='<h4>Input data keterlambatan kelas : '+rombel+'</h4>';
+       html +='<table class="table table-striped"><tr><th>No</th><th>NIS</th><th>Nama Siswa</th><th></th></tr>';
+      for (i=0;i<data.length;i++) {
+        var no=i+1;
+        html += '<tr><td>'+no+'</td><td>'+data[i].nis+'</td><td>'+data[i].nama_siswa+'</td>';
+        html +='<td><button class="form-control btn-warning" name="tl" id="tl" onClick="tl('+data[i].nis+');">Terlambat</button></td></tr>';
+      }
+      html +='</table>';
+        $('#tampil').html(html);
+    }
+});
+}
+
+
+  
 </script>
