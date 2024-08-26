@@ -520,4 +520,33 @@ public function tambahpresensi($id_agendaguru)
         
     }
 
+    public function tatapmuka($mapel=false)
+    {
+      $data = session()->get();
+      if ($this->request->is('post')) {
+        $mapel=$this->request->getPost('mapel');
+        $rombel=$this->request->getPost('rombel');
+        $agendamodel = new AgendaGuruModel();
+        $data ['agenda']=  $agendamodel->where(['kode_guru'=> $data['kode_pengguna'],'rombel'=>$rombel,'mapel'=>$mapel])->orderBy('id_agendaguru','ASC')->findAll();
+        d($data);
+        return view('header')
+         .view('menu',$data)
+         .view('rekap_tatapmuka')
+         .view('footer');
+      }
+      else {
+        $jadwal= $this->pbm->jadwal_data();
+        $data['mapel']=$this->mapel_jadwal($jadwal);
+        $data['rombel']=$this->rombel_jadwal($jadwal);
+        d($data);
+        return view('header')
+         .view('menu',$data)
+         .view('form_tatapmuka')
+         .view('footer');
+         
+      }
+        
+     
+    }
+
 }

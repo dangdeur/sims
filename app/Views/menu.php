@@ -22,12 +22,12 @@
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="<?= site_url('jadwal') ?>"> Jadwal </a></li>
 						<li><a class="dropdown-item" href="<?= site_url('agendaguru') ?>"> Agenda Guru </a></li>
-						<!-- <li><a class="dropdown-item" href=""> Agenda Guru &raquo;</a>
+						<li><a class="dropdown-item" href=""> Rekap &raquo;</a>
 				   <ul class="submenu dropdown-menu">
-						  <li><a class="dropdown-item" href="<?= site_url('agendaguru/baru') ?>">Agenda PBM Saat Ini</a></li>
-						  <li><a class="dropdown-item" href="<?= site_url('agendaguru/baru_telat') ?>">Agenda PBM Terlewat</a></li>
+						  <li><a class="dropdown-item" href="<?= site_url('agendaguru/tatapmuka') ?>">Tatap Muka</a></li>
+						  <!-- <li><a class="dropdown-item" href="<?= site_url('agendaguru/baru_telat') ?>">Agenda PBM Terlewat</a></li> -->
 					</ul>
-				</li> -->
+				</li>
 
 					</ul>
 				</li>
