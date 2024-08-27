@@ -11,12 +11,12 @@
 
 
   	<ul class="navbar-nav">
-  		<li class="nav-item active"> <a class="nav-link" href="<?= site_url('info') ?>">Info </a> </li>
-  		<li class="nav-item dropdown">
+  		<li class="nav-item active"> <a class="nav-link" href="<?= base_url('admin/ambil_alih') ?>">Pengguna </a> </li>
+  		<!-- <li class="nav-item dropdown">
   			<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  PBM  </a>
   		    <ul class="dropdown-menu">
   			  <li><a class="dropdown-item" href="<?= site_url('jadwal') ?>"> Jadwal </a></li>
-          <li><a class="dropdown-item" href="<?= site_url('agendaguru') ?>"> Agenda Guru </a></li>
+          <li><a class="dropdown-item" href="<?= site_url('agendaguru') ?>"> Agenda Guru </a></li> -->
           <!-- <li><a class="dropdown-item" href="#"> Dropdown item 2 &raquo; </a>
   			  	 <ul class="submenu dropdown-menu">
   				    <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
@@ -31,8 +31,8 @@
   				    <li><a class="dropdown-item" href="#">Submenu item 5</a></li>
   				 </ul>
   			  </li> -->
-  			  </ul>
-        </li>
+  			  <!-- </ul>
+        </li> -->
 
 		
 

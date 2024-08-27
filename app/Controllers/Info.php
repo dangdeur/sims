@@ -15,7 +15,7 @@ class Info extends BaseController
     $data['info'] = $model->select('*')->orderBy('tanggal', 'DESC')->paginate(10);
     $data['pager'] = $model->pager;
 
-
+    d($data);
 
     return view('header')
       . view('menu', $data)

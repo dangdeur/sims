@@ -12,26 +12,37 @@ use App\Models\WalasModel;
 
 class Admin extends BaseController
 {
+    
+    public function index()
+    {
+        $data = $this->session->get();
+        
+        return view('admin/header')
+         .view('admin/menu',$data)
+         .view('admin/index')
+       .view('admin/footer');
+    }
     public function Isitgldibuat()
     {
         $agendamodel = new AgendaGuruModel();
         $agenda = $agendamodel->where('dibuat', '')->findAll();
-        dd($agenda);
+        //dd($agenda);
     }
 
     public function ambil_alih ($id=FALSE)
     {
+        $data = $this->session->get();
         $pengguna = new PenggunaModel();
         if ($id === false)
         {
         
         $data['pengguna']=$pengguna->findAll();
-        d($data);
+        //d($data);
 
-        //return view('header')
-        // .view('menu',$data)
-       return  view('admin/ambilalih',$data);
-          //.view('footer');
+        return view('admin/header')
+         .view('admin/menu',$data)
+       .view('admin/ambilalih',$data)
+         .view('admin/footer');
         }
         else {
            
