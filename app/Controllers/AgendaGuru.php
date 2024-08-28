@@ -5,6 +5,7 @@ use Config\Services;
 use App\Models\AgendaGuruModel;
 use App\Models\PbmModel;
 use App\Models\SiswaModel;
+use App\Models\KeterlambatanModel;
 
 
 // class Agenda extends BaseController
@@ -520,7 +521,7 @@ public function tambahpresensi($id_agendaguru)
         
     }
 
-    public function tatapmuka($mapel=false)
+    public function tatapmuka()
     {
       $data = session()->get();
       if ($this->request->is('post')) {
@@ -528,6 +529,9 @@ public function tambahpresensi($id_agendaguru)
         $rombel=$this->request->getPost('rombel');
         $agendamodel = new AgendaGuruModel();
         $data ['agenda']=  $agendamodel->where(['kode_guru'=> $data['kode_pengguna'],'rombel'=>$rombel,'mapel'=>$mapel])->orderBy('id_agendaguru','ASC')->findAll();
+
+        $siswa = new SiswaModel();
+        $data['siswa'] = $siswa->where('rombel', $rombel)->findAll();
         d($data);
         return view('header')
          .view('menu',$data)

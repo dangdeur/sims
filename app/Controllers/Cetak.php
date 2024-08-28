@@ -42,7 +42,7 @@ class Cetak extends BaseController
 		$pdf->setTitle('Agenda Harian Mengajar');
 		$pdf->setSubject('SMKN 2 Pandeglang');
 		// $pdf->setKeywords('TCPDF, PDF, example, test, guide');
-		$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+		$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE,PDF_HEADER_STRING);
 		// set header and footer fonts
 		$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 		$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
@@ -53,6 +53,14 @@ class Cetak extends BaseController
 		$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
 		$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 		// set auto page breaks
+		//get the current page break margin:
+		//$bMargin = $pdf->getBreakMargin();   
+		//$bMargin = 55;
+		//get current auto-page-break mode:
+		//$auto_page_break = $pdf->getAutoPageBreak();
+
+//enable auto page break:
+		//$pdf->SetAutoPageBreak($auto_page_break, $bMargin);
 		$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 		// set image scale factor
 		$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);

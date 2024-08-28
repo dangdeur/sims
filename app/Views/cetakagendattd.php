@@ -48,7 +48,7 @@ for ($a=0;$a<count($agenda);$a++)
   echo '<tr>
           <td style="width: 5%;text-align: center;">'.$no;
   echo '</td><td style="width: 20%;text-align: center;">'.$tanggal.'</td>
-          <td style="width: 75%;text-align: left;">Mengajar '.$agenda[$a]['mapel'].' di '.$agenda[$a]['rombel'].' dari jam '.$jam_awal[0].'-'.$jam_akhir[1].'</td>
+          <td style="width: 75%;text-align: left;">Mengajar '.$agenda[$a]['mapel'].' di '.$agenda[$a]['rombel'].' jam '.$jam_awal[0].'-'.$jam_akhir[1].'</td>
   </tr>';
  
   $no++;
@@ -59,7 +59,8 @@ for ($a=0;$a<count($agenda);$a++)
 
 
 <br /><br />
-<table border="0" cellspacing="2" cellpadding="2">
+<table border="0" cellspacing="2" cellpadding="2" nobr="true">
+  
   <tr>
   <td style="width: 33%;text-align: center;"></td>
   <td style="width: 33%;text-align: center;"></td>
@@ -69,7 +70,7 @@ for ($a=0;$a<count($agenda);$a++)
   <tr>
   <td style="width: 33%;text-align: center;">Kepala Sekolah</td>
   <td style="width: 33%;text-align: center;">Wakabid. Kurikulum</td>
-  <td style="width: 33%;text-align: center;">Guru<br /><br /><br /><br /></td>
+  <td style="width: 33%;text-align: center;">Guru Matapelajaran<br /><br /><br /><br /></td>
   </tr>
 
   <tr>
@@ -91,6 +92,6 @@ for ($a=0;$a<count($agenda);$a++)
   }
  ?>
   </tr>
-  
+
 </table>
 

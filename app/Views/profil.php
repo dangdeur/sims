@@ -20,26 +20,68 @@
   </div>
 </div> -->
 
-<div class="container text-center">
+<div class="container"> 
 
-  <div class="row g-3 align-items-center">
-    <div class="col-auto">
-      <label class="col-form-label">Nama Lengkap</label>
-    </div>
-    <div class="col-auto">
-      <label class="col-form-label">:</label>
-    </div>
-    <div class="col-auto">
-      <label class="col-form-label"><?=$detail['nama']?></label>
-    </div>
-    <!-- <div class="col-auto">
-      <input type="text" class="form-control" value="<?=$detail['nama']?>" disabled>
-    </div> -->
-    <!-- <div class="col-auto">
-      <span id="passwordHelpInline" class="form-text">
-        Must be 8-20 characters long.
-      </span>
-    </div> -->
-  </div>
+<table class="table">
 
+<tr>
+  <td>Nama</td>
+  <td>:</td>
+  <td><?= $detail['nama_gelar'] ?></td>
+</tr>
+<tr>
+  <td>NIP</td>
+  <td>:</td>
+  <td><?= $detail['nip'] ?></td>
+</tr>
+<tr>
+  <td>NUPTK</td>
+  <td>:</td>
+  <td><?= $detail['nuptk'] ?></td>
+</tr>
+<tr>
+  <td>Tempat Tanggal Lahir</td>
+  <td>:</td>
+  <td><?= $detail['tempat_lahir'].', '.$detail['tanggal_lahir'] ?></td>
+</tr>
+<tr>
+  <td>NIK</td>
+  <td>:</td>
+  <td><?= $detail['nik'] ?></td>
+</tr>
+<tr>
+  <td>Status Pegawai</td>
+  <td>:</td>
+  <td><?= $detail['status_kepegawaian'] ?></td>
+</tr>
+<tr>
+  <td>Email</td>
+  <td>:</td>
+  <td><?= $detail['email'] ?></td>
+</tr>
+<tr>
+  <td>No HP</td>
+  <td>:</td>
+  <td><?= $detail['hp'] ?></td>
+</tr>
+<?php
+if (isset($walas))
+{
+  echo '<tr>
+  <td>Walikelas</td>
+  <td>:</td>
+  <td>'.$walas.'</td>
+</tr>';
+}
+
+if (isset($tuta['jabatan']))
+{
+  echo '<tr>
+  <td>Tugas tambahan</td>
+  <td>:</td>
+  <td>'.$tuta['jabatan'].'</td>
+</tr>';
+}
+?>
+</table>
 </div>
