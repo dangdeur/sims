@@ -39,10 +39,16 @@ for ($a=0;$a<count($agenda);$a++)
   $bln=BULAN[substr($kode[1],2,2)];
   $thn=substr($kode[1],4,4);
   $tanggal= $tgl.' '.$bln.' '.$thn;
+  
+  $tgl_barat=$thn.'-'.substr($kode[1],2,2).'-'.$tgl;
+  $waktu=strtotime($tgl_barat);
+  $hari=date('N',$waktu);
+  $jam_awal=explode('-',JP[$hari][$agenda[$a]['jp0']]);
+  $jam_akhir=explode('-',JP[$hari][$agenda[$a]['jp1']]);
   echo '<tr>
           <td style="width: 5%;text-align: center;">'.$no;
   echo '</td><td style="width: 20%;text-align: center;">'.$tanggal.'</td>
-          <td style="width: 75%;text-align: left;">Mengajar di '.$agenda[$a]['rombel'].' untuk matapelajaran '.$agenda[$a]['mapel'].' dari JP '.$agenda[$a]['jp0'].'-'.$agenda[$a]['jp1'].'</td>
+          <td style="width: 75%;text-align: left;">Mengajar '.$agenda[$a]['mapel'].' di '.$agenda[$a]['rombel'].' dari jam '.$jam_awal[0].'-'.$jam_akhir[1].'</td>
   </tr>';
  
   $no++;
@@ -57,18 +63,24 @@ for ($a=0;$a<count($agenda);$a++)
   <tr>
   <td style="width: 33%;text-align: center;"></td>
   <td style="width: 33%;text-align: center;"></td>
-  <td style="width: 33%;text-align: center;">Pandeglang, <?php echo date("d-m-Y"); ?></td>
+  <td style="width: 33%;text-align: center;">Pandeglang, <?php echo date("d").' '. BULAN[date("m")].' '.date("Y"); ?></td>
   </tr>
 
   <tr>
   <td style="width: 33%;text-align: center;">Kepala Sekolah</td>
   <td style="width: 33%;text-align: center;">Wakabid. Kurikulum</td>
-  <td style="width: 33%;text-align: center;">Guru<br /><br /><br /></td>
+  <td style="width: 33%;text-align: center;">Guru<br /><br /><br /><br /></td>
   </tr>
 
   <tr>
-  <td style="width: 33%;text-align: center;">Drs. Ade Firdaus, M. Pd.</td>
-  <td style="width: 33%;text-align: center;">Retno Utami K, M. Si.</td>
+  <td style="width: 33%;text-align: center;"><?=PEJABAT['kepsek']['nama']?></td>
+  <td style="width: 33%;text-align: center;"><?=PEJABAT['wakakur']['nama']?></td>
+  <td style="width: 33%;text-align: center;"></td>
+  </tr>
+
+  <tr>
+  <td style="width: 33%;text-align: center;"><?=PEJABAT['kepsek']['nip']?></td>
+  <td style="width: 33%;text-align: center;"><?=PEJABAT['wakakur']['nip']?></td>
   <td style="width: 33%;text-align: center;"></td>
   </tr>
   

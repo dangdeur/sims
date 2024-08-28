@@ -35,7 +35,7 @@ class Cetak extends BaseController
 
 		//d($data);
 		$html=view('cetakagendattd',$data);
-dd($data);
+//dd($data);
 		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 		$pdf->setCreator(PDF_CREATOR);
 		$pdf->setAuthor('Endang Suhendar');
