@@ -62,8 +62,8 @@ $routes->post('/tutaedit/(.+)', 'TugasTambahan::edit/$1');
 
 //admin
 $routes->get('/admin', 'Admin::index');
-$routes->get('/admin/ambilalih', 'Admin::ambil_alih');
-$routes->get('/admin/ambilalih/(.+)', 'Admin::ambil_alih/$1');
+$routes->get('/admin/ambil_alih', 'Admin::ambil_alih');
+$routes->get('/admin/ambil_alih/(.+)', 'Admin::ambil_alih/$1');
 
 //Piket
 $routes->get('/home', 'Home::index');

@@ -9,7 +9,7 @@
   <tr>
   <td style="width: 20%;text-align: left;">Nama</td>
   <td style="width: 5%;text-align: left;">:</td>
-  <td style="width: 75%;text-align: left;"><?= $staf['nama'] ?></td>
+  <td style="width: 75%;text-align: left;"><?= $staf['nama_gelar'] ?></td>
   </tr>
 
   <tr>
@@ -75,13 +75,21 @@ for ($a=0;$a<count($agenda);$a++)
   <tr>
   <td style="width: 33%;text-align: center;"><?=PEJABAT['kepsek']['nama']?></td>
   <td style="width: 33%;text-align: center;"><?=PEJABAT['wakakur']['nama']?></td>
-  <td style="width: 33%;text-align: center;"></td>
+  <td style="width: 33%;text-align: center;"><?= $staf['nama_gelar'] ?></td>
   </tr>
 
   <tr>
-  <td style="width: 33%;text-align: center;"><?=PEJABAT['kepsek']['nip']?></td>
-  <td style="width: 33%;text-align: center;"><?=PEJABAT['wakakur']['nip']?></td>
-  <td style="width: 33%;text-align: center;"></td>
+  <td style="width: 33%;text-align: center;">NIP. <?=PEJABAT['kepsek']['nip']?></td>
+  <td style="width: 33%;text-align: center;">NIP. <?=PEJABAT['wakakur']['nip']?></td>
+  <?php
+  if (isset($staf['nip']))
+  {
+    echo '<td style="width: 33%;text-align: center;">NIP. '.$staf['nip'].'</td>';
+  }
+  else {
+    echo '<td style="width: 33%;text-align: center;"></td>';
+  }
+ ?>
   </tr>
   
 </table>
