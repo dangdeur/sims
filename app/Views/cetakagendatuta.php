@@ -52,7 +52,7 @@ for ($a=0;$a<count($agenda);$a++)
   </table>
 
 
-<br /><br />
+<!-- <br /><br />
 <table border="0" cellspacing="2" cellpadding="2">
   <tr>
   <td style="width: 33%;text-align: center;"></td>
@@ -62,5 +62,41 @@ for ($a=0;$a<count($agenda);$a++)
 </td>
   </tr>
   
-</table>
+</table> -->
 
+<br /><br />
+<table border="0" cellspacing="2" cellpadding="2" nobr="true">
+  
+  <tr>
+  <td style="width: 33%;text-align: center;"></td>
+  <td style="width: 33%;text-align: center;"></td>
+  <td style="width: 33%;text-align: center;">Pandeglang, <?php echo date("d").' '. BULAN[date("m")].' '.date("Y"); ?></td>
+  </tr>
+
+  <tr>
+  <td style="width: 33%;text-align: center;">Kepala Sekolah</td>
+  <td style="width: 33%;text-align: center;"></td>
+  <td style="width: 33%;text-align: center;">Pengampu bidang/jabatan<br /><br /><br /><br /></td>
+  </tr>
+
+  <tr>
+  <td style="width: 33%;text-align: center;"><?=PEJABAT['kepsek']['nama']?></td>
+  <td style="width: 33%;text-align: center;"></td>
+  <td style="width: 33%;text-align: center;"><?= $staf['nama_gelar'] ?></td>
+  </tr>
+
+  <tr>
+  <td style="width: 33%;text-align: center;">NIP. <?=PEJABAT['kepsek']['nip']?></td>
+  <td style="width: 33%;text-align: center;"></td>
+  <?php
+  if (isset($staf['nip']))
+  {
+    echo '<td style="width: 33%;text-align: center;">NIP. '.$staf['nip'].'</td>';
+  }
+  else {
+    echo '<td style="width: 33%;text-align: center;"></td>';
+  }
+ ?>
+  </tr>
+
+</table>
