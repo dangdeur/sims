@@ -553,4 +553,42 @@ public function tambahpresensi($id_agendaguru)
      
     }
 
+    public function lapor()
+    {
+      $data = session()->get();
+      if ($this->request->is('post')) {
+        $model = new AgendaGuruModel();
+        $data['jadwal']=$this->pbm->jadwal_data();
+        $guru = $data['kode_pengguna'];
+        $rombel = $this->request->getPost('rombel');
+        $lokasi = $this->request->getPost('lokasi');
+        $tanggal=date("dmY");
+        $kode_agenda=$guru."-".$tanggal."-".$rombel;
+        $data = array(
+            'rombel' => $rombel,
+            // 'jp0' => $this->request->getPost('jp0'),
+            // 'jp1' => $this->request->getPost('jp1'),
+            'mapel' => $this->request->getPost('mapel_agenda'),
+            // 'materi' => $this->request->getPost('materi'),
+            'kode_agendaguru' => $kode_agenda,
+            'lokasi' => $lokasi,
+            'kode_guru' => $guru,
+        );
+        dd($data);
+        // $model->insert($data,false);
+        // return redirect()->to('/agendaguru');  
+      }
+      else {
+        $jadwal=$this->pbm->jadwal_data();
+        $data['rombel']=$this->rombel_jadwal($jadwal);
+        $data['mapel']=$this->mapel_jadwal($jadwal);
+        d($data);
+        return view('header')
+        .view('menu',$data)
+        .view('form_lapor')
+        .view('footer');
+      }
+      
+    }
+
 }

@@ -32,6 +32,10 @@ $routes->post('/agendaguru/hapus/(.+)', 'AgendaGuru::hapus/$1');
 $routes->get('/agendaguru/tatapmuka', 'AgendaGuru::tatapmuka');
 $routes->post('/agendaguru/tatapmuka', 'AgendaGuru::tatapmuka');
 
+//lapor
+$routes->get('/agendaguru/lapor', 'AgendaGuru::lapor');
+$routes->post('/agendaguru/lapor', 'AgendaGuru::lapor');
+
 //cetak
 $routes->get('/cetakagenda', 'Cetak::agenda');
 $routes->post('/cetakagenda', 'Cetak::agenda');
