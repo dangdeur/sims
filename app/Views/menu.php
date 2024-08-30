@@ -13,6 +13,7 @@
 				<li class="nav-item dropdown"> 
 				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" ?>Info </a> 
 					<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="<?= site_url('info') ?>"> Pengumuman </a></li>
 						<li><a class="dropdown-item" href="<?= site_url('profil') ?>"> Profil </a></li>
 					</ul>
 			
@@ -24,7 +25,7 @@
 						<li><a class="dropdown-item" href="<?= site_url('agendaguru') ?>"> Agenda Guru </a></li>
 						<li><a class="dropdown-item" href=""> Rekap &raquo;</a>
 				   <ul class="submenu dropdown-menu">
-						  <li><a class="dropdown-item" href="<?= site_url('agendaguru/tatapmuka') ?>">Tatap Muka</a></li>
+						  <li><a class="dropdown-item disabled" href="<?= site_url('agendaguru/tatapmuka') ?>">Tatap Muka</a></li>
 						  <!-- <li><a class="dropdown-item" href="<?= site_url('agendaguru/baru_telat') ?>">Agenda PBM Terlewat</a></li> -->
 					</ul>
 				</li>
@@ -90,7 +91,7 @@
 							<!-- <li><a class="dropdown-item" href="<?= site_url('terlambat') ?>"> Keterlambatan Siswa </a></li> -->
 							<li><a class="dropdown-item" href=""> Keterlambatan Siswa &raquo;</a>
 								<ul class="submenu dropdown-menu">
-									<li><a class="dropdown-item" href="<?= site_url('form_terlambat') ?>">Input
+									<li><a class="dropdown-item disabled" href="<?= site_url('form_terlambat') ?>" >Input
 											Keterlambatan</a></li>
 									<!-- <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
 					  <li><a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>

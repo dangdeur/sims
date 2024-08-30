@@ -17,6 +17,7 @@ for ($a=0;$a<count($agenda);$a++)
 }
 
 }
+d($rekap);
 foreach ($rekap as $datanya=>$kelas)
 {
     echo $datanya.'<br />';

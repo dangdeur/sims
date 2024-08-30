@@ -15,8 +15,8 @@ defined( 'JAM_PBM' ) || define( 'JAM_PBM', [
 ] );
 
 defined( 'PEJABAT' ) || define( 'PEJABAT', [
-    'kepsek'=>['nama'=>'Drs. Ade Firdaus, M. Pd','nip'=>'196606061992121003'],
-    'wakakur'=>['nama'=>'Retno Utami K, M. Si','nip'=>'197011201997032007'],
+    'kepsek'=>['nama'=>'Drs. Ade Firdaus, M. Pd.','nip'=>'196606061992121003'],
+    'wakakur'=>['nama'=>'Retno Utami K, S. TP., M. Si.','nip'=>'197011201997032007'],
 ]);
 defined( 'JP' ) || define( 'JP', [
     '1'=>[ '1'=>'08:00-08:45', '2'=>'08:45-09:30', '3'=>'09:45-10:30', '4'=>'10:30-11:15', '5'=>'11:15-12:00', '6'=>'12:30-13:10', '7'=>'13:10-13:50', '8'=>'13:50-14:30', '9'=>'14:30-15:10', '10'=>'15:10-15:50' ],
