@@ -35,7 +35,8 @@ else {
     <div class="py-5 text-center">
       <!-- <h1 class="text-danger">DATA SISWA BELUM VALID, BELUM BISA ISI PRESENSI, HANYA AGENDA GURU SAJA</h1> -->
       <!-- <img class="d-block mx-auto mb-4" src="<?= base_url('gambar/logo.png') ?>" alt="" width="72" height="72"> -->
-      <h2>Agenda Guru <?= $nama_lengkap ?></h2>
+      <h2>Agenda Guru</h2>
+      
       <?php
      
         echo date('l, j F Y, H:i');
@@ -54,12 +55,15 @@ else {
         echo '<a type="submit" class="btn btn-primary" href="'.site_url('agendaguru/baru').'">Isi Agenda Saat Ini</a>';
         echo '</div>';
         
-        echo '</div>';
+        echo '</div><br />';
        
 
      if(isset($agenda) && !empty($agenda) && !isset($form)){
       
-      echo $pager->links('default', 'paginasi');
+      echo $pager->links('default', 'paginasibootstrap');
+      //echo $pager->links('default', 'paginasi');
+      //echo $pager->links('default', 'default_full');
+      //echo $pager->links('default', 'default_simple');
       echo '<table class="table">';
       echo '<tr>';
       echo '<th>No</th><th>Tanggal</th><th>Rombel</th><th>Mapel</th><th>Materi</th><th>JP</th><th>Absensi</th><th></th>';
@@ -72,10 +76,27 @@ else {
           $bln=BULAN[substr($kode[1],2,2)];
           $thn=substr($kode[1],4,4);
           $tanggal= $tgl." ".$bln." ".$thn;
+          $waktu=strtotime($thn.'-'.substr($kode[1],2,2).'-'.$tgl);
+          $hari=date('N',$waktu);
+          //echo $hari;
+
+          if ($hari==5 && ($agenda[$a]['jp0']>8 || $agenda[$a]['jp1']>8))
+          {
+            $pesan='<br /><div Class="small text-bg-danger">Hari jumat maksimal 8 JP</div>';
+            $error_jp='class="text-bg-danger"';
+          }
+          elseif ($hari==6 || $hari==7){
+            $pesan='<br /><div Class="small text-bg-danger">Hari Sabtu/Minggu Tidak ada PBM</div>';
+            $error_jp='class="text-bg-warning"';
+          }
+          else {
+            $pesan='';
+            $error_jp='';
+          }
 
           //$tgl=substr($tanggal[1],0,2).' '.BULAN[substr($tanggal[1],3,2)];
           echo '<tr><td><a type="button" class="text-danger" href="'.site_url('agendaguru/hapus/'.$agenda[$a]['id_agendaguru']).'"><i class="fa-regular fa-calendar-xmark"></i></a>
-          '.$no_agenda.'</td><td>'.$tanggal.'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td><td>'.$agenda[$a]['materi'].'</td><td>'.$agenda[$a]['jp0'].'-'.$agenda[$a]['jp1'].'</td>
+          '.$no_agenda.'</td><td>'.$tanggal.$pesan.'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td><td>'.$agenda[$a]['materi'].'</td><td '.$error_jp.'>'.$agenda[$a]['jp0'].'-'.$agenda[$a]['jp1'].'</td>
           <td>';
           
           if (is_null($agenda[$a]['absensi']))
@@ -189,6 +210,7 @@ else {
           echo '<td>';
           //echo '<a type="button" class="text-danger" href="'.site_url('agendaguru/hapus/'.$agenda[$a]['id_agendaguru']).'"><i class="fa-regular fa-calendar-xmark"></i></a>';
           //echo '<a type="button" class="btn btn-danger" href="'.site_url('agendaguru/hapus/'.$agenda[$a]['id_agendaguru']).'">Hapus</a>';
+          echo '<a type="button" class="text-primary" href="'.site_url('agendaguru/edit/'.$agenda[$a]['id_agendaguru']).'"><i class="fa-solid fa-pen-to-square"></i></a>';
           echo '</td>';
           echo '</tr>';
           $no_agenda++;

@@ -16,6 +16,8 @@ $routes->get('/logout', 'Login::logout');
 // $routes->get('/profil', 'Profil::index');
 $routes->get('/jadwal', 'Pbm::jadwal');
 $routes->get('/agendaguru', 'AgendaGuru::index');
+$routes->get('/agendaguru/edit/(.+)', 'AgendaGuru::edit/$1');
+$routes->post('/agendaguru/edit/(.+)', 'AgendaGuru::edit/$1');
 $routes->get('/agendaguru/baru', 'AgendaGuru::baru');
 $routes->get('/agendaguru/baru_telat', 'AgendaGuru::baru_telat');
 $routes->post('/agendaguru/simpan', 'AgendaGuru::simpan');

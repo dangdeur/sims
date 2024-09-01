@@ -46,7 +46,7 @@ $jadwal= $this->pbm->jadwal_data();
 //               mapel =>
 $data['rombel']=$this->rombel_jadwal($jadwal);
 $data['mapel']=$this->mapel_jadwal($jadwal);
-  
+
 
   
   //d($data);
@@ -210,6 +210,77 @@ $data['mapel']=$this->mapel_jadwal($jadwal);
     // .view('footer');
     //d($data);
     
+  }
+
+  public function edit($id = FALSE)
+  {
+      $data = session()->get();
+      $model = new AgendaGuruModel();
+      if ($this->request->is('post')) {
+        $rules = [
+          'tanggal'=> 'required',
+          'bulan'=> 'required',
+          'tahun'=> 'required',
+          'rombel' => 'required',
+          'jp0' => 'required',
+          'jp1' => 'required',
+          'mapel' => 'required',
+          'materi' => 'required'
+        ];
+  
+        $errors = [
+          'tanggal' => ['required' =>'Tanggal belum dipilih'],
+          'bulan' => ['required' =>'Bulan belum dipilih'],
+          'tahun' => ['required' =>'Tahun belum dipilih'],
+          'rombel' => ['required' =>'Rombel belum dipilih'],
+          'jp0' => ['required' => 'Jam pelajaran awal belum dipilih'],
+          'jp1' => ['required' => 'Jam pelajaran akhir belum dipilih'],
+          'mapel' => ['required' => 'Mapel belum dipilih'],
+          'materi' => ['required' => 'Materi belum dipilih']
+        ];
+  
+        if (! $this->validate($rules, $errors)) {
+          $data['validation'] = $this->validator;
+          //$data['form']=1;
+          //return view('agendagurubaru',$data);
+          //d($data); 
+          return redirect()->back()->withInput();
+  
+        }
+        else
+        {
+
+        
+          $data['agenda']['tanggal'] = $this->request->getVar('tahun') . '-' . $this->request->getVar('bulan') . '-' . $this->request->getVar('tanggal');
+          $data['agenda']['materi'] = $this->request->getVar('materi');
+          $data['agenda']['rombel'] = $this->request->getVar('rombel');
+          $data['agenda']['mapel'] = $this->request->getVar('mapel');
+          $data['agenda']['jp0'] = $this->request->getVar('jp0');
+          $data['agenda']['jp1'] = $this->request->getVar('jp1');
+          $data['agenda']['kode_guru'] = $data['kode_pengguna'];
+          $data['agenda']['kode_agendaguru'] = $data['kode_pengguna'] . '-' . $this->request->getVar('tanggal') . $this->request->getVar('bulan') . $this->request->getVar('tahun');
+          
+          $model->update($id, $data['agenda']);
+          //return redirect()->to('/agendaguru');
+          return redirect()->to($this->request->getVar('link'));
+      } 
+    }
+      else {
+        $jadwal=$this->pbm->jadwal_data();
+          $data['agenda'] = $model->where('id_agendaguru', $id)->first();
+          $data['rombel_jadwal']=$this->rombel_jadwal($jadwal);
+          $data['mapel_jadwal']=$this->mapel_jadwal($jadwal);
+          d( $data );
+          return view('header')
+              . view('menu', $data)
+              . view('editagendaguru')
+
+              . view('footer');
+      }
+    
+
+      //return redirect()->to( '/tuta' );
+
   }
 
   public function tutabaru ()
