@@ -39,7 +39,7 @@ class Cetak extends BaseController
 		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 		$pdf->setCreator(PDF_CREATOR);
 		$pdf->setAuthor('Endang Suhendar');
-		$pdf->setTitle('Agenda Harian Mengajar');
+		//$pdf->setTitle('Agenda Harian Mengajar');
 		$pdf->setSubject('SMKN 2 Pandeglang');
 		// $pdf->setKeywords('TCPDF, PDF, example, test, guide');
 		$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE,PDF_HEADER_STRING);
@@ -75,8 +75,9 @@ class Cetak extends BaseController
 
 
 		$pdf->writeHTML($html, true, false, true, false, '');
+		ob_end_clean();
 		$this->response->setContentType('application/pdf');
-		$pdf->Output('Agenda Mengajar'.$data['nama_lengkap'].'.pdf', 'I');
+		$pdf->Output('Agenda Mengajar '.$data['nama_lengkap'].'.pdf', 'D');
 	}
 	else {
 		return view('header')
@@ -139,7 +140,7 @@ class Cetak extends BaseController
 
 		$pdf->writeHTML($html, true, false, true, false, '');
 		$this->response->setContentType('application/pdf');
-		$pdf->Output('Agenda Tugas Tambahan'.$data['nama_lengkap'].'.pdf', 'I');
+		$pdf->Output('Agenda Tugas Tambahan '.$data['nama_lengkap'].'.pdf', 'D');
 	}
 	else {
 		return view('header')
