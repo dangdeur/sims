@@ -603,7 +603,7 @@ public function tambahpresensi($id_agendaguru)
 
         $siswa = new SiswaModel();
         $data['siswa'] = $siswa->where('rombel', $rombel)->findAll();
-        d($data);
+        //d($data);
         return view('header')
          .view('menu',$data)
          .view('rekap_tatapmuka')

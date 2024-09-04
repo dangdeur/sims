@@ -51,25 +51,6 @@ defined( 'PROGRAM_KEAHLIAN' ) || define( 'PROGRAM_KEAHLIAN', [ '---', 'Agribisni
 
 
 
-defined( 'PK1' ) || define( 'PK1', 'Agribisnis Tanaman' );
-defined( 'PK2' ) || define( 'PK2', 'Agribisnis Pengolahan Hasil Pertanian' );
-defined( 'PK3' ) || define( 'PK3', 'Teknik Kendaraan Ringan' );
-defined( 'PK4' ) || define( 'PK4', 'Teknik Bisnis Sepeda Motor' );
-defined( 'PK5' ) || define( 'PK5', 'Teknik Ketenagalistrikan' );
-defined( 'PK6' ) || define( 'PK6', 'Desain Komunikasi Visual' );
-defined( 'PK7' ) || define( 'PK7', 'Teknik Jaringan Komputer Dan Telekomunikasi' );
-defined( 'PK8' ) || define( 'PK8', 'Analisis Pengujian Laboratorium' );
-
-//pengguna
-defined( 'ADMIN' ) || define( 'ADMIN', '1' );
-defined( 'VERIFIKATOR' ) || define( 'VERIFIKATOR', '2' );
-
-//pekerjaan
-defined( 'PEKERJAAN' ) || define( 'PEKERJAAN', [ 'Tidak Bekerja', 'PNS/ASN/PPPK', 'TNI/Polri', 'Honorer Pemerintah', 'Karyawan Swasta', 'Buruh Lepas', 'Wiraswasta', 'Petani' ] );
-
-//layanan bantuan
-defined( 'BANTUAN' ) || define( 'BANTUAN', [ 'Reset Password' ] );
-
 //
 /*
 | --------------------------------------------------------------------

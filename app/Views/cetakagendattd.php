@@ -50,9 +50,11 @@ for ($a=0;$a<count($agenda);$a++)
   echo '</td><td style="width: 20%;text-align: center;">'.$tanggal.'</td>
           <td style="width: 75%;text-align: left;">Mengajar '.$agenda[$a]['mapel'].' di '.$agenda[$a]['rombel'].' jam '.$jam_awal[0].'-'.$jam_akhir[1].'</td>
   </tr>';
+  $bulan_aktif =substr($kode[1],2,2);
  
   $no++;
 }
+
 ?>
   </tbody>
   </table>
@@ -60,11 +62,16 @@ for ($a=0;$a<count($agenda);$a++)
 
 <br /><br />
 <table border="0" cellspacing="2" cellpadding="2" nobr="true">
-  
+<?php
+  $tanggal_akhir = cal_days_in_month(CAL_GREGORIAN, $bulan_aktif, date("Y")); // 31
+  ?>
   <tr>
   <td style="width: 33%;text-align: center;"></td>
   <td style="width: 33%;text-align: center;"></td>
-  <td style="width: 33%;text-align: center;">Pandeglang, <?php echo date("d").' '. BULAN[date("m")].' '.date("Y"); ?></td>
+  <td style="width: 33%;text-align: center;">Pandeglang, <?php echo $tanggal_akhir.' '. BULAN[$bulan_aktif].' '.date("Y"); ?></td>
+ 
+  <!-- <td style="width: 33%;text-align: center;">Pandeglang, <?php echo date("t m Y", strtotime($tanggal)); ?></td> -->
+  
   </tr>
 
   <tr>
