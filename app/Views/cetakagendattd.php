@@ -61,7 +61,7 @@ for ($a=0;$a<count($agenda);$a++)
 
 
 <br /><br />
-<table border="0" cellspacing="2" cellpadding="2" nobr="true">
+<table cellspacing="2" cellpadding="2" nobr="true">
 <?php
   $tanggal_akhir = cal_days_in_month(CAL_GREGORIAN, $bulan_aktif, date("Y")); // 31
   ?>

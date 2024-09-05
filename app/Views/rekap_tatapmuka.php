@@ -106,12 +106,18 @@ $jum_tm=count($rekap);
             echo '</tr>';
                 $no++;
         }
+        ?>
+</tbody>
+</table>
+        <?php
+    }
+    else {
+        echo 'Tidak ada data <a class="btn btn-success" href="'.base_url('agendaguru/tatapmuka').'">Ganti Kelas/Mapel</a>';
     }
         ?>
 
 
-        </tbody>
-    </table>
+        
     </div>
 
     <script src="<?= base_url('bootstrap/extensions/sticky-header/bootstrap-table-sticky-header.js') ?>"></script>
