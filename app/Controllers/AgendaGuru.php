@@ -596,13 +596,14 @@ public function tambahpresensi($id_agendaguru)
     {
       $data = session()->get();
       if ($this->request->is('post')) {
-        $mapel=$this->request->getPost('mapel');
-        $rombel=$this->request->getPost('rombel');
+        $data['mapel_tm']=$this->request->getPost('mapel');
+        $data['rombel_tm']=$this->request->getPost('rombel');
         $agendamodel = new AgendaGuruModel();
-        $data ['agenda']=  $agendamodel->where(['kode_guru'=> $data['kode_pengguna'],'rombel'=>$rombel,'mapel'=>$mapel])->orderBy('id_agendaguru','ASC')->findAll();
+        $data ['agenda']=  $agendamodel->where(['kode_guru'=> $data['kode_pengguna'],'rombel'=>$data['rombel_tm'],'mapel'=>$data['mapel_tm']])->orderBy('id_agendaguru','ASC')->findAll();
 
         $siswa = new SiswaModel();
-        $data['siswa'] = $siswa->where('rombel', $rombel)->findAll();
+        $data['siswa'] = $siswa->where('rombel', $data['rombel_tm'])->findAll();
+        //$data['rombel_tm']=$rombel;
         //d($data);
         return view('header')
          .view('menu',$data)
@@ -613,7 +614,7 @@ public function tambahpresensi($id_agendaguru)
         $jadwal= $this->pbm->jadwal_data();
         $data['mapel']=$this->mapel_jadwal($jadwal);
         $data['rombel']=$this->rombel_jadwal($jadwal);
-        d($data);
+        //d($data);
         return view('header')
          .view('menu',$data)
          .view('form_tatapmuka')

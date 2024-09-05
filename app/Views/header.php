@@ -20,11 +20,24 @@
   <link href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?= base_url("fa/css/all.css"); ?>" />
 
+  <link href="<?= base_url('bootstrap/extensions/sticky-header/bootstrap-table-sticky-header.css') ?>" rel="stylesheet">
+
 
 
   <link href="<?= base_url('css/navbars.css') ?>" rel="stylesheet">
 
   <style>
+    table.floatThead-table {
+    border-top: none;
+    border-bottom: none;
+    background-color: #fff;
+}
+
+th {
+  position: sticky;
+  top: 50px;
+  background: white;
+}
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
