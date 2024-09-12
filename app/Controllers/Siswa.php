@@ -61,8 +61,8 @@ class Siswa extends Pbm
 
   public function simpan_tl($nis)
   {
-    $siswa = new SiswaModel();
-    $data['keterlambatan'] = $siswa->where(['id_agendaguru'=>$id_agendaguru])->first();
+    $tl = new KeterlambatanModel();
+    $data['keterlambatan'] = $tl->where(['nis'=>$nis])->first();
     $data['nis']=$nis;
     $data['catatan']=[];
     
@@ -70,7 +70,7 @@ class Siswa extends Pbm
     //   //$data['nama_siswa'] = $siswa->where('rombel', $rombel)->findAll();
     // echo json_encode($data['nama_siswa']);
   
-    $siswa->save($data);
+    $tl->save($data);
   }
 
   public function simpanpresensi()
