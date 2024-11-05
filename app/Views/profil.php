@@ -22,6 +22,33 @@
 
 <div class="container"> 
 <h3>Profil Staf</h3>
+
+
+<?php //echo img(['class'=>'rounded-circle','src'=>'gambar/staf/'.$kode_pengguna.'.JPG','width'  => '260','height' => '236',])?>
+<!-- Gambar-->
+<div class="py-4">
+  <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <div class="col">
+      <!-- <div class="card"> -->
+        <div class="ratio ratio-1x1 rounded-circle overflow-hidden">
+          <!-- <img src="https://i.sstatic.net/fcbpv.jpg?s=256&g=1" class="card-img-top img-cover" alt="Raeesh"> -->
+          <?php echo img(['src'=>'gambar/staf/'.$kode_pengguna.'.JPG'])?>
+        </div>
+        <!-- <div class="card-body">
+          <h5 class="card-title">Raeesh Alam</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">View More</a>
+        </div> -->
+      <!-- </div> -->
+    </div>
+  </div>
+</div> 
+
+
+
+<!-- end gambar-->
+
+
 <table class="table">
 
 <tr>

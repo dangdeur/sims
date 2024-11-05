@@ -12,9 +12,6 @@
   <title>SIMS</title>
   <script src="<?= base_url('jquery/jquery-3.6.0.min.js') ?>"></script>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbars/">
-
-
 
   <link rel="stylesheet" href="<?= base_url('css/css_nav.css') ?>">
   <link href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">

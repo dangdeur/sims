@@ -7,7 +7,7 @@ use App\Models\StafModel;
 
 class Info extends BaseController
 {
-  protected $helpers = ['form', 'text', 'cookie'];
+  protected $helpers = ['form', 'text', 'cookie','html'];
   public function index()
   {
     $data = $this->session->get();
