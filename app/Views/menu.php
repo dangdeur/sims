@@ -9,7 +9,7 @@
 
 		<!-- neo -->
 		
-    		<a class="navbar-brand" href="#">
+    		<a class="navbar-brand" href="<?= site_url('profil') ?>">
       		<img src="<?=base_url('gambar/staf/'.$kode_pengguna.'.JPG')?>" alt="Logo" width="30" height="26" class="rounded-circle d-inline-block align-text-top">
 			  <?= $nama_lengkap ?>
 	  <?php //echo img(['class'=>'rounded-circle','src'=>'gambar/staf/'.$kode_pengguna.'.JPG','width'  => '260','height' => '236',]) ?>
