@@ -85,5 +85,6 @@ $routes->get('/profil', 'Info::profil');
 
 //FP Upacara
 $routes->get('/fp_upacara', 'Fp::upacara');
+$routes->get('/upacara', 'Info::upacara');
 $routes->get('/fp_nonasn', 'Fp::nonasn');
 service('auth')->routes($routes);

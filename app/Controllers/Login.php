@@ -64,7 +64,7 @@ class Login extends BaseController {
                 {
                     $user['tuta']=$tuta;
                 }
-                d($user);
+                //d($user);
                 $this->setUserSession( $user );
 
                 //ingat
@@ -136,6 +136,7 @@ class Login extends BaseController {
             'email' => $user[ 'email' ],
             'peran' => $user[ 'peran' ],
             'kode_pengguna' => $user[ 'kode_pengguna' ],
+            'kode_absen' => $user[ 'kode_absen' ],
             'level' => $user[ 'level' ],
             'token' => $user[ 'token' ],
             'isLoggedIn' => true,
