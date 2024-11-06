@@ -1,19 +1,22 @@
 <!-- ============= COMPONENT ============== -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 	<div class="container-fluid">
-		<!-- <a class="navbar-brand" href="#"><?= $nama_lengkap ?></a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+		<!-- <a class="navbar-brand" href="#"><?= $nama_lengkap ?></a>-->
+		<!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
-		</button> -->
+		</button>  -->
 
 		<!-- neo -->
 		
     		<a class="navbar-brand" href="<?= site_url('profil') ?>">
       		<img src="<?=base_url('gambar/staf/'.$kode_pengguna.'.JPG')?>" alt="Logo" width="30" height="26" class="rounded-circle d-inline-block align-text-top">
-			  <?= $nama_lengkap ?>
-	  <?php //echo img(['class'=>'rounded-circle','src'=>'gambar/staf/'.$kode_pengguna.'.JPG','width'  => '260','height' => '236',]) ?>
-	  </a>
+			  <?= $nama_lengkap ?> </a>
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+	  
 		<!-- end neo -->
 		<div class="collapse navbar-collapse" id="main_nav">
 
