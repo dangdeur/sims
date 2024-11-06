@@ -26,8 +26,14 @@
 				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" ?>Info </a> 
 					<ul class="dropdown-menu">
 					<li><a class="dropdown-item" href="<?= site_url('info') ?>"> Pengumuman </a></li>
-						<li><a class="dropdown-item" href="<?= site_url('profil') ?>"> Profil </a></li>
-					</ul>
+					<li><a class="dropdown-item" href="<?= site_url('profil') ?>"> Profil </a></li>
+					<li><a class="dropdown-item" href=""> Presensi &raquo;</a>
+						<ul class="submenu dropdown-menu">
+						  <li><a class="dropdown-item" href="<?= site_url('upacara') ?>">Upacara</a></li>
+						  <li><a class="dropdown-item disabled" href="<?= site_url('harian') ?>">Harian</a></li>
+						</ul>
+					</li>
+</ul>
 			
 				</li>
 				<li class="nav-item dropdown">
