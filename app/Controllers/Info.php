@@ -5,6 +5,8 @@ use Config\Services;
 use App\Models\InfoModel;
 use App\Models\StafModel;
 use App\Models\UpacaraModel;
+use App\Models\HarianModel;
+
 
 class Info extends BaseController
 {
@@ -36,25 +38,36 @@ class Info extends BaseController
     $data = $this->session->get();
     $stafmodel = new StafModel();
   $data['detail'] = $stafmodel->where('kode_staf', $data['kode_pengguna'])->first();
-  d($data);
+  //d($data);
     return view('header')
     . view('menu', $data)
     . view('profil')
     . view('footer');
   }
 
-  public function upacara()
+  public function rekap_upacara()
   {
     $data = $this->session->get();
     $upacaramodel = new UpacaraModel();
-    //$data['detail'] = $upacaramodel->where('kode_absen', $data['kode_absen'])->findAll();
-    $data ['absen']=  $upacaramodel->where(['kode_absen'=>$data['kode_absen']])->orderBy('waktu','DESC')->paginate(10);
+    $data ['absen']=  $upacaramodel->where(['kode_absen'=>$data['kode_absen']])->orderBy('waktu','DESC')->paginate(20);
     $data ['pager'] = $upacaramodel->pager;
-    //d($data);
+   
     return view('header')
     . view('menu', $data)
     . view('upacara')
     . view('footer');
   }
+
+  public function rekap_harian()
+	{
+		$data = session()->get();
+		$model = new HarianModel();
+		$data ['kehadiran']=  $model->where(['kode_absen'=>$data['kode_absen']])->orderBy('waktu','DESC')->paginate(20);
+    $data ['pager'] = $model->pager;
+		return view('header')
+            . view('menu', $data)
+            . view('rekap_harian')
+            . view('footer');
+	}
 
 }

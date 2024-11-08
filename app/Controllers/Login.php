@@ -178,10 +178,10 @@ class Login extends BaseController {
             $login = 'Kepala Sekolah';
         } elseif ( $user[ 'peran' ] == 5 ) {
             $login = 'Admin';
-        } elseif ( $user[ 'peran' ] = 10 ) {
+        } elseif ( $user[ 'peran' ] == -1 ) {
             $login = 'Superadmin';
         } elseif ( $user[ 'peran' ] == 6 ) {
-            $login = 'Piket';
+            $login = 'Staf';
         } elseif ( $user[ 'peran' ] == 7 ) {
             $login = 'Sarpras';
         } elseif ( $user[ 'peran' ] == 8 ) {

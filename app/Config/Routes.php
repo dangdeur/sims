@@ -83,8 +83,10 @@ $routes->post('/tampil_siswa/(.+)', 'Siswa::tampil_siswa/$1');
 //Profil
 $routes->get('/profil', 'Info::profil');
 
-//FP Upacara
+//FP
 $routes->get('/fp_upacara', 'Fp::upacara');
-$routes->get('/upacara', 'Info::upacara');
-$routes->get('/fp_nonasn', 'Fp::nonasn');
+$routes->get('/rekap_upacara', 'Info::rekap_upacara');
+$routes->get('/fp_harian', 'Fp::harian');
+$routes->get('/olah_harian', 'Fp::olah_harian');
+$routes->get('/rekap_harian', 'Info::rekap_harian');
 service('auth')->routes($routes);

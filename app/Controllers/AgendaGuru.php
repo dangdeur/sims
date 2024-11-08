@@ -35,8 +35,7 @@ class AgendaGuru extends Pbm
   $data['waktu']=$this->waktu();
   
   //paginasi
-  $data ['agenda']=  $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('dibuat','DESC')->paginate(10);
-  $data ['pager'] = $agendamodel->pager;
+  
 //  $data['fungsi'] = $this;
 $jadwal= $this->pbm->jadwal_data();
 // d($jadwal);

@@ -5,7 +5,7 @@
     <div class="py-5 text-center">
       <!-- <h1 class="text-danger">DATA SISWA BELUM VALID, BELUM BISA ISI PRESENSI, HANYA AGENDA GURU SAJA</h1> -->
       <!-- <img class="d-block mx-auto mb-4" src="<?= base_url('gambar/logo.png') ?>" alt="" width="72" height="72"> -->
-      <h2>Kehadiran Upacara</h2>
+      <h2>Kehadiran Harian</h2>
       
     <?php      
 
@@ -38,6 +38,7 @@
           echo '<td>'.$info_absen[1].'</td>';
           echo '<td>'.$absen[$a]['verifikasi'].'</td>';
           echo '<td>'.$absen[$a]['status'].'</td></tr>';
+          $no_absen++;
           }
           // $tgl=substr($kode[1],0,2);
           // $bln=BULAN[substr($kode[1],2,2)];
@@ -47,7 +48,7 @@
           // $hari=date('N',$waktu);
           
           $tgl_sebelum=$tanggal;
-          $no_absen++;
+         
         }
 
       echo '</table>';  
