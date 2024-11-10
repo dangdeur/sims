@@ -5,6 +5,8 @@ namespace App\Controllers;
 use Config\Services;
 use App\Models\UpacaraModel;
 use App\Models\HarianModel;
+use App\Models\PresensiStafModel;
+
 
 
 class Fp extends BaseController
@@ -128,6 +130,38 @@ class Fp extends BaseController
 		$fp_model = new HarianModel();
 		$data ['kehadiran']=  $fp_model->findAll();
 		//d($data);
+
+		$presensi_model = new PresensiStafModel();
+		for ($a=0;$a<count($data['kehadiran']);$a++)
+		{
+			$presensi=explode(" ",$data['kehadiran'][$a]['waktu']);
+			$kode_presensi = $data['kehadiran'][$a]['kode_absen'].'-'.$presensi[0];
+
+			$db_presensi=$presensi_model->data_presensi($kode_presensi);
+			// d($db_presensi);
+			// $adakah=$db_presensi->getNumRows();
+			$jum_update=1;
+			$jum_insert=1;
+			if($db_presensi > 0)
+			{
+				$update=$presensi_model->update($kode_presensi,['pulang'=>$presensi[1]]);
+				if ($update)
+				{
+					$jum_update++;
+				}
+			}
+			else {
+				$data_presensi=['kode_presensi_staf'=>$kode_presensi,
+								'kode_absen'=>$data['kehadiran'][$a]['kode_absen'],
+								'tanggal'=>$presensi[0],
+								'datang'=>$presensi[1]];
+				$insert=$presensi_model->insert($data_presensi);
+				if ($insert)
+				{
+					$jum_insert++;
+				}
+			}
+		}
 	}
 
 	

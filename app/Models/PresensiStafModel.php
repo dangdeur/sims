@@ -6,8 +6,14 @@ class PresensiStafModel extends Model{
   protected $table = 'presensi_staf';
   protected $primaryKey = 'id_presensi_staf';
   protected $useAutoIncrement = true;
-  protected $allowedFields = ['kode_presensu_staf','kode_absen','datang','pulang'];
-  
+  protected $allowedFields = ['kode_presensi_staf','kode_absen','tanggal','datang','pulang'];
+
+
+public function data_presensi($kode)
+{
+    $data_db = $this->where('kode_presensi_staf',$kode)->countAllResults();
+    return ($data_db > 0);
+} 
   
 
 }

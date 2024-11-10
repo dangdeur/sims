@@ -54,7 +54,7 @@ class Info extends BaseController
    
     return view('header')
     . view('menu', $data)
-    . view('upacara')
+    . view('rekap_upacara')
     . view('footer');
   }
 
