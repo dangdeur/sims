@@ -662,4 +662,26 @@ public function tambahpresensi($id_agendaguru)
       
     }
 
+    public function rekap_absensi()
+       {
+        $data = session()->get();
+        $model = new AgendaGuruModel();
+        $data['absensi']=$model->rekap_absensi();
+        for ($a=0;$a<count($data['absensi']);$a++)
+        {
+          if (!$data['absensi'][$a]['absensi'] || $data['absensi'][$a]['absensi']=='[]')
+          {
+            $update=$model->update($data['absensi'][$a]['id_agendaguru'],['rekap'=>1]);
+          }
+          else {
+
+          }
+        }
+        d($data);
+        return view('header')
+        .view('menu',$data)
+        .view('rekap_absensi')
+        .view('footer');
+       }
+
 }

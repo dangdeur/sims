@@ -96,4 +96,6 @@ class PresensiSiswa extends Pbm
         $model->hapusAgenda($id);
         return redirect()->to('/product');
     }
+
+
 }

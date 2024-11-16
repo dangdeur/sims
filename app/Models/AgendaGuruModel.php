@@ -8,7 +8,7 @@ class AgendaGuruModel extends Model{
   protected $useAutoIncrement = true;
   protected $allowedFields = [
     'kode_agendaguru', 'kode_guru','rombel','mapel','materi','jp0','jp1','absensi',
-    'S','I','A','TL','BL','D'
+    'S','I','A','TL','BL','D','rekap'
     ];
     protected $beforeInsert = ['beforeInsert'];
   protected $beforeUpdate = ['beforeUpdate'];
@@ -57,4 +57,11 @@ class AgendaGuruModel extends Model{
         return $query;
     } 
 
+    public function rekap_absensi()
+    {
+      $data_db = $this->where('rekap IS NULL',NULL,false)->findAll();
+      return ($data_db);
+    }
+
+    
 }

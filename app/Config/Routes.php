@@ -89,4 +89,12 @@ $routes->get('/rekap_upacara', 'Info::rekap_upacara');
 $routes->get('/fp_harian', 'Fp::harian');
 $routes->get('/olah_harian', 'Fp::olah_harian');
 $routes->get('/rekap_harian', 'Info::rekap_harian');
+
+
+//presensi siswa
+$routes->get('/rekap_absensi', 'AgendaGuru::rekap_absensi');
+
+//push
+$routes->get('/push', 'Push::pesan');
+
 service('auth')->routes($routes);

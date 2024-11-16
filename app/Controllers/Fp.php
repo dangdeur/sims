@@ -164,6 +164,13 @@ class Fp extends BaseController
 		}
 	}
 
+	public function olah_upacara()
+	{
+		ini_set('memory_limit', '-1');
+		$data = session()->get();
+		$model = new UpacaraModel();
+	}
+
 	
 
 }
