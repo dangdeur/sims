@@ -6,7 +6,7 @@ class UpacaraModel extends Model{
   protected $table = 'fp_upacara';
   protected $primaryKey = 'id_fp_upacara';
   protected $useAutoIncrement = true;
-  protected $allowedFields = ['kode_absen','waktu','verifikasi','status'];
+  protected $allowedFields = ['kode_absen','waktu','verifikasi','status','olah'];
   
   
 
