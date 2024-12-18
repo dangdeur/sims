@@ -97,4 +97,7 @@ $routes->get('/rekap_absensi', 'AgendaGuru::rekap_absensi');
 //push
 $routes->get('/push', 'Push::pesan');
 
+//pkl
+$routes->get('/inputnilaipkl', 'Pkl::input_nilai');
+
 service('auth')->routes($routes);
