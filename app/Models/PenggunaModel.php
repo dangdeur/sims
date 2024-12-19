@@ -33,5 +33,24 @@ class PenggunaModel extends Model{
     return $data;
   }
 
+  public function nama($peran)
+  {
+    //OK
+    $data_nama = $this->select('nama_lengkap')->where($peran)->orderBy('nama_lengkap')->findAll();
+
+    // $builder = $this->table('pengguna');
+    // $builder->select('nama_lengkap');
+    // $builder->where($peran);
+    // $query=$builder->get();
+    // $data_nama=array();
+    // foreach ($query->getResultArray() as $nama)
+    // {
+    //   $data_nama[]=$nama;
+    // }
+    return $data_nama;
+  }
+
+  
+
 
 }

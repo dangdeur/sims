@@ -22,6 +22,10 @@ class StafModel extends Model{
    // $data = $this->passwordHash($data);
     $data['data']['diupdate'] = date('Y-m-d H:i:s');
     return $data;
+
   }
+
+ 
+
   
 }

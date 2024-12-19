@@ -12,6 +12,7 @@
 
   	<ul class="navbar-nav">
   		<li class="nav-item active"> <a class="nav-link" href="<?= base_url('admin/ambil_alih') ?>">Pengguna </a> </li>
+		  <li class="nav-item active"> <a class="nav-link" href="<?= base_url('admin/pollingbaru') ?>">Buat Polling </a> </li>
   		<!-- <li class="nav-item dropdown">
   			<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  PBM  </a>
   		    <ul class="dropdown-menu">

@@ -97,4 +97,7 @@ $routes->get('/rekap_absensi', 'AgendaGuru::rekap_absensi');
 //push
 $routes->get('/push', 'Push::pesan');
 
+//Polling
+$routes->get('/polling', 'Polling::index');
+
 service('auth')->routes($routes);
