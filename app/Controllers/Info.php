@@ -19,7 +19,7 @@ class Info extends BaseController
     $data['info'] = $model->select('*')->orderBy('tanggal', 'DESC')->paginate(10);
     $data['pager'] = $model->pager;
 
-    //d($data);
+    d($data);
 
     return view('header')
       . view('menu', $data)
@@ -38,7 +38,7 @@ class Info extends BaseController
     $data = $this->session->get();
     $stafmodel = new StafModel();
   $data['detail'] = $stafmodel->where('kode_staf', $data['kode_pengguna'])->first();
-  //d($data);
+  // d($data);
     return view('header')
     . view('menu', $data)
     . view('profil')

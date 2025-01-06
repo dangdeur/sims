@@ -258,4 +258,24 @@ class Login extends BaseController {
         //echo $cookie;
     }
 
+    public function pengaturan()
+{
+    $globalSettings = cache('pengaturan');
+
+    if (null === $globalSettings) {
+        $appSettingModel = model('\App\Models\PengaturanModel');
+        
+        $app_settings = $appSettingModel->getAppSettings();
+        $globalSettings = [];
+    
+        foreach ($app_settings as $row) {
+            $globalSettings[$row->app_setting_key] = $row->app_setting_value;
+        }
+        
+        cache()->save('pengaturan', $globalSettings, DAY*15);
+    }
+
+    return $globalSettings;
+}
+
 }

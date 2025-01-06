@@ -14,6 +14,8 @@ defined( 'JAM_PBM' ) || define( 'JAM_PBM', [
     '50'=>'08:00-08:45', '51'=>'08:45-09:30', '52'=>'09:45-10:30', '53'=>'10:30-11:15', '54'=>'13:00-13:40', '55'=>'13:40-14:20', '56'=>'14:20-15:00', '57'=>'15:00-15:40'
 ] );
 
+defined( 'TAPEL' ) || define( 'TAPEL', '2024/2025' );
+defined( 'SEMESTER' ) || define( 'SEMESTER', 'GENAP' );
 defined( 'PEJABAT' ) || define( 'PEJABAT', [
     'kepsek'=>['nama'=>'Drs. Ade Firdaus, M. Pd.','nip'=>'196606061992121003'],
     'wakakur'=>['nama'=>'Retno Utami K, S. TP., M. Si.','nip'=>'197011201997032007'],

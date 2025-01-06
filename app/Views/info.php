@@ -7,7 +7,7 @@
       <div class="bg-body-tertiaryp-5 rounded">
         <div class="col-sm-8 mx-auto">
           <?php
-           
+          
           
             if (isset($gantipassword))
             {
