@@ -97,6 +97,9 @@ $routes->get('/rekap_absensi', 'AgendaGuru::rekap_absensi');
 //push
 $routes->get('/push', 'Push::pesan');
 
+//chat
+//$routes->get('chat', 'Chat::index',['filter' => 'auth']);
+$routes->get('/chat', 'Chat::index');
 //Polling
 $routes->get('/polling', 'Polling::index');
 
