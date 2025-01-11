@@ -639,15 +639,15 @@ public function tambahpresensi($id_agendaguru)
             'rombel' => $rombel,
             // 'jp0' => $this->request->getPost('jp0'),
             // 'jp1' => $this->request->getPost('jp1'),
-            'mapel' => $this->request->getPost('mapel_agenda'),
+            'mapel' => $this->request->getPost('mapel'),
             // 'materi' => $this->request->getPost('materi'),
             'kode_agendaguru' => $kode_agenda,
             'lokasi' => $lokasi,
             'kode_guru' => $guru,
         );
-        dd($data);
-        // $model->insert($data,false);
-        // return redirect()->to('/agendaguru');  
+        d($data);
+         $model->insert($data,false);
+         return redirect()->to('/agendaguru');  
       }
       else {
         $jadwal=$this->pbm->jadwal_data();

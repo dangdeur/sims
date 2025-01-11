@@ -46,7 +46,7 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> PBM </a>
 					<ul class="dropdown-menu">
-					<li><a class="dropdown-item disabled" href="<?= site_url('pbm/lapor') ?>"> Lapor </a></li>
+					<li><a class="dropdown-item" href="<?= site_url('agendaguru/lapor') ?>"> Lapor </a></li>
 						<li><a class="dropdown-item" href="<?= site_url('jadwal') ?>"> Jadwal </a></li>
 						<li><a class="dropdown-item" href="<?= site_url('agendaguru') ?>"> Agenda Guru </a></li>
 						<li><a class="dropdown-item" href=""> Rekap &raquo;</a>
