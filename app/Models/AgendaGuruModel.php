@@ -7,8 +7,8 @@ class AgendaGuruModel extends Model{
   protected $primaryKey = 'id_agendaguru';
   protected $useAutoIncrement = true;
   protected $allowedFields = [
-    'kode_agendaguru', 'kode_guru','rombel','mapel','materi','jp0','jp1','absensi',
-    'S','I','A','TL','BL','D','rekap'
+    'kode_agendaguru', 'tanggal','waktu','lokasi','kode_guru','rombel','mapel','materi','jp0','jp1','absensi',
+    'S','I','A','TL','BL','D','status'
     ];
     protected $beforeInsert = ['beforeInsert'];
   protected $beforeUpdate = ['beforeUpdate'];

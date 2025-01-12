@@ -21,7 +21,7 @@
       }
 
 
-      echo form_open('agendaguru/baru');
+      echo form_open('agendaguru/baru/'.$agenda['id_agendaguru']);
       ?>
     </div>
 
@@ -30,34 +30,44 @@
        <!-- <div class="row"> -->
               <div class="col-sm-4">
             <?php 
+           $tanggal=explode("-",$agenda['tanggal']);
+           $tgl=$tanggal[2];
+           //echo $tgl;
+            // $tgl_sekarang=[date("d")];
+            // echo form_dropdown('tanggal', TANGGAL,$tgl_sekarang, $att=['class'=>'form-select','id'=>'tanggal','required'=>'required']);
+            echo form_input(['name'=>'tanggal','id'=>'tanggal','required'=>'required','class'=>'form-control','disabled'=>TRUE,'value'=>set_value('tanggal', $tgl)]);
+            
+            ?>
            
-                    $tgl_sekarang=[date("d")];
-            echo form_dropdown('tanggal', TANGGAL,$tgl_sekarang, $att=['class'=>'form-select','id'=>'tanggal','required'=>'required']); ?>
           </div>
               
           <div class="col-sm-4">
             <?php
-            $bln_sekarang=[date("m")];
-              echo form_dropdown('bulan', BULAN,$bln_sekarang, $att=['class'=>'form-select','id'=>'bulan','required'=>'required']); ?>
+            $bln=BULAN[$tanggal[1]];
+            //   echo form_dropdown('bulan', BULAN,$bln_sekarang, $att=['class'=>'form-select','id'=>'bulan','required'=>'required']); 
+              echo form_input(['name'=>'bulan','id'=>'bulan','required'=>'required','class'=>'form-control','disabled'=>TRUE,'value'=>set_value('bulan', $bln)]);
+              ?>
           </div>
           <div class="col-sm-4">
             <?php
-            
-              echo form_dropdown('tahun', [date("Y")],'', $att=['class'=>'form-select','id'=>'jp1','required'=>'required']); 
+            $thn=$tanggal[0];
+              //echo form_dropdown('tahun', [date("Y")],'', $att=['class'=>'form-select','id'=>'jp1','required'=>'required']); 
+              echo form_input(['name'=>'tahun','id'=>'tahun','required'=>'required','class'=>'form-control','disabled'=>TRUE,'value'=>set_value('tahun', $thn)]);
               ?>
           </div>
           <!-- </div> -->
           <div class="col-sm-6">
             <?php
-            if(isset($rombel_agenda))
-              {
-                $rombel_selected=$rombel_agenda;
-              }
-              else {
-                $rombel_selected='';
-              }
-            $rombel[null]='Pilih Rombel';
-            echo form_dropdown('rombel_agenda', $rombel,old('rombel_agenda'), $att=['class'=>'form-select','id'=>'rombel_agenda','required'=>'required']);
+            // if(isset($rombel_agenda))
+            //   {
+            //     $rombel_selected=$rombel_agenda;
+            //   }
+            //   else {
+            //     $rombel_selected='';
+            //   }
+            // $rombel[null]='Pilih Rombel';
+            // echo form_dropdown('rombel_agenda', $rombel,old('rombel_agenda'), $att=['class'=>'form-select','id'=>'rombel_agenda','required'=>'required']);
+            echo form_input(['name'=>'rombel_agenda','id'=>'rombel_agenda','required'=>'required','class'=>'form-control','readonly'=>TRUE,'value'=>set_value('rombel_agenda', $agenda['rombel'])]);
             ?>
           </div>
 
@@ -78,10 +88,11 @@
 
           <div class="col-12">
             <div class="input-group has-validation">
-              <span class="input-group-text">Mapel</span>
+              <!-- <span class="input-group-text">Mapel</span> -->
                 <?php
-                $mapel[null]="Pilih Mapel";
-                echo form_dropdown('mapel_agenda', $mapel,old('mapel_agenda'), $att=['class'=>'form-control','id'=>'mapel_agenda','required'=>'required']);
+                // $mapel[null]="Pilih Mapel";
+                // echo form_dropdown('mapel_agenda', $mapel,old('mapel_agenda'), $att=['class'=>'form-control','id'=>'mapel_agenda','required'=>'required']);
+                echo form_input(['name'=>'mapel_agenda','id'=>'mapel_agenda','required'=>'required','class'=>'form-control','readonly'=>TRUE,'value'=>set_value('mapel_agenda', $agenda['mapel'])]);
                 ?>
             </div>
           </div>

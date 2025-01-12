@@ -41,7 +41,7 @@ endforeach ?>
     <td><?php echo form_dropdown('lokasi',$lokasi ,'', $att=['class'=>'form-select','id'=>'rombel']); ?></td>
 </tr>
 
-<input type='hidden' name='waktu' value='strValues'
+
 <tr>
     <td colspan="3"><button class="btn btn-primary">Lapor</button></td>
     
@@ -58,6 +58,7 @@ function startTime() {
   let h = today.getHours();
   let m = today.getMinutes();
   let s = today.getSeconds();
+  
   m = checkTime(m);
   s = checkTime(s);
   //var jam = getElementById('time');

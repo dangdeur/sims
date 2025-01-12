@@ -35,11 +35,11 @@ else {
     <div class="py-5 text-center">
       <!-- <h1 class="text-danger">DATA SISWA BELUM VALID, BELUM BISA ISI PRESENSI, HANYA AGENDA GURU SAJA</h1> -->
       <!-- <img class="d-block mx-auto mb-4" src="<?= base_url('gambar/logo.png') ?>" alt="" width="72" height="72"> -->
-      <h2>Agenda Guru</h2>
+      <h2>Rekap PBM Guru</h2>
       
       <?php
      
-        echo date('l, j F Y, H:i');
+       // echo date('l, j F Y, H:i');
         echo '<p class="lead">';
         if (empty($agenda) && !isset($form))
         {
@@ -47,15 +47,15 @@ else {
         }
         echo '</p>';
         
-        echo '<div class="row justify-content-md-center">';
-        echo '<div class="col col-md-2">';
-        echo '<a type="submit" class="btn btn-warning" href="'.site_url('agendaguru/baru_telat').'">Isi Agenda Terlewat</a>';
-        echo '</div>';
-        echo '<div class="col col-md-2">';
-        echo '<a type="submit" class="btn btn-primary" href="'.site_url('agendaguru/baru').'">Isi Agenda Saat Ini</a>';
-        echo '</div>';
+        // echo '<div class="row justify-content-md-center">';
+        // echo '<div class="col col-md-2">';
+        // echo '<a type="submit" class="btn btn-warning" href="'.site_url('agendaguru/baru_telat').'">Isi Agenda Terlewat</a>';
+        // echo '</div>';
+        // echo '<div class="col col-md-2">';
+        // echo '<a type="submit" class="btn btn-primary" href="'.site_url('agendaguru/baru').'">Isi Agenda Saat Ini</a>';
+        // echo '</div>';
         
-        echo '</div><br />';
+        // echo '</div><br />';
        
 
      if(isset($agenda) && !empty($agenda) && !isset($form)){
@@ -64,6 +64,8 @@ else {
       //echo $pager->links('default', 'paginasi');
       //echo $pager->links('default', 'default_full');
       //echo $pager->links('default', 'default_simple');
+
+     
       echo '<table class="table">';
       echo '<tr>';
       echo '<th>No</th><th>Tanggal</th><th>Rombel</th><th>Mapel</th><th>Materi</th><th>JP</th><th>Absensi</th><th></th>';
@@ -78,6 +80,7 @@ else {
           $tanggal= $tgl." ".$bln." ".$thn;
           $waktu=strtotime($thn.'-'.substr($kode[1],2,2).'-'.$tgl);
           $hari=date('N',$waktu);
+          //$jam=date('H:i:s',$waktu);
           //echo $hari;
 
           if ($hari==5 && ($agenda[$a]['jp0']>8 || $agenda[$a]['jp1']>8))
@@ -96,8 +99,19 @@ else {
 
           //$tgl=substr($tanggal[1],0,2).' '.BULAN[substr($tanggal[1],3,2)];
           echo '<tr><td><a type="button" class="text-danger" href="'.site_url('agendaguru/hapus/'.$agenda[$a]['id_agendaguru']).'"><i class="fa-regular fa-calendar-xmark"></i></a>
-          '.$no_agenda.'</td><td>'.$tanggal.$pesan.'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td><td>'.$agenda[$a]['materi'].'</td><td '.$error_jp.'>'.$agenda[$a]['jp0'].'-'.$agenda[$a]['jp1'].'</td>
+          '.$no_agenda.'</td><td>'.$tanggal.'-<label id="jam">00</label>:<label id="menit">00</label>:<label id="detik">00</label>'.$pesan.'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td>';
+          
+          if ($agenda[$a]['status']!=NULL)
+          {
+          echo '<td>'.$agenda[$a]['materi'].'</td><td '.$error_jp.'>'.$agenda[$a]['jp0'].'-'.$agenda[$a]['jp1'].'</td>
           <td>';
+
+        } //end status lapor atau agenda
+        else {
+          echo '<td colspan="2"><a type="button" class="btn btn-primary" href="'.site_url('agendaguru/baru/'.$agenda[$a]['id_agendaguru']).'">Isi Agenda</a></td><td>';
+        }
+      
+        
           
           if (is_null($agenda[$a]['absensi']))
           {
@@ -256,3 +270,26 @@ else {
 
 
 <script src="<?= base_url('js/checkout.js') ?>"></script>
+<script>
+var jamLabel = document.getElementById("jam");
+var menitLabel = document.getElementById("menit");
+var detikLabel = document.getElementById("detik");
+var totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+  ++totalSeconds;
+  detikLabel.innerHTML = pad(totalSeconds % 60);
+  menitLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+  jamLabel.innerHTML = pad(parseInt(totalSeconds / 3600));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+</script>

@@ -19,7 +19,9 @@ class Cetak extends BaseController
 		if ($this->request->is('post')) 
       {
 		$stafmodel = new StafModel;
-		$bulan=$this->request->getVar('bulan').date("o");
+		//$bulan=$this->request->getVar('bulan').date("o");
+		$bulan=$this->request->getVar('bulan');
+		$tahun=$this->request->getVar('tahun');
 		$data['staf']=$stafmodel->where('kode_staf', $data['kode_pengguna'])->first();
 		 $agendamodel=new AgendaGuruModel;
 		 //OK
@@ -27,10 +29,10 @@ class Cetak extends BaseController
 
 		 //coba
 		 $agendamodel->where('kode_guru', $data['kode_pengguna']);
-		 $agendamodel->like('kode_agendaguru',$bulan);
+		 $agendamodel->like('kode_agendaguru',$bulan.$tahun);
 		 $data['agenda'] =$agendamodel->findAll();
 		 $data['qr']=$this->qr();
-		 $data['bulan']=BULAN[$this->request->getVar('bulan')].' '.date("o");
+		 $data['bulan']=BULAN[$this->request->getVar('bulan')].' '.$tahun;
 
 
 		//d($data);
@@ -77,7 +79,7 @@ class Cetak extends BaseController
 		$pdf->writeHTML($html, true, false, true, false, '');
 		ob_end_clean();
 		$this->response->setContentType('application/pdf');
-		$pdf->Output('Agenda Mengajar '.$data['nama_lengkap'].'.pdf', 'D');
+		$pdf->Output('Agenda Mengajar '.$data['nama_lengkap'].' '.$bulan.'-'.$tahun.'.pdf', 'D');
 	}
 	else {
 		return view('header')
@@ -140,7 +142,7 @@ class Cetak extends BaseController
 
 		$pdf->writeHTML($html, true, false, true, false, '');
 		$this->response->setContentType('application/pdf');
-		$pdf->Output('Agenda Tugas Tambahan '.$data['nama_lengkap'].'.pdf', 'D');
+		$pdf->Output('Agenda Tugas Tambahan '.$data['nama_lengkap'].' '.$bulan.'-'.$tahun.'.pdf', 'D');
 	}
 	else {
 		return view('header')
@@ -151,152 +153,7 @@ class Cetak extends BaseController
 	}
 	}
 
-	public function kelulusan($no)
-	{
-
-		$db=new PersonalModel;
-		$data=$this->session->get();
-
-		$no="'".$no."'";
-
-		$query = $db->query('SELECT * FROM pendaftar
-											JOIN nilai ON nilai.no_pendaftaran = pendaftar.no_pendaftaran
-											JOIN pendaftaran ON pendaftaran.no_pendaftaran = nilai.no_pendaftaran
-											JOIN kelulusan ON pendaftaran.no_pendaftaran = kelulusan.no_pendaftaran
-											WHERE pendaftar.no_pendaftaran='.$no);
-
-		if (is_array($query->getRow()) || is_object($query->getRow()))
-		{
-			foreach ($query->getRow() as $key => $value) {
-				$data[$key]=$value;
-			}
-		}
-		else {
-			 echo "Data Tidak Ada";
-		}
-
-		$data=array_merge($data,$this->progress($data['verifikasi']));
-
-		$html=view('cetakkelulusan',$data);
-
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-		$pdf->setCreator(PDF_CREATOR);
-		$pdf->setAuthor('Endang Suhendar');
-		$pdf->setTitle('Bukti Kelulusan PPDB');
-		$pdf->setSubject('PPDB SMKN 2 Pandeglang');
-		// $pdf->setKeywords('TCPDF, PDF, example, test, guide');
-		$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
-		// set header and footer fonts
-		$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-		$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-		// set default monospaced font
-		$pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-		// set margins
-		$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-		$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
-		$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
-		// set auto page breaks
-		$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-		// set image scale factor
-		$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-		// set some language-dependent strings (optional)
-		if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
-			require_once(dirname(__FILE__).'/lang/eng.php');
-			$pdf->setLanguageArray($l);
-		}
-		$pdf->setFont('dejavusans', '', 10);
-		$pdf->AddPage();
-
-
-
-		$pdf->writeHTML($html, true, false, true, false, '');
-		$this->response->setContentType('application/pdf');
-		$pdf->Output('Bukti Kelulusan PPDB'.$data['no_pendaftaran'].'.pdf', 'I');
-	}
-
-
-	public function kartu($no)
-	{
-		$db=new PersonalModel;
-		$data=$this->session->get();
-
-		$no="'".$no."'";
-
-		$query = $db->query('SELECT * FROM pendaftar
-											JOIN nilai ON nilai.no_pendaftaran = pendaftar.no_pendaftaran
-											JOIN pendaftaran ON pendaftaran.no_pendaftaran = nilai.no_pendaftaran
-											WHERE pendaftar.no_pendaftaran='.$no);
-
-		if (is_array($query->getRow()) || is_object($query->getRow()))
-		{
-			foreach ($query->getRow() as $key => $value) {
-				$data[$key]=$value;
-			}
-		}
-		else {
-			 echo "Data Tidak Ada";
-		}
-
-		$html=view('cetakkartu',$data);
-
-		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-		$pdf->setCreator(PDF_CREATOR);
-		$pdf->setAuthor('Endang Suhendar');
-		$pdf->setTitle('Agenda Harian Mengajar');
-		$pdf->setSubject('SMKN 2 Pandeglang');
-		// $pdf->setKeywords('TCPDF, PDF, example, test, guide');
-		$pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
-		// set header and footer fonts
-		$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-		$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-		// set default monospaced font
-		$pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-		// set margins
-		$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-		$pdf->setHeaderMargin(PDF_MARGIN_HEADER);
-		$pdf->setFooterMargin(PDF_MARGIN_FOOTER);
-		// set auto page breaks
-		$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-		// set image scale factor
-		$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-		// set some language-dependent strings (optional)
-		if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
-			require_once(dirname(__FILE__).'/lang/eng.php');
-			$pdf->setLanguageArray($l);
-		}
-		$pdf->setFont('dejavusans', '', 10);
-		$pdf->AddPage();
-
-
-		$pdf->writeHTML($html, true, false, true, false, '');
-		$this->response->setContentType('application/pdf');
-		$pdf->Output('Agenda Mengajar'.$data['no_pendaftaran'].'.pdf', 'I');
-	}
-
-
-	public function progress($verifikasi)
-	{
-
-		helper('date');
-		$ver=json_decode($verifikasi);
-		//print_r($ver);
-		$data['petugas']=$ver->petugas;
-		// $waktu_= new DateTime($jadwal_verifikasi);
-		// $waktu_->add(new DateInterval('PT12H'));
-		// $waktu=$waktu_->format("d-m-Y H:m:s");
-
-		 $waktu=Time::parse($ver->waktu,'Asia/Jakarta');
-		 $waktu_verifikasi=$waktu->addHours(12);
-		 $tgl = explode(" ",$waktu_verifikasi);
-		 $tanggal_=explode("-",$tgl[0]);
-		 $tanggal=$tanggal_[2]."-".$tanggal_[1]."-".$tanggal_[0];
-
-		$data['waktu']=$tgl[1];
-		$data['tanggal']=$tanggal;
-		//$data['waktu']=$waktu_->toLocalizedString('d-m-yyyy HH:mm:s');
-		return $data;
-
-	}
+	
 
 	public function qr()
     {

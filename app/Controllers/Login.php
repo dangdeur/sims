@@ -6,6 +6,7 @@ use App\Models\PenggunaModel;
 use App\Models\WalasModel;
 use App\Models\PiketModel;
 use App\Models\TutaModel;
+use App\Models\PengaturanModel;
 
 class Login extends BaseController {
     protected $helpers = [ 'form', 'text', 'cookie' ];
@@ -260,22 +261,7 @@ class Login extends BaseController {
 
     public function pengaturan()
 {
-    $globalSettings = cache('pengaturan');
-
-    if (null === $globalSettings) {
-        $appSettingModel = model('\App\Models\PengaturanModel');
-        
-        $app_settings = $appSettingModel->getAppSettings();
-        $globalSettings = [];
-    
-        foreach ($app_settings as $row) {
-            $globalSettings[$row->app_setting_key] = $row->app_setting_value;
-        }
-        
-        cache()->save('pengaturan', $globalSettings, DAY*15);
-    }
-
-    return $globalSettings;
+    $model = new PengaturanModel();
 }
 
 }

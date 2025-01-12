@@ -69,7 +69,7 @@ for ($a=0;$a<count($agenda);$a++)
   <tr>
   <td style="width: 33%;text-align: center;"></td>
   <td style="width: 33%;text-align: center;"></td>
-  <td style="width: 33%;text-align: center;">Pandeglang, <?php echo $tanggal_akhir.' '. BULAN[$bulan_aktif].' '.date("Y"); ?></td>
+  <td style="width: 33%;text-align: center;">Pandeglang, <?php echo $tanggal_akhir.' '. BULAN[$bulan_aktif].' '.$thn; ?></td>
  
   <!-- <td style="width: 33%;text-align: center;">Pandeglang, <?php echo date("t m Y", strtotime($tanggal)); ?></td> -->
   

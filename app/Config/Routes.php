@@ -18,11 +18,12 @@ $routes->get('/jadwal', 'Pbm::jadwal');
 $routes->get('/agendaguru', 'AgendaGuru::index');
 $routes->get('/agendaguru/edit/(.+)', 'AgendaGuru::edit/$1');
 $routes->post('/agendaguru/edit/(.+)', 'AgendaGuru::edit/$1');
-$routes->get('/agendaguru/baru', 'AgendaGuru::baru');
+//$routes->get('/agendaguru/baru', 'AgendaGuru::baru');
+$routes->get('/agendaguru/baru/(.+)', 'AgendaGuru::baru/$1');
 $routes->get('/agendaguru/baru_telat', 'AgendaGuru::baru_telat');
 $routes->post('/agendaguru/simpan', 'AgendaGuru::simpan');
 $routes->get('/agendaguru/hapus/(.+)', 'AgendaGuru::hapus/$1');
-$routes->post('/agendaguru/baru', 'AgendaGuru::baru');
+$routes->post('/agendaguru/baru/(.+)', 'AgendaGuru::baru/$1');
 
 $routes->get('/agendaguru/absensi', 'AgendaGuru::absensi');
 $routes->get('/agendaguru/presensi/(.+)', 'AgendaGuru::presensi/$1/$2');
