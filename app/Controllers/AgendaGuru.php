@@ -712,6 +712,8 @@ public function tambahpresensi($id_agendaguru)
         $data['rombel'] = $this->request->getPost('rombel');
         $data['mapel'] = $this->request->getPost('mapel');
         $data['lokasi'] = $this->request->getPost('lokasi');
+        $data['tapel']=TAPEL;
+        $data['semester']=2;
         $data['tanggal']=date("Y-m-d");
         $data['waktu'] = date("H:i:s");
         $data['kode_agendaguru']=$data['kode_guru']."-".date("dmY")."-".$data['rombel'];

@@ -99,7 +99,8 @@ else {
 
           //$tgl=substr($tanggal[1],0,2).' '.BULAN[substr($tanggal[1],3,2)];
           echo '<tr><td><a type="button" class="text-danger" href="'.site_url('agendaguru/hapus/'.$agenda[$a]['id_agendaguru']).'"><i class="fa-regular fa-calendar-xmark"></i></a>
-          '.$no_agenda.'</td><td>'.$tanggal.'-<label id="jam">00</label>:<label id="menit">00</label>:<label id="detik">00</label>'.$pesan.'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td>';
+          '.$no_agenda.'</td><td>'.$tanggal.$pesan.'</td><td>'.$agenda[$a]['rombel'].'</td><td>'.$agenda[$a]['mapel'].'</td>';
+          //'-<label id="jam">00</label>:<label id="menit">00</label>:<label id="detik">00</label>'.
           
           if ($agenda[$a]['status']!=NULL)
           {
