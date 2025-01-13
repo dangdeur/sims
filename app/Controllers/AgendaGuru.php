@@ -58,7 +58,7 @@ $data['mapel']=$this->mapel_jadwal($jadwal);
     $data = session()->get();
     $agendamodel = new AgendaGuruModel();
     $data['agenda'] = $agendamodel->where('id_agendaguru', $id)->first();
-    d($data);
+    //d($data);
     // $data['waktu']=$this->waktu();
     // $jadwal=$this->pbm->jadwal_data();
     // //d($jadwal);
