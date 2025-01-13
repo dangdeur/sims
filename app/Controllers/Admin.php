@@ -115,5 +115,19 @@ class Admin extends BaseController
 
     }
 
+    public function reset( $id ) {
+       
+        $passwordbaru = 'smkn2jaya';
+        $pengguna = new PenggunaModel();
+        //$data[ 'id' ] = $id;
+        //$data[ 'update' ][ 'password' ] = $passwordbaru;
+        $update = $pengguna->update( $id, ['password'=>$passwordbaru]);
+        return redirect()->to( '/admin' );
+
+    
+
    
+    }
+
+    
 }
