@@ -29,7 +29,7 @@ class AgendaGuru extends Pbm
   
   //d($data);
   $agendamodel = new AgendaGuruModel();
-  if (!isset($data['kode_pengguna']))
+  if (!array_key_exists('kode_pengguna', $data))
   {
     redirect()->to('/logout'); 
   }
