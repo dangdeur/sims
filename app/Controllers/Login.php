@@ -65,7 +65,7 @@ class Login extends BaseController {
                 {
                     $user['tuta']=$tuta;
                 }
-                //d($user);
+                //dd($user);
                 $this->setUserSession( $user );
 
                 //ingat

@@ -26,8 +26,14 @@ class AgendaGuru extends Pbm
   public function index()
   {
   $data = session()->get();
+  
   //d($data);
   $agendamodel = new AgendaGuruModel();
+  if (!isset($data['kode_pengguna']))
+  {
+    redirect()->to('/logout'); 
+  }
+  
   $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->findAll();
  
   $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('tanggal', 'DESC')->paginate(10);
