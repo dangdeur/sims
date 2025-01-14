@@ -29,14 +29,17 @@ class AgendaGuru extends Pbm
   
   //d($data);
   $agendamodel = new AgendaGuruModel();
-  if (!array_key_exists('kode_pengguna', $data))
+  if (array_key_exists('kode_pengguna', $data))
   {
+    $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('tanggal', 'DESC')->paginate(10);
+  }
+  else {
     redirect()->to('/logout'); 
   }
   
-  $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->findAll();
+  // $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->findAll();
  
-  $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('tanggal', 'DESC')->paginate(10);
+  
   $data['pager'] = $agendamodel->pager;
 
   $jadwal= $this->pbm->jadwal_data();
