@@ -1,4 +1,7 @@
 <div class="container">
+<div class="alert alert-danger">
+Lapor PBM dilaksanakan saat akan memulai proses pembelajaran. Apabila tidak Lapor, maka tidak bisa mengisi Agenda
+</div>
 
 <h3>Lapor Pelaksanaan PBM</h3>
 Dengan ini saya melapor kepada pihak terkait,

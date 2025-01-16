@@ -13,29 +13,26 @@ class AgendaGuru extends Pbm
 {
   protected $helpers = ['form','text','cookie','date'];
   protected $pbm;
+  public $data;
   protected $session;
 
   public function __construct()
   {
      $this->pbm= new Pbm();
-     $data = session()->get();
+    
+     //$data = session()->get();
      
   }
   
 
   public function index()
   {
-  $data = session()->get();
-  
-  //d($data);
+  global $data;
+  $this->sesi();
+  //dd($this->data);
   $agendamodel = new AgendaGuruModel();
-  if (array_key_exists('kode_pengguna', $data))
-  {
-    $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('tanggal', 'DESC')->paginate(10);
-  }
-  else {
-    redirect()->to('/logout'); 
-  }
+  $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('tanggal', 'DESC')->paginate(10);
+  
   
   // $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->findAll();
  
@@ -62,9 +59,23 @@ $data['mapel']=$this->mapel_jadwal($jadwal);
          .view('footer');
   }
 
+  public function sesi()
+  {
+    global $data;
+    if (isset($_SESSION['kode_pengguna']))
+    {
+      $data = session()->get();
+    }
+    else {
+      return redirect()->to('/logout');  
+    } 
+  }
+
   public function baru ($id)
   {
-    $data = session()->get();
+    //$data = session()->get();
+    global $data;
+    $this->sesi();
     $agendamodel = new AgendaGuruModel();
     $data['agenda'] = $agendamodel->where('id_agendaguru', $id)->first();
     //d($data);
@@ -223,7 +234,9 @@ $data['mapel']=$this->mapel_jadwal($jadwal);
 
   public function baru_telat ()
   {
-    $data = session()->get();
+    //$data = session()->get();
+    global $data;
+    $this->sesi();
     $data['waktu']=$this->waktu();
     $jadwal=$this->pbm->jadwal_data();
     //d($jadwal);
@@ -300,7 +313,9 @@ $data['mapel']=$this->mapel_jadwal($jadwal);
 
   public function edit($id = FALSE)
   {
-      $data = session()->get();
+      //$data = session()->get();
+      global $data;
+      $this->sesi();
       $model = new AgendaGuruModel();
       if ($this->request->is('post')) {
         $rules = [
@@ -371,7 +386,9 @@ $data['mapel']=$this->mapel_jadwal($jadwal);
 
   public function tutabaru ()
   {
-    $data = session()->get();
+    //$data = session()->get();
+    global $data;
+    $this->sesi();
     //$data['waktu']=$this->waktu();
     
     if ($this->request->is('get')) 
@@ -426,7 +443,8 @@ $data['mapel']=$this->mapel_jadwal($jadwal);
   
   public function presensi($rombel,$id)
   {
-    $data = session()->get();
+    global $data;
+    $this->sesi();
     $presensi = new SiswaModel();
     $agenda= new AgendaGuruModel();
     $data['agenda'] = $agenda->where(['id_agendaguru'=>$id])->first();
@@ -444,7 +462,8 @@ $data['mapel']=$this->mapel_jadwal($jadwal);
 
   public function simpanpresensi()
   {
-    $data = session()->get();
+    global $data;
+    $this->sesi();
     $agenda= new AgendaGuruModel();
     $data['datapresensi']=$this->request->getPost();
     //dd($data);
@@ -493,7 +512,8 @@ $data['mapel']=$this->mapel_jadwal($jadwal);
 
   public function hapuspresensi($absensi,$nis,$id_agendaguru)
   {
-    $data = session()->get();
+    global $data;
+    $this->sesi();
     
     $agenda= new AgendaGuruModel();
     $data['agenda'] = $agenda->where(['id_agendaguru'=>$id_agendaguru])->first();
@@ -524,7 +544,8 @@ $data['mapel']=$this->mapel_jadwal($jadwal);
 
 public function tambahpresensi($id_agendaguru)
   {
-    $data = session()->get();
+    global $data;
+    $this->sesi();
     $presensi = new SiswaModel();
     $agenda= new AgendaGuruModel();
     $data['agenda'] = $agenda->where(['id_agendaguru'=>$id_agendaguru])->first();
@@ -595,7 +616,8 @@ public function tambahpresensi($id_agendaguru)
 
   public function absensi()
   {
-    $data = session()->get();
+    global $data;
+    $this->sesi();
     $data['agenda']=1;
 
     if ($this->request->is('post')) 
@@ -656,7 +678,8 @@ public function tambahpresensi($id_agendaguru)
 
     public function hapus($id)
     {
-      $data = session()->get();
+      global $data;
+    $this->sesi();
       $model = new AgendaGuruModel();
       if ($this->request->is('post')) 
       {
@@ -680,7 +703,8 @@ public function tambahpresensi($id_agendaguru)
 
     public function tatapmuka()
     {
-      $data = session()->get();
+      global $data;
+      $this->sesi();
       if ($this->request->is('post')) {
         $data['mapel_tm']=$this->request->getPost('mapel');
         $data['rombel_tm']=$this->request->getPost('rombel');
@@ -713,10 +737,14 @@ public function tambahpresensi($id_agendaguru)
 
     public function lapor()
     {
-      $data = session()->get();
+      global $data;
+    $this->sesi();
+      $data['jadwal']=$this->pbm->jadwal_data();
+      $data['jam_sekarang']=$this->pbm->jam_ke();
+      d($data);
       if ($this->request->is('post')) {
         $model = new AgendaGuruModel();
-        $data['jadwal']=$this->pbm->jadwal_data();
+        // $data['jadwal']=$this->pbm->jadwal_data();
         $data['kode_guru'] = $data['kode_pengguna'];
         $data['rombel'] = $this->request->getPost('rombel');
         $data['mapel'] = $this->request->getPost('mapel');
@@ -732,9 +760,9 @@ public function tambahpresensi($id_agendaguru)
          return redirect()->to('/agendaguru');  
       }
       else {
-        $jadwal=$this->pbm->jadwal_data();
-        $data['rombel']=$this->rombel_jadwal($jadwal);
-        $data['mapel']=$this->mapel_jadwal($jadwal);
+        //$jadwal=$this->pbm->jadwal_data();
+        $data['rombel']=$this->rombel_jadwal( $data['jadwal']);
+        $data['mapel']=$this->mapel_jadwal( $data['jadwal']);
         //d($data);
         return view('header')
         .view('menu',$data)
@@ -746,7 +774,8 @@ public function tambahpresensi($id_agendaguru)
 
     public function rekap_absensi()
        {
-        $data = session()->get();
+        global $data;
+    $this->sesi();
         $model = new AgendaGuruModel();
         $data['absensi']=$model->rekap_absensi();
         for ($a=0;$a<count($data['absensi']);$a++)

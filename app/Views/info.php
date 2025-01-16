@@ -46,3 +46,14 @@ $tanggal= $hari[2]." ".BULAN[$hari[1]]." ".$hari[0];
         </div>
       </div>
     </div>
+    <!-- <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
+    <script>
+  const beamsClient = new PusherPushNotifications.Client({
+    instanceId: '858941f5-5fbe-49b7-8202-2031c0e0fb06',
+  });
+
+  beamsClient.start()
+    .then(() => beamsClient.addDeviceInterest('hello'))
+    .then(() => console.log('Successfully registered and subscribed!'))
+    .catch(console.error);
+</script> -->
