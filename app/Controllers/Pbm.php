@@ -536,7 +536,7 @@ class Pbm extends BaseController {
                 }
             }
         }
-        d( $jadwal );
+        //d( $jadwal );
         return $jadwal;
     }
 

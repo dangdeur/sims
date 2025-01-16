@@ -739,9 +739,53 @@ public function tambahpresensi($id_agendaguru)
     {
       global $data;
     $this->sesi();
+    
       $data['jadwal']=$this->pbm->jadwal_data();
-      $data['jam_sekarang']=$this->pbm->jam_ke();
-      d($data);
+      $data['jam_sekarang']=date("N").$this->pbm->jam_ke();
+      
+      switch (date("N")) {
+        case 1:
+            $h='Senin';
+            break;
+        case 2:
+          $h='Selasa';
+            break;
+        case 3:
+          $h='Rabu';
+          break;
+        case 4:
+          $h='Kamis';
+          break;
+        case 5:
+          $h='Jumat';
+          break;
+        case 6:
+          $h='Sabtu';
+          break;
+        case 7:
+          $h='Minggu';
+          break;
+      }
+     $data['kode_hari']=date("N");
+
+      $jadwal_hari_ini = $data['jadwal'][$h];
+     
+foreach ($jadwal_hari_ini as $jam=>$kelas)
+{
+  
+  if (!isset($durasi[$kelas['kelas']][$jam]))
+    {
+      $durasi[$kelas['kelas']][$jam] =['rombel'=>$kelas['kelas'],'mapel'=>$kelas['mapel']];
+     // $durasi[$kelas['kelas']]['mapel']=$kelas['mapel'];
+    }
+    else {
+      $durasi[$kelas['kelas']][$jam]=['rombel'=>$kelas['kelas'],'mapel'=>$kelas['mapel']];
+    }
+    
+}
+$data['info']=$durasi;
+
+     
       if ($this->request->is('post')) {
         $model = new AgendaGuruModel();
         // $data['jadwal']=$this->pbm->jadwal_data();
@@ -754,6 +798,7 @@ public function tambahpresensi($id_agendaguru)
         $data['tanggal']=date("Y-m-d");
         $data['waktu'] = date("H:i:s");
         $data['kode_agendaguru']=$data['kode_guru']."-".date("dmY")."-".$data['rombel'];
+       
         
         //d($data);
          $model->insert($data,false);
@@ -761,9 +806,10 @@ public function tambahpresensi($id_agendaguru)
       }
       else {
         //$jadwal=$this->pbm->jadwal_data();
+       
         $data['rombel']=$this->rombel_jadwal( $data['jadwal']);
         $data['mapel']=$this->mapel_jadwal( $data['jadwal']);
-        //d($data);
+        d($data);
         return view('header')
         .view('menu',$data)
         .view('form_lapor')

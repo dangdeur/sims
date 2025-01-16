@@ -15,22 +15,55 @@ Dengan ini saya melapor kepada pihak terkait,
 
 <?php
 echo form_open("agendaguru/lapor");
+
+
+
 ?>
 <table class="table">
   <tr>
     <td>Waktu pelaporan</td>
    
-    <td><strong><div id="time" class="col-form-label"></div></strong></td>
+    <td>
+      <strong><div id="time" class="col-form-label"></div></strong>
+    <?php
+    $jp=substr($jam_sekarang, -1, 1);
+    $jp=$jp+1;
+    echo JP[$kode_hari][$jp];
+    ?>
+    </td>
 </tr>
 <tr>
     <td>Rombel</td>
     
-    <td><?php echo form_dropdown('rombel', $rombel,'', $att=['class'=>'form-select','id'=>'rombel']); ?></td>
+    <td>
+      <?php 
+      
+      if (isset($info[$jam_sekarang]['rombel']))
+      {
+        $rombel_saat_ini=$info[$jam_sekarang]['rombel'];
+      }
+      else {
+        $rombel_saat_ini=NULL;
+        $rombel[NULL]='Jadwal Tidak Terdeteksi';
+      }
+      echo form_dropdown('rombel', $rombel,$rombel_saat_ini, $att=['class'=>'form-select','id'=>'rombel']);
+      ?>
+      </td>
 </tr>
 <tr>
     <td>Matapelajaran</td>
    
-    <td><?php echo form_dropdown('mapel', $mapel,'', $att=['class'=>'form-select','id'=>'rombel']); ?></td>
+    <td>
+      <?php
+        if (isset($info[$jam_sekarang]['mapel']))
+        {
+          $mapel_saat_ini=$info[$jam_sekarang]['mapel'];
+        }
+        else {
+          $mapel_saat_ini=NULL;
+          $mapel[NULL]='Mapel Tidak Terdeteksi';
+        }
+    echo form_dropdown('mapel', $mapel,$mapel_saat_ini, $att=['class'=>'form-select','id'=>'rombel']); ?></td>
 </tr>
 <?php foreach (LOKASI as $item): 
 

@@ -36,6 +36,7 @@ else {
       <!-- <h1 class="text-danger">DATA SISWA BELUM VALID, BELUM BISA ISI PRESENSI, HANYA AGENDA GURU SAJA</h1> -->
       <!-- <img class="d-block mx-auto mb-4" src="<?= base_url('gambar/logo.png') ?>" alt="" width="72" height="72"> -->
       <h2>Rekap PBM Guru</h2>
+      <a class="btn btn-success" href="<?= site_url('/agendaguru/lapor'); ?>">Lapor</a>
       
       <?php
      
