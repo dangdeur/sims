@@ -713,7 +713,11 @@ class AgendaGuru extends Pbm
     }
     $data['kode_hari'] = date("N");
 
-    $jadwal_hari_ini = $data['jadwal'][$h];
+    if (isset($data['jadwal'][$h]))
+    {
+      $jadwal_hari_ini = $data['jadwal'][$h];
+    
+    
 
     foreach ($jadwal_hari_ini as $jam => $kelas) {
 
@@ -726,7 +730,8 @@ class AgendaGuru extends Pbm
     }
     $data['info'] = $durasi;
 
-
+    }
+    
     if ($this->request->is('post')) {
       $model = new AgendaGuruModel();
       // $data['jadwal']=$this->pbm->jadwal_data();
