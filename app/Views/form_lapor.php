@@ -25,9 +25,7 @@ echo form_open("agendaguru/lapor");
    
     <td>
       <strong><div id="time" class="col-form-label"></div></strong>
-    <?php
-   
-    ?>
+    <?=$jam_ke?>
     </td>
 </tr>
 <tr>

@@ -712,7 +712,18 @@ class AgendaGuru extends Pbm
         break;
     }
     $data['kode_hari'] = date("N");
-
+    
+    if (date("N") !=6 || date("N") !=6)
+    {
+    $jam_ke=substr($data['jam_sekarang'], -1, 1);
+    $jam_ke=$jam_ke+1;
+    $data['jam_ke']=JP[date("N")][$jam_ke];
+    //echo JP[$kode_hari][$jp];
+    }
+    else {
+      $data['jam_ke']="";
+    }
+    
     if (isset($data['jadwal'][$h]))
     {
       $jadwal_hari_ini = $data['jadwal'][$h];
