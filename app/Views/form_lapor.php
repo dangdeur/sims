@@ -26,9 +26,7 @@ echo form_open("agendaguru/lapor");
     <td>
       <strong><div id="time" class="col-form-label"></div></strong>
     <?php
-    $jp=substr($jam_sekarang, -1, 1);
-    $jp=$jp+1;
-    echo JP[$kode_hari][$jp];
+   
     ?>
     </td>
 </tr>
