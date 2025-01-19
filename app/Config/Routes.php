@@ -81,6 +81,7 @@ $routes->get('/form_terlambat', 'Siswa::form_terlambat');
 $routes->get('/tampil_siswa/(.+)', 'Siswa::tampil_siswa/$1');
 $routes->post('/tampil_siswa', 'Siswa::tampil_siswa');
 $routes->post('/tampil_siswa/(.+)', 'Siswa::tampil_siswa/$1');
+$routes->get('/simpan_tl/(.+)', 'Piket::simpan_tl/$1');
 
 //Profil
 $routes->get('/profil', 'Info::profil');

@@ -1,41 +1,47 @@
 <?php
 
 namespace App\Controllers;
+
 use Config\Services;
-use App\Models\PenggunaModel;
-use App\Models\StafModel;
+// use App\Models\PenggunaModel;
+use App\Models\KeterlambatanModel;
+// use App\Models\StafModel;
 //$encrypter = service('encrypter');
 
 
-class Polling extends BaseController
+class Piket extends BaseController
 {
-  protected $helpers = ['form', 'text', 'cookie','html'];
-  
-  public function index()
+  protected $helpers = ['form', 'text', 'cookie', 'html'];
+
+  public function sesi()
   {
-    //$enkripsi = service('encrypter');
-    $data = $this->session->get();
-    $model = new PenggunaModel;
-   $data['nama_guru']=$model->nama(['peran'=>1]);
-   $data['nama_staf']=$model->nama(['peran'=>6]);
-   //$data['txt_guru']=$enkripsi->encrypt($nama_guru);
-   //$data['txt_guru']=$nama_guru;
-  d($data);
-
-  //  $modelpolling = new PollingModel();
-  //  $data['polling']=$modelpolling->data_polling();
-   //($data['txt_guru']);
-
-    return view('header')
-       . view('menu', $data)
-      . view('polling')
-      . view('footer');
+    global $data;
+    if (isset($_SESSION['kode_pengguna'])) {
+      $data = session()->get();
+    } else {
+      return redirect()->to('/logout');
+    }
   }
 
-  
+  public function index()
+  {
+    
+  }
 
- 
-
- 
-
+  public function simpan_tl($nis)
+  {
+    $this->sesi();
+    $model = new KeterlambatanModel();
+    $tanggal = date("dmY");
+    $kode = $nis . "-" . $tanggal;
+    $data = array(
+      'kode' => $kode,
+      'nis' => $nis,
+      'jp' => 'jp',
+      
+    );
+    //dd($data);
+    $model->insert($data, false);
+    return redirect()->to('/form_terlambat');
+  }
 }

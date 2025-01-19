@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 use Config\Services;
- use App\Models\AgendaGuruModel;
-
 use App\Models\SiswaModel;
 
 
@@ -14,13 +12,17 @@ class Siswa extends Pbm
   //use ResponseTrait;
   protected $helpers = ['form','text','cookie','date','url','html'];
   protected $pbm;
+  //protected $data;
   protected $session;
 
-  public function __construct()
+  public function sesi()
   {
-    //  $this->pbm= new Pbm();
-    //  $data = session()->get();
-     
+    global $data;
+    if (isset($_SESSION['kode_pengguna'])) {
+      return $data = session()->get();
+    } else {
+      return redirect()->to('/logout');
+    }
   }
   
   public function login()
@@ -138,7 +140,11 @@ class Siswa extends Pbm
 
    public function form_terlambat()
   {
-    $data = session()->get();
+    //$data = session()->get();
+    global $data;
+    $this->sesi();
+    //dd($data);
+    
     $siswa = new SiswaModel();
    
     $siswa->distinct()->select('rombel')->orderBy('rombel','ASC');

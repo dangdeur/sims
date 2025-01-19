@@ -25,7 +25,14 @@
 
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown"> 
-				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" ?>Info </a> 
+				<!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    				99+
+    				<span class="visually-hidden">unread messages</span>
+  				</span> -->
+				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" ?>
+				
+				  Info 
+				</a> 
 					<ul class="dropdown-menu">
 					<li><a class="dropdown-item" href="<?= site_url('info') ?>"> Pengumuman </a></li>
 					<li><a class="dropdown-item" href="<?= site_url('profil') ?>"> Profil </a></li>
@@ -116,10 +123,10 @@
 						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Piket </a>
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="<?= site_url('tuta') ?>">Lapor Aktifitas </a></li>
-							<!-- <li><a class="dropdown-item" href="<?= site_url('terlambat') ?>"> Keterlambatan Siswa </a></li> -->
+							
 							<li><a class="dropdown-item" href=""> Keterlambatan Siswa &raquo;</a>
 								<ul class="submenu dropdown-menu">
-									<li><a class="dropdown-item disabled" href="<?= site_url('form_terlambat') ?>" >Input
+									<li><a class="dropdown-item" href="<?= site_url('form_terlambat') ?>" >Input
 											Keterlambatan</a></li>
 									<!-- <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
 					  <li><a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>

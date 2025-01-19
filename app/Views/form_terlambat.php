@@ -18,11 +18,6 @@
   echo '</div>';
   ?>
 
-
-
-
-
-
 </div>
 
 <?php
@@ -53,7 +48,7 @@
           for (i = 0; i < data.length; i++) {
             var no = i + 1;
             html += '<tr><td>' + no + '</td><td>' + data[i].nis + '</td><td>' + data[i].nama_siswa + '</td>';
-            html += '<td><button class="form-control btn-warning" name="tl" id="tl" onClick="tl(' + data[i].nis + ');">Terlambat</button></td></tr>';
+            html += '<td><button class="form-control btn-warning" name="tl" id="tl" onClick="tl(' + data[i].nis + ');">Terlambatt</button></td></tr>';
           }
           html += '</table>';
           $('#tampil').html(html);
