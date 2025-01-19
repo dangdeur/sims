@@ -31,11 +31,12 @@ class Piket extends BaseController
   public function simpan_tl($nis)
   {
     $this->sesi();
+
     $model = new KeterlambatanModel();
     $tanggal = date("dmY");
     $kode = $nis . "-" . $tanggal;
     $data = array(
-      'kode' => $kode,
+      'kode_keterlambatan' => $kode,
       'nis' => $nis,
       'jp' => 'jp',
       

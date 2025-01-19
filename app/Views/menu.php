@@ -126,7 +126,7 @@
 							
 							<li><a class="dropdown-item" href=""> Keterlambatan Siswa &raquo;</a>
 								<ul class="submenu dropdown-menu">
-									<li><a class="dropdown-item" href="<?= site_url('form_terlambat') ?>" >Input
+									<li><a class="dropdown-item disabled" href="<?= site_url('form_terlambat') ?>" >Input
 											Keterlambatan</a></li>
 									<!-- <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
 					  <li><a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
