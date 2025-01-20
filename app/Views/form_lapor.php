@@ -2,22 +2,27 @@
   <?php
    switch (date("N")) {
     case 1:
+      $jam_masuk='8.00';
       $jam_pulang = '15.50';
       break;
     case 5:
+      $jam_masuk='8.00';
       $jam_pulang = '15.40';
       break;
     case 6:
+      $jam_masuk='-';
       $jam_pulang = '-';
       break;
     case 7:
+      $jam_masuk='-';
       $jam_pulang = '-';
       break;
     default:
+    $jam_masuk='7.15';
       $jam_pulang='15.40';
     }
 
-if (date('H.i') >= 7.00 && date('H.i') <= $jam_pulang) 
+if (date('H.i') >= $jam_masuk && date('H.i') <= $jam_pulang) 
 { 
   ?>
 <div class="alert alert-danger">
@@ -106,7 +111,7 @@ echo form_close();
 else {
   ?>
 <div class="alert alert-danger">
-Diluar waktu pembelajaran, jam 07.00 - <?=$jam_pulang;?>
+Diluar waktu pembelajaran <strong><?= $jam_masuk.' - '.$jam_pulang;?></strong>. Waktu saat ini  <strong><span id="time"></div></span></strong>
 </div>
   <?php
 }

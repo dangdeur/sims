@@ -11,9 +11,21 @@ use App\Models\HarianModel;
 class Info extends BaseController
 {
   protected $helpers = ['form', 'text', 'cookie','html'];
+  
+  public function sesi()
+  {
+    global $data;
+    if (isset($_SESSION['kode_pengguna'])) {
+      $data = session()->get();
+    } else {
+      return redirect()->to('/logout');
+    }
+  }
+
   public function index()
   {
-    $data = $this->session->get();
+    global $data;
+    $this->sesi();
     $model = new InfoModel;
     //paginasi
     $data['info'] = $model->select('*')->orderBy('tanggal', 'DESC')->paginate(10);
@@ -35,7 +47,8 @@ class Info extends BaseController
 
   public function profil()
   {
-    $data = $this->session->get();
+    global $data;
+    $this->sesi();
     $stafmodel = new StafModel();
   $data['detail'] = $stafmodel->where('kode_staf', $data['kode_pengguna'])->first();
   // d($data);
@@ -47,7 +60,8 @@ class Info extends BaseController
 
   public function rekap_upacara()
   {
-    $data = $this->session->get();
+    global $data;
+    $this->sesi();
     $upacaramodel = new UpacaraModel();
     $data ['absen']=  $upacaramodel->where(['kode_absen'=>$data['kode_absen']])->orderBy('waktu','DESC')->paginate(20);
     $data ['pager'] = $upacaramodel->pager;

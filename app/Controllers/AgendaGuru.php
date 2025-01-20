@@ -14,7 +14,7 @@ class AgendaGuru extends Pbm
 {
   protected $helpers = ['form', 'text', 'cookie', 'date'];
   protected $pbm;
-  public $data;
+  //public $data;
   protected $session;
 
   public function __construct()
@@ -32,7 +32,7 @@ class AgendaGuru extends Pbm
     $this->sesi();
     //dd($this->data);
     $agendamodel = new AgendaGuruModel();
-    $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('tanggal', 'DESC')->paginate(10);
+    $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('dibuat', 'DESC')->paginate(10);
 
 
     // $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->findAll();
