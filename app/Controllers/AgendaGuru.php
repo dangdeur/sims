@@ -733,14 +733,20 @@ class AgendaGuru extends Pbm
     foreach ($jadwal_hari_ini as $jam => $kelas) {
 
       if (!isset($durasi[$kelas['kelas']][$jam])) {
-        $durasi[$kelas['kelas']][$jam] = ['rombel' => $kelas['kelas'], 'mapel' => $kelas['mapel']];
+        $durasi[$jam] = ['rombel' => $kelas['kelas'], 'mapel' => $kelas['mapel']];
         // $durasi[$kelas['kelas']]['mapel']=$kelas['mapel'];
-      } else {
-        $durasi[$kelas['kelas']][$jam] = ['rombel' => $kelas['kelas'], 'mapel' => $kelas['mapel']];
-      }
+        $jpnya[]=$jam;
+      } 
     }
     $data['info'] = $durasi;
-
+    $data['jp0']=reset($jpnya);
+    $jam_0=substr($data['jp0'], -1, 1);
+    $jam_0=$jam_0+1;
+    $data['jp1']=end($jpnya);
+    $jam_1=substr($data['jp1'], -1, 1);
+    $jam_1=$jam_1+1;
+    $data['jp_0']=$jam_0;
+    $data['jp_1']=$jam_1;
     }
     
     if ($this->request->is('post')) {

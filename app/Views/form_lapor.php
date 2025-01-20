@@ -34,7 +34,7 @@ echo form_open("agendaguru/lapor");
     <td>
       <?php 
       
-      if (isset($info[$jam_sekarang]['rombel']))
+      if (isset($info[$jam_sekarang]))
       {
         $rombel_saat_ini=$info[$jam_sekarang]['rombel'];
       }
