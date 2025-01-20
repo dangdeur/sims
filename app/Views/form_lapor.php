@@ -1,4 +1,25 @@
 <div class="container">
+  <?php
+   switch (date("N")) {
+    case 1:
+      $jam_pulang = '15.50';
+      break;
+    case 5:
+      $jam_pulang = '15.40';
+      break;
+    case 6:
+      $jam_pulang = '-';
+      break;
+    case 7:
+      $jam_pulang = '-';
+      break;
+    default:
+      $jam_pulang='15.40';
+    }
+
+if (date('H.i') >= 7.00 && date('H.i') <= $jam_pulang) 
+{ 
+  ?>
 <div class="alert alert-danger">
 Lapor PBM dilaksanakan saat akan memulai proses pembelajaran. Apabila tidak Lapor, maka tidak bisa mengisi Agenda
 </div>
@@ -81,6 +102,14 @@ endforeach ?>
 </table>
 <?php
 echo form_close();
+}
+else {
+  ?>
+<div class="alert alert-danger">
+Diluar waktu pembelajaran, jam 07.00 - <?=$jam_pulang;?>
+</div>
+  <?php
+}
 ?>
 </div>
 
