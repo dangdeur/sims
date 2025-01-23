@@ -11,7 +11,7 @@ use App\Models\KeterlambatanModel;
 
 class Piket extends BaseController
 {
-  protected $helpers = ['form', 'text', 'cookie', 'html'];
+  protected $helpers = ['form', 'text', 'cookie', 'html','session'];
 
   public function sesi()
   {
@@ -31,7 +31,7 @@ class Piket extends BaseController
   public function simpan_tl($nis)
   {
     $this->sesi();
-
+    $session=session();
     $model = new KeterlambatanModel();
     $tanggal = date("dmY");
     $kode = $nis . "-" . $tanggal;
@@ -42,6 +42,8 @@ class Piket extends BaseController
       
     );
     d($data);
+    $_SESSION['nis']=$nis;
+    $session->setFlashdata('nis');
     $model->save($data, false);
     return redirect()->to('/form_terlambat');
   }
