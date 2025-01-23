@@ -78,11 +78,6 @@ class AgendaGuru extends Pbm
     $agendamodel = new AgendaGuruModel();
     $data['agenda'] = $agendamodel->where('id_agendaguru', $id)->first();
     //d($data);
-    // $data['waktu']=$this->waktu();
-    // $jadwal=$this->pbm->jadwal_data();
-    // //d($jadwal);
-    // $data['rombel']=$this->rombel_jadwal($jadwal);
-    // $data['mapel']=$this->mapel_jadwal($jadwal);
     if ($this->request->is('get')) {
       $data['form'] = 1;
       return view('header')
@@ -486,13 +481,20 @@ class AgendaGuru extends Pbm
 
     $data_absensi = json_decode($data['agenda']['absensi'], true);
     $key = array_column($data_absensi[$absensi], $nis);
-    //dd($data_absensi);
+    
     for ($h = 0; $h < count($data_absensi[$absensi]); $h++) {
       if ($data_absensi[$absensi][$h]['nis'] == $nis) {
         unset($data_absensi[$absensi][$h]);
       }
     }
-
+    
+  //   foreach ($data_absensi as $key => $value) {
+  //     if (count($value) < 0) {
+  //        unset($data_absensi[$value]);
+  //     }
+  // }
+    //$data_absensi=array_filter($data_absensi);
+    //d($data_absensi);
     $this->update_absen($data_absensi, $id_agendaguru);
     return redirect()->to('/agendaguru');
   }
@@ -530,12 +532,17 @@ class AgendaGuru extends Pbm
   public function update_absen($absen, $id)
   {
     $agenda = new AgendaGuruModel();
+    $absen=array_filter($absen);
     if (!empty($absen)) {
       $dataabsen = json_encode($absen);
     } else {
-      $dataabsen = 'NULL';
+      $dataabsen = NULL;
     }
     $data['update']['absensi'] = $dataabsen;
+    // if (is_null($data['update']['absensi']))
+    // {
+    //   unset($data['update']['absensi']);
+    // }
     $agenda->update($id, $data['update']);
   }
   public function rombel_jadwal($jadwal)
@@ -745,17 +752,20 @@ class AgendaGuru extends Pbm
     $data['jp1']=end($jpnya);
     $jam_1=substr($data['jp1'], -1, 1);
     $jam_1=$jam_1+1;
-    $data['jp_0']=$jam_0;
-    $data['jp_1']=$jam_1;
+    $data['jp0']=$jam_0;
+    $data['jp1']=$jam_1;
     }
     
     if ($this->request->is('post')) {
+
       $model = new AgendaGuruModel();
       // $data['jadwal']=$this->pbm->jadwal_data();
       $data['kode_guru'] = $data['kode_pengguna'];
       $data['rombel'] = $this->request->getPost('rombel');
       $data['mapel'] = $this->request->getPost('mapel');
       $data['lokasi'] = $this->request->getPost('lokasi');
+       $data['jp0'] = $data['jp0'];
+       $data['jp1'] = $data['jp1'];
       $data['tapel'] = TAPEL;
       $data['semester'] = 2;
       $data['tanggal'] = date("Y-m-d");

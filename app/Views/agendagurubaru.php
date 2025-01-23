@@ -77,12 +77,12 @@
             $jp=JP[date('N')];
             $jp[null]='Pilih JP';
             
-            echo form_dropdown('jp0', $jp,old('jp0'), $att=['class'=>'form-select','id'=>'jp0','required'=>'required']); ?>
+            echo form_dropdown('jp0', $jp,$agenda['jp0'], $att=['class'=>'form-select','id'=>'jp0','required'=>'required']); ?>
           </div>
               
           <div class="col-sm-3">
             <?php
-              echo form_dropdown('jp1', $jp,old('jp1'), $att=['class'=>'form-select','id'=>'jp1','required'=>'required']); ?>
+              echo form_dropdown('jp1', $jp,$agenda['jp1'], $att=['class'=>'form-select','id'=>'jp1','required'=>'required']); ?>
           </div>
             
 

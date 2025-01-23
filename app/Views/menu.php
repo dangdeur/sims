@@ -1,16 +1,7 @@
 <!-- ============= COMPONENT ============== -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 	<div class="container-fluid">
-		<!-- <a class="navbar-brand" href="#"><?= $nama_lengkap ?></a>-->
-		<!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>  -->
-
-		<!-- neo -->
-
-			
-		
+				
     		<a class="navbar-brand" href="<?= site_url('profil') ?>">
       		<img src="<?=base_url('gambar/staf/'.$kode_pengguna.'.JPG')?>" alt="Logo" width="30" height="26" class="rounded-circle d-inline-block align-text-top">
 			  <?= $nama_lengkap ?> </a>
@@ -126,7 +117,7 @@
 							
 							<li><a class="dropdown-item" href=""> Keterlambatan Siswa &raquo;</a>
 								<ul class="submenu dropdown-menu">
-									<li><a class="dropdown-item disabled" href="<?= site_url('form_terlambat') ?>" >Input
+									<li><a class="dropdown-item" href="<?= site_url('form_terlambat') ?>" >Input
 											Keterlambatan</a></li>
 									<!-- <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
 					  <li><a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>

@@ -24,6 +24,8 @@
 
 if (date('H.i') >= $jam_masuk && date('H.i') <= $jam_pulang) 
 { 
+  if(isset($info[$jam_sekarang]) && $info[$jam_sekarang] != NULL)
+  {
   ?>
 <div class="alert alert-danger">
 Lapor PBM dilaksanakan saat akan memulai proses pembelajaran. Apabila tidak Lapor, maka tidak bisa mengisi Agenda
@@ -99,7 +101,26 @@ endforeach ?>
     <td><?php echo form_dropdown('lokasi',$lokasi ,'', $att=['class'=>'form-select','id'=>'rombel']); ?></td>
 </tr>
 
-
+<tr>
+    <td>Jam Pelajaran</td>
+    
+    <td>
+      <div class="row">
+        <div class="col-2">
+      <?php
+       echo form_input(['name'=>'jp0','id'=>'jp0','required'=>'required','class'=>'form-control','readonly'=>TRUE,'value'=>set_value('jp0', JP[date("N")][$jp0])]);
+       echo '</div>';
+        //echo '<div class="col-2">';
+      //  echo 's.d';
+      //echo '<label>-</label>';
+        //echo '</div>';
+      
+       echo '<div class="col-2">';
+       echo form_input(['name'=>'jp1','id'=>'jp1','required'=>'required','class'=>'form-control','readonly'=>TRUE,'value'=>set_value('jp1', JP[date("N")][$jp1])]);
+      ?>
+      </div>
+      </td>
+</tr>
 <tr>
     <td colspan="3"><button class="btn btn-primary">Lapor</button></td>
     
@@ -107,6 +128,14 @@ endforeach ?>
 </table>
 <?php
 echo form_close();
+  }
+  else {
+  ?>
+  <div class="alert alert-success">
+Tidak ada jadwal PBM saat ini <strong><?= JAM_PBM[$jam_sekarang];?></strong>. Waktu saat ini  <strong><span id="time"></div></span></strong>
+</div>
+<?php
+  }
 }
 else {
   ?>

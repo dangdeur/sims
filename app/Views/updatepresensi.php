@@ -23,6 +23,7 @@ foreach ($absen_lama as $absensinya=>$orangnya)
 //d($data_lama_catatan);
 //}
 ?>
+<div class="container">
 <h2>Pengisian Absensi <?=$agenda['rombel'].' Jam Ke '.$agenda['jp0']."-".$agenda['jp1'] ?></h2>
 <table class="table table-striped">
 <tr>
@@ -144,7 +145,8 @@ $no++;
 // echo form_hidden('siswa',$siswa );
 echo form_hidden('id_agendaguru', $agenda['id_agendaguru']);
 echo form_hidden('jumlah_siswa', $no);
-echo '<tr><td colspan=5>'.form_submit('simpanpresensi', 'Simpan',['class'=>'form-control']).'</td></tr>';
+echo '<tr><td colspan=5>'.form_submit('simpanpresensi', 'Simpan',['class'=>'form-control btn btn-warning']).'</td></tr>';
 echo form_close();
 ?>
 </table>
+</div>

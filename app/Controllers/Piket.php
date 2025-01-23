@@ -41,8 +41,8 @@ class Piket extends BaseController
       'jp' => 'jp',
       
     );
-    //dd($data);
-    $model->insert($data, false);
+    d($data);
+    $model->save($data, false);
     return redirect()->to('/form_terlambat');
   }
 }

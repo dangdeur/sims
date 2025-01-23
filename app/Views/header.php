@@ -21,7 +21,7 @@
   <link href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?= base_url("fa/css/all.css"); ?>" />
 
-  <link href="<?= base_url('bootstrap/extensions/sticky-header/bootstrap-table-sticky-header.css') ?>" rel="stylesheet">
+  <!-- <link href="<?= base_url('bootstrap/extensions/sticky-header/bootstrap-table-sticky-header.css') ?>" rel="stylesheet"> -->
 
 
 
@@ -34,11 +34,17 @@
     background-color: #fff;
 }
 
-th {
-  position: sticky;
+    .judul{
+        position:sticky;
+        top: 0 ;
+    }
+
+
+/* th {
+  //position: sticky;
   top: 50px;
-  background: white;
-}
+  background: blue;
+} */
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
