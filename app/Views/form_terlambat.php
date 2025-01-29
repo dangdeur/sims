@@ -50,15 +50,23 @@ echo '<div id="pesan"></div>';
         contentType: "application/json",
         dataType: "JSON",
         success: function(data) {
+          console.log(data);
           var kalender = new Date();
           var i;
           var html = '<h4>Input data keterlambatan kelas : ' + rombel + ', Tanggal ' + '<?php echo date("d"); ?>' + ' ' + '<?php echo BULAN[date("m")]; ?>' + ' ' + '<?php echo date("Y"); ?>' + '</h4>';
           html += '<table class="table table-striped"><tr><th>No</th><th>NIS</th><th>Nama Siswa</th><th></th></tr>';
           for (i = 0; i < data.length; i++) {
+            console.log(data[i]);
             var no = i + 1;
             html += '<tr><td>' + no + '</td><td>' + data[i].nis + '</td><td>' + data[i].nama_siswa + '</td>';
 
+            if (data[i].kode_keterlambatan == null)
+          {
             html += '<td><button class="form-control btn-warning" name="tl" id="tl" onClick=tl(' + JSON.stringify(data[i].nis) + ');>Terlambat</button></td></tr>';
+          }
+          else {
+            html += '<td><button class="form-control btn-warning" name="tl" id="tl" onClick=tl(' + JSON.stringify(data[i].nis) + ');>Terlamb</button></td></tr>';
+          }
           }
           html += '</table>';
 

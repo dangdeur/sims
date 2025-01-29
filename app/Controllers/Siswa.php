@@ -138,58 +138,35 @@ class Siswa extends Pbm
         //end login cookies
   }
 
-   public function form_terlambat()
-  {
-    //$data = session()->get();
-    global $data;
-    $this->sesi();
-    //dd($data);
-    
-    $siswa = new SiswaModel();
-   
-    $siswa->distinct()->select('rombel')->orderBy('rombel','ASC');
-   
-    $data['rombel'] = $siswa->get()->getResultArray();
-     // d($data);
+  
 
-    
-    return view('header')
-         .view('menu',$data)
-         .view('form_terlambat')
-         .view('footer');
-   
-   
-  }
-
-  public function tampil_siswa($rombel=false)
-  {
+  // public function tampil_siswa($rombel=false)
+  // {
          
-    if ($rombel != '')
-    {
-      $siswa = new SiswaModel();
-      $data['nama_siswa']=$siswa->where(['rombel'=>$rombel])->findAll();
-      //$data['nama_siswa'] = $siswa->where('rombel', $rombel)->findAll();
-    echo json_encode($data['nama_siswa']);
-    }
-    else {
-      echo 'rombel ='.$rombel;
-    }
+  //   if ($rombel != '')
+  //   {
+  //     $siswa = new SiswaModel();
+  //     $data['nama_siswa']=$siswa->where(['rombel'=>$rombel])->findAll();
+      
+  //   echo json_encode($data['nama_siswa']);
+  //   }
+  //   else {
+  //     echo 'rombel ='.$rombel;
+  //   }
   
-  }
+  // }
 
-  public function simpan_tl($nis)
-  {
-    $tl = new KeterlambatanModel();
-    $data['keterlambatan'] = $tl->where(['nis'=>$nis])->first();
-    $data['nis']=$nis;
-    $data['catatan']=[];
+  // public function simpan_tl($nis)
+  // {
+  //   $tl = new KeterlambatanModel();
+  //   $data['keterlambatan'] = $tl->where(['nis'=>$nis])->first();
+  //   $data['nis']=$nis;
+  //   $data['catatan']=[];
     
-    // $data['nama_siswa']=$siswa->where(['rombel'=>$rombel])->findAll();
-    //   //$data['nama_siswa'] = $siswa->where('rombel', $rombel)->findAll();
-    // echo json_encode($data['nama_siswa']);
+    
   
-    $tl->save($data);
-  }
+  //   $tl->save($data);
+  // }
 
   public function simpanpresensi()
   {
