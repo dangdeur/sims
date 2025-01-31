@@ -74,7 +74,8 @@ $routes->get('/admin/ambil_alih', 'Admin::ambil_alih');
 $routes->get('/admin/ambil_alih/(.+)', 'Admin::ambil_alih/$1');
 
 //Piket
-$routes->get('/home', 'Home::index');
+$routes->get('/piket', 'Piket::index');
+$routes->get('/piketbaru', 'Piket::lapor');
 $routes->get('/home/get_items', 'Home::get_items');
 $routes->get('/gi', 'Home::get_items');
 $routes->get('/form_terlambat', 'Piket::form_terlambat');

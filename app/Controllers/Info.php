@@ -6,6 +6,7 @@ use App\Models\InfoModel;
 use App\Models\StafModel;
 use App\Models\UpacaraModel;
 use App\Models\HarianModel;
+use App\Models\PiketModel;
 
 
 class Info extends BaseController
@@ -32,7 +33,14 @@ class Info extends BaseController
     $data['info'] = $model->select('*')->orderBy('tanggal', 'DESC')->paginate(10);
     $data['pager'] = $model->pager;
 
-    //d($data);
+
+    // $piketmodel = new PiketModel();
+    // $piket = $piketmodel->where('kode_petugas', $data['kode_pengguna'])->first();
+    // if (!empty($piket['kode_petugas'])) {
+    //     $data['piket'] = $piket;
+    // }
+
+    d($data);
 
     return view('header')
       . view('menu', $data)

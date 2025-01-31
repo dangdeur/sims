@@ -113,7 +113,8 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Piket </a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="<?= site_url('tuta') ?>">Lapor Aktifitas </a></li>
+							<!-- <li><a class="dropdown-item" href="<?= site_url('tuta') ?>">Lapor Aktifitas </a></li> -->
+							<li><a class="dropdown-item" href="<?= site_url('piket') ?>">Lapor Aktifitas </a></li>
 							
 							<li><a class="dropdown-item" href=""> Keterlambatan Siswa &raquo;</a>
 								<ul class="submenu dropdown-menu">

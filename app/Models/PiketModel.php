@@ -6,7 +6,7 @@ class PiketModel extends Model{
   protected $table = 'piket';
   protected $primaryKey = 'id_piket';
   protected $useAutoIncrement = true;
-  protected $allowedFields = ['hari','jadwal','petugas_piket','kode_petugas','catatan'];
+  protected $allowedFields = ['hari','jadwal','petugas_piket','kode_petugas','koordinator'];
 
 
 
