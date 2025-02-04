@@ -69,6 +69,7 @@ $routes->post('/tutaedit/(.+)', 'TugasTambahan::edit/$1');
 
 //admin
 $routes->get('/admin', 'Admin::index');
+$routes->get('/admin/perbaiki_jam', 'Admin::perbaiki_jam');
 $routes->get('/admin/reset/(.+)', 'Admin::reset/$1');
 $routes->get('/admin/ambil_alih', 'Admin::ambil_alih');
 $routes->get('/admin/ambil_alih/(.+)', 'Admin::ambil_alih/$1');

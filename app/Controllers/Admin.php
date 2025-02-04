@@ -13,6 +13,16 @@ use App\Models\WalasModel;
 class Admin extends BaseController
 {
     
+    public function sesi()
+  {
+    global $data;
+    if (isset($_SESSION['kode_pengguna'])) {
+      $data = session()->get();
+    } else {
+      return redirect()->to('/logout');
+    }
+  }
+
     public function index()
     {
         $data = $this->session->get();
@@ -60,6 +70,22 @@ class Admin extends BaseController
                 $this->setUserSession( $user );
                 return redirect()->to( 'info' );
         }
+
+    }
+
+    public function perbaiki_jam ()
+    {
+        $data = $this->session->get();
+        $agendamodel = new AgendaGuruModel();
+        $data['agenda'] = $agendamodel->where('jp0 >=', 10);
+        $data['agenda']=$agendamodel->where('jp1 >=',10);
+        $data['agenda']=$agendamodel->findAll();
+d($data);
+        return view('admin/header')
+         .view('admin/menu',$data)
+         .view('admin/perbaikan_jam')
+       .view('admin/footer');
+       
 
     }
 
