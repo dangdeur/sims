@@ -8,7 +8,7 @@
         <div class="col-sm-8 mx-auto">
           <h3>Cetak Laporan Tugas Tambahan : <strong><?= $nama_lengkap ?></strong></h3>
           <?php
-          $option=[
+          $bln=[
             '01'=>'Januari',
             '02'=>'Februari',
             '03'=>'Maret',
@@ -22,12 +22,23 @@
             '11'=>'November',
             '12'=>'Desember'
           ];
+          $thn=['2024'=>'2024','2025'=>'2025'];
             echo form_open('cetakagendatuta');
            
             //echo 'Agenda harian mengajar :';
             $bln_sekarang=[date("m")];
             
-            echo form_dropdown('bulan', $option,$bln_sekarang ,['class'=>'form-control']);
+            $thn_sekarang=[date("Y")];
+            
+            //echo form_dropdown('bulan', $option,$bln_sekarang ,['class'=>'form-control']);
+            echo '<div class="row">';
+            echo '<div class="col">';
+            echo form_dropdown('bulan', $bln,$bln_sekarang ,['class'=>'form-control']);
+            echo '</div>';
+            echo '<div class="col">';
+            echo form_dropdown('tahun', $thn,$thn_sekarang ,['class'=>'form-control']);
+            echo '</div>';
+            echo '</div>';
            
             echo '<br /><button class="w-100 btn btn-lg btn-primary" type="submit">Cetak</button>';
             echo form_close();

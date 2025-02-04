@@ -29,9 +29,14 @@
             $bln_sekarang=[date("m")];
             $thn_sekarang=[date("Y")];
             
-           
+            echo '<div class="row">';
+            echo '<div class="col">';
             echo form_dropdown('bulan', $bln,$bln_sekarang ,['class'=>'form-control']);
+            echo '</div>';
+            echo '<div class="col">';
             echo form_dropdown('tahun', $thn,$thn_sekarang ,['class'=>'form-control']);
+            echo '</div>';
+            echo '</div>';
            
             echo '<br /><button class="w-100 btn btn-lg btn-primary" type="submit">Cetak</button>';
             echo form_close();

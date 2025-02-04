@@ -96,12 +96,13 @@ class Cetak extends BaseController
 		if ($this->request->is('post')) 
       {
 		$stafmodel = new StafModel;
-		$bulan=$this->request->getVar('bulan').date("o");
+		$bulan=$this->request->getVar('bulan');
+		$tahun=$this->request->getVar('tahun');
 		$data['staf']=$stafmodel->where('kode_staf', $data['kode_pengguna'])->first();
 		 $agendamodel=new AgendaTutaModel;
 		
 		 $agendamodel->where('kode_staf', $data['kode_pengguna']);
-		 $agendamodel->like('kode_agendatuta',$bulan);
+		 $agendamodel->like('kode_agendatuta',$bulan.date("Y"));
 		 $data['agenda'] =$agendamodel->findAll();
 		 $data['qr']=$this->qr();
 		 $data['bulan']=BULAN[$this->request->getVar('bulan')].' '.date("o");
