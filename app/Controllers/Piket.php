@@ -38,7 +38,7 @@ class Piket extends Pbm
   {
     global $data;
     $this->sesi();
-    d($data);
+    //d($data);
    
 
      

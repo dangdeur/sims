@@ -40,7 +40,7 @@ class Info extends BaseController
     //     $data['piket'] = $piket;
     // }
 
-    d($data);
+    //d($data);
 
     return view('header')
       . view('menu', $data)
