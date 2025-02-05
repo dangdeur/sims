@@ -35,7 +35,7 @@ class Cetak extends BaseController
 		 $data['bulan']=BULAN[$this->request->getVar('bulan')].' '.$tahun;
 
 
-		//($data);
+		//dd($data);
 		$html=view('cetakagendattd',$data);
 //dd($data);
 		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);

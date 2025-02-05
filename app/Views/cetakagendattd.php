@@ -43,17 +43,17 @@ for ($a=0;$a<count($agenda);$a++)
   $tgl_barat=$thn.'-'.substr($kode[1],2,2).'-'.$tgl;
   $waktu=strtotime($tgl_barat);
   $hari=date('N',$waktu);
-  $jam_awal=explode(' ',JP[$hari][$agenda[$a]['jp0']]);
-  $jam_awal_fix=explode('-',$jam_awal[2]);
+  //d($agenda);
+  //tutup 05-2025
+  //$jam_awal=explode(' ',JP[$hari][$agenda[$a]['jp0']]);
+  //$jam_awal_fix=explode('-',$jam_awal[2]);
+  //$jam_akhir=explode('-',JP[$hari][$agenda[$a]['jp1']]);
   
-  //d($jam_awal);
-  
-  $jam_akhir=explode('-',JP[$hari][$agenda[$a]['jp1']]);
-  //d($jam_akhir);
   echo '<tr>
           <td style="width: 5%;text-align: center;">'.$no;
-  echo '</td><td style="width: 20%;text-align: center;">'.$tanggal.'</td>
-          <td style="width: 75%;text-align: left;">Mengajar '.$agenda[$a]['mapel'].' di '.$agenda[$a]['rombel'].' jam '.$jam_awal_fix[0].'-'.$jam_akhir[1].'</td>
+  echo '</td><td style="width: 20%;text-align: center;">'.$tanggal.'</td>';
+  //echo '<td style="width: 75%;text-align: left;">Mengajar '.$agenda[$a]['mapel'].' di '.$agenda[$a]['rombel'].' jam '.$jam_awal_fix[0].'-'.$jam_akhir[1].'</td>
+  echo '<td style="width: 75%;text-align: left;">Mengajar '.$agenda[$a]['mapel'].' di '.$agenda[$a]['rombel'].'</td>
   </tr>';
   $bulan_aktif =substr($kode[1],2,2);
  
