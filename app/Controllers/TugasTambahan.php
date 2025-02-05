@@ -45,14 +45,14 @@ class TugasTambahan extends Pbm
 
         if ($this->request->is('post')) {
             $rules = [
-                'aktifitas' => 'required',
-                'jabatan' => 'required'
+                'aktifitas' => 'required'
+                //'jabatan' => 'required'
 
             ];
 
             $errors = [
-                'aktifitas' => ['required' => 'Aktifitas belum diisi'],
-                'jabatan' => ['required' => 'Jabatan belum diisi']
+                'aktifitas' => ['required' => 'Aktifitas belum diisi']
+                //'jabatan' => ['required' => 'Jabatan belum diisi']
 
             ];
 
@@ -61,7 +61,7 @@ class TugasTambahan extends Pbm
                 return redirect()->back()->withInput();
 
             } else {
-                $data['tuta']['jabatan']=$this->request->getVar('jabatan');
+                //$data['tuta']['jabatan']=$this->request->getVar('jabatan');
                 $data['tuta']['tanggal'] = $this->request->getVar('tahun') . '-' . $this->request->getVar('bulan') . '-' . $this->request->getVar('tanggal');
                 $data['tuta']['aktifitas'] = $this->request->getVar('aktifitas');
                 $data['tuta']['agenda'] = 1;
@@ -70,7 +70,7 @@ class TugasTambahan extends Pbm
                 $data['tuta']['kode_agendatuta'] = $data['kode_pengguna'] . '-' . $this->request->getVar('tanggal') . $this->request->getVar('bulan') . $this->request->getVar('tahun');
 
                 $agendatuta = new AgendaTutaModel();
-                d( $data );
+                //d( $data );
                 $agendatuta->insert($data['tuta'], false);
                 return redirect()->to('/tuta');
 

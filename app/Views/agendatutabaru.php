@@ -54,8 +54,9 @@
       <?php
       $text_area = ['name' => 'aktifitas', 'placeholder' => 'Uraian aktifitas', 'class' => 'form-control', 'value' => old('aktifitas')];
       echo form_textarea($text_area);
-      $jabatan[NULL]='Pilih jabatan';
-      echo form_dropdown('jabatan', $jabatan, '', $att = ['class' => 'form-select', 'id' => 'jabatan','value' => old('jabatan')]); ?>
+      // $jabatan[NULL]='Pilih jabatan';
+      // echo form_dropdown('jabatan', $jabatan, '', $att = ['class' => 'form-select', 'id' => 'jabatan','value' => old('jabatan')]); 
+      ?>
      
     
 
