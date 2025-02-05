@@ -18,7 +18,7 @@ class Info extends BaseController
     global $data;
     //if (isset($_SESSION['kode_pengguna'])) {
       if (session()->has('kode_pengguna')) {
-      $data = session()->get();
+      //$data = session()->get();
     } else {
       return redirect()->to('/logout');
     }
