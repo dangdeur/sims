@@ -16,8 +16,8 @@ class Info extends BaseController
   public function sesi()
   {
     global $data;
-    if (isset($_SESSION['kode_pengguna'])) {
-    //  if (session()->has('kode_pengguna')) {
+    //if (isset($_SESSION['kode_pengguna'])) {
+      if (session()->has('kode_pengguna')) {
       $data = session()->get();
     } else {
       return redirect()->to('/logout');
@@ -40,7 +40,7 @@ class Info extends BaseController
     //     $data['piket'] = $piket;
     // }
 
-    //d($data);
+    d($data);
 
     return view('header')
       . view('menu', $data)
