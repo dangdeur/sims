@@ -1,8 +1,18 @@
+<?php
+if (!isset($kode_pengguna))
+			{
+				return redirect()->to('/logout');
+			}
+			else {
+				?>
+
+			
 <!-- ============= COMPONENT ============== -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 	<div class="container-fluid">
 				
     		<a class="navbar-brand" href="<?= site_url('profil') ?>">
+					
 			
       		<img src="<?=base_url('gambar/staf/'.$kode_pengguna.'.JPG')?>" alt="Logo" width="30" height="26" class="rounded-circle d-inline-block align-text-top">
 			  <?= $nama_lengkap ?> </a>
@@ -204,3 +214,7 @@
 <!-- <div class="container-xl mb-4">
 	<p>Matching .container-xl...</p>
   </div> -->
+
+  <?php
+}
+  ?>
