@@ -1,7 +1,7 @@
 <?php
 if (!isset($kode_pengguna))
 			{
-				return redirect()->to('/logout');
+				return redirect()->to('/login');
 			}
 			else {
 				?>

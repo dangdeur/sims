@@ -1,28 +1,22 @@
 <div class="container">
   <?php
-   switch (date("N")) {
-    case 1:
-      $jam_masuk='8.00';
-      $jam_pulang = '15.50';
-      break;
-    case 5:
-      $jam_masuk='8.00';
-      $jam_pulang = '15.40';
-      break;
-    case 6:
-      $jam_masuk='-';
-      $jam_pulang = '-';
-      break;
-    case 7:
-      $jam_masuk='-';
-      $jam_pulang = '-';
-      break;
-    default:
-    $jam_masuk='7.15';
-      $jam_pulang='15.40';
-    }
+  //  switch (date("N")) {
+  //   case 1:
+  //     $jam_mulai='6.00';
+  //     $jam_selesai='12.00';
+      
+  //     break;
+  //   case 2:
+  //     $jam_mulai='12.00';
+  //     $jam_selesai='16.00';
+     
+  //     break;
+   
+  //   }
+    $jam_mulai='6.00';
+    $jam_selesai='12.00';
 
-if (date('H.i') >= $jam_masuk && date('H.i') <= $jam_pulang) 
+if (date('H.i') >= $jam_mulai && date('H.i') <= $jam_selesai) 
 { 
   if(isset($info[$jam_sekarang]) && $info[$jam_sekarang] != NULL)
   {
