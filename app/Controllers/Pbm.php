@@ -33,6 +33,7 @@ class Pbm extends BaseController
         $data_jadwal = $this->olah_jadwal3($jadwal);
 
         $data['jadwal'] = $data_jadwal;
+        $data['ramadhan']=RAMADHAN;
 
         return view('header')
             . view('menu', $data)
@@ -58,6 +59,9 @@ class Pbm extends BaseController
         $hari = date('w');
         
         $sekarang = Time::now('Asia/Jakarta', 'id_ID');
+        $ramadhan=RAMADHAN;
+        if ($ramadhan = 0)
+        {
         
         if ($hari == 1) {
             $jp1 = '08:45';
@@ -95,6 +99,32 @@ class Pbm extends BaseController
             $jp7 = '15:00';
             $jp8 = '15:40';
         }
+    }
+    else {
+        if ($hari == 5) {
+            $jp1 = '08:25';
+            $jp2 = '08:50';
+            $jp3 = '09:15';
+            $jp4 = '09:40';
+            $jp5 = '10:20';
+            $jp6 = '10:45';
+            $jp7 = '11:10';
+            $jp8 = '11:35';
+          
+        }
+        else {
+            $jp1 = '08:25';
+            $jp2 = '08:50';
+            $jp3 = '09:15';
+            $jp4 = '09:40';
+            $jp5 = '10:05';
+            $jp6 = '10:45';
+            $jp7 = '11:10';
+            $jp8 = '11:35';
+            $jp9 = '12:00';
+            $jp10 = '12:25';
+        }
+    }
 
         if ($sekarang->isBefore($jp1)) {
             $data['jp'] = '0';

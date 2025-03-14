@@ -53,7 +53,14 @@ $template = ['table_open' => '<table border="1" cellpadding="4" cellspacing="0" 
       $hari_seb=$h;
       $kelas_seb=$value['kelas'];
       $mapel_seb=$value['mapel'];
-      $table->addRow($hari,JAM_PBM[$key],$kelas,$mapel);
+      if ($ramadhan)
+      {
+        $jam_pbm=JAM_PBM_RAMADHAN;
+      }
+      else {
+        $jam_pbm=JAM_PBM;
+      }
+      $table->addRow($hari,$jam_pbm[$key],$kelas,$mapel);
       //$table->addRow($hari,$kelas,$kelas,$mapel);
       //$hariyangsama=false;
     }

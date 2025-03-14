@@ -1,36 +1,57 @@
 <div class="container">
   <?php
-  switch (date("N")) {
-    case 1:
-      $jam_masuk = '8.00';
-      $jam_pulang = '15.50';
-      break;
-    case 5:
-      $jam_masuk = '8.00';
-      $jam_pulang = '15.40';
-      break;
-    case 6:
-      $jam_masuk = '-';
-      $jam_pulang = '-';
-      break;
-    case 7:
-      $jam_masuk = '-';
-      $jam_pulang = '-';
-      break;
-    default:
-      $jam_masuk = '7.15';
-      $jam_pulang = '15.40';
+  if ($ramadhan = 0) {
+    switch (date("N")) {
+      case 1:
+        $jam_masuk = '8.00';
+        $jam_pulang = '15.50';
+        break;
+      case 5:
+        $jam_masuk = '8.00';
+        $jam_pulang = '15.40';
+        break;
+      case 6:
+        $jam_masuk = '-';
+        $jam_pulang = '-';
+        break;
+      case 7:
+        $jam_masuk = '-';
+        $jam_pulang = '-';
+        break;
+      default:
+        $jam_masuk = '7.15';
+        $jam_pulang = '15.40';
+    }
+  } else {
+    switch (date("N")) {
+
+      case 5:
+        $jam_masuk = '8.00';
+        $jam_pulang = '11.35';
+        break;
+      case 6:
+        $jam_masuk = '-';
+        $jam_pulang = '-';
+        break;
+      case 7:
+        $jam_masuk = '-';
+        $jam_pulang = '-';
+        break;
+      default:
+        $jam_masuk = '8.00';
+        $jam_pulang = '12.25';
+    }
   }
 
   if (date('H.i') >= $jam_masuk && date('H.i') <= $jam_pulang) {
     if (isset($jam_sekarang) && $jam_sekarang != NULL) {
 
-    //  foreach ($info as $kelas):
+      //  foreach ($info as $kelas):
 
-    //     $info[$kelas] = $ite;
+      //     $info[$kelas] = $ite;
 
-    //   endforeach
-      
+      //   endforeach
+
   ?>
       <div class="alert alert-danger">
         Lapor PBM dilaksanakan saat akan memulai proses pembelajaran. Apabila tidak Lapor, maka tidak bisa mengisi Agenda
@@ -112,7 +133,7 @@
             <div class="row">
               <div class="col-2">
                 <?php
-               // echo form_input(['name' => 'jp0', 'id' => 'jp0', 'required' => 'required', 'class' => 'form-control', 'readonly' => TRUE, 'value' => set_value('jp0', JP[date("N")][$jp0])]);
+                // echo form_input(['name' => 'jp0', 'id' => 'jp0', 'required' => 'required', 'class' => 'form-control', 'readonly' => TRUE, 'value' => set_value('jp0', JP[date("N")][$jp0])]);
                 echo '</div>';
                 //echo '<div class="col-2">';
                 //  echo 's.d';
@@ -120,7 +141,7 @@
                 //echo '</div>';
 
                 echo '<div class="col-2">';
-               // echo form_input(['name' => 'jp1', 'id' => 'jp1', 'required' => 'required', 'class' => 'form-control', 'readonly' => TRUE, 'value' => set_value('jp1', JP[date("N")][$jp1])]);
+                // echo form_input(['name' => 'jp1', 'id' => 'jp1', 'required' => 'required', 'class' => 'form-control', 'readonly' => TRUE, 'value' => set_value('jp1', JP[date("N")][$jp1])]);
                 ?>
               </div>
           </td>
@@ -130,14 +151,23 @@
 
         </tr>
       </table>
-    <?php
+      <?php
       echo form_close();
     } else {
-    ?>
-      <div class="alert alert-success">
-        Tidak ada jadwal PBM saat ini <strong><?= JAM_PBM[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
+      if ($ramadhan = 0) {
+
+      ?>
+        <div class="alert alert-success">
+          Tidak ada jadwal PBM saat ini <strong><?= JAM_PBM[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
 </div>
 <?php
+      } else {
+?>
+  <div class="alert alert-success">
+    Tidak ada jadwal PBM saat ini <strong><?= JAM_PBM_RAMADHAN[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
+  </div>
+<?php
+      }
     }
   } else {
 ?>
