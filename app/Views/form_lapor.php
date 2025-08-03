@@ -1,14 +1,26 @@
 <div class="container">
   <?php
-  if ($ramadhan = 0) {
+  if ($ramadhan=TRUE) {
     switch (date("N")) {
       case 1:
         $jam_masuk = '8.00';
         $jam_pulang = '15.50';
         break;
-      case 5:
+       case 2:
         $jam_masuk = '8.00';
-        $jam_pulang = '15.40';
+        $jam_pulang = '15.50';
+        break;
+         case 3:
+        $jam_masuk = '7.15';
+        $jam_pulang = '15.10';
+        break;
+         case 4:
+        $jam_masuk = '7.15';
+        $jam_pulang = '15.10';
+        break;
+      case 5:
+        $jam_masuk = '7.00';
+        $jam_pulang = '15.00';
         break;
       case 6:
         $jam_masuk = '-';
@@ -18,9 +30,9 @@
         $jam_masuk = '-';
         $jam_pulang = '-';
         break;
-      default:
-        $jam_masuk = '7.15';
-        $jam_pulang = '15.40';
+      // default:
+      //   $jam_masuk = '7.15';
+      //   $jam_pulang = '15.40';
     }
   } else {
     switch (date("N")) {
@@ -37,9 +49,9 @@
         $jam_masuk = '-';
         $jam_pulang = '-';
         break;
-      default:
-        $jam_masuk = '8.00';
-        $jam_pulang = '12.25';
+      // default:
+      //   $jam_masuk = '8.00';
+      //   $jam_pulang = '12.25';
     }
   }
 
@@ -82,7 +94,7 @@
             <strong>
               <div id="time" class="col-form-label"></div>
             </strong>
-            <?= $jam_ke ?>
+           
           </td>
         </tr>
         <tr>
@@ -131,17 +143,18 @@
 
           <td>
             <div class="row">
-              <div class="col-2">
+              <div class="col">
                 <?php
-                // echo form_input(['name' => 'jp0', 'id' => 'jp0', 'required' => 'required', 'class' => 'form-control', 'readonly' => TRUE, 'value' => set_value('jp0', JP[date("N")][$jp0])]);
-                echo '</div>';
-                //echo '<div class="col-2">';
+                //  echo form_input(['name' => 'jp0', 'id' => 'jp0', 'required' => 'required', 'class' => 'form-control', 'readonly' => TRUE, 'value' => set_value('jp0', JP[date("N")][$jp0])]);
+                // echo '</div>';
+                // echo '<div class="col">';
                 //  echo 's.d';
-                //echo '<label>-</label>';
-                //echo '</div>';
+                // echo '<label>-</label>';
+                // echo '</div>';
 
-                echo '<div class="col-2">';
-                // echo form_input(['name' => 'jp1', 'id' => 'jp1', 'required' => 'required', 'class' => 'form-control', 'readonly' => TRUE, 'value' => set_value('jp1', JP[date("N")][$jp1])]);
+                // echo '<div class="col">';
+                //  echo form_input(['name' => 'jp1', 'id' => 'jp1', 'required' => 'required', 'class' => 'form-control', 'readonly' => TRUE, 'value' => set_value('jp1', JP[date("N")][$jp1])]);
+                echo form_label(JP[date("N")][$jp0]." s.d." . JP[date("N")][$jp1]);
                 ?>
               </div>
           </td>
@@ -154,18 +167,19 @@
       <?php
       echo form_close();
     } else {
-      if ($ramadhan = 0) {
+      if ($ramadhan) {
 
       ?>
-        <div class="alert alert-success">
-          Tidak ada jadwal PBM saat ini <strong><?= JAM_PBM[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
-</div>
+      <div class="alert alert-success">
+    Tidak ada jadwal PBM saat ini <strong><?= JAM_PBM_RAMADHAN[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
+  </div>
+        
 <?php
       } else {
 ?>
   <div class="alert alert-success">
-    Tidak ada jadwal PBM saat ini <strong><?= JAM_PBM_RAMADHAN[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
-  </div>
+          Tidak ada jadwal PBM saat ini <strong><?= JAM_PBM[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
+</div>
 <?php
       }
     }

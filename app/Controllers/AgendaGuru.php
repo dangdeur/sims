@@ -7,6 +7,7 @@ use App\Models\AgendaGuruModel;
 use App\Models\PbmModel;
 use App\Models\SiswaModel;
 use App\Models\KeterlambatanModel;
+use CodeIgniter\I18n\Time;
 
 
 // class Agenda extends BaseController
@@ -809,6 +810,7 @@ class AgendaGuru extends Pbm
 
     $data['jadwal'] = $this->pbm->jadwal_data();
     $data['jam_sekarang'] = date("N") . $this->pbm->jam_ke();
+   
 
     switch (date("N")) {
       case 1:
@@ -835,16 +837,17 @@ class AgendaGuru extends Pbm
     }
     $data['kode_hari'] = date("N");
 
-    if (date("N") != 6 || date("N") != 6) {
+    if (date("N") != 6 || date("N") != 7) {
       $jam_ke = substr($data['jam_sekarang'], -1, 1);
-      $jam_ke = $jam_ke + 1;
+      
+      $data['jam_ke'] = $jam_ke + 1;
 
      
-      if (!$data['ramadhan']) {
-        $data['jam_ke'] = JP[date("N")][$jam_ke];
-      } else {
-        $data['jam_ke'] = JP_RAMADHAN[date("N")][$jam_ke];
-      }
+      // if (!$data['ramadhan']) {
+      //   $data['jam_ke'] = JP[date("N")][$jam_ke];
+      // } else {
+      //   $data['jam_ke'] = JP_RAMADHAN[date("N")][$jam_ke];
+      // }
       //echo JP[$kode_hari][$jp];
     } else {
       $data['jam_ke'] = "";
