@@ -140,7 +140,7 @@ class Pbm extends BaseController
         }
     }
 
-        if($hari !=6 || $hari !=7) {
+        if($hari == 5) {
         if ($sekarang->isBefore($jp1,'Asia/Jakarta')) {
             $data['jp'] = '0';
         } elseif ($sekarang->isBefore($jp2,'Asia/Jakarta')) {
@@ -157,20 +157,40 @@ class Pbm extends BaseController
             $data['jp'] = '6';
         } 
     }
-          elseif($hari !=5) {
-        if ($sekarang->isBefore($jp8,'Asia/Jakarta')) {
+    else {
+
+        if($hari == 6 || $hari == 7) {
+       
+
+        }
+        else {
+            if ($sekarang->isBefore($jp1,'Asia/Jakarta')) {
+            $data['jp'] = '0';
+        } elseif ($sekarang->isBefore($jp2,'Asia/Jakarta')) {
+            $data['jp'] = '1';
+        } elseif ($sekarang->isBefore($jp3,'Asia/Jakarta')) {
+            $data['jp'] = '2';
+        } elseif ($sekarang->isBefore($jp4,'Asia/Jakarta')) {
+            $data['jp'] = '3';
+        } elseif ($sekarang->isBefore($jp5,'Asia/Jakarta')) {
+            $data['jp'] = '4';
+        } elseif ($sekarang->isBefore($jp6,'Asia/Jakarta')) {
+            $data['jp'] = '5';
+        } elseif ($sekarang->isBefore($jp7,'Asia/Jakarta')) {
+            $data['jp'] = '6';
+        } 
+             if ($sekarang->isBefore($jp8,'Asia/Jakarta')) {
             $data['jp'] = '7';
         } elseif ($sekarang->isBefore($jp9,'Asia/Jakarta')) {
             $data['jp'] = '8';
         } elseif ($sekarang->isBefore($jp10,'Asia/Jakarta')) {
             $data['jp'] = '9';
-        } 
-
-        }
-        else {
+        } else
             $data['jp'] = '100';
          }
     }
+        
+    
 
 
        // $data['sekarang'] = $sekarang;
