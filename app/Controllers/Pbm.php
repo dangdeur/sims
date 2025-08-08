@@ -188,8 +188,6 @@ class Pbm extends BaseController
         } else
             $data['jp'] = '100';
          }
-    }
-        
     
 
 

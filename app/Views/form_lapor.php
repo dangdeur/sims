@@ -56,7 +56,8 @@
   }
 
   if (date('H.i') >= $jam_masuk && date('H.i') <= $jam_pulang) {
-    if (isset($jam_sekarang) && $jam_sekarang != NULL) {
+    //if (isset($jam_sekarang) && $jam_sekarang != NULL) {
+    if (isset($jp0) && isset($jp1)) {
 
       //  foreach ($info as $kelas):
 
@@ -167,18 +168,18 @@
       <?php
       echo form_close();
     } else {
-      if ($ramadhan) {
+      if (RAMADHAN) {
 
       ?>
       <div class="alert alert-success">
-    Tidak ada jadwal PBM saat ini <strong><?= JAM_PBM_RAMADHAN[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
+    Anda terdeteksi tidak mempunyai jadwal PBM saat ini <strong><?= JAM_PBM_RAMADHAN[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
   </div>
         
 <?php
       } else {
 ?>
   <div class="alert alert-success">
-          Tidak ada jadwal PBM saat ini <strong><?= JAM_PBM[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
+          Anda terdeteksi tidak mempunyai jadwal PBM saat ini <strong><?= JAM_PBM[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
 </div>
 <?php
       }
