@@ -192,6 +192,7 @@ class Pbm extends BaseController
 
 
        // $data['sekarang'] = $sekarang;
+        }
         
         return $data['jp'];
     }
