@@ -855,18 +855,27 @@ class AgendaGuru extends Pbm
 
     if (isset($data['jadwal'][$h])) {
       $jadwal_hari_ini = $data['jadwal'][$h];
+    }
 
-
-
+d($jadwal_hari_ini);
       foreach ($jadwal_hari_ini as $jam => $kelas) {
 
-        if (!isset($durasi[$kelas['kelas']][$jam])) {
-          $durasi[$jam] = ['rombel' => $kelas['kelas'], 'mapel' => $kelas['mapel']];
-          // $durasi[$kelas['kelas']]['mapel']=$kelas['mapel'];
-          $jpnya[] = $jam;
-        }
+      //if (!isset($durasi[$kelas['kelas']][$jam])) {
+      //if (!isset($durasi)) {
+      //////ok $durasi[] = ['jam0'=> $jam,'rombel' => $kelas['kelas'], 'mapel' => $kelas['mapel']];
+      // $durasi[$kelas['kelas']]['mapel']=$kelas['mapel'];
+      $jpnya[] = $jam;
+      //}
+      if (!isset($durasi[$kelas['kelas']])) {
+        $durasi[$kelas['kelas']] = ['jam0'=> $jam, 'mapel' => $kelas['mapel']];
+   
       }
-      $data['info'] = $durasi;
+      else {
+         $durasi[$kelas['kelas']] ['jam1']= $jam;
+      }   
+      //d($jpnya);
+      //////////////////////////////////$data['info'] = $durasi;
+      // pecah jadwalnya
       $data['jp0'] = reset($jpnya);
       $jam_0 = substr($data['jp0'], -1, 1);
       $jam_0 = $jam_0 + 1;
@@ -876,6 +885,7 @@ class AgendaGuru extends Pbm
       $data['jp0'] = $jam_0;
       $data['jp1'] = $jam_1;
     }
+    d($durasi);
 
     if ($this->request->is('post')) {
 
@@ -902,13 +912,14 @@ class AgendaGuru extends Pbm
 
       $data['rombel'] = $this->rombel_jadwal($data['jadwal']);
       $data['mapel'] = $this->mapel_jadwal($data['jadwal']);
-      //($data);
+      //d($data);
       return view('header')
         . view('menu', $data)
         . view('form_lapor')
         . view('footer');
     }
   }
+
 
   public function rekap_absensi()
   {

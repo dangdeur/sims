@@ -8,7 +8,35 @@ $template = ['table_open' => '<table border="1" cellpadding="4" cellspacing="0" 
   <?php
   
  $table->setHeading('Hari','Jam', 'Kelas','Mapel');
-//  dd($jadwal);
+//  $hari = [
+//     ['hari' => 'Senin', 'urutan' => 1],
+//     ['hari' => 'Selasa', 'urutan' => 2],
+//     ['hari' => 'Rabu', 'urutan' => 3],
+//     ['hari' => 'Kamis', 'urutan' => 4],
+//     ['hari' => 'Jumat', 'urutan' => 5],
+// ];
+
+// usort($jadwal, function($a, $b) {
+//     return $a['urutan'] <=> $b['urutan']; // Sorts by age in ascending order
+// });
+if (isset($jadwal['Senin'])) {
+$jadwal['Senin']=$jadwal['Senin'];
+}
+
+if (isset($jadwal['Selasa'])) {
+$jadwal['Selasa']=$jadwal['Selasa'];
+}
+
+if (isset($jadwal['Rabu'])) {
+$jadwal['Rabu']=$jadwal['Rabu'];
+}
+if (isset($jadwal['Kamis'])) {
+$jadwal['Kamis']=$jadwal['Kamis'];  
+}
+if (isset($jadwal['Jumat'])) {
+$jadwal['Jumat']=$jadwal['Jumat']; 
+}
+ //d($jadwal_baru);
   foreach ($jadwal as $h => $d) { //$h hari, $d kelas=>...,mapel=>...
     
    foreach ($d as $key=>$value) {
