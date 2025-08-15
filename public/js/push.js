@@ -1,5 +1,5 @@
 // Get VAPID public key from your server
-const vapidPublicKey = 'YOUR_VAPID_PUBLIC_KEY_HERE'; // Or fetch it from a CI4 endpoint
+const vapidPublicKey = "<?= env('VAPID_PUBLIC_KEY'); ?>"; // Or fetch it from a CI4 endpoint
 
 // Function to convert base64 to Uint8Array
 function urlBase64ToUint8Array(base64String) {

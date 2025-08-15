@@ -16,7 +16,7 @@ class PushNotificationController extends Controller
         // Assume you have a library for handling push notifications, e.g., web-push-php
         $this->pushManager = new \Minishlink\WebPush\WebPush([
             'VAPID' => [
-                'subject' => 'mailto:you@example.com',
+                'subject' => 'mailto: <dangdeur@gmail.com>',
                 'publicKey' => getenv('VAPID_PUBLIC_KEY'),
                 'privateKey' => getenv('VAPID_PRIVATE_KEY'),
             ],
