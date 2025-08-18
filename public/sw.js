@@ -1,9 +1,9 @@
 self.addEventListener('push', function(event) {
     const data = event.data.json();
-    const title = data.title || 'Notification';
+    const title = data.title || 'Pesan Baru';
     const options = {
-        body: data.body || 'You have a new notification.',
-        icon: data.icon || '/path/to/default/icon.png',
+        body: data.body || 'Anda mendapatkan pesan baru.',
+        icon: data.icon || 'gambar/pesan.png',
         badge: data.badge || '/path/to/default/badge.png',
         data: {
             url: data.data.url || '/',

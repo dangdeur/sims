@@ -114,7 +114,7 @@ define ('PDF_HEADER_TITLE', 'SMKN 2 Pandeglang');
 /**
  * Header description string.
  */
-define ('PDF_HEADER_STRING', "Dinas Pendidikan Dan Kebudayaan Provinsi Banten\nTahun Pelajaran 2024-2025");
+define ('PDF_HEADER_STRING', "Dinas Pendidikan Dan Kebudayaan Provinsi Banten\nTahun Pelajaran 2025/2026");
 
 /**
  * Document unit of measure [pt=point, mm=millimeter, cm=centimeter, in=inch].

@@ -53,6 +53,59 @@ class Pbm extends BaseController
         return $data_jadwal;
     }
 
+    public function jadwal_ekin()
+    {
+        $pbmmodel = new PbmModel();
+        $data = session()->get();
+        $jadwal = $pbmmodel->where('kode_guru', $data['kode_pengguna'])->findAll();
+
+        $data_jadwal = $this->olah_jadwal2($jadwal);
+        $kelas_cek = '';
+        foreach ($data_jadwal as $harinya => $jadwalnya) {
+            foreach ($jadwalnya as $j) {
+                $jp = JAM_PBM[$j['jp']];
+                $jpnya=explode('-',$jp);
+                if ($kelas_cek != $j['kelas']) {
+                    
+                    $data_ekin[$harinya][$j['kelas']] = [
+                        'jp0' => $jpnya[0],
+                        'mapel' => $j['mapel']
+                    ];
+                } else {
+                    // jika kelasnya sama, gabungkan data
+                    $data_ekin[$harinya][$j['kelas']]['jp1'] = $jpnya[1];
+                }
+                $kelas_cek = $j['kelas'];
+            }
+        }
+        return $data_ekin;
+    }
+
+    public function tglBulan($tahun, $bulan)
+    {
+        $bulantahun = $tahun . '-' . $bulan;
+        $jumlah_hari = cal_days_in_month(CAL_GREGORIAN, $bulan, $tahun);
+        for ($i = 1; $i <= $jumlah_hari; $i++) {
+            $caritanggal =   Time::parse($bulantahun . '-' . $i, 'Asia/Jakarta', 'id_ID');
+            if ($caritanggal->format('w') == '1') {
+                $tanggal[1][] = $i;
+            }
+            if ($caritanggal->format('w') == '2') {
+                $tanggal[2][] = $i;
+            }
+            if ($caritanggal->format('w') == '3') {
+                $tanggal[3][] = $i;
+            }
+            if ($caritanggal->format('w') == '4') {
+                $tanggal[4][] = $i;
+            }
+            if ($caritanggal->format('w') == '5') {
+                $tanggal[5][] = $i;
+            }
+        }
+        return $tanggal;
+    }
+
     public function jam_ke()
     {
         $data = array();
@@ -93,7 +146,6 @@ class Pbm extends BaseController
                 $jp5 = '13:40';
                 $jp6 = '14:20';
                 $jp7 = '15:00';
-
             } else {
                 $jp1 = '08:00';
                 $jp2 = '08:45';
@@ -118,7 +170,6 @@ class Pbm extends BaseController
                 $jp6 = '10:45';
                 $jp7 = '11:10';
                 $jp8 = '11:35';
-
             } else {
                 $jp1 = '08:25';
                 $jp2 = '08:50';
@@ -150,8 +201,6 @@ class Pbm extends BaseController
                 $data['jp'] = '6';
             }
         } elseif ($hari == 6 || $hari == 7) {
-
-
         } else {
             if ($sekarang->isBefore($jp1, 'Asia/Jakarta')) {
                 $data['jp'] = '0';
@@ -180,8 +229,8 @@ class Pbm extends BaseController
 
 
         // $data['sekarang'] = $sekarang;
-    
-    
+
+
         return $data['jp'];
     }
 
@@ -266,70 +315,65 @@ class Pbm extends BaseController
     //     return $data;
     // }
 
-    // public function olah_jadwal2($jadwal)
-    // {
-    //     $data = [];
-    //     $hari = ['senin' => '1', 'selasa' => '2', 'rabu' => '3', 'kamis' => '4', 'jumat' => '5'];
-    //     if (count($jadwal) > 0) {
-    //         for (
-    //             $a = 0;
-    //             $a < count($jadwal);
-    //             $a++
-    //         ) {
-    //             foreach ($hari as $h => $i) {
-    //                 if ($this->cek($jadwal[$a][$i . '0'])) {
-    //                     $data[$h][] = ['jp' => $i . '0', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '0']), 'mapel' => $jadwal[$a]['mapel_guru']];
-    //                 }
+    public function olah_jadwal2($jadwal)
+    {
+        $data = [];
+        $hari = ['1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5'];
+        if (count($jadwal) > 0) {
+            for (
+                $a = 0;
+                $a < count($jadwal);
+                $a++
+            ) {
+                foreach ($hari as $h => $i) {
+                    if ($this->cek($jadwal[$a][$i . '0'])) {
+                        $data[$h][] = ['jp' => $i . '0', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '0']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                    }
 
-    //                 if ($this->cek($jadwal[$a][$i . '1'])) {
-    //                     $data[$h][] = ['jp' => $i . '1', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '1']), 'mapel' => $jadwal[$a]['mapel_guru']];
-    //                 }
+                    if ($this->cek($jadwal[$a][$i . '1'])) {
+                        $data[$h][] = ['jp' => $i . '1', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '1']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                    }
 
-    //                 if ($this->cek($jadwal[$a][$i . '2'])) {
-    //                     $data[$h][] = ['jp' => $i . '2', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '2']), 'mapel' => $jadwal[$a]['mapel_guru']];
-    //                 }
+                    if ($this->cek($jadwal[$a][$i . '2'])) {
+                        $data[$h][] = ['jp' => $i . '2', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '2']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                    }
 
-    //                 if ($this->cek($jadwal[$a][$i . '3'])) {
-    //                     $data[$h][] = ['jp' => $i . '3', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '3']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                    if ($this->cek($jadwal[$a][$i . '3'])) {
+                        $data[$h][] = ['jp' => $i . '3', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '3']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                    }
 
-    //                 }
+                    if ($this->cek($jadwal[$a][$i . '4'])) {
+                        $data[$h][] = ['jp' => $i . '4', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '4']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                    }
 
-    //                 if ($this->cek($jadwal[$a][$i . '4'])) {
-    //                     $data[$h][] = ['jp' => $i . '4', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '4']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                    if ($this->cek($jadwal[$a][$i . '5'])) {
+                        $data[$h][] = ['jp' => $i . '5', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '5']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                    }
 
-    //                 }
+                    if ($this->cek($jadwal[$a][$i . '6'])) {
+                        $data[$h][] = ['jp' => $i . '6', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '6']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                    }
 
-    //                 if ($this->cek($jadwal[$a][$i . '5'])) {
-    //                     $data[$h][] = ['jp' => $i . '5', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '5']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                    if ($i != 5) {
 
-    //                 }
+                        if ($this->cek($jadwal[$a][$i . '7'])) {
+                            $data[$h][] = ['jp' => $i . '7', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '7']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                        }
 
-    //                 if ($this->cek($jadwal[$a][$i . '6'])) {
-    //                     $data[$h][] = ['jp' => $i . '6', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '6']), 'mapel' => $jadwal[$a]['mapel_guru']];
 
-    //                 }
+                        if ($this->cek($jadwal[$a][$i . '8'])) {
+                            $data[$h][] = ['jp' => $i . '8', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '8']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                        }
+                        if ($this->cek($jadwal[$a][$i . '9'])) {
+                            $data[$h][] = ['jp' => $i . '9', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '9']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                        }
+                    }
+                }
+            }
+        }
 
-    //                 if ($this->cek($jadwal[$a][$i . '7'])) {
-    //                     $data[$h][] = ['jp' => $i . '7', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '7']), 'mapel' => $jadwal[$a]['mapel_guru']];
-
-    //                 }
-
-    //                 if ($i != 5) {
-    //                     if ($this->cek($jadwal[$a][$i . '8'])) {
-    //                         $data[$h][] = ['jp' => $i . '8', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '8']), 'mapel' => $jadwal[$a]['mapel_guru']];
-
-    //                     }
-    //                     if ($this->cek($jadwal[$a][$i . '9'])) {
-    //                         $data[$h][] = ['jp' => $i . '9', 'kelas' => $this->kelas_apa($jadwal[$a][$i . '9']), 'mapel' => $jadwal[$a]['mapel_guru']];
-
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    //     return $data;
-    // }
+        return $data;
+    }
 
     public function olah_jadwal3($jadwal)
     {
@@ -374,13 +418,13 @@ class Pbm extends BaseController
                         //$data[ $a ][ $h ][ $i.'6' ] = [];
                     }
 
-                    // 2025-2026 jumat hanya sampai jam ke 7
-                    // if ($this->cek($jadwal[$a][$i . '7'])) {
-                    //     $data[$h][$i . '7'] = ['kelas' => $this->kelas_apa($jadwal[$a][$i . '7']), 'mapel' => $jadwal[$a]['mapel_guru']];
-                    //     //$data[ $a ][ $h ][ $i.'7' ] = [];
-                    // }
-
                     if ($i != 5) {
+                        if ($this->cek($jadwal[$a][$i . '7'])) {
+                            $data[$h][$i . '7'] = ['kelas' => $this->kelas_apa($jadwal[$a][$i . '7']), 'mapel' => $jadwal[$a]['mapel_guru']];
+                            //$data[ $a ][ $h ][ $i.'7' ] = [];
+                        }
+
+
                         if ($this->cek($jadwal[$a][$i . '8'])) {
                             $data[$h][$i . '8'] = ['kelas' => $this->kelas_apa($jadwal[$a][$i . '8']), 'mapel' => $jadwal[$a]['mapel_guru']];
                             //$data[ $a ][ $h ][ $i.'8' ] = [];
@@ -639,8 +683,5 @@ class Pbm extends BaseController
         }
     }
 
-    public function istirahatkah()
-    {
-
-    }
+    public function istirahatkah() {}
 }

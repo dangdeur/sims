@@ -7,6 +7,14 @@ defined( 'JARGON' ) || define( 'JARGON', 'SMK Pusat Keunggulan' );
 defined( 'WEB' ) || define( 'WEB', 'www.smkn2pandeglang.sch.id' );
 defined( 'SITUS' ) || define( 'SITUS', 'SIMS SMKN 2 Pandeglang' );
 defined( 'HARI_PBM' ) || define( 'HARI_PBM', [ 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat' ] );
+
+/*
+ * Dispensasi Ekin karena telat rilis
+ * 2025/2026
+ */ 
+defined( 'DISPENSASI_EKIN' ) || define( 'DISPENSASI_EKIN', [ '082025'
+
+]); 
 /*
 //2024-2025
 defined( 'JAM_PBM' ) || define( 'JAM_PBM', [
