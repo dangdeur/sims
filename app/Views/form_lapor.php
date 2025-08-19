@@ -1,25 +1,25 @@
 <div class="container">
   <?php
-  if ($ramadhan=TRUE) {
+  if (!$ramadhan) {
     switch (date("N")) {
       case 1:
         $jam_masuk = '8.00';
         $jam_pulang = '15.50';
         break;
-       case 2:
+      case 2:
         $jam_masuk = '8.00';
         $jam_pulang = '15.50';
         break;
-         case 3:
+      case 3:
         $jam_masuk = '7.15';
         $jam_pulang = '15.10';
         break;
-         case 4:
+      case 4:
         $jam_masuk = '7.15';
         $jam_pulang = '15.10';
         break;
       case 5:
-        $jam_masuk = '7.00';
+        $jam_masuk = '8.00';
         $jam_pulang = '15.00';
         break;
       case 6:
@@ -57,18 +57,13 @@
 
   if (date('H.i') >= $jam_masuk && date('H.i') <= $jam_pulang) {
     //if (isset($jam_sekarang) && $jam_sekarang != NULL) {
-    if (isset($jp0) && isset($jp1)) {
+    if (isset($jadwal[$kode_hari])) {
 
-      //  foreach ($info as $kelas):
-
-      //     $info[$kelas] = $ite;
-
-      //   endforeach
-
-  ?>
-      <div class="alert alert-danger">
+  
+      ?>
+      <!-- <div class="alert alert-danger">
         Lapor PBM dilaksanakan saat akan memulai proses pembelajaran. Apabila tidak Lapor, maka tidak bisa mengisi Agenda
-      </div>
+      </div> -->
 
       <h3>Lapor Pelaksanaan PBM</h3>
       Dengan ini saya melapor kepada pihak terkait,
@@ -79,7 +74,7 @@
 
 
       <!-- Waktu saat ini : <?php //echo date("h:m:s"); 
-                            ?> -->
+          ?> -->
 
       <?php
       echo form_open("agendaguru/lapor");
@@ -95,7 +90,7 @@
             <strong>
               <div id="time" class="col-form-label"></div>
             </strong>
-           
+
           </td>
         </tr>
         <tr>
@@ -104,8 +99,12 @@
           <td>
             <?php
 
-            if (isset($info[$jam_sekarang])) {
-              $rombel_saat_ini = $info[$jam_sekarang]['rombel'];
+            if (isset($jadwal[$kode_hari])) {
+              foreach ($jadwal[$kode_hari] as $rombelnya => $jadwal_rombel) {
+                $rombel[]=$rombelnya;
+              }
+              //$rombel_saat_ini = $info[$jam_sekarang]['rombel'];
+               $rombel_saat_ini = array_search($jam_sekarang,$jadwal[$kode_hari]);
             } else {
               $rombel_saat_ini = NULL;
               $rombel[NULL] = 'Jadwal Tidak Terdeteksi';
@@ -125,7 +124,8 @@
               $mapel_saat_ini = NULL;
               $mapel[NULL] = 'Mapel Tidak Terdeteksi';
             }
-            echo form_dropdown('mapel', $mapel, $mapel_saat_ini, $att = ['class' => 'form-select', 'id' => 'rombel']); ?></td>
+            echo form_dropdown('mapel', $mapel, $mapel_saat_ini, $att = ['class' => 'form-select', 'id' => 'rombel']); ?>
+          </td>
         </tr>
         <?php foreach (LOKASI as $item):
 
@@ -146,16 +146,8 @@
             <div class="row">
               <div class="col">
                 <?php
-                //  echo form_input(['name' => 'jp0', 'id' => 'jp0', 'required' => 'required', 'class' => 'form-control', 'readonly' => TRUE, 'value' => set_value('jp0', JP[date("N")][$jp0])]);
-                // echo '</div>';
-                // echo '<div class="col">';
-                //  echo 's.d';
-                // echo '<label>-</label>';
-                // echo '</div>';
-
-                // echo '<div class="col">';
-                //  echo form_input(['name' => 'jp1', 'id' => 'jp1', 'required' => 'required', 'class' => 'form-control', 'readonly' => TRUE, 'value' => set_value('jp1', JP[date("N")][$jp1])]);
-                echo form_label(JP[date("N")][$jp0]." s.d." . JP[date("N")][$jp1]);
+                
+                ////////////OK echo form_label(JP[date("N")][$jp0] . " s.d." . JP[date("N")][$jp1]);
                 ?>
               </div>
           </td>
@@ -168,30 +160,33 @@
       <?php
       echo form_close();
     } else {
-      if (RAMADHAN) {
+      if ($ramadhan) {
 
-      ?>
-      <div class="alert alert-success">
-    Anda terdeteksi tidak mempunyai jadwal PBM saat ini <strong><?= JAM_PBM_RAMADHAN[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
-  </div>
-        
-<?php
+        ?>
+        <div class="alert alert-success">
+          Anda terdeteksi tidak mempunyai jadwal PBM saat ini <strong><?= JAM_PBM_RAMADHAN[$jam_sekarang]; ?></strong>. Waktu
+          saat ini <strong><span id="time"></div></span></strong>
+      </div>
+
+      <?php
       } else {
-?>
-  <div class="alert alert-success">
-          Anda terdeteksi tidak mempunyai jadwal PBM saat ini <strong><?= JAM_PBM[$jam_sekarang]; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
-</div>
-<?php
+        ?>
+      <div class="alert alert-success">
+        Anda terdeteksi tidak mempunyai jadwal PBM saat ini <strong><?= JAM_PBM[$jam_sekarang]; ?></strong>. Waktu saat ini
+        <strong><span id="time"></div></span></strong>
+      </div>
+      <?php
       }
     }
   } else {
-?>
-<div class="alert alert-danger">
-  Diluar waktu pembelajaran <strong><?= $jam_masuk . ' - ' . $jam_pulang; ?></strong>. Waktu saat ini <strong><span id="time"></div></span></strong>
-</div>
-<?php
+    ?>
+  <div class="alert alert-danger">
+    Diluar waktu pembelajaran <strong><?= $jam_masuk . ' - ' . $jam_pulang; ?></strong>. Waktu saat ini <strong><span
+        id="time"></div></span></strong>
+  </div>
+  <?php
   }
-?>
+  ?>
 </div>
 
 <script>

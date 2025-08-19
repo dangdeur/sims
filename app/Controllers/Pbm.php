@@ -64,9 +64,9 @@ class Pbm extends BaseController
         foreach ($data_jadwal as $harinya => $jadwalnya) {
             foreach ($jadwalnya as $j) {
                 $jp = JAM_PBM[$j['jp']];
-                $jpnya=explode('-',$jp);
+                $jpnya = explode('-', $jp);
                 if ($kelas_cek != $j['kelas']) {
-                    
+
                     $data_ekin[$harinya][$j['kelas']] = [
                         'jp0' => $jpnya[0],
                         'mapel' => $j['mapel']
@@ -81,12 +81,40 @@ class Pbm extends BaseController
         return $data_ekin;
     }
 
+    public function jadwal_lapor()
+    {
+        $pbmmodel = new PbmModel();
+        $data = session()->get();
+        $jadwal = $pbmmodel->where('kode_guru', $data['kode_pengguna'])->findAll();
+
+        $data_jadwal = $this->olah_jadwal2($jadwal);
+        $kelas_cek = '';
+        foreach ($data_jadwal as $harinya => $jadwalnya) {
+            foreach ($jadwalnya as $j) {
+                $jp = $j['jp'];
+                //$jpnya = explode('-', $jp);
+                if ($kelas_cek != $j['kelas']) {
+
+                    $data_lapor[$harinya][$j['kelas']] = [
+                        'jp0' => $jp,
+                        'mapel' => $j['mapel']
+                    ];
+                } else {
+                    // jika kelasnya sama, gabungkan data
+                    $data_lapor[$harinya][$j['kelas']]['jp1'] = $jp;
+                }
+                $kelas_cek = $j['kelas'];
+            }
+        }
+        return $data_lapor;
+    }
+
     public function tglBulan($tahun, $bulan)
     {
         $bulantahun = $tahun . '-' . $bulan;
         $jumlah_hari = cal_days_in_month(CAL_GREGORIAN, $bulan, $tahun);
         for ($i = 1; $i <= $jumlah_hari; $i++) {
-            $caritanggal =   Time::parse($bulantahun . '-' . $i, 'Asia/Jakarta', 'id_ID');
+            $caritanggal = Time::parse($bulantahun . '-' . $i, 'Asia/Jakarta', 'id_ID');
             if ($caritanggal->format('w') == '1') {
                 $tanggal[1][] = $i;
             }
@@ -114,9 +142,9 @@ class Pbm extends BaseController
 
         $sekarang = Time::now('Asia/Jakarta', 'id_ID');
         $ramadhan = RAMADHAN;
-        if ($ramadhan == FALSE) {
+        if (!$ramadhan) {
 
-            if ($hari == 1) {
+            if ($hari = 1) {
                 $jp1 = '08:45';
                 $jp2 = '09:30';
                 $jp3 = '10:30';
@@ -127,7 +155,7 @@ class Pbm extends BaseController
                 $jp8 = '14:30';
                 $jp9 = '15:10';
                 $jp10 = '15:50';
-            } elseif ($hari == 2 || $hari == 3 || $hari == 4) {
+            } elseif ($hari = 2 || $hari = 3 || $hari = 4) {
                 $jp1 = '08:00';
                 $jp2 = '08:45';
                 $jp3 = '09:30';
@@ -138,7 +166,7 @@ class Pbm extends BaseController
                 $jp8 = '13:50';
                 $jp9 = '14:30';
                 $jp10 = '15:10';
-            } elseif ($hari == 5) {
+            } elseif ($hari = 5) {
                 $jp1 = '08:45';
                 $jp2 = '09:30';
                 $jp3 = '10:30';
@@ -184,54 +212,56 @@ class Pbm extends BaseController
             }
         }
 
-        if ($hari == 5) {
-            if ($sekarang->isBefore($jp1, 'Asia/Jakarta')) {
-                $data['jp'] = '0';
+        if ($hari == 5) 
+            {
+                if ($sekarang->isBefore($jp1, 'Asia/Jakarta')) {
+                $data_jamke = '0';
             } elseif ($sekarang->isBefore($jp2, 'Asia/Jakarta')) {
-                $data['jp'] = '1';
+                $data_jamke = '1';
             } elseif ($sekarang->isBefore($jp3, 'Asia/Jakarta')) {
-                $data['jp'] = '2';
+                $data_jamke = '2';
             } elseif ($sekarang->isBefore($jp4, 'Asia/Jakarta')) {
-                $data['jp'] = '3';
+                $data_jamke = '3';
             } elseif ($sekarang->isBefore($jp5, 'Asia/Jakarta')) {
-                $data['jp'] = '4';
+                $data_jamke = '4';
             } elseif ($sekarang->isBefore($jp6, 'Asia/Jakarta')) {
-                $data['jp'] = '5';
+                $data_jamke = '5';
             } elseif ($sekarang->isBefore($jp7, 'Asia/Jakarta')) {
-                $data['jp'] = '6';
+                $data_jamke = '6';
             }
-        } elseif ($hari == 6 || $hari == 7) {
-        } else {
-            if ($sekarang->isBefore($jp1, 'Asia/Jakarta')) {
-                $data['jp'] = '0';
+        } 
+        elseif ($hari == 1 || $hari == 2 || $hari == 3 || $hari == 4) 
+            {
+                if ($sekarang->isBefore($jp1, 'Asia/Jakarta')) {
+                $data_jamke = '0';
             } elseif ($sekarang->isBefore($jp2, 'Asia/Jakarta')) {
-                $data['jp'] = '1';
+                $data_jamke = '1';
             } elseif ($sekarang->isBefore($jp3, 'Asia/Jakarta')) {
-                $data['jp'] = '2';
+                $data_jamke = '2';
             } elseif ($sekarang->isBefore($jp4, 'Asia/Jakarta')) {
-                $data['jp'] = '3';
+                $data_jamke = '3';
             } elseif ($sekarang->isBefore($jp5, 'Asia/Jakarta')) {
-                $data['jp'] = '4';
+                $data_jamke = '4';
             } elseif ($sekarang->isBefore($jp6, 'Asia/Jakarta')) {
-                $data['jp'] = '5';
+                $data_jamke = '5';
             } elseif ($sekarang->isBefore($jp7, 'Asia/Jakarta')) {
-                $data['jp'] = '6';
+                $data_jamke = '6';
             } elseif ($sekarang->isBefore($jp8, 'Asia/Jakarta')) {
-                $data['jp'] = '7';
+                $data_jamke = '7';
             } elseif ($sekarang->isBefore($jp9, 'Asia/Jakarta')) {
-                $data['jp'] = '8';
+                $data_jamke = '8';
             } elseif ($sekarang->isBefore($jp10, 'Asia/Jakarta')) {
-                $data['jp'] = '9';
-            } else
-                $data['jp'] = '100';
+                $data_jamke = '9';
+            } else {
+                $data_jamke = '10';
+            }
+        } 
+        else 
+            {
+            $data_jamke='100';
         }
-
-
-
-        // $data['sekarang'] = $sekarang;
-
-
-        return $data['jp'];
+        //$data_jamke=$data['jp'];
+        return $data_jamke;
     }
 
 
@@ -683,5 +713,7 @@ class Pbm extends BaseController
         }
     }
 
-    public function istirahatkah() {}
+    public function istirahatkah()
+    {
+    }
 }
