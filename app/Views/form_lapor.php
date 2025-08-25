@@ -59,7 +59,7 @@
     //if (isset($jam_sekarang) && $jam_sekarang != NULL) {
     if (isset($jadwal[$kode_hari])) {
 
-  
+
       ?>
       <!-- <div class="alert alert-danger">
         Lapor PBM dilaksanakan saat akan memulai proses pembelajaran. Apabila tidak Lapor, maka tidak bisa mengisi Agenda
@@ -101,10 +101,17 @@
 
             if (isset($jadwal[$kode_hari])) {
               foreach ($jadwal[$kode_hari] as $rombelnya => $jadwal_rombel) {
-                $rombel[]=$rombelnya;
+                $rombel[] = $rombelnya;
+                $mapel[] = $jadwal_rombel['mapel'];
+                if ($jadwal_rombel['jp0'] = $jam_sekarang || $jadwal_rombel['jp1'] = $jam_sekarang) {
+                  $rombel_saat_ini = array_search($jam_sekarang, $jadwal[$kode_hari]);
+                }
+                d($jadwal_rombel);
+
               }
               //$rombel_saat_ini = $info[$jam_sekarang]['rombel'];
-               $rombel_saat_ini = array_search($jam_sekarang,$jadwal[$kode_hari]);
+              //$rombel_saat_ini = array_search($jam_sekarang, $jadwal[$kode_hari]);
+              $mapel_saat_ini = array_search($jam_sekarang, $jadwal[$kode_hari]);
             } else {
               $rombel_saat_ini = NULL;
               $rombel[NULL] = 'Jadwal Tidak Terdeteksi';
@@ -118,12 +125,15 @@
 
           <td>
             <?php
-            if (isset($info[$jam_sekarang]['mapel'])) {
-              $mapel_saat_ini = $info[$jam_sekarang]['mapel'];
-            } else {
-              $mapel_saat_ini = NULL;
-              $mapel[NULL] = 'Mapel Tidak Terdeteksi';
-            }
+            // if (isset($jadwal[$kode_hari]['jp0']) || isset($jadwal[$kode_hari]['jp1'])) {
+            //   if ($jadwal[$kode_hari]['jp0'] == $jam_sekarang || $jadwal[$kode_hari]['jp1'] == $jam_sekarang) {
+            //     $mapel_saat_ini = $jadwal[$kode_hari]['mapel'];
+            //   }
+        
+            // } else {
+            //   $mapel_saat_ini = NULL;
+            //   $mapel[NULL] = 'Mapel Tidak Terdeteksi';
+            // }
             echo form_dropdown('mapel', $mapel, $mapel_saat_ini, $att = ['class' => 'form-select', 'id' => 'rombel']); ?>
           </td>
         </tr>
@@ -146,7 +156,7 @@
             <div class="row">
               <div class="col">
                 <?php
-                
+
                 ////////////OK echo form_label(JP[date("N")][$jp0] . " s.d." . JP[date("N")][$jp1]);
                 ?>
               </div>
@@ -173,7 +183,8 @@
         ?>
       <div class="alert alert-success">
         Anda terdeteksi tidak mempunyai jadwal PBM saat ini <strong><?= JAM_PBM[$jam_sekarang]; ?></strong>. Waktu saat ini
-        <strong><span id="time"></div></span></strong>
+        <strong><span id="time">
+      </div></span></strong>
       </div>
       <?php
       }
