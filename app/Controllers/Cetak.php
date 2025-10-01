@@ -48,6 +48,7 @@ class Cetak extends Pbm
 
 				if (isset($data['tanggal'][1])) {
 					foreach ($data['tanggal'][1] as $tanggal) {
+						if(isset($jadwal[1])) {
 						foreach ($jadwal[1] as $rombel => $datanya) {
 							$data_agenda[] = [
 								'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
@@ -56,10 +57,12 @@ class Cetak extends Pbm
 							];
 						}
 					}
+					}
 				}
 
 				if (isset($data['tanggal'][2])) {
 					foreach ($data['tanggal'][2] as $tanggal) {
+						if(isset($jadwal[2])) {
 						foreach ($jadwal[2] as $rombel => $datanya) {
 							$data_agenda[] = [
 								'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
@@ -69,9 +72,11 @@ class Cetak extends Pbm
 						}
 					}
 				}
+				}
 
 				if (isset($data['tanggal']['3'])) {
 					foreach ($data['tanggal']['3'] as $tanggal) {
+						if(isset($jadwal[3])) {
 						foreach ($jadwal['3'] as $rombel => $datanya) {
 							$data_agenda[] = [
 								'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
@@ -80,10 +85,12 @@ class Cetak extends Pbm
 							];
 						}
 					}
+					}
 				}
 
 				if (isset($data['tanggal'][4])) {
 					foreach ($data['tanggal'][4] as $tanggal) {
+						if(isset($jadwal[4])) {
 						foreach ($jadwal[4] as $rombel => $datanya) {
 							$data_agenda[] = [
 								'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
@@ -92,10 +99,12 @@ class Cetak extends Pbm
 							];
 						}
 					}
+					}
 				}
 
 				if (isset($data['tanggal'][5])) {
 					foreach ($data['tanggal'][5] as $tanggal) {
+						if(isset($jadwal[5])) {
 						foreach ($jadwal[5] as $rombel => $datanya) {
 							$data_agenda[] = [
 								'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
@@ -103,6 +112,7 @@ class Cetak extends Pbm
 								'urutan' =>$tanggal
 							];
 						}
+					}
 					}
 				}
 

@@ -12,7 +12,7 @@ defined( 'HARI_PBM' ) || define( 'HARI_PBM', [ 'Senin', 'Selasa', 'Rabu', 'Kamis
  * Dispensasi Ekin karena telat rilis
  * 2025/2026
  */ 
-defined( 'DISPENSASI_EKIN' ) || define( 'DISPENSASI_EKIN', [ '082025'
+defined( 'DISPENSASI_EKIN' ) || define( 'DISPENSASI_EKIN', [ '092025'
 
 ]); 
 /*
