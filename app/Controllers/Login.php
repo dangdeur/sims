@@ -184,7 +184,7 @@ class Login extends BaseController
         } elseif ($user['peran'] == -1) {
             $login = 'SuperAdmin';
         } elseif ($user['peran'] == 6) {
-            $login = 'Staf';
+            $login = 'Tenaga Kependidikan';
         } elseif ($user['peran'] == 7) {
             $login = 'Sarpras';
         } elseif ($user['peran'] == 8) {

@@ -52,13 +52,13 @@ class TokenAuth implements FilterInterface
         $authenticator = auth('tokens')->getAuthenticator();
 
         $result = $authenticator->attempt([
-            'token' => $request->getHeaderLine(setting('Auth.authenticatorHeader')['tokens'] ?? 'Authorization'),
+            'token' => $request->getHeaderLine(setting('AuthToken.authenticatorHeader')['tokens'] ?? 'Authorization'),
         ]);
 
         if (! $result->isOK() || (! empty($arguments) && $result->extraInfo()->tokenCant($arguments[0]))) {
             return service('response')
                 ->setStatusCode(Response::HTTP_UNAUTHORIZED)
-                ->setJson(['message' => lang('Auth.badToken')]);
+                ->setJSON(['message' => lang('Auth.badToken')]);
         }
 
         if (setting('Auth.recordActiveDate')) {
@@ -72,15 +72,14 @@ class TokenAuth implements FilterInterface
 
             return service('response')
                 ->setStatusCode(Response::HTTP_FORBIDDEN)
-                ->setJson(['message' => lang('Auth.activationBlocked')]);
+                ->setJSON(['message' => lang('Auth.activationBlocked')]);
         }
     }
 
     /**
      * We don't have anything to do here.
      *
-     * @param Response|ResponseInterface $response
-     * @param array|null                 $arguments
+     * @param array|null $arguments
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null): void
     {

@@ -2,7 +2,7 @@
 if (!isset($kode_pengguna)) {
 	return redirect()->to('/login');
 } else {
-?>
+	?>
 
 
 	<!-- ============= COMPONENT ============== -->
@@ -12,7 +12,8 @@ if (!isset($kode_pengguna)) {
 			<a class="navbar-brand" href="<?= site_url('profil') ?>">
 
 
-				<img src="<?= base_url('gambar/staf/' . $kode_pengguna . '.JPG') ?>" alt="Logo" width="30" height="26" class="rounded-circle d-inline-block align-text-top">
+				<img src="<?= base_url('gambar/staf/' . $kode_pengguna . '.JPG') ?>" alt="Logo" width="30" height="26"
+					class="rounded-circle d-inline-block align-text-top">
 				<?= $nama_lengkap ?> </a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -26,9 +27,9 @@ if (!isset($kode_pengguna)) {
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown">
 						<!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-    				99+
-    				<span class="visually-hidden">unread messages</span>
-  				</span> -->
+					99+
+					<span class="visually-hidden">unread messages</span>
+				  </span> -->
 						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" ?>
 
 							Info
@@ -48,7 +49,7 @@ if (!isset($kode_pengguna)) {
 
 					<?php
 					if ($level == 'Guru') {
-					?>
+						?>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> PBM </a>
 							<ul class="dropdown-menu">
@@ -57,21 +58,22 @@ if (!isset($kode_pengguna)) {
 								<li><a class="dropdown-item" href="<?= site_url('agendaguru') ?>"> Agenda Guru </a></li>
 								<li><a class="dropdown-item" href=""> Rekap &raquo;</a>
 									<ul class="submenu dropdown-menu">
-										<li><a class="dropdown-item" href="<?= site_url('agendaguru/tatapmuka') ?>">Tatap Muka</a></li>
+										<li><a class="dropdown-item" href="<?= site_url('agendaguru/tatapmuka') ?>">Tatap
+												Muka</a></li>
 										<!-- <li><a class="dropdown-item" href="<?= site_url('agendaguru/baru_telat') ?>">Agenda PBM Terlewat</a></li> -->
 									</ul>
 								</li>
 
 							</ul>
 						</li>
-					<?php
+						<?php
 					}
 					?>
 					<!-- walikelas -->
 					<?php
 					//dd($walas);
 					if (isset($walas)) {
-					?>
+						?>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Walikelas </a>
 							<ul class="dropdown-menu">
@@ -94,7 +96,7 @@ if (!isset($kode_pengguna)) {
 				</li> -->
 							</ul>
 						</li>
-					<?php
+						<?php
 					}
 					?>
 
@@ -102,7 +104,7 @@ if (!isset($kode_pengguna)) {
 					//dd($walas);
 					if (isset($tuta)) {
 
-					?>
+						?>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> <?= $tuta['bidang'] ?></a>
 							<ul class="dropdown-menu">
@@ -110,14 +112,27 @@ if (!isset($kode_pengguna)) {
 
 							</ul>
 						</li>
-					<?php
+						<?php
+					}
+
+					if ($level == 'Tenaga Kependidikan') {
+						?>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Lapor</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="<?= site_url('tendik') ?>">Aktifitas Harian</a></li>
+
+							</ul>
+						</li>
+
+						<?php
 					}
 					?>
 
 					<?php
 					//dd($walas);
 					if (isset($piket)) {
-					?>
+						?>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Piket </a>
 							<ul class="dropdown-menu">
@@ -141,7 +156,7 @@ if (!isset($kode_pengguna)) {
 								</li>
 							</ul>
 						</li>
-					<?php
+						<?php
 					}
 					?>
 
@@ -151,13 +166,24 @@ if (!isset($kode_pengguna)) {
 						<ul class="dropdown-menu">
 							<?php
 							if ($level == 'Guru') {
-							?>
+								?>
 								<li><a class="dropdown-item" href="<?= site_url('cetakagenda') ?>" target="_blank"> Cetak Agenda
 										Harian PBM </a></li>
-							<?php
+								<?php
+							}
+
+							if ($level != 'Tenaga Kependidikan') {
+								?>
+								<li><a class="dropdown-item" href="<?= site_url('cetakagendatuta') ?>" target="_blank"> Cetak
+										Agenda Tugas Tambahan </a></li>
+								<?php
+							} else {
+								?>
+								<li><a class="dropdown-item" href="<?= site_url('cetakagendatendik') ?>" target="_blank"> Cetak
+										Agenda Harian </a></li>
+								<?php
 							}
 							?>
-							<li><a class="dropdown-item" href="<?= site_url('cetakagendatuta') ?>" target="_blank"> Cetak Agenda Tugas Tambahan </a></li>
 							<!-- <li><a class="dropdown-item" href="#"> Dropdown item 2 &raquo; </a>
 					 <ul class="submenu dropdown-menu">
 					  <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
@@ -211,6 +237,6 @@ if (!isset($kode_pengguna)) {
 	<p>Matching .container-xl...</p>
   </div> -->
 
-<?php
+	<?php
 }
 ?>

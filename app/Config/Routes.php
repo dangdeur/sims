@@ -61,6 +61,17 @@ $routes->get('/tuta', 'TugasTambahan::index');
 $routes->get('/tutabaru', 'TugasTambahan::baru');
 $routes->post('/tutasimpan', 'TugasTambahan::baru');
 
+//tendik
+$routes->get('/tendik', 'Tendik::index');
+$routes->get('/tendikbaru', 'Tendik::baru');
+$routes->post('/tendiksimpan', 'Tendik::baru');
+
+//cetak
+// $routes->get('/cetakagenda', 'Cetak::agenda');
+// $routes->post('/cetakagenda', 'Cetak::agenda');
+$routes->get('/cetakagendatendik', 'Cetak::agenda_tendik');
+$routes->post('/cetakagendatendik', 'Cetak::agenda_tendik');
+
 $routes->get('/tuta/hapus/(.+)', 'TugasTambahan::hapus/$1');
 $routes->post('/tuta/hapus/(.+)', 'TugasTambahan::hapus/$1');
 $routes->get('/tutaedit/(.+)', 'TugasTambahan::edit/$1');

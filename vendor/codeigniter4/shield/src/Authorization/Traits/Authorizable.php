@@ -33,8 +33,6 @@ trait Authorizable
     {
         $this->populateGroups();
 
-        $configGroups = $this->getConfigGroups();
-
         $groupCount = count($this->groupCache);
 
         foreach ($groups as $group) {
@@ -45,8 +43,11 @@ trait Authorizable
                 continue;
             }
 
+            /** @var GroupModel $groupModel */
+            $groupModel = model(GroupModel::class);
+
             // make sure it's a valid group
-            if (! in_array($group, $configGroups, true)) {
+            if (! $groupModel->isValidGroup($group)) {
                 throw AuthorizationException::forUnknownGroup($group);
             }
 
@@ -96,10 +97,11 @@ trait Authorizable
     {
         $this->populateGroups();
 
-        $configGroups = $this->getConfigGroups();
+        /** @var GroupModel $groupModel */
+        $groupModel = model(GroupModel::class);
 
         foreach ($groups as $group) {
-            if (! in_array($group, $configGroups, true)) {
+            if (! $groupModel->isValidGroup($group)) {
                 throw AuthorizationException::forUnknownGroup($group);
             }
         }
@@ -108,6 +110,22 @@ trait Authorizable
         $this->saveGroups();
 
         return $this;
+    }
+
+    /**
+     * Set groups cache manually
+     */
+    public function setGroupsCache(array $groups): void
+    {
+        $this->groupCache = $groups === [] ? null : $groups;
+    }
+
+    /**
+     * Set permissions cache manually
+     */
+    public function setPermissionsCache(array $permissions): void
+    {
+        $this->permissionsCache = $permissions === [] ? null : $permissions;
     }
 
     /**
@@ -248,12 +266,15 @@ trait Authorizable
         // Check the groups the user belongs to
         $this->populateGroups();
 
+        // Get the group matrix
+        $matrix = setting('AuthGroups.matrix');
+
         foreach ($permissions as $permission) {
             // Permission must contain a scope and action
-            if (strpos($permission, '.') === false) {
+            if (! str_contains($permission, '.')) {
                 throw new LogicException(
                     'A permission must be a string consisting of a scope and action, like `users.create`.'
-                    . ' Invalid permission: ' . $permission
+                    . ' Invalid permission: ' . $permission,
                 );
             }
 
@@ -264,11 +285,9 @@ trait Authorizable
                 return true;
             }
 
-            if (! count($this->groupCache)) {
+            if (count($this->groupCache) === 0) {
                 return false;
             }
-
-            $matrix = setting('AuthGroups.matrix');
 
             foreach ($this->groupCache as $group) {
                 // Check exact match
@@ -363,7 +382,7 @@ trait Authorizable
     }
 
     /**
-     * @phpstan-param 'group'|'permission' $type
+     * @param 'group'|'permission'       $type
      * @param GroupModel|PermissionModel $model
      */
     private function saveGroupsOrPermissions(string $type, $model, array $cache): void
@@ -390,7 +409,7 @@ trait Authorizable
                 $inserts[] = [
                     'user_id'    => $this->id,
                     $type        => $item,
-                    'created_at' => Time::now()->format('Y-m-d H:i:s'),
+                    'created_at' => Time::now(),
                 ];
             }
 
@@ -399,15 +418,7 @@ trait Authorizable
     }
 
     /**
-     * @return string[]
-     */
-    private function getConfigGroups(): array
-    {
-        return array_keys(setting('AuthGroups.groups'));
-    }
-
-    /**
-     * @return string[]
+     * @return list<string>
      */
     private function getConfigPermissions(): array
     {

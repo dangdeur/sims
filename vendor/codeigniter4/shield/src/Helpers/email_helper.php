@@ -13,9 +13,11 @@ declare(strict_types=1);
 
 use CodeIgniter\Email\Email;
 
-if (! defined('emailer')) {
+if (! function_exists('emailer')) {
     /**
      * Provides convenient access to the CodeIgniter Email class.
+     *
+     * @param array<string, mixed> $overrides Email preferences to override.
      *
      * @internal
      */
@@ -46,7 +48,7 @@ if (! defined('emailer')) {
         ];
 
         if ($overrides !== []) {
-            $config = array_merge($overrides, $config);
+            $config = array_merge($config, $overrides);
         }
 
         /** @var Email $email */

@@ -11,6 +11,7 @@ class Profil extends BaseController
     {
       //$session=session();
       $data = $this->session->get();
+     
 
       return view('profil',$data);
     }

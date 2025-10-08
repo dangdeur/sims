@@ -92,7 +92,7 @@ class MagicLinkController extends BaseController
         $user  = $this->provider->findByCredentials(['email' => $email]);
 
         if ($user === null) {
-            return redirect()->route('magic-link')->with('error', lang('Auth.invalidEmail'));
+            return redirect()->route('magic-link')->with('error', lang('Auth.invalidEmail', [$email]));
         }
 
         /** @var UserIdentityModel $identityModel */
@@ -109,7 +109,7 @@ class MagicLinkController extends BaseController
             'user_id' => $user->id,
             'type'    => Session::ID_TYPE_MAGIC_LINK,
             'secret'  => $token,
-            'expires' => Time::now()->addSeconds(setting('Auth.magicLinkLifetime'))->format('Y-m-d H:i:s'),
+            'expires' => Time::now()->addSeconds(setting('Auth.magicLinkLifetime')),
         ]);
 
         /** @var IncomingRequest $request */
@@ -121,10 +121,15 @@ class MagicLinkController extends BaseController
 
         // Send the user an email with the code
         helper('email');
-        $email = emailer()->setFrom(setting('Email.fromEmail'), setting('Email.fromName') ?? '');
+        $email = emailer(['mailType' => 'html'])
+            ->setFrom(setting('Email.fromEmail'), setting('Email.fromName') ?? '');
         $email->setTo($user->email);
         $email->setSubject(lang('Auth.magicLinkSubject'));
-        $email->setMessage($this->view(setting('Auth.views')['magic-link-email'], ['token' => $token, 'ipAddress' => $ipAddress, 'userAgent' => $userAgent, 'date' => $date]));
+        $email->setMessage($this->view(
+            setting('Auth.views')['magic-link-email'],
+            ['token' => $token, 'user' => $user, 'ipAddress' => $ipAddress, 'userAgent' => $userAgent, 'date' => $date],
+            ['debug' => false],
+        ));
 
         if ($email->send(false) === false) {
             log_message('error', $email->printDebugger(['headers']));
@@ -218,7 +223,7 @@ class MagicLinkController extends BaseController
     private function recordLoginAttempt(
         string $identifier,
         bool $success,
-        $userId = null
+        $userId = null,
     ): void {
         /** @var LoginModel $loginModel */
         $loginModel = model(LoginModel::class);
@@ -229,15 +234,14 @@ class MagicLinkController extends BaseController
             $success,
             $this->request->getIPAddress(),
             (string) $this->request->getUserAgent(),
-            $userId
+            $userId,
         );
     }
 
     /**
      * Returns the rules that should be used for validation.
      *
-     * @return array<string, array<string, array<string>|string>>
-     * @phpstan-return array<string, array<string, string|list<string>>>
+     * @return array<string, array<string, list<string>|string>>
      */
     protected function getValidationRules(): array
     {

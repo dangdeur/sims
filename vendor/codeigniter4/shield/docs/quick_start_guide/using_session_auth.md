@@ -12,7 +12,7 @@ Learning any new authentication system can be difficult, especially as they get 
 
 ### Configure Redirect URLs
 
-If you need everyone to redirect to a single URL after login/logout/register actions, you can modify the `Config\Auth::$redirects` array in **app/Config/Auth.php** to specify the url to redirect to.
+If you need to redirect everyone to a single URL after login/logout/register actions, you can modify the `Config\Auth::$redirects` array in **app/Config/Auth.php** to specify the url to redirect to.
 
 By default, a successful login or register attempt will all redirect to `/`, while a logout action
 will redirect to a [named route](https://codeigniter.com/user_guide/incoming/routing.html#using-named-routes "See routing docs") `login` or a *URI path* `/login`. You can change the default URLs used within the **app/Config/Auth.php** config file:
@@ -94,7 +94,13 @@ command.
 
 ## Protecting Pages
 
-If you want to limit all routes (e.g. `localhost:8080/admin`, `localhost:8080/panel` and ...), you need to add the following code in the **app/Config/Filters.php** file.
+By default, Shield does not protect pages. To make certain pages accessible only
+to logged-in users, set the `session`
+[controller filter](../references/controller_filters.md).
+
+For example, if you want to limit all routes (e.g. `localhost:8080/admin`,
+`localhost:8080/panel` and ...), you need to add the following code in the
+**app/Config/Filters.php** file.
 
 ```php
 public $globals = [
