@@ -89,7 +89,7 @@ class Tendik extends Pbm
     public function hapus($id)
     {
         $data = session()->get();
-        $model = new AgendatendikModel();
+        $model = new AgendaTendikModel();
         if ($this->request->is('post')) {
             $id = $this->request->getPost('id');
             $model->delete($id);
@@ -109,7 +109,7 @@ class Tendik extends Pbm
     public function edit($id = FALSE)
     {
         $data = session()->get();
-        $model = new AgendatendikModel();
+        $model = new AgendaTendikModel();
         if ($this->request->is('post')) {
             $data['tendik']['tanggal'] = $this->request->getVar('tahun') . '-' . $this->request->getVar('bulan') . '-' . $this->request->getVar('tanggal');
             $data['tendik']['aktifitas'] = $this->request->getVar('aktifitas');
