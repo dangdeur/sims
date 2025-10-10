@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\TupoksiModel;
 use Config\Services;
 use App\Models\PenggunaModel;
 use App\Models\WalasModel;
@@ -68,11 +69,18 @@ class Login extends BaseController
                     
                 }
 
+                // nanti ganti dg tupoksi
                 $tutamodel = new TutaModel();
                 $tuta = $tutamodel->where('kode_guru', $user['kode_pengguna'])->first();
                 if (!empty($tuta['bidang'])) {
                     $user['tuta'] = $tuta;
                 }
+
+                $tupoksimodel = new TupoksiModel();
+                $tupoksi = $tupoksimodel->where('kode_staf', $user['kode_pengguna'])->first();
+                if (!empty($tupoksi['kode_staf'])) {
+                    $user['tupoksi'] = $tupoksi;
+                }   
                 //d($user);
                 $this->setUserSession($user);
 
@@ -143,6 +151,7 @@ class Login extends BaseController
             'kode_pengguna' => $user['kode_pengguna'],
             'kode_absen' => $user['kode_absen'],
             'level' => $user['level'],
+            'tupoksi' => $user['tupoksi'],
             'token' => $user['token'],
             'isLoggedIn' => true,
         ];

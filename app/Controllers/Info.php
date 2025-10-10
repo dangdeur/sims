@@ -34,13 +34,8 @@ class Info extends BaseController
     $data['pager'] = $model->pager;
 
 
-    // $piketmodel = new PiketModel();
-    // $piket = $piketmodel->where('kode_petugas', $data['kode_pengguna'])->first();
-    // if (!empty($piket['kode_petugas'])) {
-    //     $data['piket'] = $piket;
-    // }
-
-    // d($data);
+   
+    d($data);
 
     return view('header')
       . view('menu', $data)
