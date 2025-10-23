@@ -917,7 +917,7 @@ class AgendaGuru extends Pbm
 
       //$data['rombel'] = $this->rombel_jadwal($data['jadwal']);
       //$data['mapel'] = $this->mapel_jadwal($data['jadwal']);
-      d($data);
+      //d($data);
       return view('header')
         . view('menu', $data)
         . view('form_lapor')

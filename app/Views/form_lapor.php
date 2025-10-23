@@ -106,7 +106,7 @@
                 if ($jadwal_rombel['jp0'] = $jam_sekarang || $jadwal_rombel['jp1'] = $jam_sekarang) {
                   $rombel_saat_ini = array_search($jam_sekarang, $jadwal[$kode_hari]);
                 }
-                d($jadwal_rombel);
+                //d($jadwal_rombel);
 
               }
               //$rombel_saat_ini = $info[$jam_sekarang]['rombel'];
