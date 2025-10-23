@@ -151,7 +151,7 @@ class Login extends BaseController
             'kode_pengguna' => $user['kode_pengguna'],
             'kode_absen' => $user['kode_absen'],
             'level' => $user['level'],
-            'tupoksi' => $user['tupoksi'],
+            //'tupoksi' => $user['tupoksi'],
             'token' => $user['token'],
             'isLoggedIn' => true,
         ];

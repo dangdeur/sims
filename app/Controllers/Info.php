@@ -35,7 +35,7 @@ class Info extends BaseController
 
 
    
-    d($data);
+    //d($data);
 
     return view('header')
       . view('menu', $data)
