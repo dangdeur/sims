@@ -8,11 +8,16 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Login::index');
 $routes->get('/login', 'Login::index');
 
+
 $routes->get('/login/gantipassword/(.+)', 'Login::gantipassword/$1');
 $routes->post('/login/gantipassword/(.+)', 'Login::gantipassword/$1');
 $routes->post('/login', 'Login::index');
 $routes->get('/info', 'Info::index');
 $routes->get('/logout', 'Login::logout');
+
+//siswa
+$routes->get('/login/siswa', 'Login::siswa');
+$routes->post('/login/siswa', 'Login::siswa');
 // $routes->get('/profil', 'Profil::index');
 $routes->get('/jadwal', 'Pbm::jadwal');
 $routes->get('/agendaguru', 'AgendaGuru::index');
@@ -124,5 +129,8 @@ $routes->get('/push', 'Push::pesan');
 $routes->get('/chat', 'Chat::index');
 //Polling
 $routes->get('/polling', 'Polling::index');
+
+//Voting gupres
+$routes->get('/gupres', 'Gupres::index');
 
 service('auth')->routes($routes);

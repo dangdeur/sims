@@ -276,4 +276,85 @@ class Login extends BaseController
     {
         $model = new PengaturanModel();
     }
+
+     public function siswa()
+    {
+        $data = [];
+        //baru
+        if ($this->request->is('post')) {
+
+            $rules = [
+                'nis' => 'required|min_length[10]|max_length[10]',
+                'password' => 'required|min_length[3]|max_length[255]|validateSiswa[nis,password]',
+            ];
+
+            $errors = [
+                'nis' => [
+                    'required' => 'NIS belum diisi, gunakan format misal 1025.012345',
+                    'min_length' => 'Email kurang dari 10 karakter',
+                    'max_length' => 'Email lebih dari 10 karakter',
+                   
+                ],
+                'password' => [
+                    'validateSiswa' => 'NIS atau Password salah'
+                ]
+            ];
+
+            if (! $this->validate($rules, $errors)) {
+                $data['validation'] = $this->validator;
+                echo view('loginsiswa');
+            } else {
+                $model = new SiswaModel();
+                //$model->join('piket','piket.kode_petugas = pengguna.kode_pengguna','inner');
+                $user = $model->where('nis', $this->request->getVar('nis'))->first();
+                // $user['level'] = $this->siapaLogin($user, [$user['peran']]);
+                //$model->join('kodenya','pengguna.kode_pengguna = piket.kode_petugas');
+
+                
+
+                //d($user);
+                $this->setUserSession($user);
+
+                //ingat
+                if ($this->request->getVar('ingat') === '1') {
+                    $token = random_string('alnum', 16);
+                    set_cookie('skendava', $token, time() + (365 * 24 * 60 * 60));
+                    $user['token'] = $token;
+                    //d( $user );
+                    $data_update['update']['token'] = $token;
+                    $data['id'] = $user['id_pengguna'];
+                    $data['update']['token'] = $token;
+                    $this->update($data);
+                }
+                
+            }
+        }
+        //end post login normal
+        else {
+
+            if (get_cookie('skendava')) {
+
+                $token = get_cookie('skendava');
+                $model = new PenggunaModel();
+
+                $user = $model->where('token', $token)->first();
+                $walas = new WalasModel();
+                $walikelas = $walas->where('kode_walas', $user['kode_pengguna'])->first();
+                if (!empty($walikelas['rombel'])) {
+                    $user['walas'] = $walikelas['rombel'];
+                }
+                $user['loginnya'] = 'dengan cookie';
+                
+                d( $user );
+                $user['level'] = $this->siapaLogin($user, [$user['peran']]);
+                $this->setUserSession($user);
+                return redirect()->to(site_url('info'))->withCookies();
+            } else {
+
+                echo view('loginsiswa');
+            }
+        }
+        //end login cookies
+    }
+    //end index
 }

@@ -41,7 +41,7 @@
 
 <main class="form-signin">
 
-<?= form_open('login') ?>
+<?= form_open('login/siswa') ?>
     <img class="mb-4" src="<?= base_url('gambar/logo.png') ?>" alt="" width="100" height="100">
     <h1 class="h3 mb-3 fw-normal">Silahkan Login</h1>
     <div class="small text-danger">
@@ -49,8 +49,8 @@
     </div>
 
     <div class="form-floating">
-      <input name="email" type="text" class="form-control" id="floatingInput" placeholder="email">
-      <label for="floatingInput">email</label>
+      <input name="nis" type="text" class="form-control" id="floatingInput" placeholder="NIS">
+      <label for="floatingInput">NIS</label>
     </div>
     <div class="form-floating">
       <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
@@ -68,7 +68,7 @@
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
       <hr />
-    <a class="w-100 btn btn-lg btn-success" href="<?= base_url('login/siswa') ?>">Login Siswa</a>
+   
     <p class="mt-5 mb-3 text-muted">&copy; 2024</p>
     
   </form>

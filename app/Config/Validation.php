@@ -28,6 +28,7 @@ class Validation extends BaseConfig
         FileRules::class,
         CreditCardRules::class,
         \App\Validation\PenggunaRules::class,
+        \App\Validation\SiswaRules::class,
     ];
 
     /**
