@@ -18,6 +18,7 @@ $routes->get('/logout', 'Login::logout');
 //siswa
 $routes->get('/login/siswa', 'Login::siswa');
 $routes->post('/login/siswa', 'Login::siswa');
+$routes->get('/infosiswa', 'Info::siswa');
 // $routes->get('/profil', 'Profil::index');
 $routes->get('/jadwal', 'Pbm::jadwal');
 $routes->get('/agendaguru', 'AgendaGuru::index');

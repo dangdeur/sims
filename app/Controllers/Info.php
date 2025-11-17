@@ -15,6 +15,14 @@ class Info extends BaseController
 {
   protected $helpers = ['form', 'text', 'cookie', 'html'];
 
+   protected $session;
+   
+     public function __construct()
+    {
+        $this->session = Services::session();
+    }
+
+
   public function sesi()
   {
     global $data;
@@ -43,6 +51,26 @@ class Info extends BaseController
     return view('header')
       . view('menu', $data)
       . view('info')
+      . view('footer');
+  }
+
+  public function siswa()
+  {
+    global $data;
+    $this->sesi();
+    // $model = new InfoModel;
+    // //paginasi
+    // $data['info'] = $model->select('*')->orderBy('tanggal', 'DESC')->paginate(10);
+    // $data['pager'] = $model->pager;
+
+    $kegiatanmodel = new KegiatanModel();
+    $data['kegiatan'] = $kegiatanmodel->where('status', '1')->first();
+
+    d($data);
+
+    return view('header')
+      . view('menu', $data)
+      . view('infosiswa')
       . view('footer');
   }
 

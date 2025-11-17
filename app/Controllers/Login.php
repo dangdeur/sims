@@ -9,10 +9,17 @@ use App\Models\WalasModel;
 use App\Models\PiketModel;
 use App\Models\TutaModel;
 use App\Models\PengaturanModel;
+use App\Models\SiswaModel;
 
 class Login extends BaseController
 {
     protected $helpers = ['form', 'text', 'cookie'];
+     protected $session;
+   
+     public function __construct()
+    {
+        $session = Services::session();
+    }
 
     public function Index()
     {
@@ -177,6 +184,27 @@ class Login extends BaseController
         return true;
     }
 
+   
+ public function setSiswaSession($user)
+    {
+        // In a controller method or constructor
+
+         global $session;
+
+    $data = [
+            'id_siswa' => $user['id_siswa'],
+            'nama_siswa' => $user['nama_siswa'],
+            'nis' => $user['nis'],
+            'jk' => $user['jk'],
+            'rombel' => $user['rombel'],
+            'kode_walikelas' => $user['kode_walikelas'],
+            'isLoggedIn' => true
+        ];
+        dd($data);
+        $this->session->set($data);
+        return true;
+    }
+
     public function siapaLogin($user, $peran)
     {
 
@@ -279,7 +307,7 @@ class Login extends BaseController
 
      public function siswa()
     {
-        $data = [];
+       $data = [];
         //baru
         if ($this->request->is('post')) {
 
@@ -312,22 +340,27 @@ class Login extends BaseController
 
                 
 
-                //d($user);
-                $this->setUserSession($user);
-
+                d($user);
+                $this->setSiswaSession($user);
+              
+        
+       // return true;  
                 //ingat
-                if ($this->request->getVar('ingat') === '1') {
-                    $token = random_string('alnum', 16);
-                    set_cookie('skendava', $token, time() + (365 * 24 * 60 * 60));
-                    $user['token'] = $token;
-                    //d( $user );
-                    $data_update['update']['token'] = $token;
-                    $data['id'] = $user['id_pengguna'];
-                    $data['update']['token'] = $token;
-                    $this->update($data);
-                }
+                // if ($this->request->getVar('ingat') === '1') {
+                //     $token = random_string('alnum', 16);
+                //     set_cookie('skendava', $token, time() + (365 * 24 * 60 * 60));
+                //     $user['token'] = $token;
+                //     //d( $user );
+                //     $data_update['update']['token'] = $token;
+                //     $data['id'] = $user['id_pengguna'];
+                //     $data['update']['token'] = $token;
+                //     $this->update($data);
+                // }
+                d($data);
+                 return redirect()->to(site_url('infosiswa'))->withCookies();
                 
             }
+            
         }
         //end post login normal
         else {
@@ -335,19 +368,19 @@ class Login extends BaseController
             if (get_cookie('skendava')) {
 
                 $token = get_cookie('skendava');
-                $model = new PenggunaModel();
+                $model = new SiswaModel();
 
                 $user = $model->where('token', $token)->first();
-                $walas = new WalasModel();
-                $walikelas = $walas->where('kode_walas', $user['kode_pengguna'])->first();
-                if (!empty($walikelas['rombel'])) {
-                    $user['walas'] = $walikelas['rombel'];
-                }
+                // $walas = new WalasModel();
+                // $walikelas = $walas->where('kode_walas', $user['kode_pengguna'])->first();
+                // if (!empty($walikelas['rombel'])) {
+                //     $user['walas'] = $walikelas['rombel'];
+                // }
                 $user['loginnya'] = 'dengan cookie';
                 
                 d( $user );
                 $user['level'] = $this->siapaLogin($user, [$user['peran']]);
-                $this->setUserSession($user);
+                $this->setSiswaSession($user);
                 return redirect()->to(site_url('info'))->withCookies();
             } else {
 
