@@ -506,30 +506,30 @@ class Pbm extends BaseController
     {
 
         if (!empty($rombel)) {
-            $arr = str_split($rombel);
-            $jenjang = ['X' => '1', 'XI' => '2', '3' => 'XII'];
-            $jur = [
-                '1' => 'ATPH',
-                '2' => 'APHP',
-                '3' => 'TKR',
-                '4' => 'TITL',
-                '5' => 'DKV',
-                '6' => 'TKJ',
-                '7' => 'APL',
-                '8' => 'TSM'
+            $arr = explode(" ",$rombel);
+            $jenjang = ['X' => '1', 'XI' => '2', 'XII' => '3'];
+
+            $jur_ = substr($arr[1], 0, -1);
+             $jur = [
+                'ATPH' => '1',
+                'APHP' => '2',
+                'TKR' => '3',
+                'TITL' => '4',
+                'DKV' => '5',
+                'TKJ' => '6',
+                'APL' => '7',
+                'TSM' => '8'
             ];
 
+            $kelas = substr($arr[1], -1);
+// dd($arr);
 
-            if ($arr[0] == 'P') {
-                $rombel = 'Piket';
-            } else {
-                $rombel = $jenjang[$arr[0]] . ' ' . $jur[$arr[1]] . $arr[2];
-            }
-        } else {
-            $rombel = '';
-        }
-        return $rombel;
+           $kode_kelas = $jenjang[$arr[0]].$jur[$jur_].$kelas; 
+        //   dd($kode_kelas);
+           
+        return $kode_kelas;
     }
+}
 
     public function cek($data)
     {

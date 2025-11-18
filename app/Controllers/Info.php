@@ -19,7 +19,7 @@ class Info extends BaseController
    
      public function __construct()
     {
-        $this->session = Services::session();
+        $session = session();
     }
 
 
@@ -57,19 +57,15 @@ class Info extends BaseController
   public function siswa()
   {
     global $data;
-    $this->sesi();
-    // $model = new InfoModel;
-    // //paginasi
-    // $data['info'] = $model->select('*')->orderBy('tanggal', 'DESC')->paginate(10);
-    // $data['pager'] = $model->pager;
-
+    $data = session()->get();
+    
     $kegiatanmodel = new KegiatanModel();
     $data['kegiatan'] = $kegiatanmodel->where('status', '1')->first();
 
-    d($data);
+    // d($data);
 
     return view('header')
-      . view('menu', $data)
+      . view('menusiswa', $data)
       . view('infosiswa')
       . view('footer');
   }

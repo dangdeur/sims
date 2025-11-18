@@ -18,7 +18,8 @@ class Login extends BaseController
    
      public function __construct()
     {
-        $session = Services::session();
+        global $session;
+        $session = session();
     }
 
     public function Index()
@@ -200,8 +201,9 @@ class Login extends BaseController
             'kode_walikelas' => $user['kode_walikelas'],
             'isLoggedIn' => true
         ];
-        dd($data);
-        $this->session->set($data);
+        d($data);
+        session()->set($data);
+        d($session->get());
         return true;
     }
 
@@ -356,7 +358,7 @@ class Login extends BaseController
                 //     $data['update']['token'] = $token;
                 //     $this->update($data);
                 // }
-                d($data);
+                // dd($data);
                  return redirect()->to(site_url('infosiswa'))->withCookies();
                 
             }
