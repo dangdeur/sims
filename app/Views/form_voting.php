@@ -20,7 +20,7 @@
 
 <?php
 // d($guru);
-form_open('gupres/simpanvoting');
+echo form_open('simpanvoting');
 $no=1;
 echo '<table class="table table-striped">
 <thead>
@@ -38,12 +38,12 @@ echo '<tr>
 <td>'.$g['nama_guru'].'</td>
 <td>'.$g['mapel_guru'].'</td>
 <td>';
-// echo form_radio($datanya=['name'=>'nilai'.$g['kode_guru'],'id'=>'nilai'.$g['kode_guru'],'value'=>'0','checked'=>FALSE]).'0 ';
-echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>'1','checked'=>FALSE]).'1 ';
-echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>'2','checked'=>FALSE]).'2 ';
-echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>'3','checked'=>FALSE]).'3 ';
-echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>'4','checked'=>FALSE]).'4 ';
-echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>'5','checked'=>FALSE]).'5 ';
+echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>0,'checked'=>FALSE]).'0 ';
+echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>1,'checked'=>FALSE]).'1 ';
+echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>2,'checked'=>FALSE]).'2 ';
+echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>3,'checked'=>FALSE]).'3 ';
+echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>4,'checked'=>FALSE]).'4 ';
+echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>5,'checked'=>FALSE]).'5 ';
 
 echo form_hidden('kode_guru'.$no, $g['kode_guru']);
 
@@ -54,10 +54,12 @@ $no++;
 
 
   }
+ 
+  echo form_hidden('jumlah_guru', $no);
   echo '<tr><td colspan="4">'.form_submit('submit','Simpan',['class'=>'btn btn-primary']).'</td></tr>';
   echo '</tbody></table>';
 
-form_close()
+echo form_close();
 ?>
 
 </div>

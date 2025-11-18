@@ -132,6 +132,8 @@ $routes->get('/chat', 'Chat::index');
 $routes->get('/polling', 'Polling::index');
 
 //Voting gupres
+
 $routes->get('/gupres', 'Gupres::index');
+$routes->post('/simpanvoting', 'Gupres::simpanvoting');
 
 service('auth')->routes($routes);

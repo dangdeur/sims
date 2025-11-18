@@ -6,6 +6,7 @@ use Config\Services;
 
 use App\Models\PbmModel;
 use App\Models\SiswaModel;
+use App\Models\VotingModel;
 use CodeIgniter\I18n\Time;
 
 
@@ -21,28 +22,20 @@ class Gupres extends Pbm
   {
     $this->pbm = new Pbm();
     //global $session;
-        $session = session();
+    $session = session();
   }
 
 
   public function index()
   {
-    
-$data = session()->get();
-    // $agendamodel = new AgendaGuruModel();
-    // $data['agenda'] = $agendamodel->where('kode_guru', $data['kode_pengguna'])->orderBy('dibuat', 'DESC')->paginate(10);
 
-    // $data['pager'] = $agendamodel->pager;
+    $data = session()->get();
 
-    // $jadwal = $this->pbm->jadwal_data();
+    $kode_kelas = $this->pbm->kode_kelas($data['rombel']);
 
-    // $data['rombel'] = $this->rombel_jadwal($jadwal);
-    // $data['mapel'] = $this->mapel_jadwal($jadwal);
-    $kode_kelas=$this->pbm->kode_kelas($data['rombel']);
-
-    $data['guru']=$this->cariGuru($kode_kelas);
-    $data['kode_kelas']=$kode_kelas;
-    // d($data);
+    $data['guru'] = $this->cariGuru($kode_kelas);
+    $data['kode_kelas'] = $kode_kelas;
+    d($data);
     return view('header')
       . view('menusiswa', $data)
       . view('form_voting')
@@ -51,11 +44,10 @@ $data = session()->get();
 
   public function cariGuru($kelas)
   {
-    
-    $sql = "SELECT `kode_guru`,`nama_guru`,`mapel_guru` FROM jadwal WHERE ".$kelas." IN (`10`,`11`,`12`,`13`,`14`,`15`,`16`,`17`,`18`,`19`,`20`,`21`,`22`,`23`,`24`,`25`,`26`,`27`,`28`,`29`,`30`,`31`,`32`,`33`,`34`,`35`,`36`,`37`,`38`,`39`,`40`,`41`,`42`,`43`,`44`,`45`,`46`,`47`,`48`,`49`,`50`,`51`,`52`,`53`,`54`,`55`,`56`);";
+
+    $sql = "SELECT `kode_guru`,`nama_guru`,`mapel_guru` FROM jadwal WHERE " . $kelas . " IN (`10`,`11`,`12`,`13`,`14`,`15`,`16`,`17`,`18`,`19`,`20`,`21`,`22`,`23`,`24`,`25`,`26`,`27`,`28`,`29`,`30`,`31`,`32`,`33`,`34`,`35`,`36`,`37`,`38`,`39`,`40`,`41`,`42`,`43`,`44`,`45`,`46`,`47`,`48`,`49`,`50`,`51`,`52`,`53`,`54`,`55`,`56`);";
     $db = db_connect();
     return $query = $db->query($sql)->getResultArray();
-   
   }
   public function sesi()
   {
@@ -69,35 +61,19 @@ $data = session()->get();
 
   public function simpanvoting()
   {
+    $data = session()->get();
     $votingmodel = new VotingModel();
     $data['datavoting'] = $this->request->getPost();
-    //dd($data);
-    $absen = array();
-    $no_urut = 1;
+    d($data);
+     $voting = array();
+    // $no_urut = 1;
     for ($a = 1; $a <= $data['datavoting']['jumlah_guru']; $a++) {
-      if (!empty($data['datapvoting']['nilai' . $a])) {
-        if ($data['datapvoting']['nilai' . $a] == "TL") {
-          $absen['TL'][] = ['nis' => $this->request->getPost('nis' . $a), 'nama' => $this->request->getPost('nama_siswa' . $a), 'catatan' => $this->request->getPost('catatan' . $a)];
-        }
-        if ($data['datapvoting']['nilai' . $a] == "BL") {
-          $absen['BL'][] = ['nis' => $this->request->getPost('nis' . $a), 'nama' => $this->request->getPost('nama_siswa' . $a), 'catatan' => $this->request->getPost('catatan' . $a)];
-        }
-        if ($data['datapvoting']['nilai' . $a] == "D") {
-          $absen['D'][] = ['nis' => $this->request->getPost('nis' . $a), 'nama' => $this->request->getPost('nama_siswa' . $a), 'catatan' => $this->request->getPost('catatan' . $a)];
-        }
-        if ($data['datapvoting']['nilai' . $a] == "S") {
-          $absen['S'][] = ['nis' => $this->request->getPost('nis' . $a), 'nama' => $this->request->getPost('nama_siswa' . $a), 'catatan' => $this->request->getPost('catatan' . $a)];
-        }
-        if ($data['datapvoting']['nilai' . $a] == "I") {
-          $absen['I'][] = ['nis' => $this->request->getPost('nis' . $a), 'nama' => $this->request->getPost('nama_siswa' . $a), 'catatan' => $this->request->getPost('catatan' . $a)];
-        }
-        if ($data['datapvoting']['nilai' . $a] == "A") {
-          $absen['A'][] = ['nis' => $this->request->getPost('nis' . $a), 'nama' => $this->request->getPost('nama_siswa' . $a), 'catatan' => $this->request->getPost('catatan' . $a)];
-        }
+      if (!empty($data['datavoting']['nilai' . $a])) {
+        $voting[$data['nis']][] = ['kode_guru' => $this->request->getPost('kode_guru' . $a), 'nilai' => $this->request->getPost('nilai' . $a)];
       }
     }
     //$data['tess']=$presensi->getLastQuery();
-    //dd($absen);
+    dd($voting);
     $dataabsen = json_encode($absen);
     $data['update']['nilai'] = $dataabsen;
     //dd($data);
