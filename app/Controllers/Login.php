@@ -304,7 +304,7 @@ class Login extends BaseController
             return redirect()->to('/login/siswa');
         } else {
 
-            d($data);
+            // d($data);
             return view('header')
                 . view('menusiswa', $data)
                 . view('form_passwordsiswa')
