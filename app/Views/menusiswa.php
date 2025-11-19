@@ -54,7 +54,7 @@
 
 
 				
-				<li class="nav-item"><a class="nav-link" href="<?= site_url('logout') ?>">Keluar</a></li>
+				<li class="nav-item"><a class="nav-link" href="<?= site_url('logoutsiswa') ?>">Keluar</a></li>
 
 
 

@@ -14,11 +14,14 @@ $routes->post('/login/gantipassword/(.+)', 'Login::gantipassword/$1');
 $routes->post('/login', 'Login::index');
 $routes->get('/info', 'Info::index');
 $routes->get('/logout', 'Login::logout');
+$routes->get('/logoutsiswa', 'Login::logoutsiswa');
 
 //siswa
 $routes->get('/login/siswa', 'Login::siswa');
 $routes->post('/login/siswa', 'Login::siswa');
 $routes->get('/infosiswa', 'Info::siswa');
+$routes->get('/login/gantipasswordsiswa/(.+)', 'Login::gantipasswordsiswa/$1');
+$routes->post('/login/gantipasswordsiswa/(.+)', 'Login::gantipasswordsiswa/$1');
 // $routes->get('/profil', 'Profil::index');
 $routes->get('/jadwal', 'Pbm::jadwal');
 $routes->get('/agendaguru', 'AgendaGuru::index');
@@ -134,6 +137,8 @@ $routes->get('/polling', 'Polling::index');
 //Voting gupres
 
 $routes->get('/gupres', 'Gupres::index');
+$routes->get('/gupresedit', 'Gupres::gupresedit');
+$routes->get('/gupreshapus', 'Gupres::gupreshapus');
 $routes->post('/simpanvoting', 'Gupres::simpanvoting');
 
 service('auth')->routes($routes);

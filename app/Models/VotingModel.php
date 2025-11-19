@@ -6,7 +6,7 @@ class VotingModel extends Model {
     protected $table = 'voting';
     protected $primaryKey = 'id_voting';
     protected $useAutoIncrement = true;
-    protected $allowedFields = [ 'kode_voting','variabel', 'nilai','keterangan' ];
+    protected $allowedFields = [ 'kode_voting','data_voting', 'waktu_voting','status' ];
 
 
 

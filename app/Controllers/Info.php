@@ -9,18 +9,23 @@ use App\Models\UpacaraModel;
 use App\Models\HarianModel;
 use App\Models\PiketModel;
 use App\Models\KegiatanModel;
+use App\Models\VotingModel;
 
 
-class Info extends BaseController
+class Info extends Pbm
 {
   protected $helpers = ['form', 'text', 'cookie', 'html'];
 
-   protected $session;
-   
-     public function __construct()
-    {
-        $session = session();
-    }
+  protected $session;
+
+  protected $pbm;
+
+  public function __construct()
+  {
+    $session = session();
+    $this->pbm = new Pbm();
+
+  }
 
 
   public function sesi()
@@ -36,8 +41,7 @@ class Info extends BaseController
 
   public function index()
   {
-    global $data;
-    $this->sesi();
+    $data = session()->get();
     $model = new InfoModel;
     //paginasi
     $data['info'] = $model->select('*')->orderBy('tanggal', 'DESC')->paginate(10);
@@ -46,7 +50,7 @@ class Info extends BaseController
     $kegiatanmodel = new KegiatanModel();
     $data['kegiatan'] = $kegiatanmodel->where('status', '1')->first();
 
-    d($data);
+    // d($data);
 
     return view('header')
       . view('menu', $data)
@@ -56,21 +60,29 @@ class Info extends BaseController
 
   public function siswa()
   {
-    global $data;
+    //global $data;
     $data = session()->get();
-    
-    $kegiatanmodel = new KegiatanModel();
-    $data['kegiatan'] = $kegiatanmodel->where('status', '1')->first();
+
+    // $kegiatanmodel = new KegiatanModel();
+    // $data['kegiatan'] = $kegiatanmodel->where('status', '1')->first();
+
+    $pesan = $this->cekVoting();
+    // dd($pesan);
+    if ($pesan) {
+      $dataarr = json_decode($pesan['data_voting'], true);
+      $data['voting'] = $dataarr[$data['nis']];
+    } else {
+      $data['voting'] = FALSE;
+    }
 
     // d($data);
-
     return view('header')
       . view('menusiswa', $data)
       . view('infosiswa')
       . view('footer');
   }
 
- 
+
   public function profil()
   {
     global $data;
@@ -89,7 +101,7 @@ class Info extends BaseController
     global $data;
     $this->sesi();
     $upacaramodel = new UpacaraModel();
-    $data['absen'] =  $upacaramodel->where(['kode_absen' => $data['kode_absen']])->orderBy('waktu', 'DESC')->paginate(20);
+    $data['absen'] = $upacaramodel->where(['kode_absen' => $data['kode_absen']])->orderBy('waktu', 'DESC')->paginate(20);
     $data['pager'] = $upacaramodel->pager;
 
     return view('header')
@@ -102,11 +114,26 @@ class Info extends BaseController
   {
     $data = session()->get();
     $model = new HarianModel();
-    $data['kehadiran'] =  $model->where(['kode_absen' => $data['kode_absen']])->orderBy('waktu', 'DESC')->paginate(20);
+    $data['kehadiran'] = $model->where(['kode_absen' => $data['kode_absen']])->orderBy('waktu', 'DESC')->paginate(20);
     $data['pager'] = $model->pager;
     return view('header')
       . view('menu', $data)
       . view('rekap_harian')
       . view('footer');
+  }
+
+  public function cekVoting()
+  {
+    $data = session()->get();
+    $kode_kelas = $this->pbm->kode_kelas($data['rombel']);
+    $votingmodel = new VotingModel();
+    $ada = $votingmodel->where('kode_voting', $data['nis'] . "-" . $kode_kelas)->first();
+    if ($ada) {
+      //$pesan = TRUE;
+      $data['voting'] = $ada;
+    } else {
+      $data['voting'] = FALSE;
+    }
+    return $data['voting'];
   }
 }

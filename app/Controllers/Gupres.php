@@ -34,12 +34,47 @@ class Gupres extends Pbm
     $kode_kelas = $this->pbm->kode_kelas($data['rombel']);
 
     $data['guru'] = $this->cariGuru($kode_kelas);
-    $data['kode_kelas'] = $kode_kelas;
-    d($data);
+    // $data['kode_kelas'] = $kode_kelas;
+    //session()->set('kode_kelas', $kode_kelas);
+
+
     return view('header')
       . view('menusiswa', $data)
       . view('form_voting')
       . view('footer');
+
+  }
+
+  public function gupresedit()
+  {
+
+    $data = session()->get();
+
+    $votingmodel = new VotingModel();
+    $data['datavoting'] = $votingmodel->where('kode_voting', $data['nis'] . "-" . $data['kode_kelas'])->first();
+    //  dd($data); 
+    $data['guru'] = $this->cariGuru($data['kode_kelas']);
+    $data['voting_sebelumnya'] = json_decode($data['datavoting']['data_voting'], true);
+    d($data['voting_sebelumnya'][$data['nis']]);
+    //session()->set('kode_kelas', $kode_kelas);
+
+
+    return view('header')
+      . view('menusiswa', $data)
+      . view('form_voting_edit')
+      . view('footer');
+
+  }
+
+  public function gupreshapus()
+  {
+
+    $data = session()->get();
+    $votingmodel = new VotingModel();
+    $votingmodel->where('kode_voting', $data['nis'] . "-" . $data['kode_kelas'])->delete();
+
+   return redirect()->to('/infosiswa');
+
   }
 
   public function cariGuru($kelas)
@@ -64,21 +99,42 @@ class Gupres extends Pbm
     $data = session()->get();
     $votingmodel = new VotingModel();
     $data['datavoting'] = $this->request->getPost();
-    d($data);
-     $voting = array();
+    // d($data);
+    $voting = array();
     // $no_urut = 1;
     for ($a = 1; $a <= $data['datavoting']['jumlah_guru']; $a++) {
       if (!empty($data['datavoting']['nilai' . $a])) {
-        $voting[$data['nis']][] = ['kode_guru' => $this->request->getPost('kode_guru' . $a), 'nilai' => $this->request->getPost('nilai' . $a)];
+        $voting[$data['nis']][] = ['id_voting' => $data['nis'] . '-' . $data['kode_kelas'], 'kode_guru' => $this->request->getPost('kode_guru' . $a), 'nilai' => $this->request->getPost('nilai' . $a)];
       }
     }
     //$data['tess']=$presensi->getLastQuery();
-    dd($voting);
-    $dataabsen = json_encode($absen);
-    $data['update']['nilai'] = $dataabsen;
+
+    $votingdb = json_encode($voting);
+    $datadb = [
+      'kode_voting' => $data['nis'] . '-' . $data['kode_kelas'],
+      'data_voting' => $votingdb,
+      'waktu_voting' => Time::now(),
+      'status' => 1,
+    ];
+
+    //  d($votingdb);
+    // echo $dbvoting;
+    //$data['update']['nilai'] = $data['datavoting'];
+    $votingmodel->save($datadb);
     //dd($data);
-    $agenda->update($data['datapvoting']['id_agendaguru'], $data['update']);
+    //$votingmodel->update($data['datapvoting']['id_agendaguru'], $data['update']);
     //$data['waktu']=$this->waktu();
-    return redirect()->to('/agendaguru');
+    return redirect()->to('/infosiswa');
   }
+
+  // public function cekVoting()
+  // {
+  //   $data = session()->get();
+  //   $votingmodel = new VotingModel();
+  //   $ada = $votingmodel->where('kode_voting', $data['nis'] . "-" . $data['kode_kelas'])->first();
+  //   if ($ada) {
+  //     $pesan = 'Anda sudah melakukan voting';
+  //   }
+  //   return $pesan;
+  // }
 }

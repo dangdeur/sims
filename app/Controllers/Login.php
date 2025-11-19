@@ -14,9 +14,9 @@ use App\Models\SiswaModel;
 class Login extends BaseController
 {
     protected $helpers = ['form', 'text', 'cookie'];
-     protected $session;
-   
-     public function __construct()
+    protected $session;
+
+    public function __construct()
     {
         global $session;
         $session = session();
@@ -45,7 +45,7 @@ class Login extends BaseController
                 ]
             ];
 
-            if (! $this->validate($rules, $errors)) {
+            if (!$this->validate($rules, $errors)) {
                 $data['validation'] = $this->validator;
                 echo view('login');
             } else {
@@ -67,14 +67,13 @@ class Login extends BaseController
                 //d($piket);
 
                 if ($piket) {
-                   
-                    
-                        for ($p=0;$p<count($piket);$p++)
-                        {
-                            $user['piket'][]=$piket[$p];
-                        }
-                       
-                    
+
+
+                    for ($p = 0; $p < count($piket); $p++) {
+                        $user['piket'][] = $piket[$p];
+                    }
+
+
                 }
 
                 // nanti ganti dg tupoksi
@@ -88,7 +87,7 @@ class Login extends BaseController
                 $tupoksi = $tupoksimodel->where('kode_staf', $user['kode_pengguna'])->first();
                 if (!empty($tupoksi['kode_staf'])) {
                     $user['tupoksi'] = $tupoksi;
-                }   
+                }
                 //d($user);
                 $this->setUserSession($user);
 
@@ -108,7 +107,7 @@ class Login extends BaseController
                     //return redirect()->to('/admin')->withCookies();
                     return redirect()->to(site_url('info'))->withCookies();
                     //redirect()->to('admin/dashboard');
-                    
+
                 } else {
                     return redirect()->to(site_url('info'))->withCookies();
                 }
@@ -129,8 +128,8 @@ class Login extends BaseController
                     $user['walas'] = $walikelas['rombel'];
                 }
                 $user['loginnya'] = 'dengan cookie';
-                
-                d( $user );
+
+                d($user);
                 $user['level'] = $this->siapaLogin($user, [$user['peran']]);
                 $this->setUserSession($user);
                 return redirect()->to(site_url('info'))->withCookies();
@@ -185,25 +184,29 @@ class Login extends BaseController
         return true;
     }
 
-   
- public function setSiswaSession($user)
+
+    public function setSiswaSession($user)
     {
         // In a controller method or constructor
 
-         global $session;
+        global $session;
 
-    $data = [
+        $data = [
             'id_siswa' => $user['id_siswa'],
             'nama_siswa' => $user['nama_siswa'],
             'nis' => $user['nis'],
             'jk' => $user['jk'],
             'rombel' => $user['rombel'],
             'kode_walikelas' => $user['kode_walikelas'],
+            'kode_kelas' => $this->kode_kelas($user['rombel']),
             'isLoggedIn' => true
         ];
-        d($data);
+        // d($data);
+        if ($this->request->getVar('password') == 'smkn2jaya') {
+            $data['gantipassword'] = true;
+        }
         session()->set($data);
-        d($session->get());
+        // d($session->get());
         return true;
     }
 
@@ -258,6 +261,15 @@ class Login extends BaseController
         echo view('login');
     }
 
+    public function logoutsiswa()
+    {
+        session()->destroy();
+
+        set_cookie('skendava', '', -1);
+        //return redirect()->to( 'login' );
+        echo view('loginsiswa');
+    }
+
     public function gantipassword($id)
     {
         if ($this->request->is('post')) {
@@ -276,6 +288,34 @@ class Login extends BaseController
                 . view('form_password')
                 . view('footer');
         }
+    }
+
+    public function gantipasswordsiswa($id)
+    {
+        $data = session()->get();
+        if ($this->request->is('post')) {
+
+            $passwordbaru = $this->request->getVar('passwordbaru');
+            $data['id_siswa'] = $id;
+            $data['update']['password'] = password_hash($passwordbaru, PASSWORD_DEFAULT);
+            ;
+            $this->updatesiswa($data);
+            $this->logout();
+            return redirect()->to('/login/siswa');
+        } else {
+
+            d($data);
+            return view('header')
+                . view('menusiswa', $data)
+                . view('form_passwordsiswa')
+                . view('footer');
+        }
+    }
+
+    public function updatesiswa($data)
+    {
+        $siswa = new SiswaModel();
+        $update = $siswa->update($data['id_siswa'], $data['update']);
     }
 
     public function update($data)
@@ -307,9 +347,9 @@ class Login extends BaseController
         $model = new PengaturanModel();
     }
 
-     public function siswa()
+    public function siswa()
     {
-       $data = [];
+        $data = [];
         //baru
         if ($this->request->is('post')) {
 
@@ -323,14 +363,14 @@ class Login extends BaseController
                     'required' => 'NIS belum diisi, gunakan format misal 1025.012345',
                     'min_length' => 'Email kurang dari 10 karakter',
                     'max_length' => 'Email lebih dari 10 karakter',
-                   
+
                 ],
                 'password' => [
                     'validateSiswa' => 'NIS atau Password salah'
                 ]
             ];
 
-            if (! $this->validate($rules, $errors)) {
+            if (!$this->validate($rules, $errors)) {
                 $data['validation'] = $this->validator;
                 echo view('loginsiswa');
             } else {
@@ -340,13 +380,13 @@ class Login extends BaseController
                 // $user['level'] = $this->siapaLogin($user, [$user['peran']]);
                 //$model->join('kodenya','pengguna.kode_pengguna = piket.kode_petugas');
 
-                
+
 
                 d($user);
                 $this->setSiswaSession($user);
-              
-        
-       // return true;  
+
+
+                // return true;  
                 //ingat
                 // if ($this->request->getVar('ingat') === '1') {
                 //     $token = random_string('alnum', 16);
@@ -359,10 +399,10 @@ class Login extends BaseController
                 //     $this->update($data);
                 // }
                 // dd($data);
-                 return redirect()->to(site_url('infosiswa'))->withCookies();
-                
+                return redirect()->to(site_url('infosiswa'))->withCookies();
+
             }
-            
+
         }
         //end post login normal
         else {
@@ -379,8 +419,8 @@ class Login extends BaseController
                 //     $user['walas'] = $walikelas['rombel'];
                 // }
                 $user['loginnya'] = 'dengan cookie';
-                
-                d( $user );
+
+                // d($user);
                 $user['level'] = $this->siapaLogin($user, [$user['peran']]);
                 $this->setSiswaSession($user);
                 return redirect()->to(site_url('info'))->withCookies();
@@ -392,4 +432,32 @@ class Login extends BaseController
         //end login cookies
     }
     //end index
+    public function kode_kelas($rombel)
+    {
+
+        if (!empty($rombel)) {
+            $arr = explode(" ", $rombel);
+            $jenjang = ['X' => '1', 'XI' => '2', 'XII' => '3'];
+
+            $jur_ = substr($arr[1], 0, -1);
+            $jur = [
+                'ATPH' => '1',
+                'APHP' => '2',
+                'TKR' => '3',
+                'TITL' => '4',
+                'DKV' => '5',
+                'TKJ' => '6',
+                'APL' => '7',
+                'TSM' => '8'
+            ];
+
+            $kelas = substr($arr[1], -1);
+            // dd($arr);
+
+            $kode_kelas = $jenjang[$arr[0]] . $jur[$jur_] . $kelas;
+            //   dd($kode_kelas);
+
+            return $kode_kelas;
+        }
+    }
 }

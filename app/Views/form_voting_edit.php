@@ -38,6 +38,14 @@ echo '<tr>
 <td>'.$g['nama_guru'].'</td>
 <td>'.$g['mapel_guru'].'</td>
 <td>';
+// echo form_radio($datanya=['name'=>'absensi'.$no,'id'=>'absensi'.$no,'value'=>'TL','checked'=>set_radio('absensi'.$no,'TL')]).'TL ';
+// echo form_radio($datanya=['name'=>'absensi'.$no,'id'=>'absensi'.$no,'value'=>'BL','checked'=>set_radio('absensi'.$no,'BL')]).'BL ';
+// echo form_radio($datanya=['name'=>'absensi'.$no,'id'=>'absensi'.$no,'value'=>'D','checked'=>set_radio('absensi'.$no,'D')]).'D ';
+// echo form_radio($datanya=['name'=>'absensi'.$no,'id'=>'absensi'.$no,'value'=>'S','checked'=>set_radio('absensi'.$no,'S')]).'S ';
+// echo form_radio($datanya=['name'=>'absensi'.$no,'id'=>'absensi'.$no,'value'=>'I','checked'=>set_radio('absensi'.$no,'I')]).'I ';
+// echo form_radio($datanya=['name'=>'absensi'.$no,'id'=>'absensi'.$no,'value'=>'A','checked'=>set_radio('absensi'.$no,'A')]).'A ';
+// echo form_radio($datanya=['name'=>'absensi'.$no,'id'=>'absensi'.$no,'value'=>'H','checked'=>set_radio('absensi'.$no,'H')]).'H ';
+//tanpa H
 echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>0,'checked'=>FALSE]).'0 ';
 echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>1,'checked'=>FALSE]).'1 ';
 echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>2,'checked'=>FALSE]).'2 ';

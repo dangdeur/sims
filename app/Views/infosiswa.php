@@ -10,11 +10,17 @@
 
 
         if (isset($gantipassword)) {
-          echo 'Anda menggunakan password bawaan, beresiko terjadi penyalahgunaan. <a class="btn btn-primary" href="login/gantipassword/' . $id_pengguna . '">Ganti Password</a>';
+          echo '<p>Anda menggunakan password bawaan, beresiko terjadi penyalahgunaan. <a class="btn btn-primary" href="login/gantipasswordsiswa/' . $id_siswa . '">Ganti Password</a></p>';
         }
 
-         if (isset($kegiatan)) {
-          echo 'Ada kegiatan <strong>'.$kegiatan['nama_kegiatan'].'</strong> '.$kegiatan['deskripsi'].' <a class="btn btn-primary" href="'.$kegiatan['link'].'">Partisipasi</a>';
+         if (!$voting) {
+          echo '<p>Ada kegiatan <strong>Pemilihan Guru Favorit</strong> <a class="btn btn-primary" href="gupres">Partisipasi</a></p>';
+        }
+        else {
+          echo '<p>Terima kasih telah berpartisipasi dalam Pemilihan Guru Favorit. Untuk merubah penilaian anda, hapus dulu penilaian sebelumnya
+           <a class="btn btn-primary" href="gupreshapus">Hapus</a></p>';
+
+           
         }
 
         if (isset($info)) {

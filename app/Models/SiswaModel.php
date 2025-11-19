@@ -6,7 +6,7 @@ class SiswaModel extends Model {
     protected $table = 'siswa';
     protected $primaryKey = 'id_siswa';
     protected $useAutoIncrement = true;
-    protected $allowedFields = [ 'nis', 'nama_siswa', 'jk', 'rombel', 'kode_walikelas' ];
+    protected $allowedFields = [ 'nis', 'nama_siswa', 'jk', 'rombel', 'kode_walikelas','password','catatan' ];
 
     //   public function __construct()
     // {
@@ -52,5 +52,25 @@ class SiswaModel extends Model {
     //     $query = $this->db->table( $table )->delete( array( 'id_agendaguru' => $id ) );
     //     return $query;
     // }
+
+//      protected function beforeInsert(array $data){
+//     $data = $this->passwordHash($data);
+//     $data['data']['updated_at'] = date('Y-m-d H:i:s');
+
+//     return $data;
+//   }
+
+//   protected function beforeUpdate(array $data){
+//     $data = $this->passwordHash($data);
+//     $data['data']['updated_at'] = date('Y-m-d H:i:s');
+//     return $data;
+//   }
+
+  protected function passwordHash(array $data){
+    if(isset($data['data']['password']))
+      $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
+
+    return $data;
+  }
 
 }
