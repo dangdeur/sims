@@ -55,7 +55,7 @@ class Gupres extends Pbm
     //  dd($data); 
     $data['guru'] = $this->cariGuru($data['kode_kelas']);
     $data['voting_sebelumnya'] = json_decode($data['datavoting']['data_voting'], true);
-    d($data['voting_sebelumnya'][$data['nis']]);
+    // d($data['voting_sebelumnya'][$data['nis']]);
     //session()->set('kode_kelas', $kode_kelas);
 
 
