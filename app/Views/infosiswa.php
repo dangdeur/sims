@@ -14,11 +14,11 @@
         }
 
          if (!$voting) {
-          echo '<p>Ada kegiatan <strong>Pemilihan Guru Favorit</strong> <a class="btn btn-primary" href="gupres">Partisipasi</a></p>';
+          echo '<p>Dalam rangka memperingati Hari Guru Tahun 2025, SMKN 2 Pandeglang mengadakan pemilihan guru favorit. <br>Pilih guru favoritmu </strong> <a class="btn btn-primary" href="gupres">DISINI</a></p>';
         }
         else {
           echo '<p>Terima kasih telah berpartisipasi dalam Pemilihan Guru Favorit. Untuk merubah penilaian anda, hapus dulu penilaian sebelumnya
-           <a class="btn btn-primary" href="gupreshapus">Hapus</a></p>';
+           <a class="btn btn-danger" href="gupreshapus">Hapus</a></p>';
 
            
         }

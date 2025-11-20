@@ -1,6 +1,8 @@
 <div class="container">
 <h3>Pemilihan Guru Favorit</h3>
-<p>Berilah umpan balik pada guru yang mengajar di kelas anda berpatokan pada kriteria berikut,</p>
+<p>Berilah umpan balik pada guru yang mengajar di kelas anda.
+   Skor tertinggi adalah 5 dan terendah adalah 1. Anda bisa mengisi lebih dari satu guru. 
+   Pengisian anda akan dirahasiakan. Kriteria penilaian adalah sebagai berikut,</p>
 
 
 <dl>
@@ -16,7 +18,7 @@
   jawaban siswa, menyikapi kesalahan siswa sebagai bagian dari proses belajar.</dd>
 </dl>
 
-<p>Pilih skor 5 jika semua aspek diatas terlihat dengan kuat dan konsisten. Pengisian anda akan dirahasiakan</p>
+<p></p>
 
 <?php
 // d($guru);

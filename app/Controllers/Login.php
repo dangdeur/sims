@@ -202,7 +202,7 @@ class Login extends BaseController
             'isLoggedIn' => true
         ];
         // d($data);
-        if ($this->request->getVar('password') == 'smkn2jaya') {
+        if ($this->request->getVar('password') == 'skendava') {
             $data['gantipassword'] = true;
         }
         session()->set($data);
