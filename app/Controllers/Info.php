@@ -63,13 +63,17 @@ class Info extends Pbm
     //global $data;
     $data = session()->get();
 
-    // $kegiatanmodel = new KegiatanModel();
-    // $data['kegiatan'] = $kegiatanmodel->where('status', '1')->first();
+    $stafmodel = new StafModel();
+    $datastaf = $stafmodel->select('kode_staf, nama,nama_gelar')->findAll();
+    foreach ($datastaf as $staf) {
+      $data['staf'][$staf['kode_staf']] = ['nama'=>$staf['nama'],'nama_gelar'=>$staf['nama_gelar']];
+    }
 
     $pesan = $this->cekVoting();
-    // dd($pesan);
+    //  d($pesan);
     if ($pesan) {
       $dataarr = json_decode($pesan['data_voting'], true);
+      // d($dataarr);
       $data['voting'] = $dataarr[$data['nis']];
     } else {
       $data['voting'] = FALSE;
@@ -125,7 +129,8 @@ class Info extends Pbm
   public function cekVoting()
   {
     $data = session()->get();
-    $kode_kelas = $this->pbm->kode_kelas($data['rombel']);
+    // $kode_kelas = $this->pbm->kode_kelas($data['rombel']);
+    $kode_kelas =$data['kode_kelas'];
     $votingmodel = new VotingModel();
     $ada = $votingmodel->where('kode_voting', $data['nis'] . "-" . $kode_kelas)->first();
     if ($ada) {

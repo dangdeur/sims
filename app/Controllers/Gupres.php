@@ -114,7 +114,7 @@ class Gupres extends Pbm
       'kode_voting' => $data['nis'] . '-' . $data['kode_kelas'],
       'data_voting' => $votingdb,
       'waktu_voting' => Time::now(),
-      'status' => 1,
+      'status' => 0,
     ];
 
     //  d($votingdb);
