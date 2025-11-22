@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 <h3>Pemilihan Guru Favorit</h3>
 <p>Berilah umpan balik pada guru yang mengajar di kelas anda.
    Skor tertinggi adalah 5 dan terendah adalah 1. Anda bisa mengisi lebih dari satu guru. 
@@ -47,7 +47,9 @@ echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>3,'chec
 echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>4,'checked'=>FALSE]).'4 ';
 echo form_radio($datanya=['name'=>'nilai'.$no,'id'=>'nilai'.$no,'value'=>5,'checked'=>FALSE]).'5 ';
 
-echo form_hidden('kode_guru'.$no, $g['kode_guru']);
+$data_hidden=['kode_guru'.$no=>$g['kode_guru'],
+'mapel'.$no=> $g['mapel_guru']];
+echo form_hidden($data_hidden);
 
 echo '</td>
 

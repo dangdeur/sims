@@ -3,27 +3,29 @@
   </div> -->
 
 
-  <div>
+  <div class="container-fluid">
     <div class="bg-body-tertiaryp-5 rounded">
       <div class="col-sm-8 mx-auto">
         <?php
 
 
         if (isset($gantipassword)) {
-          echo '<p>Anda menggunakan password bawaan, beresiko terjadi penyalahgunaan. <a class="btn btn-primary" href="login/gantipasswordsiswa/' . $id_siswa . '">Ganti Password</a></p>';
+          echo '<p><strong>'. $nama_siswa.'</strong>, anda menggunakan password bawaan, beresiko terjadi penyalahgunaan. <a class="btn btn-primary" href="login/gantipasswordsiswa/' . $id_siswa . '">Ganti Password</a></p>';
         }
 
         if (!$voting) {
-          echo '<p>Dalam rangka memperingati Hari Guru Tahun 2025, SMKN 2 Pandeglang mengadakan pemilihan guru favorit. <br>Pilih guru favoritmu </strong> <a class="btn btn-primary" href="gupres">DISINI</a></p>';
+          echo '<p><strong>'. $nama_siswa.'</strong>, dalam rangka memperingati Hari Guru Tahun 2025, SMKN 2 Pandeglang mengadakan pemilihan guru favorit. 
+          <br>Pilih guru favoritmu di kelas <strong>'.$rombel.'</strong> <a class="btn btn-primary" href="gupres">DISINI</a></p>';
         } else {
-          echo '<p>Terima kasih telah berpartisipasi dalam Pemilihan Guru Favorit. Penilaian yang anda lakukan adalah,</p>';
+          echo '<p>Terima kasih <strong>'. $nama_siswa.'</strong>, telah berpartisipasi dalam Pemilihan Guru Favorit di kelas <strong>'.$rombel.'</strong>. Penilaian yang anda lakukan adalah,</p>';
           echo '<table class="table table-striped">
-                <tr><th>No</th><th>Guru</th><th>Nilai</th></tr>';
+                <tr><th>No</th><th>Guru</th><th>Mapel</th><th>Nilai</th></tr>';
           $no = 1;
           for ($i = 0; $i < count($voting); $i++) {
             echo '<tr>
             <td>' . $no . '</td>
             <td>' . $staf[$voting[$i]['kode_guru']]['nama_gelar'] . '</td>
+            <td>' . $voting[$i]['mapel'] . '</td>
             <td>' . $voting[$i]['nilai'] . '</td>
             </tr>';
             $no++;

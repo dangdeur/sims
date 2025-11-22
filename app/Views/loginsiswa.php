@@ -57,14 +57,14 @@
       <label for="floatingPassword">Password</label>
     </div>
 
-    <div class="row mb-3">
+    <!-- <div class="row mb-3">
       <div class="col checkbox text-start">
           <input name="ingat" class="" type="checkbox" value="1"> Ingat saya
         </div>
       <div class="col text-end">
         <a href="" >Lupa</a>
       </div>
-    </div>
+    </div> -->
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
       <hr />

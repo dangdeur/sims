@@ -99,16 +99,19 @@ class Gupres extends Pbm
     $data = session()->get();
     $votingmodel = new VotingModel();
     $data['datavoting'] = $this->request->getPost();
-    // d($data);
+    d($data);
     $voting = array();
     // $no_urut = 1;
     for ($a = 1; $a <= $data['datavoting']['jumlah_guru']; $a++) {
       if (!empty($data['datavoting']['nilai' . $a])) {
-        $voting[$data['nis']][] = ['id_voting' => $data['nis'] . '-' . $data['kode_kelas'], 'kode_guru' => $this->request->getPost('kode_guru' . $a), 'nilai' => $this->request->getPost('nilai' . $a)];
+        $voting[$data['nis']][] = ['id_voting' => $data['nis'] . '-' . $data['kode_kelas'], 
+                                  'kode_guru' => $this->request->getPost('kode_guru' . $a),
+                                  'mapel' => $this->request->getPost('mapel' . $a),
+                                  'nilai' => $this->request->getPost('nilai' . $a)];
       }
     }
     //$data['tess']=$presensi->getLastQuery();
-
+d($voting);
     $votingdb = json_encode($voting);
     $datadb = [
       'kode_voting' => $data['nis'] . '-' . $data['kode_kelas'],
