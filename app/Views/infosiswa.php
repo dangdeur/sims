@@ -19,7 +19,7 @@
         } else {
           echo '<p>Terima kasih <strong>'. $nama_siswa.'</strong>, telah berpartisipasi dalam Pemilihan Guru Favorit di kelas <strong>'.$rombel.'</strong>. Penilaian yang anda lakukan adalah,</p>';
           echo '<table class="table table-striped">
-                <tr><th>No</th><th>Guru</th><th>Mapel</th><th>Nila  i</th></tr>';
+                <tr><th>No</th><th>Guru</th><th>Mapel</th><th>Nilai</th></tr>';
           $no = 1;
           for ($i = 0; $i < count($voting); $i++) {
             echo '<tr>
