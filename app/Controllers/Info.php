@@ -10,6 +10,7 @@ use App\Models\HarianModel;
 use App\Models\PiketModel;
 use App\Models\KegiatanModel;
 use App\Models\VotingModel;
+use App\Models\VotingTendikModel;
 
 
 class Info extends Pbm
@@ -50,7 +51,22 @@ class Info extends Pbm
     $kegiatanmodel = new KegiatanModel();
     $data['kegiatan'] = $kegiatanmodel->where('status', '1')->first();
 
+     $stafmodel = new StafModel();
+    $datastaf = $stafmodel->select('kode_staf, nama,nama_gelar')->findAll();
+    foreach ($datastaf as $staf) {
+      $data['staf'][$staf['kode_staf']] = ['nama'=>$staf['nama'],'nama_gelar'=>$staf['nama_gelar']];
+    }
+
     // d($data);
+     $pesan = $this->cekVotingTendik();
+    //  d($pesan);
+    if ($pesan) {
+      $dataarr = json_decode($pesan['data_voting'], true);
+      // d($dataarr);
+      $data['voting'] = $dataarr[$data['kode_pengguna']];
+    } else {
+      $data['voting'] = FALSE;
+    }
 
     return view('header')
       . view('menu', $data)
@@ -133,6 +149,22 @@ class Info extends Pbm
     $kode_kelas =$data['kode_kelas'];
     $votingmodel = new VotingModel();
     $ada = $votingmodel->where('kode_voting', $data['nis'] . "-" . $kode_kelas)->first();
+    if ($ada) {
+      //$pesan = TRUE;
+      $data['voting'] = $ada;
+    } else {
+      $data['voting'] = FALSE;
+    }
+    return $data['voting'];
+  }
+
+   public function cekVotingTendik()
+  {
+    $data = session()->get();
+    // $kode_kelas = $this->pbm->kode_kelas($data['rombel']);
+    
+    $votingmodel = new VotingTendikModel();
+    $ada = $votingmodel->where('kode_voting', $data['kode_pengguna'])->first();
     if ($ada) {
       //$pesan = TRUE;
       $data['voting'] = $ada;

@@ -94,11 +94,15 @@ $routes->get('/tutaedit/(.+)', 'TugasTambahan::edit/$1');
 $routes->post('/tutaedit/(.+)', 'TugasTambahan::edit/$1');
 
 //admin
-$routes->get('/admin', 'Login::index');
+$routes->get('/admin', 'Admin::index');
 $routes->get('/admin/perbaiki_jam', 'Admin::perbaiki_jam');
 $routes->get('/admin/reset/(.+)', 'Admin::reset/$1');
 $routes->get('/admin/ambil_alih', 'Admin::ambil_alih');
 $routes->get('/admin/ambil_alih/(.+)', 'Admin::ambil_alih/$1');
+
+//kepsek
+$routes->get('/kepsek', 'Kepsek::index');
+
 
 //Piket
 $routes->get('/piket', 'Piket::index');
@@ -135,10 +139,13 @@ $routes->get('/chat', 'Chat::index');
 $routes->get('/polling', 'Polling::index');
 
 //Voting gupres
-
 $routes->get('/gupres', 'Gupres::index');
 $routes->get('/gupresedit', 'Gupres::gupresedit');
 $routes->get('/gupreshapus', 'Gupres::gupreshapus');
 $routes->post('/simpanvoting', 'Gupres::simpanvoting');
+$routes->get('/olahvoting', 'Gupres::olahVoting');
+$routes->get('/tenpres', 'Gupres::tenpres');
+$routes->post('/simpanvotingtendik', 'Gupres::simpanvotingtendik');
+$routes->get('/tenpreshapus', 'Gupres::tenpreshapus');
 
 service('auth')->routes($routes);

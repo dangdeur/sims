@@ -7,6 +7,7 @@ use Config\Services;
 use App\Models\PbmModel;
 use App\Models\SiswaModel;
 use App\Models\VotingModel;
+use App\Models\VotingTendikModel;
 use CodeIgniter\I18n\Time;
 
 
@@ -45,6 +46,22 @@ class Gupres extends Pbm
 
   }
 
+   public function tenpres()
+  {
+
+    $data = session()->get();
+
+    
+    $data['tendik'] = $this->cariTendik();
+    
+
+    return view('header')
+      . view('menu', $data)
+      . view('form_voting_tendik')
+      . view('footer');
+
+  }
+
   public function gupresedit()
   {
 
@@ -77,10 +94,29 @@ class Gupres extends Pbm
 
   }
 
+  public function tenpreshapus()
+  {
+
+    $data = session()->get();
+    $votingmodel = new VotingTendikModel();
+    $votingmodel->where('kode_voting', $data['kode_pengguna'])->delete();
+
+   return redirect()->to('/info');
+
+  }
+
   public function cariGuru($kelas)
   {
 
     $sql = "SELECT `kode_guru`,`nama_guru`,`mapel_guru` FROM jadwal WHERE " . $kelas . " IN (`10`,`11`,`12`,`13`,`14`,`15`,`16`,`17`,`18`,`19`,`20`,`21`,`22`,`23`,`24`,`25`,`26`,`27`,`28`,`29`,`30`,`31`,`32`,`33`,`34`,`35`,`36`,`37`,`38`,`39`,`40`,`41`,`42`,`43`,`44`,`45`,`46`,`47`,`48`,`49`,`50`,`51`,`52`,`53`,`54`,`55`,`56`);";
+    $db = db_connect();
+    return $query = $db->query($sql)->getResultArray();
+  }
+
+  public function cariTendik()
+  {
+
+    $sql = "SELECT `kode_staf`,`nama_gelar` FROM staf WHERE `tugas_tambahan`='Tendik'";
     $db = db_connect();
     return $query = $db->query($sql)->getResultArray();
   }
@@ -130,6 +166,38 @@ class Gupres extends Pbm
     return redirect()->to('/infosiswa');
   }
 
+   public function simpanvotingtendik()
+  {
+    $data = session()->get();
+    $votingmodel = new VotingTendikModel();
+    $data['datavoting'] = $this->request->getPost();
+    // d($data);
+    $voting = array();
+    // $no_urut = 1;
+    for ($a = 1; $a <= $data['datavoting']['jumlah_tendik']; $a++) {
+      if (!empty($data['datavoting']['nilai' . $a])) {
+        $voting[$data['kode_pengguna']][] = [ 
+                                  'kode_staf' => $this->request->getPost('kode_tendik' . $a),
+                                  
+                                  'nilai' => $this->request->getPost('nilai' . $a)];
+      }
+    }
+  //  d($voting);
+    $votingdb = json_encode($voting);
+    $datadb = [
+      'kode_voting' => $data['kode_pengguna'],
+      'data_voting' => $votingdb,
+      'waktu_voting' => Time::now(),
+      'status' => 0,
+    ];
+
+    // d($datadb);
+    $votingmodel->save($datadb);
+    
+    return redirect()->to('/info');
+  }
+
+
   // public function cekVoting()
   // {
   //   $data = session()->get();
@@ -140,4 +208,30 @@ class Gupres extends Pbm
   //   }
   //   return $pesan;
   // }
+
+  public function olahVoting()
+  {
+    $data = session()->get();
+    $votingmodel = new VotingModel();
+    $data['datavoting'] = $votingmodel->where('status', 0)->findAll();
+    
+    $hasil = array();
+    foreach ($data['datavoting'] as $dv) {
+      $detail_voting = json_decode($dv['data_voting'], true);
+      // d($detail_voting);
+      foreach ($detail_voting as $nilai_siswa) {
+        foreach ($nilai_siswa as $nv) {
+          // $hasil[$nv['kode_guru']]['mapel'] = $nv['mapel'];
+          // $hasil[$nv['kode_guru']]['total'] = isset($hasil[$nv['kode_guru']]['total']) ? $hasil[$nv['kode_guru']]['total'] + $nv['nilai'] : $nv['nilai'];
+          // $hasil[$nv['kode_guru']]['jumlah'] = isset($hasil[$nv['kode_guru']]['jumlah']) ? $hasil[$nv['kode_guru']]['jumlah'] + 1 : 1;
+          $hasil[$nv['kode_guru']][ $nv['mapel']][] = $nv['nilai'];
+        }
+      }
+      //update status sudah diolah
+      //$votingmodel->update($dv['id_voting'], ['status' => 1]);
+    }
+    dd($hasil);
+    //dd($data); 
+    
+  }
 }

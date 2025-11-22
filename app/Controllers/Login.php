@@ -103,12 +103,17 @@ class Login extends BaseController
                     $this->update($data);
                 }
                 //d($user);
-                if ($user['level'] == 'Admin') {
-                    //return redirect()->to('/admin')->withCookies();
-                    return redirect()->to(site_url('info'))->withCookies();
+                if ($user['level'] == 'SuperAdmin') {
+                    return redirect()->to('/admin')->withCookies();
+                    // return redirect()->to(site_url('info'))->withCookies();
                     //redirect()->to('admin/dashboard');
 
-                } else {
+                } 
+                elseif ($user['level'] == 'Kepala Sekolah'){
+                    return redirect()->to('/kepsek')->withCookies();
+
+                }
+                else {
                     return redirect()->to(site_url('info'))->withCookies();
                 }
             }
@@ -129,7 +134,7 @@ class Login extends BaseController
                 }
                 $user['loginnya'] = 'dengan cookie';
 
-                d($user);
+                // d($user);
                 $user['level'] = $this->siapaLogin($user, [$user['peran']]);
                 $this->setUserSession($user);
                 return redirect()->to(site_url('info'))->withCookies();
@@ -281,7 +286,7 @@ class Login extends BaseController
             $this->logout();
             return redirect()->to('/');
         } else {
-            $data = $this->session->get();
+           $data = session()->get();
             //d( $data );
             return view('header')
                 . view('menu', $data)
@@ -382,7 +387,7 @@ class Login extends BaseController
 
 
 
-                d($user);
+                // d($user);
                 $this->setSiswaSession($user);
 
 
