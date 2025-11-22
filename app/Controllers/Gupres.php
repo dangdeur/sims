@@ -99,7 +99,7 @@ class Gupres extends Pbm
     $data = session()->get();
     $votingmodel = new VotingModel();
     $data['datavoting'] = $this->request->getPost();
-    d($data);
+    // d($data);
     $voting = array();
     // $no_urut = 1;
     for ($a = 1; $a <= $data['datavoting']['jumlah_guru']; $a++) {
@@ -111,7 +111,7 @@ class Gupres extends Pbm
       }
     }
     //$data['tess']=$presensi->getLastQuery();
-d($voting);
+// d($voting);
     $votingdb = json_encode($voting);
     $datadb = [
       'kode_voting' => $data['nis'] . '-' . $data['kode_kelas'],
