@@ -34,8 +34,10 @@
            <a class="btn btn-danger" href="tenpreshapus">Hapus</a></p>';
         }
         else {
+          if($level=='Guru') {
          if (isset($kegiatan)) {
           echo 'Ada kegiatan <strong>'.$kegiatan['nama_kegiatan'].'</strong> '.$kegiatan['deskripsi'].' <a class="btn btn-primary" href="'.$kegiatan['link'].'">Partisipasi</a>';
+        }
         }
         }
 

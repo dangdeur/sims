@@ -67,7 +67,7 @@ class Info extends Pbm
     } else {
       $data['voting'] = FALSE;
     }
-
+// d($data);
     return view('header')
       . view('menu', $data)
       . view('info')
