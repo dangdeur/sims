@@ -47,7 +47,7 @@ class Admin extends BaseController
         {
         
         $data['pengguna']=$pengguna->findAll();
-        //d($data);
+        // d($data);
 
         return view('admin/header')
          .view('admin/menu',$data)
@@ -143,12 +143,20 @@ d($data);
 
     public function reset( $id ) {
        
-        $passwordbaru = 'smkn2jaya';
+        //$data = session()->get();
+        // $passwordbaru = 'smkn2jaya';
         $pengguna = new PenggunaModel();
-        //$data[ 'id' ] = $id;
-        //$data[ 'update' ][ 'password' ] = $passwordbaru;
-        $update = $pengguna->update( $id, ['password'=>$passwordbaru]);
-        return redirect()->to( '/admin' );
+         $data['id'] = $id;
+        $data['update']['password'] = '$2y$10$gmuUGgcI/m1w1vuEqrDRTeeurrN2D0PhGklbuwAwA0Bo9HeFs8EB2';
+        // $update = $pengguna->save(['id_pengguna'=>$id,'password'=>'$2y$10$gmuUGgcI/m1w1vuEqrDRTeeurrN2D0PhGklbuwAwA0Bo9HeFs8EB2']);
+         $update = $pengguna->update($data['id'], $data['update']);
+        
+        if (!$update) {
+            session()->setFlashdata( 'error', 'Reset password gagal.' );
+        } else {
+            session()->setFlashdata( 'sukses', 'Password berhasil direset' );
+        }   
+         return redirect()->to( '/admin/ambil_alih' );  
 
     
 
