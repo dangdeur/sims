@@ -99,6 +99,7 @@ $routes->get('/admin/perbaiki_jam', 'Admin::perbaiki_jam');
 $routes->get('/admin/reset/(.+)', 'Admin::reset/$1');
 $routes->get('/admin/ambil_alih', 'Admin::ambil_alih');
 $routes->get('/admin/ambil_alih/(.+)', 'Admin::ambil_alih/$1');
+$routes->get('/rombel_guru', 'Admin::rombel_guru');
 
 //kepsek
 $routes->get('/kepsek', 'Kepsek::index');

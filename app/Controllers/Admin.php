@@ -38,6 +38,29 @@ class Admin extends BaseController
         $agenda = $agendamodel->where('dibuat', '')->findAll();
         //dd($agenda);
     }
+     public function rombel_guru()
+    {
+        $pbmmodel = new PbmModel();
+        $data = session()->get();
+        $jadwal = $pbmmodel->findAll();
+        for ($j=0; $j<count($jadwal);$j++)
+        {
+            if (!isset($rombelnya[$jadwal[$j]['kode_guru']]))
+            {
+                // $rombelnya[$jadwal[$j]['kode_guru']] =[];
+                $rombelnya[$jadwal[$j]['kode_guru']] =['mapel'=>$jadwal[$j]['mapel_guru']];
+            }
+            else {
+                $rombelnya[$jadwal[$j]['kode_guru']]['mapel'] [] = $jadwal[$j]['mapel_guru'];
+
+            }
+           
+                                                  
+        }
+        d($rombelnya);
+        return $jadwal;
+    }
+
 
     public function ambil_alih ($id=FALSE)
     {
