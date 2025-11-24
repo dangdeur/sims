@@ -7,6 +7,7 @@ use Config\Services;
 use App\Models\PbmModel;
 use App\Models\SiswaModel;
 use App\Models\VotingModel;
+use App\Models\PollingModel;
 use App\Models\VotingTendikModel;
 use CodeIgniter\I18n\Time;
 
@@ -46,14 +47,14 @@ class Gupres extends Pbm
 
   }
 
-   public function tenpres()
+  public function tenpres()
   {
 
     $data = session()->get();
 
-    
+
     $data['tendik'] = $this->cariTendik();
-    
+
 
     return view('header')
       . view('menu', $data)
@@ -90,7 +91,7 @@ class Gupres extends Pbm
     $votingmodel = new VotingModel();
     $votingmodel->where('kode_voting', $data['nis'] . "-" . $data['kode_kelas'])->delete();
 
-   return redirect()->to('/infosiswa');
+    return redirect()->to('/infosiswa');
 
   }
 
@@ -101,7 +102,7 @@ class Gupres extends Pbm
     $votingmodel = new VotingTendikModel();
     $votingmodel->where('kode_voting', $data['kode_pengguna'])->delete();
 
-   return redirect()->to('/info');
+    return redirect()->to('/info');
 
   }
 
@@ -140,10 +141,12 @@ class Gupres extends Pbm
     // $no_urut = 1;
     for ($a = 1; $a <= $data['datavoting']['jumlah_guru']; $a++) {
       if (!empty($data['datavoting']['nilai' . $a])) {
-        $voting[$data['nis']][] = ['id_voting' => $data['nis'] . '-' . $data['kode_kelas'], 
-                                  'kode_guru' => $this->request->getPost('kode_guru' . $a),
-                                  'mapel' => $this->request->getPost('mapel' . $a),
-                                  'nilai' => $this->request->getPost('nilai' . $a)];
+        $voting[$data['nis']][] = [
+          'id_voting' => $data['nis'] . '-' . $data['kode_kelas'],
+          'kode_guru' => $this->request->getPost('kode_guru' . $a),
+          'mapel' => $this->request->getPost('mapel' . $a),
+          'nilai' => $this->request->getPost('nilai' . $a)
+        ];
       }
     }
     //$data['tess']=$presensi->getLastQuery();
@@ -166,7 +169,7 @@ class Gupres extends Pbm
     return redirect()->to('/infosiswa');
   }
 
-   public function simpanvotingtendik()
+  public function simpanvotingtendik()
   {
     $data = session()->get();
     $votingmodel = new VotingTendikModel();
@@ -176,13 +179,14 @@ class Gupres extends Pbm
     // $no_urut = 1;
     for ($a = 1; $a <= $data['datavoting']['jumlah_tendik']; $a++) {
       if (!empty($data['datavoting']['nilai' . $a])) {
-        $voting[$data['kode_pengguna']][] = [ 
-                                  'kode_staf' => $this->request->getPost('kode_tendik' . $a),
-                                  
-                                  'nilai' => $this->request->getPost('nilai' . $a)];
+        $voting[$data['kode_pengguna']][] = [
+          'kode_staf' => $this->request->getPost('kode_tendik' . $a),
+
+          'nilai' => $this->request->getPost('nilai' . $a)
+        ];
       }
     }
-  //  d($voting);
+    //  d($voting);
     $votingdb = json_encode($voting);
     $datadb = [
       'kode_voting' => $data['kode_pengguna'],
@@ -193,7 +197,7 @@ class Gupres extends Pbm
 
     // d($datadb);
     $votingmodel->save($datadb);
-    
+
     return redirect()->to('/info');
   }
 
@@ -213,25 +217,68 @@ class Gupres extends Pbm
   {
     $data = session()->get();
     $votingmodel = new VotingModel();
+    // $guru
     $data['datavoting'] = $votingmodel->where('status', 0)->findAll();
-    
+
     $hasil = array();
     foreach ($data['datavoting'] as $dv) {
       $detail_voting = json_decode($dv['data_voting'], true);
-      // d($detail_voting);
+      
       foreach ($detail_voting as $nilai_siswa) {
         foreach ($nilai_siswa as $nv) {
-          // $hasil[$nv['kode_guru']]['mapel'] = $nv['mapel'];
-          // $hasil[$nv['kode_guru']]['total'] = isset($hasil[$nv['kode_guru']]['total']) ? $hasil[$nv['kode_guru']]['total'] + $nv['nilai'] : $nv['nilai'];
-          // $hasil[$nv['kode_guru']]['jumlah'] = isset($hasil[$nv['kode_guru']]['jumlah']) ? $hasil[$nv['kode_guru']]['jumlah'] + 1 : 1;
-          $hasil[$nv['kode_guru']][ $nv['mapel']][] = $nv['nilai'];
+          // $nv
+          // id_voting => string (14) "1025.13224-111"
+          // kode_guru => string (1) "5"
+          // mapel => string (11) "Penjaskes X"
+          // nilai => string (1) "5"
+
+// d($nilai_siswa);
+
+          $hasil[$nv['kode_guru']][$nv['mapel']][] = $nv['nilai'];
+
+
         }
-      }
-      //update status sudah diolah
-      //$votingmodel->update($dv['id_voting'], ['status' => 1]);
-    }
-    dd($hasil);
-    //dd($data); 
+        //update status sudah diolah
     
+      }
+$votingmodel->update($dv['id_voting'], ['status' => 1]);
+    }
+    foreach ($hasil as $kode_guru => $data_guru) {
+      foreach ($data_guru as $mapel => $nilai_mapel) {
+        $jumlah = array_sum($nilai_mapel);
+        $count = count($nilai_mapel);
+        $rata_rata = $jumlah / $count;
+        $hasil2[$kode_guru][$mapel] = [
+          'jumlah' => $jumlah,
+          'rata_rata' => $rata_rata,
+          'pemilih' => $count
+        ];
+       
+      }
+
+    }
+
+
+
+   
+    // dd($hasil2);
+    // dd($data); 
+    
+
+    $pollingmodel = new PollingModel();
+    foreach ($hasil2 as $kode_guru => $data_guru) {
+      foreach ($data_guru as $mapel => $nilai_mapel) {
+        $datapolling = [
+          'kode_staf' => $kode_guru,
+          'mapel' => $mapel,
+          'jumlah' => $nilai_mapel['jumlah'],
+          'rerata' => $nilai_mapel['rata_rata'],
+          'pemilih' => $nilai_mapel['pemilih'],
+          'voting' => 'Gupres'
+        ];
+        $pollingmodel->save($datapolling);  
+
+  }
+}
   }
 }
