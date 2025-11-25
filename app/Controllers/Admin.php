@@ -9,6 +9,10 @@ use App\Models\AgendaGuruModel;
 use App\Models\PenggunaModel;
 use App\Models\PbmModel;
 use App\Models\WalasModel;
+use App\Models\RombelModel;
+use App\Models\VotingModel;
+use App\Models\PollingModel;
+use App\Models\VotingTendikModel;
 
 class Admin extends BaseController
 {
@@ -40,44 +44,39 @@ class Admin extends BaseController
     }
     public function rombel_guru()
     {
-        $pbmmodel = new PbmModel();
         $data = session()->get();
+        $rombelmodel=new RombelModel();
+        $rombel=$rombelmodel->findAll();
+        for($r=0;$r<count($rombel);$r++)
+        {
+            $datarombel[$rombel[$r]['kode_rombel']]=$rombel[$r]['jumlah_siswa'];
+        }
+        // dd($datarombel);
+        
+        $pbmmodel = new PbmModel();
+        
         $jadwal = $pbmmodel->findAll();
         for ($j = 0; $j < count($jadwal); $j++) {
-            // if (!isset($rombelnya[$jadwal[$j]['kode_guru']]))
-            // {
-            // $rombelnya[$jadwal[$j]['kode_guru']] =[];
-            // $data_jadwal[$jadwal[$j]['kode_guru']] []= ['mapel' => $jadwal[$j]['mapel_guru']];
 
             for ($k = 10; $k <= 56; $k++) {
                 if ($jadwal[$j][$k] != '') {
                     if (isset($data_jadwal[$jadwal[$j]['kode_guru']][$jadwal[$j]['mapel_guru']])) {
                         if (in_array($jadwal[$j][$k], $data_jadwal[$jadwal[$j]['kode_guru']][$jadwal[$j]['mapel_guru']]['rombelnya'])) {
                             continue;
+                        } else {
+                            $data_jadwal[$jadwal[$j]['kode_guru']][$jadwal[$j]['mapel_guru']]['rombelnya'][] = $datarombel[$jadwal[$j][$k]];
                         }
-                        else {
-                            $data_jadwal[$jadwal[$j]['kode_guru']][$jadwal[$j]['mapel_guru']]['rombelnya'][] = $jadwal[$j][$k];
-                        }
-                        
-                    }
+                    } 
                     else {
-                        $data_jadwal[$jadwal[$j]['kode_guru']][$jadwal[$j]['mapel_guru']]['rombelnya'][] = $jadwal[$j][$k];
+                        $data_jadwal[$jadwal[$j]['kode_guru']][$jadwal[$j]['mapel_guru']]['rombelnya'][] = $datarombel[$jadwal[$j][$k]];
                     }
-
                    
-
                 }
+                 $data_jadwal[$jadwal[$j]['kode_guru']][$jadwal[$j]['mapel_guru']]['total']=array_sum( $data_jadwal[$jadwal[$j]['kode_guru']][$jadwal[$j]['mapel_guru']]['rombelnya']);
             }
-            // }
-            // else {
-            //     $rombelnya[$jadwal[$j]['kode_guru']]['mapel'] [] = $jadwal[$j]['mapel_guru'];
-
-            // }
-
-
         }
         d($data_jadwal);
-        return $jadwal;
+        return $data_jadwal;
     }
 
     public function jumlah_siswa()
@@ -114,7 +113,6 @@ class Admin extends BaseController
             $this->setUserSession($user);
             return redirect()->to('info');
         }
-
     }
 
     public function perbaiki_jam()
@@ -129,8 +127,6 @@ class Admin extends BaseController
             . view('admin/menu', $data)
             . view('admin/perbaikan_jam')
             . view('admin/footer');
-
-
     }
 
     private function setUserSession($user)
@@ -183,7 +179,6 @@ class Admin extends BaseController
             $login = 'Siswa';
         }
         return $login;
-
     }
 
     public function reset($id)
@@ -203,11 +198,153 @@ class Admin extends BaseController
             session()->setFlashdata('sukses', 'Password berhasil direset');
         }
         return redirect()->to('/admin/ambil_alih');
-
-
-
-
     }
 
+    public function olahVoting()
+    {
+        $data = session()->get();
+        $votingmodel = new VotingModel();
 
+        $data['datavoting'] = $votingmodel->where('status', 0)->findAll();
+        // dd($data['datavoting']);
+        $hasil = array();
+        foreach ($data['datavoting'] as $dv) {
+            $datavoting = json_decode($dv['data_voting'], true);
+            // dd($datavoting);
+
+
+            foreach ($datavoting as $nis => $hv) {
+                // dd($hasilvoting);
+                for ($v = 0; $v < count($hv); $v++) {
+                    if (!isset($hasil[$hv[$v]['kode_guru']])) {
+                        $hasil[$hv[$v]['kode_guru']] = [$hv[$v]['mapel'] => [$hv[$v]['nilai']]];
+                        // $hasil array (1)
+                        //         5 => array (1)
+                        //             Penjaskes X => array (1)
+                        //                             0 => string (1) "5"
+                    }
+                    else {
+                        $hasil[$hv[$v]['kode_guru']][$hv[$v]['mapel']][]= $hv[$v]['nilai'];
+                       
+                    }
+                                       
+                }
+                //    dd($hasil);
+            }
+            // $votingmodel->update($dv['id_voting'], ['status' => 1]);
+            // UPDATE `voting` SET `status`=0 WHERE 1
+            // dd($hasil);
+        }
+        //  dd($hasil);
+        // $hasil
+        //      0
+        //          nis
+        //              0
+        //                  id_voting
+        //                  kode_guru
+
+        
+        foreach ($hasil as $kode_guru => $data_guru) {
+            foreach ($data_guru as $mapel => $nilai_mapel) {
+                $jumlah = array_sum($nilai_mapel);
+                $count = count($nilai_mapel);
+                $rata_rata = $jumlah / $count;
+                $hasil2[$kode_guru][$mapel] = [
+                    'jumlah' => $jumlah,
+                    'rata_rata' => $rata_rata,
+                    'pemilih' => $count
+                ];
+            }
+        }
+        d($hasil2);
+        $pollingmodel = new PollingModel();
+        foreach ($hasil2 as $kode_guru => $data_guru) {
+            foreach ($data_guru as $mapel => $nilai_mapel) {
+                $datapolling = [
+                    'kode_staf' => $kode_guru,
+                    'mapel' => $mapel,
+                    'jumlah' => $nilai_mapel['jumlah'],
+                    'rerata' => $nilai_mapel['rata_rata'],
+                    'pemilih' => $nilai_mapel['pemilih'],
+                    'voting' => 'Gupres'
+                ];
+                $pollingmodel->save($datapolling);
+            }
+        }
+        d($datapolling);
+    }
+
+    public function olahVotingTenpres()
+    {
+        $data = session()->get();
+        $votingmodel = new VotingTendikModel();
+
+        $data['datavoting'] = $votingmodel->where('status', 0)->findAll();
+        // dd($data['datavoting']);
+        $hasil = array();
+        foreach ($data['datavoting'] as $dv) {
+            $datavoting = json_decode($dv['data_voting'], true);
+            // dd($datavoting);
+
+
+            foreach ($datavoting as $nis => $hv) {
+                // dd($hasilvoting);
+                for ($v = 0; $v < count($hv); $v++) {
+                    if (!isset($hasil[$hv[$v]['kode_staf']])) {
+                        $hasil[$hv[$v]['kode_staf']] = ['Tendik' => [$hv[$v]['nilai']]];
+                        // $hasil array (1)
+                        //         5 => array (1)
+                        //             Penjaskes X => array (1)
+                        //                             0 => string (1) "5"
+                    }
+                    else {
+                        $hasil[$hv[$v]['kode_staf']]['Tendik'][]= $hv[$v]['nilai'];
+                       
+                    }
+                                       
+                }
+                //    dd($hasil);
+            }
+            // $votingmodel->update($dv['id_voting'], ['status' => 1]);
+            // UPDATE `voting` SET `status`=0 WHERE 1
+            // dd($hasil);
+        }
+        //  dd($hasil);
+        // $hasil
+        //      0
+        //          nis
+        //              0
+        //                  id_voting
+        //                  kode_guru
+
+        
+        foreach ($hasil as $kode_guru => $data_guru) {
+            foreach ($data_guru as $mapel => $nilai_mapel) {
+                $jumlah = array_sum($nilai_mapel);
+                $count = count($nilai_mapel);
+                $rata_rata = $jumlah / $count;
+                $hasil2[$kode_guru][$mapel] = [
+                    'jumlah' => $jumlah,
+                    'rata_rata' => $rata_rata,
+                    'pemilih' => $count
+                ];
+            }
+        }
+        d($hasil2);
+        $pollingmodel = new PollingModel();
+        foreach ($hasil2 as $kode_guru => $data_guru) {
+            foreach ($data_guru as $mapel => $nilai_mapel) {
+                $datapolling = [
+                    'kode_staf' => $kode_guru,
+                    'mapel' => $mapel,
+                    'jumlah' => $nilai_mapel['jumlah'],
+                    'rerata' => $nilai_mapel['rata_rata'],
+                    'pemilih' => $nilai_mapel['pemilih'],
+                    'voting' => 'Tenpres'
+                ];
+                $pollingmodel->save($datapolling);
+            }
+        }
+        d($datapolling);
+    }
 }

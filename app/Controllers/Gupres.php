@@ -44,7 +44,6 @@ class Gupres extends Pbm
       . view('menusiswa', $data)
       . view('form_voting')
       . view('footer');
-
   }
 
   public function tenpres()
@@ -60,7 +59,6 @@ class Gupres extends Pbm
       . view('menu', $data)
       . view('form_voting_tendik')
       . view('footer');
-
   }
 
   public function gupresedit()
@@ -81,7 +79,6 @@ class Gupres extends Pbm
       . view('menusiswa', $data)
       . view('form_voting_edit')
       . view('footer');
-
   }
 
   public function gupreshapus()
@@ -92,7 +89,6 @@ class Gupres extends Pbm
     $votingmodel->where('kode_voting', $data['nis'] . "-" . $data['kode_kelas'])->delete();
 
     return redirect()->to('/infosiswa');
-
   }
 
   public function tenpreshapus()
@@ -103,7 +99,6 @@ class Gupres extends Pbm
     $votingmodel->where('kode_voting', $data['kode_pengguna'])->delete();
 
     return redirect()->to('/info');
-
   }
 
   public function cariGuru($kelas)
@@ -150,7 +145,7 @@ class Gupres extends Pbm
       }
     }
     //$data['tess']=$presensi->getLastQuery();
-// d($voting);
+    // d($voting);
     $votingdb = json_encode($voting);
     $datadb = [
       'kode_voting' => $data['nis'] . '-' . $data['kode_kelas'],
@@ -213,72 +208,5 @@ class Gupres extends Pbm
   //   return $pesan;
   // }
 
-  public function olahVoting()
-  {
-    $data = session()->get();
-    $votingmodel = new VotingModel();
-    // $guru
-    $data['datavoting'] = $votingmodel->where('status', 0)->findAll();
-
-    $hasil = array();
-    foreach ($data['datavoting'] as $dv) {
-      $detail_voting = json_decode($dv['data_voting'], true);
-      
-      foreach ($detail_voting as $nilai_siswa) {
-        foreach ($nilai_siswa as $nv) {
-          // $nv
-          // id_voting => string (14) "1025.13224-111"
-          // kode_guru => string (1) "5"
-          // mapel => string (11) "Penjaskes X"
-          // nilai => string (1) "5"
-
-// d($nilai_siswa);
-
-          $hasil[$nv['kode_guru']][$nv['mapel']][] = $nv['nilai'];
-
-
-        }
-        //update status sudah diolah
-    
-      }
-$votingmodel->update($dv['id_voting'], ['status' => 1]);
-    }
-    foreach ($hasil as $kode_guru => $data_guru) {
-      foreach ($data_guru as $mapel => $nilai_mapel) {
-        $jumlah = array_sum($nilai_mapel);
-        $count = count($nilai_mapel);
-        $rata_rata = $jumlah / $count;
-        $hasil2[$kode_guru][$mapel] = [
-          'jumlah' => $jumlah,
-          'rata_rata' => $rata_rata,
-          'pemilih' => $count
-        ];
-       
-      }
-
-    }
-
-
-
-   
-    // dd($hasil2);
-    // dd($data); 
-    
-
-    $pollingmodel = new PollingModel();
-    foreach ($hasil2 as $kode_guru => $data_guru) {
-      foreach ($data_guru as $mapel => $nilai_mapel) {
-        $datapolling = [
-          'kode_staf' => $kode_guru,
-          'mapel' => $mapel,
-          'jumlah' => $nilai_mapel['jumlah'],
-          'rerata' => $nilai_mapel['rata_rata'],
-          'pemilih' => $nilai_mapel['pemilih'],
-          'voting' => 'Gupres'
-        ];
-        $pollingmodel->save($datapolling);  
-
-  }
-}
-  }
+  
 }
