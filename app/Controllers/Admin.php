@@ -29,7 +29,7 @@ class Admin extends BaseController
 
     public function index()
     {
-        $data = $this->session->get();
+         $data = session()->get();
 
         return view('admin/header')
             . view('admin/menu', $data)
@@ -87,7 +87,7 @@ class Admin extends BaseController
 
     public function ambil_alih($id = FALSE)
     {
-        $data = $this->session->get();
+         $data = session()->get();
         $pengguna = new PenggunaModel();
         if ($id === false) {
 
@@ -117,7 +117,7 @@ class Admin extends BaseController
 
     public function perbaiki_jam()
     {
-        $data = $this->session->get();
+         $data = session()->get();
         $agendamodel = new AgendaGuruModel();
         $data['agenda'] = $agendamodel->where('jp0 >=', 10);
         $data['agenda'] = $agendamodel->where('jp1 >=', 10);
