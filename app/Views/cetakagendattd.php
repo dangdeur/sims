@@ -1,9 +1,10 @@
 <table border="0" cellspacing="3" cellpadding="2">
   <tr>
-    <td colspan="3"  style="text-align: center;">
+    <td colspan="3" style="text-align: center;">
       <h3>Agenda Harian Mengajar
-    
-      <br><?= $bulan ?></h3>
+
+        <br><?= $bulan ?>
+      </h3>
     </td>
   </tr>
 
@@ -33,13 +34,13 @@
   <tbody>
     <?php
     $no = 1;
-    if (isset($dispensasi) && $dispensasi ==false) {
+    if (isset($dispensasi) && $dispensasi == false) {
       for ($a = 0; $a < count($agenda); $a++) {
         $kode = explode("-", $agenda[$a]['kode_agendaguru']);
         $tgl = substr($kode[1], 0, 2);
         $bln = BULAN[substr($kode[1], 2, 2)];
         $tahun = substr($kode[1], 4, 4);
-        
+
         $tanggal = $tgl . ' ' . $bln . ' ' . $thn;
 
         $tgl_barat = $thn . '-' . substr($kode[1], 2, 2) . '-' . $tgl;
@@ -50,7 +51,7 @@
         //$jam_awal=explode(' ',JP[$hari][$agenda[$a]['jp0']]);
         //$jam_awal_fix=explode('-',$jam_awal[2]);
         //$jam_akhir=explode('-',JP[$hari][$agenda[$a]['jp1']]);
-
+    
         echo '<tr>
           <td style="width: 5%;text-align: center;">' . $no;
         echo '</td><td style="width: 20%;text-align: center;">' . $tanggal . '</td>';
@@ -61,19 +62,19 @@
 
         $no++;
       }
-    }
-    else {
+    } else {
       $bulan_aktif = $kodebulan;
       for ($a = 0; $a < count($agenda); $a++) {
-       echo '<tr>
+        $tgl_ = explode("-", $agenda[$a]['tanggal']);
+        echo '<tr>
           <td style="width: 5%;text-align: center;">' . $no;
-        echo '</td><td style="width: 20%;text-align: center;">' .$agenda[$a]['tanggal'] . '</td>';
-        //echo '<td style="width: 75%;text-align: left;">Mengajar '.$agenda[$a]['mapel'].' di '.$agenda[$a]['rombel'].' jam '.$jam_awal_fix[0].'-'.$jam_akhir[1].'</td>
-        echo '<td style="width: 75%;text-align: left;">' . $agenda[$a]['uraian'] . '</td>
+        echo '</td><td style="width: 20%;text-align: center;">' . $tgl_[2] . " " . BULAN[$tgl_[1]] . " " . $tgl_[0] . '</td>';
+        echo '<td style="width: 75%;text-align: left;">Mengajar ' . $agenda[$a]['mapel'] . ' di ' . $agenda[$a]['rombel'] . '</td>
+        
   </tr>';
-      $no++;
+        $no++;
       }
-      
+
     }
 
     ?>
@@ -90,7 +91,9 @@
   <tr>
     <td style="width: 33%;text-align: center;"></td>
     <td style="width: 33%;text-align: center;"></td>
-    <td style="width: 33%;text-align: center;">Pandeglang, <?php echo $tanggal_akhir . ' ' . BULAN[$bulan_aktif] . ' ' . $tahun; ?></td>
+    <td style="width: 33%;text-align: center;">Pandeglang,
+      <?php echo $tanggal_akhir . ' ' . BULAN[$bulan_aktif] . ' ' . $tahun; ?>
+    </td>
 
     <!-- <td style="width: 33%;text-align: center;">Pandeglang, <?php //echo date("t m Y", strtotime($tanggal)); ?></td> -->
 

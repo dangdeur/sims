@@ -40,80 +40,80 @@ class Cetak extends Pbm
 				$data['dispensasi'] = true;
 
 				/*
-				*	Kode hari
-				*	     	=> rombel
-				*                     => jp0,mapel,jp1
-				*/
+				 *	Kode hari
+				 *	     	=> rombel
+				 *                     => jp0,mapel,jp1
+				 */
 				$jadwal = $this->pbm->jadwal_ekin();
 				//$data['jadwal'] = $jadwal;
 
 				if (isset($data['tanggal'][1])) {
 					foreach ($data['tanggal'][1] as $tanggal) {
-						if(isset($jadwal[1])) {
-						foreach ($jadwal[1] as $rombel => $datanya) {
-							$data_agenda[] = [
-								'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
-								'uraian' => 'Mengajar mapel ' . $datanya['mapel'] . ' di ' . $rombel . ' jam ' . $datanya['jp0'] . '-' . $datanya['jp1'],
-								'urutan' =>$tanggal
-							];
+						if (isset($jadwal[1])) {
+							foreach ($jadwal[1] as $rombel => $datanya) {
+								$data_agenda[] = [
+									'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
+									'uraian' => 'Mengajar mapel ' . $datanya['mapel'] . ' di ' . $rombel . ' jam ' . $datanya['jp0'] . '-' . $datanya['jp1'],
+									'urutan' => $tanggal
+								];
+							}
 						}
-					}
 					}
 				}
 
 				if (isset($data['tanggal'][2])) {
 					foreach ($data['tanggal'][2] as $tanggal) {
-						if(isset($jadwal[2])) {
-						foreach ($jadwal[2] as $rombel => $datanya) {
-							$data_agenda[] = [
-								'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
-								'uraian' => 'Mengajar mapel ' . $datanya['mapel'] . ' di ' . $rombel . ' jam ' . $datanya['jp0'] . '-' . $datanya['jp1'],
-								'urutan' =>$tanggal
-							];
+						if (isset($jadwal[2])) {
+							foreach ($jadwal[2] as $rombel => $datanya) {
+								$data_agenda[] = [
+									'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
+									'uraian' => 'Mengajar mapel ' . $datanya['mapel'] . ' di ' . $rombel . ' jam ' . $datanya['jp0'] . '-' . $datanya['jp1'],
+									'urutan' => $tanggal
+								];
+							}
 						}
 					}
-				}
 				}
 
 				if (isset($data['tanggal']['3'])) {
 					foreach ($data['tanggal']['3'] as $tanggal) {
-						if(isset($jadwal[3])) {
-						foreach ($jadwal['3'] as $rombel => $datanya) {
-							$data_agenda[] = [
-								'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
-								'uraian' => 'Mengajar mapel ' . $datanya['mapel'] . ' di ' . $rombel . ' jam ' . $datanya['jp0'] . '-' . $datanya['jp1'],
-								'urutan' =>$tanggal
-							];
+						if (isset($jadwal[3])) {
+							foreach ($jadwal['3'] as $rombel => $datanya) {
+								$data_agenda[] = [
+									'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
+									'uraian' => 'Mengajar mapel ' . $datanya['mapel'] . ' di ' . $rombel . ' jam ' . $datanya['jp0'] . '-' . $datanya['jp1'],
+									'urutan' => $tanggal
+								];
+							}
 						}
-					}
 					}
 				}
 
 				if (isset($data['tanggal'][4])) {
 					foreach ($data['tanggal'][4] as $tanggal) {
-						if(isset($jadwal[4])) {
-						foreach ($jadwal[4] as $rombel => $datanya) {
-							$data_agenda[] = [
-								'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
-								'uraian' => 'Mengajar mapel ' . $datanya['mapel'] . ' di ' . $rombel . ' jam ' . $datanya['jp0'] . '-' . $datanya['jp1'],
-								'urutan' =>$tanggal
-							];
+						if (isset($jadwal[4])) {
+							foreach ($jadwal[4] as $rombel => $datanya) {
+								$data_agenda[] = [
+									'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
+									'uraian' => 'Mengajar mapel ' . $datanya['mapel'] . ' di ' . $rombel . ' jam ' . $datanya['jp0'] . '-' . $datanya['jp1'],
+									'urutan' => $tanggal
+								];
+							}
 						}
-					}
 					}
 				}
 
 				if (isset($data['tanggal'][5])) {
 					foreach ($data['tanggal'][5] as $tanggal) {
-						if(isset($jadwal[5])) {
-						foreach ($jadwal[5] as $rombel => $datanya) {
-							$data_agenda[] = [
-								'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
-								'uraian' => 'Mengajar mapel ' . $datanya['mapel'] . ' di ' . $rombel . ' jam ' . $datanya['jp0'] . '-' . $datanya['jp1'],
-								'urutan' =>$tanggal
-							];
+						if (isset($jadwal[5])) {
+							foreach ($jadwal[5] as $rombel => $datanya) {
+								$data_agenda[] = [
+									'tanggal' => $tanggal . '-' . $bulan . '-' . $tahun,
+									'uraian' => 'Mengajar mapel ' . $datanya['mapel'] . ' di ' . $rombel . ' jam ' . $datanya['jp0'] . '-' . $datanya['jp1'],
+									'urutan' => $tanggal
+								];
+							}
 						}
-					}
 					}
 				}
 
@@ -139,7 +139,7 @@ class Cetak extends Pbm
 				$data['agenda'] = $agendamodel->findAll();
 				$data['qr'] = $this->qr();
 			}
-			//dd($data);
+			// dd($data);
 			$html = view('cetakagendattd', $data);
 			//dd($data);
 			$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
@@ -306,7 +306,7 @@ class Cetak extends Pbm
 			$pdf->setFont('dejavusans', '', 10);
 			$pdf->AddPage();
 
-			
+
 
 			$pdf->writeHTML($html, true, false, true, false, '');
 			$this->response->setContentType('application/pdf');
