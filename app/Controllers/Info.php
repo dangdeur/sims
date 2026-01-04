@@ -12,6 +12,8 @@ use App\Models\KegiatanModel;
 use App\Models\VotingModel;
 use App\Models\VotingTendikModel;
 
+use App\Libraries\Push;
+
 
 class Info extends Pbm
 {
@@ -43,6 +45,11 @@ class Info extends Pbm
   public function index()
   {
     $data = session()->get();
+
+    //push
+    $push = new Push();
+    $sub=$push->subscribe();
+    d($sub);
     $model = new InfoModel;
     //paginasi
     $data['info'] = $model->select('*')->orderBy('tanggal', 'DESC')->paginate(10);

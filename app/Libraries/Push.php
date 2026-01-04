@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Libraries;
 
-use CodeIgniter\Controller;
-use CodeIgniter\API\ResponseTrait;
 
-class Push extends Controller
+
+class Push
 {
-    use ResponseTrait;
+    // use ResponseTrait;
 
     protected $pushManager;
 
@@ -25,7 +24,8 @@ class Push extends Controller
 
     public function subscribe()
     {
-        $input = $this->request->getJSON(true);
+        // $input = $this->getVar()->getJSON(true);
+        $input = $this->request->getJsonVar(TRUE);
         $endpoint = $input['endpoint'] ?? null;
         $keys = $input['keys'] ?? null;
 

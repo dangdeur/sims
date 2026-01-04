@@ -6,6 +6,7 @@
   <div>
     <div class="bg-body-tertiaryp-5 rounded">
       <div class="col-sm-8 mx-auto">
+        <button onclick="enableNotif()">Aktifkan Notifikasi</button>
         <?php
 
 
@@ -71,14 +72,29 @@
       </div>
     </div>
   </div>
-  <!-- <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
-    <script>
-  const beamsClient = new PusherPushNotifications.Client({
-    instanceId: '858941f5-5fbe-49b7-8202-2031c0e0fb06',
-  });
+   <script>
+        navigator.serviceWorker.register("sw.js");
 
-  beamsClient.start()
-    .then(() => beamsClient.addDeviceInterest('hello'))
-    .then(() => console.log('Successfully registered and subscribed!'))
-    .catch(console.error);
-</script> -->
+        function enableNotif() {
+            Notification.requestPermission().then((permission)=> {
+                if (permission === 'granted') {
+                    // get service worker
+                    navigator.serviceWorker.ready.then((sw)=> {
+                        // subscribe
+                        sw.pushManager.subscribe({
+                            userVisibleOnly: true,
+                            applicationServerKey: "BB5JPlQO1Hjgw6wkcyGM3mXI72qLTSE75onjiaYskVxLuyM_NQQiQrhsBtcFzARSNqn36tHW5zFEm2nGe3yP9PQ"
+                        }).then((subscription)=> {
+                            // console.log(JSON.stringify(subscription));
+                            JSON.stringify(subscription);
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+
+    <!-- 
+    {"endpoint":"https://fcm.googleapis.com/fcm/send/fyRHP1sXJBU:APA91bG4Zv7aSU3HeW7ztr0TKbM7tw7_T6q8WZRR7AsYk9fSBRHu3n6K1Yl3LyGSoAw-_WnDjntO6KxFlHTaEnnWLMyPCt3eUNNcoM3KCNibA2I3H2LI6EW8iWCxLi55ihssKotvfSkF","expirationTime":null,"keys":{"p256dh":"BCBNk-hLu0unHlqDH_eclUo0XpAuaIYViOZI9D89VRoLzX_4U60OoF_nr1MtlKH7gK4lKhn5nJoVz5X7HDwqW7A","auth":"v4Dpcu6JPG5JB8geKBrrQQ"}}
+    -->
+    
