@@ -23,7 +23,7 @@ class AuthGroups extends ShieldAuthGroups
      * --------------------------------------------------------------------
      * The group that a newly registered user is added to.
      */
-    public string $defaultGroup = 'user';
+    public string $defaultGroup = 'siswa';
 
     /**
      * --------------------------------------------------------------------
@@ -53,22 +53,30 @@ class AuthGroups extends ShieldAuthGroups
             'title'       => 'Kepala Sekolah',
             'description' => 'Kepala Sekolah',
         ],
-        'user' => [
-            'title'       => 'User',
-            'description' => 'General users of the site. Often customers.',
+        'waka' => [
+            'title'       => 'Wakil Kepala Sekolah',
+            'description' => 'Wakil Kepala Sekolah',
+        ],
+        'walikelas' => [
+            'title'       => 'Wali Kelas',
+            'description' => 'Wali Kelas',
         ],
         'guru' => [
             'title'       => 'Guru',
-            'description' => 'Guru Mata Pelajaran',
+            'description' => 'Guru',
         ],
-        'walas' => [
-            'title'       => 'Walikelas',
-            'description' => 'Walikelas',
+        'tendik' => [
+            'title'       => 'Tenaga Kependidikan',
+            'description' => 'Tenaga Kependidikan',
         ],
-        'beta' => [
-            'title'       => 'Beta User',
-            'description' => 'Has access to beta-level features.',
+        'siswa' => [
+            'title'       => 'Siswa',
+            'description' => 'Siswa',
         ],
+        'ortu' => [
+            'title'       => 'Orang Tua',
+            'description' => 'Orang Tua',
+        ]
     ];
 
     /**
